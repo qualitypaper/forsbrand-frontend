@@ -1,0 +1,51 @@
+.pages{
+  padding: 60px 0 20px;
+  ul{
+    gap: 5px;
+    li{
+      align-items: center;
+      justify-content: center;
+      line-height: 1em;
+      margin: 0.25em;
+      min-height: 1em;
+      min-width: 1em;
+      padding: 0.5em 0.5em;
+      transition: opacity .2s;
+    }
+    .active{
+      color: #999997;
+    }
+  }
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 13px;
+  padding: 60px 0 20px;
+}
+
+.page-number {
+  align-items: center;
+  justify-content: center;
+  line-height: 1em;
+  min-height: 1em;
+  min-width: 1em;
+  transition: opacity .2s;
+}
+
+//.previous {
+//  background-image: url('../../../../assets/images/arrow_left_black.svg'); /* Relative path from the CSS file to the image */
+//  background-repeat: no-repeat;
+//  background-size: contain; /* Adjust as needed */
+//  padding-left: 30px; /* Adjust the padding to make room for the image and provide additional space for text */
+//  padding-right: 10px; /* Optional: Add padding to the right for additional spacing */
+//}
+
+.next {
+  /* Styles for the "Next" button */
+}
+
+.active {
+  /* Styles for the active (selected) page link */
+  color: #999997; /* Example color */
+}

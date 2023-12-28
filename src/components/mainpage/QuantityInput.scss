@@ -1,0 +1,30 @@
+.quantity-input {
+  display: flex;
+  font-size: 14px;
+  border-radius: 3px;
+  margin-top: 7px;
+  .custom-input-container {
+    display: flex;
+    border: 3px solid rgba(77, 75, 75, 0.04);
+    padding: 5px;
+    justify-content: center;
+    .custom-input{
+      padding: 5px;
+    }
+    .custom-input-container-img{
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      border: 1px solid #fff0f0;
+      margin: 5px 0 0 10px;
+      .img_quantity1{
+        position: absolute;
+      }
+    .img_quantity{
+      margin-top:20px;
+    }
+    }
+  }
+.quantity {
+}
+}

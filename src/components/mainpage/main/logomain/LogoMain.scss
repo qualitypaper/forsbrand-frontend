@@ -1,0 +1,28 @@
+.logo_main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 600px;
+    height: 600px;
+  }
+}
+
+@media (max-width: 616px) {
+  .logo_main {
+    img {
+      width: 450px;
+      height: 450px;
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .logo_main {
+    img {
+      width: 300px;
+      height: 300px;
+    }
+  }
+}

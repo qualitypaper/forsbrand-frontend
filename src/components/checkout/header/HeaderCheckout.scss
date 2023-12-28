@@ -1,0 +1,34 @@
+
+
+.checkout_main {
+  width: 100%;
+  .header__checkout {
+    div {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 0;
+      border-bottom: 1px solid #999997;
+      flex: 1;
+
+      h1 {
+        color: black;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+  @media (max-width: 928px) {
+    .checkout_main {
+    .header__checkout {
+      div {
+        padding: 40px;
+        p {
+          display: none;
+        }
+        h1{
+        }
+      }
+    }
+  }
+}
