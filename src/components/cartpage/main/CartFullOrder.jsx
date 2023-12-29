@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 import {AppContext} from "../../app/App";
 import QuantityInput from "../../mainpage/QuantityInput";
 
-const CartItem = ({ images, originalPrice, name,  availableSizes, quantity, setQuantity, deleteToOrder,  product }) => {
+const CartItem = ({ images, originalPrice, name,  availableSizes, quantity, setQuantity, deleteToOrder,   product }) => {
     const {
         cartItems,
         setCartItemCount,
@@ -54,13 +54,14 @@ const CartItem = ({ images, originalPrice, name,  availableSizes, quantity, setQ
 
 
 
-const CartFullOrder = ({deleteToOrder,  removeFromCart}) => {
+const CartFullOrder = ({deleteToOrder}) => {
     const {
         openPromotionalCode,
         setOpenPromotionalCode,
         totalCost,
         cartItems,
         setQuantity,
+
     } = useContext(AppContext);
 
     return (
@@ -81,7 +82,7 @@ const CartFullOrder = ({deleteToOrder,  removeFromCart}) => {
                         setQuantity={setQuantity}
                         product={item}
                         deleteToOrder={() => deleteToOrder(item.id)}
-                        removeFromCart={removeFromCart}
+
                     />
                 ))}
                 <div className="cart__order-full-list">

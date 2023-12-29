@@ -17,7 +17,7 @@
     display: flex;
     width: 100%;
     gap: 3px;
-    background-color: rgb(39, 51, 20);
+    background-color: rgb(56, 56, 56);
     align-items: center;
     margin-top: 10px;
     height: 46px;
@@ -29,10 +29,10 @@
     justify-content: center;
 
     &:hover {
-      background: lighten( rgb(39, 52, 37), 5%);
+      background: lighten( rgb(73, 73, 73), 5%);
     }
 
     &:active {
-      background: darken( rgb(80, 112, 31), 5%);
+      background: darken( rgb(91, 91, 91), 5%);
     }
 }

@@ -45,24 +45,24 @@ const CartPage = () => {
     }, [id]);
     const navigate = useNavigate();
 
-    const removeFromOrder = (item) => {
-        setCartItems((prevItems) => {
-            const updatedItems = prevItems.map(product => {
-                if (product.id === item.id) {
-                    if (product.quantity > 1) {
-                        product.quantity -= 1;
-                    } else return null;
-                }
-                return product;
-            }).filter(Boolean);
-
-            if (updatedItems.length === 0) {
-                navigate('/');
-            }
-
-            return updatedItems;
-        });
-    };
+    // const removeFromOrder = (item) => {
+    //     setCartItems((prevItems) => {
+    //         const updatedItems = prevItems.map(product => {
+    //             if (product.id === item.id) {
+    //                 if (product.quantity > 1) {
+    //                     product.quantity -= 1;
+    //                 } else return null;
+    //             }
+    //             return product;
+    //         }).filter(Boolean);
+    //
+    //         if (updatedItems.length === 0) {
+    //             navigate('/');
+    //         }
+    //
+    //         return updatedItems;
+    //     });
+    // };
     const deleteToOrder = (id) => {
         setCartItems((prevItems) => {
             const updatedItems = prevItems.filter(product => product.id !== id);
@@ -79,7 +79,7 @@ const CartPage = () => {
             <div className="mid">
                 <div className="mid_background1">
                     <div className="one">
-                                <CartOrderMain removeFromCart={removeFromOrder} deleteToOrder={deleteToOrder} cardData={cardData}  onAdd={addToOrder} product={windowItems} onClickAddToCart={addToCartFromWindow}
+                                <CartOrderMain  deleteToOrder={deleteToOrder} cardData={cardData}  onAdd={addToOrder} product={windowItems} onClickAddToCart={addToCartFromWindow}
                                                openCart={openCart}/>
                     </div>
                 </div>

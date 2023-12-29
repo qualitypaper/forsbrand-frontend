@@ -12,6 +12,19 @@
 body{
   overflow-x: hidden;
   overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 23px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(65, 65, 65);
+    border: 1px solid white;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: rgba(243, 243, 243, 0.42);
+  }
+
 }
 ul{
   list-style: none;

@@ -78,6 +78,7 @@ const App = () => {
         setCartItems((prevItems) =>
           prevItems.filter((product) => product.id !== item.id)
         );
+
         setQuantity(1);
       }
     }

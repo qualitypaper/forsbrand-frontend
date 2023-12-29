@@ -29,7 +29,6 @@ export const CheckoutPage = () => {
 
     return (
         <>
-            <SuccessfulOrder />
             <div className="mid1">
                      <HeaderCheckout />
                      <MainCheckout    onAdd={addToOrder}

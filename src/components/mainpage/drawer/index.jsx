@@ -48,18 +48,13 @@ function Drawer({ onClickClosed, deleteToOrder,removeFromCart}) {
                         </div>
                     </div>
                     {cartItems.length > 0 ? (
-                        <div className="d-flex flex-column flex">
+                        <div className="cartItems-mains">
                         <div className="cartItems-main">
                             {cartItems.map((item) => (
-                                <div key={item.id}
-
-                                     onMouseEnter={() => setHoveredItemId(item.id)}
-                                     onMouseLeave={() => setHoveredItemId("")}
-                                     className="cartItem d-flex align-center mb-20 ml-20">
-
+                                <div key={item.id} onMouseEnter={() => setHoveredItemId(item.id)} onMouseLeave={() => setHoveredItemId("")} className="cartItem">
                                     <img src={item.images[0]} width={80} height={80} alt="" />
-                                    <div className="ml-40 flex">
-                                        <p className="mb-5 text">{item.name}</p>
+                                    <div className="cart_item">
+                                        <p className="text">{item.name}</p>
                                         <b>{item.originalPrice} ₴</b>
                                         <QuantityInput
                                             removeFromCart={removeFromCart}
@@ -72,7 +67,7 @@ function Drawer({ onClickClosed, deleteToOrder,removeFromCart}) {
                                     {hoveredItemId === item.id && (
                                         <img
                                             onClick={() => deleteToOrder(item.id)}
-                                            className="mr-20 cu-p"
+                                            className="cartItems-img"
                                             src={cross}
                                             alt="Remove"
                                         />

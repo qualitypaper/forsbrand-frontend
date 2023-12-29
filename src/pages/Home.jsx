@@ -10,6 +10,7 @@ import "./Home.scss";
 import {ProductJson} from "../assets/clothes";
 import PreLoader from "../components/preloader/PreLoader";
 import { BASE_URL } from '../assets/constant';
+import {Pages} from "../components/mainpage/main/pages";
 
 
 export const Home = () => {

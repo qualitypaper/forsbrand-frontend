@@ -6,13 +6,17 @@ import {Link} from "react-router-dom";
 
 
 export const LogoMain = () => {
+    const handleClick = () => {
+        window.location.reload();
+    };
+
     return (
         <div className="container">
-            <Link to="/">
-        <section className="logo_main">
-                <img src={logo}  alt="logo"/>
-        </section>
+            <Link to="/" onClick={handleClick}>
+                <section className="logo_main">
+                    <img src={logo} alt="logo" />
+                </section>
             </Link>
         </div>
-    )
-}
+    );
+};
