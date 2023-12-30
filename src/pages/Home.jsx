@@ -34,6 +34,7 @@ export const Home = () => {
         removeFromOrder
     } = useContext(AppContext);
     const [itemOffset, setItemOffset] = useState(0);
+    const logoAnimation = sessionStorage.getItem('logo') === undefined ? true : false;
 
     useEffect(() => {
         const getClothes = async () => {
@@ -85,7 +86,7 @@ export const Home = () => {
     console.log("currentPage : ", currentPage)
     return (
         <>
-            <PreLoader />
+            {logoAnimation && <PreLoader />}
             <div className="mid">
                 <div className="mid_background1">
                     <div className="one1">

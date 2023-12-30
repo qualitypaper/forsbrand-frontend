@@ -1,7 +1,7 @@
 import React from 'react';
 import CheckoutInput from "./CustomerDetailsForm";
 
-const ShippingOptions = ({ selectedOption, onChange, label, name,  id, value, handleInputChange, handleInputChange2}) => {
+const ShippingOptions = ({ selectedOption, onChange, label, name,  id, value, addressValue, departmentValue, handleInputChange, handleInputChange2}) => {
     return (
         <div>
             <div className="radio">
@@ -12,20 +12,19 @@ const ShippingOptions = ({ selectedOption, onChange, label, name,  id, value, ha
                             id={id}
                             type='radio'
                             name={name}
-                            value={value}
-                            checked={selectedOption.value === value}
+                            checked={selectedOption.id === id}
                             onChange={onChange}
                         />
                         <div className="radio-button-text">
                             {label}
                         </div>
                     </fieldset>
-                    {selectedOption.value === value && (
+                    {selectedOption.id === id && (
                         <div className="radio-subtext">
                             <p>{selectedOption.description}</p>
-                            {selectedOption.requiredInputFields.map((field) => (
-                                field === "ADDRESS_INPUT" ? <CheckoutInput    onChange={handleInputChange}  type="text" placeholder="Address"/> :
-                                    <CheckoutInput  onChange={handleInputChange2}  type="text" placeholder="Department"/>
+                            {selectedOption.requiredFieldsList.map((field) => (
+                                field === "ADDRESS_INPUT" ? <CheckoutInput value={addressValue} onChange={handleInputChange}  type="text" placeholder="Address"/> :
+                                    <CheckoutInput value={departmentValue} onChange={handleInputChange2}  type="text" placeholder="Department"/>
                                 ))}
                         </div>
                     )}

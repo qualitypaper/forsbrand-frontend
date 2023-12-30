@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
 import arrow_down from "../../../assets/images/arrow_down.svg";
+import arrow_top from "../../../assets/images/arrow_top.svg";
 import "./CardFull.scss";
 import { Header } from "../header";
 import { AppContext } from "../../app/App";
 import { SIZES } from "../../../assets/constant";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function CardFull({ product, onClickAddToCart, openCart }) {
   const [open, setOpen] = useState(false);
@@ -13,12 +14,11 @@ function CardFull({ product, onClickAddToCart, openCart }) {
   const [selectedButton, setSelectedButton] = useState(0);
   const { currentClothing } = useContext(AppContext);
   const [quantity, setQuantity] = useState(1);
-  const [openSeeSized, setOpenSeeSizes] = useState(false)
+  const [arrowChange, setArrowChange] = useState(false)
+  const [arrowChangeSeeSizes, setArrowChangeSeeSizes] = useState(false)
+  const [openSeeSized, setOpenSeeSizes] = useState(false);
   const navigate = useNavigate();
-  const {
-    addToOrder,
-    setWindowProduct,
-  } = useContext(AppContext);
+  const { addToOrder, setWindowProduct } = useContext(AppContext);
 
   const currencyValue = "₴";
 
@@ -36,6 +36,10 @@ function CardFull({ product, onClickAddToCart, openCart }) {
     setCurrentImageIndex(index);
     setSelectedButton(index);
   };
+
+  const ChangeImgButton = () => {
+    setArrowChange(!arrowChange)
+  }
   const isButtonSelected = (index) => {
     return selectedButton === index;
   };
@@ -45,15 +49,21 @@ function CardFull({ product, onClickAddToCart, openCart }) {
     setOpen(false);
   };
   const handleAddToCart = () => {
-    const temp = {...currentClothing, size: textList, quantity: Number.parseInt(quantity) }
+    if(!textList) return;
+    const temp = {
+      ...currentClothing,
+      size: textList,
+      quantity: Number.parseInt(quantity),
+    };
     addToOrder(temp);
-    navigate("/")
+    navigate("/");
     openCart();
     setWindowProduct(false);
   };
   const clickOpenSeeSized = () => {
-    setOpenSeeSizes(!openSeeSized)
-  }
+    setOpenSeeSizes(!openSeeSized);
+    setArrowChangeSeeSizes(!arrowChangeSeeSizes)
+  };
 
   const getSizesImage = () => {
     if (currentClothing.group) {
@@ -72,20 +82,26 @@ function CardFull({ product, onClickAddToCart, openCart }) {
         </>
       );
     } else {
-      return <span className="">{originalPrice + currencyValue}</span>;
+      return <span>{originalPrice + currencyValue}</span>;
     }
   };
 
   const handleQuantityChange = (event) => {
     event.preventDefault();
-    setQuantity(event.target.value)
-  }
+    setQuantity(event.target.value);
+  };
+
+  const processDescription = () => {
+    if (description) {
+      return String(description).replaceAll("\n", "</br>");
+    } else return "";
+  };
 
   return (
     <div className="card__full">
       <Header text={name} id={currentImageIndex} />
       <div className="card__full-all">
-        <div className="window__left-page m-25">
+        <div className="window__left-page ">
           <img
             className="window__left-page-img"
             src={images[currentImageIndex]}
@@ -108,30 +124,27 @@ function CardFull({ product, onClickAddToCart, openCart }) {
               ))}
           </div>
           <div className="window__left-text">
-            <p>{description || ""}</p>
+            <div dangerouslySetInnerHTML={{__html: processDescription()}}/>
           </div>
-          {/*<div className="">*/}
-          {/*  Посмотреть размеры*/}
-          {/*  <div>*/}
-          {/*    <img src={getSizesImage()} width={200} height={200} />*/}
-          {/*  </div>*/}
-          {/*</div>*/}
         </div>
-        <div className="window__right">
-          <div className="window__right-text">
+        <div className="product__page">
+          <div className="product__page-text">
             <p>{name}</p>
             <p>{constructPrice()}</p>
           </div>
-          <div className="window__right-size">
+          <div className="product__page-size">
+            <div onClick={ChangeImgButton} >
+              <p>Sizes</p>
             <button
-              className="window__right-size-btn"
+              className="product__page-size-btn"
               onClick={() => setOpen(!open)}
             >
               <p>{textList}</p>
-              <img src={arrow_down} alt="" />
+              <img src={arrowChange ? arrow_top : arrow_down} alt="" />
             </button>
+            </div>
             {open && (
-              <div className="window__right-size-open">
+              <div className="product__page-size-open">
                 {list.map((sort, index) => (
                   <li key={index} onClick={() => onClickSorting(index)}>
                     {sort}
@@ -140,24 +153,36 @@ function CardFull({ product, onClickAddToCart, openCart }) {
               </div>
             )}
           </div>
-          <input onChange={handleQuantityChange} className="input_quantity" type="number" min={0} max={sizes[open] || 100} />
-          <button onClick={handleAddToCart} className="window__right-btn cu-p">
+          <div>
+          <p>Кількість</p>
+          <input
+            onChange={handleQuantityChange}
+            className="input_quantity"
+            type="number"
+            min={1}
+            max={sizes[open] || 100}
+          />
+          </div>
+          <button onClick={handleAddToCart} className="product__page-btn cu-p">
             <p>Додати до кошика</p>
           </button>
-
         </div>
-        <div>
-
+        <div></div>
       </div>
-    </div>
-      <div className="see_sizes">
-      <p onClick={clickOpenSeeSized} className="see_sizes-text">Посмотреть размеры</p>
-        {openSeeSized &&
-        <div className="see_sizes-images">
-          <img src={getSizesImage()} />
-        </div>
-        }
+      <div  onClick={clickOpenSeeSized} className="see_sizes">
+        <button
+            className="see_sizes-btn"
+            onClick={() => setOpenSeeSizes(!openSeeSized)}
+        >
+        <p  className="see_sizes-text"> Посмотреть размеры </p>
+          <img className="see_sizes-img" width={30} height={30} src={arrowChangeSeeSizes ? arrow_top : arrow_down} alt="" />
+        </button>
       </div>
+        {openSeeSized && (
+          <div className="see_sizes-images">
+            <img src={getSizesImage()} />
+          </div>
+        )}
     </div>
   );
 }

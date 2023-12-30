@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import "./MainCheckout.scss"
 import {AppContext} from "../../app/App";
 import sale from "../../../assets/images/sale.svg";
@@ -7,8 +7,41 @@ import list1 from "../../../assets/images/list.svg";
 import CheckoutInput from "./CustomerDetailsForm";
 import Payment from "./Payment";
 import {Link} from "react-router-dom";
-
-
+import axios from 'axios';
+import { BASE_URL } from '../../../assets/constant';
+// [{
+//     id: 0,
+//     name: 'ДОСТАВКА ПО УКРАЇНІ (NOVA POST)',
+//     description: 'Доставка по Україні здійснюється «новою поштою» від 1 до 3 діб. Вартість доставки зазвичай 50-100грн',
+//     requiredInputFields: [
+//         "ADDRESS_INPUT"
+//     ]
+// },
+// {
+//     id: 1,
+//     name: 'ДОСТАВКА В КРАЇНИ ЄВРОПИ В КОТРИХ Є ВІДДІЛЕННЯ НОВОЇ ПОШТИ',
+//     description: 'Доставка на відділення «нової пошти» в Європі коштує 400грн/10€, термін доставки зазвичай до 16 діб, але часто буває що відділення знаходиться дуже дале від вашого міста, і тоді вам потрібен наступний варіант доставки',
+//     requiredInputFields: [
+//         "ADDRESS_INPUT",
+//         "DEPARTMENT_INPUT"
+//     ]
+// },
+// {
+//     id: 2,
+//     name: 'АДРЕСНА ДОСТАВКА В КРАЇНИ ЄВРОПИ В КОТРИХ Є ВІДДІЛЕННЯ НОВОЇ ПОШТИ',
+//     description: 'Тут все теж саме що і в минулому пункті, але посилка приходить саме під ваш дім (до 21 доби). Вартість 600грн/15€',
+//     requiredInputFields: [
+//         "DEPARTMENT_INPUT",
+//     ]
+// },
+// {
+//     id: 3,
+//     name: 'ДОСТАВКА В БУДЬ-ЯКІ ІНШІ КРАЇНИ В КОТРИХ НЕМАЄ НОВОЇ ПОШТИ',
+//     description: 'Така доставка здійснюється «укрпоштою» вартість такої доставки 1000грн/25€, термін доставки приблизно 14-21 діб',
+//     requiredInputFields: [
+//         "ADDRESS_INPUT"
+//     ]
+// },]
 const MainCheckout = ({items}) => {
     const {
         openPromotionalCode,
@@ -37,6 +70,7 @@ const MainCheckout = ({items}) => {
         checkPromocode,
 
     } = useContext(AppContext);
+
     const card = cartItems;
     const [openNote, setOpenNote] = useState(false)
     const [promocode, setPromocode] = useState('');
@@ -55,45 +89,8 @@ const MainCheckout = ({items}) => {
     const [departmentValue, setDepartmentValue] = useState('');
     console.log('orderData state:', orderData);
     console.log(formData.description)
-    const shippingOptions = [
-        {
-            id: 0,
-            value: 'option1',
-            name: 'ДОСТАВКА ПО УКРАЇНІ (NOVA POST)',
-            description: 'Доставка по Україні здійснюється «новою поштою» від 1 до 3 діб. Вартість доставки зазвичай 50-100грн',
-            requiredInputFields: [
-                "ADDRESS_INPUT"
-            ]
-        },
-        {
-            id: 1,
-            value: 'option2',
-            name: 'ДОСТАВКА В КРАЇНИ ЄВРОПИ В КОТРИХ Є ВІДДІЛЕННЯ НОВОЇ ПОШТИ',
-            description: 'Доставка на відділення «нової пошти» в Європі коштує 400грн/10€, термін доставки зазвичай до 16 діб, але часто буває що відділення знаходиться дуже дале від вашого міста, і тоді вам потрібен наступний варіант доставки',
-            requiredInputFields: [
-                "ADDRESS_INPUT",
-                "DEPARTMENT_INPUT"
-            ]
-        },
-        {
-            id: 2,
-            value: 'option3',
-            name: 'АДРЕСНА ДОСТАВКА В КРАЇНИ ЄВРОПИ В КОТРИХ Є ВІДДІЛЕННЯ НОВОЇ ПОШТИ',
-            description: 'Тут все теж саме що і в минулому пункті, але посилка приходить саме під ваш дім (до 21 доби). Вартість 600грн/15€',
-            requiredInputFields: [
-                "DEPARTMENT_INPUT",
-            ]
-        },
-        {
-            id: 3,
-            value: 'option4',
-            name: 'ДОСТАВКА В БУДЬ-ЯКІ ІНШІ КРАЇНИ В КОТРИХ НЕМАЄ НОВОЇ ПОШТИ',
-            description: 'Така доставка здійснюється «укрпоштою» вартість такої доставки 1000грн/25€, термін доставки приблизно 14-21 діб',
-            requiredInputFields: [
-                "ADDRESS_INPUT"
-            ]
-        },
-    ];
+
+    const [shippingOptions, setShippingOptions] = useState([ ]);
 
     const inputFields = [
         { label: 'Ел. пошта для підтвердження замовлення*', id: 'email', type: 'text' },
@@ -104,7 +101,17 @@ const MainCheckout = ({items}) => {
         { label: 'Місто*', id: 'town', type: 'text' },
         { label: 'Поштовий індекс*', id: 'postcode', type: 'text' },
     ];
-
+    //
+    // useEffect(() => {
+    //     const fetchShippingOptions = async () => {
+    //         const res = await axios.get(`${BASE_URL}/delivery-types/getAll`);
+    //         if(res.data) {
+    //             setShippingOptions(res.data)
+    //         }
+    //     }
+    //
+    //     fetchShippingOptions().then()
+    // }, [])
 
     const handleInputChange = (event) => {
         const { id, value } = event.target;
@@ -143,13 +150,15 @@ const MainCheckout = ({items}) => {
         setShowPay(false)
         setShowPayOpen(true)
     };
-    const handleShippingOptionChange = (event) => {
-        console.log(event)
-        setSelectedOption(event);
+    const handleShippingOptionChange = (option) => {
+        console.log(option)
+        setSelectedOption({})
+        setInputValue('')
+        setDepartmentValue('')
+        setSelectedOption(option);
     };
 
-    const checkPromo = async (event) => {
-        event.preventDefault();
+    const checkPromo = async () => {
         const res = await checkPromocode(promocode);
         if(res) {
             if(res.valid) {
@@ -202,8 +211,8 @@ const MainCheckout = ({items}) => {
                     </div>
                         <p className="checkout-open-text">{selectedOption.name} </p>
                         <div className="d-flex">
-                            <p className="checkout-open-text mr-5">{inputValue}</p>
-                            <p className="checkout-open-text">{departmentValue}</p>
+                            {inputValue && <p className="checkout-open-text mr-5">Address: {inputValue}</p>}
+                            {departmentValue && <p className="checkout-open-text">Department: {departmentValue}</p>}
                         </div>
 
                     </div>
@@ -216,10 +225,11 @@ const MainCheckout = ({items}) => {
                         {shippingOptions.map((shipping) => (
                             <ShippingOptions
                                 id={shipping.id}
-                                value={shipping.value}
                                 label={shipping.name}
                                 selectedOption={selectedOption}
                                 onChange={() => handleShippingOptionChange(shipping)}
+                                addressValue={inputValue}
+                                departmentValue={departmentValue}
                                 handleInputChange={handleInputChange2}
                                 handleInputChange2={handleInputChange3}
                             />
@@ -263,9 +273,11 @@ const MainCheckout = ({items}) => {
                                 <div className="checkout-right__order-card-text">
                                     <li className="cart__order-full-price">
                                         <p>{item.name}</p>
-                                        <p>{item.originalPrice}₴</p>
+                                        {/* TODO: use method construct price */}
+                                        <p>{item.currentPrice}₴</p>
                                     </li>
                                     <p>К-сть: {item.quantity}</p>
+                                    <p>Розмір: {item.size}</p>
                                 </div>
                             </div>
                         </div>
@@ -315,7 +327,13 @@ const MainCheckout = ({items}) => {
                             </li>
                             <li className="cart__order-full-price">
                                 <p>Доставка</p>
-                                <p>{cardData.originalPrice}₴</p>
+                                <li className="cart__order-full-price">
+                                    <p>
+                                        {selectedOption && selectedOption.price !== undefined
+                                            ? `${selectedOption.price}₴`
+                                            : "Выберите доставку"}
+                                    </p>
+                                </li>
                             </li>
                             <p></p>
                         </ul>
@@ -323,7 +341,7 @@ const MainCheckout = ({items}) => {
                     <div className="card__order-full-btn">
                         <div className="card__order-full-btn-text">
                             <p className="card__order-full-btn-text-main">Загалом</p>
-                            <p>{card.originalPrice}₴</p>
+                            <p>{Number.parseInt(totalCost) + (selectedOption.price ? Number.parseInt(selectedOption.price) : 0)}₴</p>
                         </div>
                     </div>
                 </div>

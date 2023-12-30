@@ -6,28 +6,17 @@ import cross from "../../../assets/images/cross_mark.svg";
 import {Link} from "react-router-dom";
 import QuantityInput from "../QuantityInput";
 import {AppContext} from "../../app/App";
+import {SIZES} from "../../../assets/constant";
 
 function Drawer({ onClickClosed, deleteToOrder,removeFromCart}) {
     const [hoveredItemId, setHoveredItemId] = useState("");
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const {
-        setCartItemCount,
         cartItems,
-        setTotalCost,
         totalCost,
         handleQuantityChange,
     } = useContext(AppContext);
 
-
-    useEffect(() => {
-        const count = cartItems.reduce(
-            (total, cartItem) => total + cartItem.quantity, 0
-        );
-        setCartItemCount(count);
-    }, [cartItems]);
-    useEffect(() => {
-        setTotalCost(cartItems.reduce((total, cartItem) => total + cartItem.originalPrice * cartItem.quantity, 0))
-    }, [cartItems])
-    
     return (
         <div>
             <div className="overlay">
@@ -54,8 +43,8 @@ function Drawer({ onClickClosed, deleteToOrder,removeFromCart}) {
                                 <div key={item.id} onMouseEnter={() => setHoveredItemId(item.id)} onMouseLeave={() => setHoveredItemId("")} className="cartItem">
                                     <img src={item.images[0]} width={80} height={80} alt="" />
                                     <div className="cart_item">
-                                        <p className="text">{item.name}</p>
-                                        <b>{item.originalPrice} ₴</b>
+                                        <p className="text" style={{ wordBreak: 'break-all' }}>{item.name}</p>
+                                        <b>{item.originalPrice} ₴ {item.size}</b>
                                         <QuantityInput
                                             removeFromCart={removeFromCart}
                                             setQuantity={(quantity) => handleQuantityChange(item, quantity)}

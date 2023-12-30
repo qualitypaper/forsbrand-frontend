@@ -11,6 +11,7 @@ const PreLoader = () => {
             setTimeout(() => {
                 setLoading(true);
             }, 1500);
+            sessionStorage.setItem('logo', false);
         };
 
         preLoaderAnim();

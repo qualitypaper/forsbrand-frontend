@@ -1,7 +1,7 @@
 export const ProductJson = [
   {
     "id":1,
-    "name":"Sneakers",
+    "name":"Самая лучшая футболка для вас и для ваше семьи",
     "group":{"id":1,
       "groupName":"Shoes",
       "sizesImage":"http://localhost:8080/static/photo_2023-02-19_14-07-16.jpg",

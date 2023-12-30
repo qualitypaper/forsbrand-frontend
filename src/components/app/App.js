@@ -46,26 +46,30 @@ const App = () => {
   const [selectedButton, setSelectedButton] = useState(0);
   const [deliveryOpenMethod, setDeliveryOpenMethod] = useState(false);
   const [selectedOption, setSelectedOption] = React.useState({});
-  const addToOrder = (item) => {
-    console.log(item);
-    const temp = cartItems.find((e) => e.id === item.id && e.size === item.size);
-    console.log(cartItems);
-    if (temp) {
-        if (item.quantity) {
-          temp.quantity += item.quantity;
+    const addToOrder = (item) => {
+        console.log(item);
+
+        const temp = cartItems.find((e) => e.id === item.id && e.size === item.size);
+        console.log(cartItems);
+
+        if (temp) {
+            // Item with the same id and size already exists in the cart
+            if (item.quantity) {
+                temp.quantity += item.quantity;
+            } else {
+                temp.quantity += 1;
+            }
+            setCartItems([...cartItems]);
         } else {
-          temp.quantity += 1;
+            // Item with the same id and size doesn't exist in the cart
+            if (!item.quantity) {
+                setCartItems([...cartItems, { ...item, quantity: 1 }]);
+            } else {
+                setCartItems([...cartItems, { ...item }]);
+            }
         }
-        setCartItems([...cartItems]);
-    } else {
-      if (!item.quantity) {
-        setCartItems([...cartItems, { ...item, quantity: 1 }]);
-      } else {
-        setCartItems([...cartItems, { ...item }]);
-      }
-    }
-    console.log(cartItems);
-  };
+        console.log(cartItems);
+    };
 
   const removeFromOrder = (item) => {
     const temp = cartItems.find((e) => e.id === item.id && e.size === item.size);
@@ -78,8 +82,6 @@ const App = () => {
         setCartItems((prevItems) =>
           prevItems.filter((product) => product.id !== item.id)
         );
-
-        setQuantity(1);
       }
     }
 
@@ -95,6 +97,7 @@ const App = () => {
       )
     );
   };
+
   useEffect(() => {
     const localStorageItem = JSON.parse(localStorage.getItem("cart"));
     if (localStorageItem) {
@@ -108,6 +111,14 @@ const App = () => {
     }
   }, [cartItems]);
 
+  useEffect(() => {
+    const count = cartItems.reduce(
+        (total, cartItem) => total + cartItem.quantity, 0
+    );
+    setCartItemCount(count);
+    setTotalCost(cartItems.reduce((total, cartItem) => total + cartItem.originalPrice * cartItem.quantity, 0))
+}, [cartItems]);
+  //
   // const checkPromocode = async (promocode) => {
   //   const res = await axios.get(
   //     `${BASE_URL}/promocodes/check?promocode=${promocode}`

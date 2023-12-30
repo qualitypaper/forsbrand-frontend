@@ -199,3 +199,10 @@
     display: none;
   }
 }
+
+.original_price {
+  text-decoration: line-through;
+  opacity: 90%;
+  margin-right: 7px;
+  color: gray;
+}

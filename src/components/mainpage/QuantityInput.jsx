@@ -11,8 +11,9 @@ function QuantityInput({ value, setQuantity, item, removeFromCart }) {
         windowItems: windowItem,
         setCartItems,
     } = useContext(AppContext);
+
     const addToOrder = (item) => {
-        const temp = cartItems.find((e) => e.id === item.id);
+        const temp = cartItems.find((e) => e.id === item.id && e.size === item.size);
         if (temp) {
             temp.quantity += 1;
             setCartItems([...cartItems]);
