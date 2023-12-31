@@ -6,7 +6,7 @@ import "./CheckoutLeft.scss"
 import ShippingOptions from "./shippingoptions/ShippingOptions";
 import CheckoutInputs from "./checkoutinputs/CheckoutInputs";
 
-const CheckoutLeft = () => {
+const   CheckoutLeft = () => {
     const {
         showPay,
         showPayOpen,

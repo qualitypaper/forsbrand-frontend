@@ -47,47 +47,50 @@ const App = () => {
   const [deliveryOpenMethod, setDeliveryOpenMethod] = useState(false);
   const [selectedOption, setSelectedOption] = React.useState({});
 
+  const addToOrder = (item) => {
+    console.log(item);
 
-    const addToOrder = (item) => {
-        console.log(item);
-
-        const temp = cartItems.find((e) => e.id === item.id && e.size === item.size);
-        console.log(cartItems);
-
-        if (temp) {
-            // Item with the same id and size already exists in the cart
-            if (item.quantity) {
-                temp.quantity += item.quantity;
-            } else {
-                temp.quantity += 1;
-            }
-            setCartItems([...cartItems]);
-        } else {
-            // Item with the same id and size doesn't exist in the cart
-            if (!item.quantity) {
-                setCartItems([...cartItems, { ...item, quantity: 1 }]);
-            } else {
-                setCartItems([...cartItems, { ...item }]);
-            }
-        }
-        console.log(cartItems);
-    };
-
-  const removeFromOrder = (item) => {
-    const temp = cartItems.find((e) => e.id === item.id && e.size === item.size);
+    const temp = cartItems.find(
+      (e) => e.id === item.id && e.size === item.size
+    );
+    console.log(cartItems);
 
     if (temp) {
-      if (temp.quantity > 1 ) {
+      // Item with the same id and size already exists in the cart
+      if (item.quantity) {
+        temp.quantity += item.quantity;
+      } else {
+        temp.quantity += 1;
+      }
+      setCartItems([...cartItems]);
+    } else {
+      // Item with the same id and size doesn't exist in the cart
+      if (!item.quantity) {
+        setCartItems([...cartItems, { ...item, quantity: 1 }]);
+      } else {
+        setCartItems([...cartItems, { ...item }]);
+      }
+    }
+    console.log(cartItems);
+  };
+
+  const removeFromOrder = (item) => {
+    const temp = cartItems.find(
+      (e) => e.id === item.id && e.size === item.size
+    );
+
+    if (temp) {
+      if (temp.quantity > 1) {
         temp.quantity -= 1;
         setCartItems([...cartItems]);
       } else {
-        setCartItems((prevItems) =>
-          prevItems.filter((product) => product.id !== item.id)
+        const temp = cartItems.filter(
+          (product) => product.id !== item.id || product.size !== item.size
         );
+        setCartItems(temp);
+        localStorage.setItem("cart", JSON.stringify(temp));
       }
     }
-
-    localStorage.setItem("cart", JSON.stringify(cartItems));
   };
 
   const handleQuantityChange = (item, quantity) => {
@@ -95,10 +98,18 @@ const App = () => {
     console.log("quantity", quantity);
     setCartItems(
       cartItems.map((i) =>
-        i.id === item.id ? { ...item, quantity: quantity } : { ...i }
+        i.id === item.id && i.size == item.size
+          ? { ...item, quantity: quantity }
+          : { ...i }
       )
     );
   };
+
+  useEffect(() => {
+    if (cartItems.length > 0) {
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+    }
+  }, [cartItems]);
 
   useEffect(() => {
     const localStorageItem = JSON.parse(localStorage.getItem("cart"));
@@ -108,18 +119,18 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    if (cartItems.length > 0) {
-      localStorage.setItem("cart", JSON.stringify(cartItems));
-    }
-  }, [cartItems]);
-
-  useEffect(() => {
     const count = cartItems.reduce(
-        (total, cartItem) => total + cartItem.quantity, 0
+      (total, cartItem) => total + cartItem.quantity,
+      0
     );
     setCartItemCount(count);
-    setTotalCost(cartItems.reduce((total, cartItem) => total + cartItem.originalPrice * cartItem.quantity, 0))
-}, [cartItems]);
+    setTotalCost(
+      cartItems.reduce(
+        (total, cartItem) => total + cartItem.originalPrice * cartItem.quantity,
+        0
+      )
+    );
+  }, [cartItems]);
   //
   // const checkPromocode = async (promocode) => {
   //   const res = await axios.get(
@@ -136,76 +147,76 @@ const App = () => {
 
   return (
     <AppContext.Provider
-        value={{
-            addToOrder,
-            handleQuantityChange,
-            removeFromOrder,
-            cartOpened,
-            setCartOpened,
-            windowItems,
-            setWindowItems,
-            cartItems,
-            setCartItems,
-            windowProduct,
-            setWindowProduct,
-            cardData,
-            setCardData,
-            quantity,
-            setQuantity,
-            currentImageIndex,
-            setCurrentImageIndex,
-            selectedSizeIndex,
-            setSelectedSizeIndex,
-            openPromotionalCode,
-            setOpenPromotionalCode,
-            openNoteCode,
-            setOpenNoteCode,
-            pageActive,
-            setPageActive,
-            loading,
-            setLoading,
-            counter,
-            setCounter,
-            currentPage,
-            setCurrentPage,
-            clothesPerPage,
-            pageNumber,
-            setPageNumber,
-            currentCardData,
-            setCurrentCardData,
-            currentClothing,
-            setCurrentClothing,
-            open,
-            setOpen,
-            selected,
-            setSelected,
-            idActiveCircle,
-            setIdActiveCircle,
-            cartItemCount,
-            setCartItemCount,
-            totalCost,
-            setTotalCost,
-            showData,
-            setShowData,
-            orderData,
-            setOrderData,
-            inputData,
-            setInputData,
-            deliveryOpenMethod,
-            setDeliveryOpenMethod,
-            displayText,
-            setDisplayText,
-            deliveryMethod,
-            setDeliveryMethod,
-            selectedOption,
-            setSelectedOption,
-            showPay,
-            setShowPay,
-            showPayOpen,
-            setShowPayOpen,
-            selectedButton,
-            setSelectedButton,
-        }}
+      value={{
+        addToOrder,
+        handleQuantityChange,
+        removeFromOrder,
+        cartOpened,
+        setCartOpened,
+        windowItems,
+        setWindowItems,
+        cartItems,
+        setCartItems,
+        windowProduct,
+        setWindowProduct,
+        cardData,
+        setCardData,
+        quantity,
+        setQuantity,
+        currentImageIndex,
+        setCurrentImageIndex,
+        selectedSizeIndex,
+        setSelectedSizeIndex,
+        openPromotionalCode,
+        setOpenPromotionalCode,
+        openNoteCode,
+        setOpenNoteCode,
+        pageActive,
+        setPageActive,
+        loading,
+        setLoading,
+        counter,
+        setCounter,
+        currentPage,
+        setCurrentPage,
+        clothesPerPage,
+        pageNumber,
+        setPageNumber,
+        currentCardData,
+        setCurrentCardData,
+        currentClothing,
+        setCurrentClothing,
+        open,
+        setOpen,
+        selected,
+        setSelected,
+        idActiveCircle,
+        setIdActiveCircle,
+        cartItemCount,
+        setCartItemCount,
+        totalCost,
+        setTotalCost,
+        showData,
+        setShowData,
+        orderData,
+        setOrderData,
+        inputData,
+        setInputData,
+        deliveryOpenMethod,
+        setDeliveryOpenMethod,
+        displayText,
+        setDisplayText,
+        deliveryMethod,
+        setDeliveryMethod,
+        selectedOption,
+        setSelectedOption,
+        showPay,
+        setShowPay,
+        showPayOpen,
+        setShowPayOpen,
+        selectedButton,
+        setSelectedButton,
+      }}
     >
       <Router>
         <Routes>

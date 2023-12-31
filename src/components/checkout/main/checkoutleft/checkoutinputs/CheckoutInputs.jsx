@@ -13,6 +13,7 @@ const CheckoutInputs = () => {
         setDeliveryMethod,
     } = useContext(AppContext);
     const [showError, setShowError] = React.useState(false)
+    const [ showNext, setShowNext] = React.useState(true)
     const [formData, setFormData] = React.useState({
         email: '',
         name: '',
@@ -70,7 +71,7 @@ const CheckoutInputs = () => {
                 setShowData(true);
                 setInputData(false);
                 setDeliveryMethod(false);
-                setDeliveryOpenMethod(true);
+                showNext && setDeliveryOpenMethod(true);
             } else {
                 // Trigger HTML5 validation manually
                 form.reportValidity();
@@ -80,6 +81,7 @@ const CheckoutInputs = () => {
     const handleButtonClick2 = () => {
         setInputData(true)
         setShowData(false);
+        setShowNext(false)
     };
 
     return (

@@ -10,17 +10,19 @@ function QuantityInput({ value, setQuantity, item, removeFromCart }) {
         cartItems,
         windowItems: windowItem,
         setCartItems,
+        addToOrder,
+        removeFromOrder,
     } = useContext(AppContext);
 
-    const addToOrder = (item) => {
-        const temp = cartItems.find((e) => e.id === item.id && e.size === item.size);
-        if (temp) {
-            temp.quantity += 1;
-            setCartItems([...cartItems]);
-        } else {
-            setCartItems([...cartItems, { ...item, quantity: 1 }]);
-        }
-    };
+    // const handleIncrease = (item) => {
+    //     const temp = cartItems.find((e) => e.id === item.id && e.size === item.size);
+    //     if (temp) {
+    //         temp.quantity += 1;
+    //         setCartItems([...cartItems]);
+    //     } else {
+    //         setCartItems([...cartItems, { ...item, quantity: 1 }]);
+    //     }
+    // };
     // const removeFromOrder = (item) => {
     //     setCartItems((prevItems) => {
     //         const updatedItems = prevItems.map(product => {
@@ -46,9 +48,9 @@ function QuantityInput({ value, setQuantity, item, removeFromCart }) {
         if (newQuantity === 1) {
             // If the quantity becomes 1, you might want to remove the item from the cart
             if (item) {
-                removeFromCart(item);
+                removeFromOrder(item);
             } else {
-                removeFromCart(windowItem);
+                removeFromOrder(windowItem);
             }
         }
     };

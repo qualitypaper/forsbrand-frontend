@@ -7,7 +7,7 @@ import {AppContext} from "../../../app/App";
 const CartFullOrderRight = ({deleteToOrder}) => {
     const {
         cartItems,
-        setQuantity,
+        handleQuantityChange,
         openPromotionalCode,
         setOpenPromotionalCode,
         checkPromocode,
@@ -43,9 +43,9 @@ const CartFullOrderRight = ({deleteToOrder}) => {
                     originalPrice={item.originalPrice}
                     availableSizes={item.availableSizes}
                     quantity={item.quantity}
-                    setQuantity={setQuantity}
+                    setQuantity={(quantity) => handleQuantityChange(item, quantity)}
                     product={item}
-                    deleteToOrder={() => deleteToOrder(item.id)}
+                    deleteToOrder={() => deleteToOrder(item)}
                 />
             ))}
             <div className="cart__order-full-list">

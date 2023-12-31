@@ -9,14 +9,11 @@ import CartItem from "./cartitem/CartItem";
 import CartFullOrderRight from "./cartfullright/CartFullOrderRight";
 import CartFullOrderLeft from "./cartfullleft/CartFullOrderLeft";
 
-
-const CartFullOrder = ({deleteToOrder}) => {
-
-
+const CartFullOrder = ({ deleteToOrder }) => {
   return (
     <div className="cart__order-full">
-    <CartFullOrderRight deleteToOrder={deleteToOrder}/>
-    <CartFullOrderLeft />
+      <CartFullOrderRight deleteToOrder={deleteToOrder} />
+      <CartFullOrderLeft />
     </div>
   );
 };
