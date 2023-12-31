@@ -5,7 +5,7 @@ import arrow_down from "../../../assets/images/arrow_down.svg";
 import arrow_top from "../../../assets/images/arrow_top.svg";
 import { Link } from "react-router-dom";
 import { AppContext } from "../../app/App";
-import { SIZES } from "../../../assets/constant";
+import {currencyValue, SIZES} from "../../../assets/constant";
 import arrow_down_background from "../../../assets/images/arrow_down_background.svg";
 import arrow_top_background from "../../../assets/images/arrow_top_background.svg";
 
@@ -26,11 +26,9 @@ function Window({ openCart, onClickClosedWindow }) {
     cartItems,
     addToOrder,
   } = useContext(AppContext);
-
-  const currencyValue = "₴";
-
+const [selectSize, setSelectSize] = useState(false)
   const constructPrice = () => {
-    const { currentPrice, originalPrice } = windowItem; 
+    const { currentPrice, originalPrice } = windowItem;
     if (currentPrice !== originalPrice) {
       return (
         <>
@@ -76,6 +74,7 @@ function Window({ openCart, onClickClosedWindow }) {
   };
 
   const handleAddToCart = () => {
+    setSelectSize(true)
     if (!textList) return;
 
     const productToAdd = {
@@ -140,6 +139,7 @@ function Window({ openCart, onClickClosedWindow }) {
           </div>
           <div className="windowAll">
             <div className="window__left ">
+              <Link to={`/product-page/${windowItem.id}`}>
               <img
                 className="window__left-img"
                 src={windowItem.images[currentImageIndex]}
@@ -147,6 +147,7 @@ function Window({ openCart, onClickClosedWindow }) {
                 width={500}
                 height={500}
               />
+              </Link>
               <div className="image-indicators">
                 {windowItem.images.map((image, index) => (
                   <div
@@ -205,6 +206,9 @@ function Window({ openCart, onClickClosedWindow }) {
                     alt=""
                   />
                 </button>
+                {selectSize && !textList && (
+                <p className="select_sizeWindow">Виберіть розмір</p>
+                )}
                 {open && (
                   <div className="window__right-size-open">
                     {list.map((sort, index) => (

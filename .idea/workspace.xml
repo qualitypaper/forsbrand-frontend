@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="working with CartPage and Checkout">
+      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutinputs/CheckoutInputs.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutinputs/CheckoutInputs.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/CheckoutLeft.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/CheckoutLeft.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/CheckoutRight.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/CheckoutRight.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/promocode/PromocodeOrder.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/promocode/PromocodeOrder.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/shippingoptions/ShippingOptions.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/shippingoptions/ShippingOptions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/textarea/OrderTextArea.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/textarea/OrderTextArea.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/clothes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/clothes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/constant.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/constant.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cartpage/main/CartFullOrder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartpage/main/CartFullOrder.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cartpage/main/CartFullOrder.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartpage/main/CartFullOrder.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/header/HeaderCheckout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/header/HeaderCheckout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/header/HeaderCheckout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/header/HeaderCheckout.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/MainCheckout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/MainCheckout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/MainCheckout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/MainCheckout.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/ShippingOptions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/ShippingOption.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/successfulorder/SuccessfulOrder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/successfulorder/SuccessfulOrder.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/QuantityInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/QuantityInput.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/drawer/drawer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/drawer/drawer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/drawer/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/drawer/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/window/Window.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/window/Window.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/window/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/window/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productpage/header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/header/Header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/CardFull.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/CardFull.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/CardFull.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/CardFull.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CheckoutPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CheckoutPage.jsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectId" id="2aEc7k42j8RsnAAQNDgXwvQCgMP" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/ferzy/Desktop/clothing-store/clothing-store/src/components/checkout/main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.rcb.reactComponents" value="false" />
+        <entry key="com.haulmont.rcb.reactInspector" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ferzy\Desktop\clothing-store\clothing-store\src\components\checkout\main" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ferzy\Desktop\clothing-store\clothing-store\src\components\checkout\main\checkoutright" />
+      <recent name="C:\Users\ferzy\Desktop\clothing-store\clothing-store\src\components\checkout\main\textarea" />
+      <recent name="C:\Users\ferzy\Desktop\clothing-store\clothing-store\src\components\checkout\main\promocode" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="" />
+      <created>1703887014920</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1703887014920</updated>
+      <workItem from="1703887020748" duration="4877000" />
+      <workItem from="1703942533403" duration="9568000" />
+      <workItem from="1703973564010" duration="18437000" />
+    </task>
+    <task id="LOCAL-00001" summary="bug fixes CartFullOrder">
+      <created>1703965466030</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1703965466030</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="bug fixes CartFullOrder" />
+    <MESSAGE value="working with CartPage and Checkout" />
+    <option name="LAST_COMMIT_MESSAGE" value="working with CartPage and Checkout" />
+  </component>
+</project>

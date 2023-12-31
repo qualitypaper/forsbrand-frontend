@@ -43,7 +43,7 @@ function Drawer({ onClickClosed, deleteToOrder,removeFromCart}) {
                                 <div key={item.id} onMouseEnter={() => setHoveredItemId(item.id)} onMouseLeave={() => setHoveredItemId("")} className="cartItem">
                                     <img src={item.images[0]} width={80} height={80} alt="" />
                                     <div className="cart_item">
-                                        <p className="text" style={{ wordBreak: 'break-all' }}>{item.name}</p>
+                                        <p className="text" >{item.name}</p>
                                         <b>{item.originalPrice} ₴ {item.size}</b>
                                         <QuantityInput
                                             removeFromCart={removeFromCart}

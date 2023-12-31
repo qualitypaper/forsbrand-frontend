@@ -50,6 +50,13 @@
         align-items: center;
         gap: 20px;
         margin-bottom: 0;
+        .header__product-nav {
+          .header__product-navigation{
+            p{
+              font: normal normal normal 11px/17px "courier new", courier-ps-w01, courier-ps-w02, courier-ps-w10, monospace;
+            }
+          }
+        }
       }
     }
   }

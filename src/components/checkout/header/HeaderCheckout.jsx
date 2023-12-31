@@ -10,7 +10,9 @@ const HeaderCheckout = () => {
                 <Link to="/">
                 <h1>БЕЗПЕЧНЕ ЗАМОВЛЕННЯ</h1>
                 </Link>
+                <Link to="/">
                 <p>Продовжити перегляд</p>
+                </Link>
             </div>
         </header>
         </div>

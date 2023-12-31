@@ -1,0 +1,19 @@
+.checkout-right__order-promo{
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(65, 65, 65, 0.2);
+  .userInput{
+    color: rgba(52, 52, 52, 0.71);
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .checkout-right__list{
+    gap: 10px;
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    padding: 20px 0;
+    border-top: 1px solid rgba(65, 65, 65, 0.2);
+  }
+}

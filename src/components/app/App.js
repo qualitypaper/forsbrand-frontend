@@ -75,7 +75,7 @@ const App = () => {
     const temp = cartItems.find((e) => e.id === item.id && e.size === item.size);
 
     if (temp) {
-      if (temp.quantity > 1) {
+      if (temp.quantity > 1 ) {
         temp.quantity -= 1;
         setCartItems([...cartItems]);
       } else {

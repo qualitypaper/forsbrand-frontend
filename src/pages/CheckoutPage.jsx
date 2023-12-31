@@ -32,7 +32,7 @@ export const CheckoutPage = () => {
             <div className="mid1">
                      <HeaderCheckout />
                      <MainCheckout    onAdd={addToOrder}
-                                      product={windowItems} items={cartItems}/>
+                                      product={windowItems}/>
             </div>
         </>
     )

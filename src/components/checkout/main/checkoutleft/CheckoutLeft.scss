@@ -1,0 +1,198 @@
+.checkout-left {
+  max-width: 508px;
+  .checkout-left__button{
+
+    display: flex;
+    gap: 3px;
+    background-color: rgb(65, 65, 65);
+    align-items: center;
+    justify-content: center;
+    border: none;
+    height: 46px;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.1s ease-in-out;
+
+    &:hover {
+      background: lighten( rgba(65,65,65,1), 5%);
+    }
+
+    &:active {
+      background: darken( rgba(65,65,65,1), 5%);
+    }
+    p{
+      color: #FFFFFF;
+    }
+  }
+  .checkout-left__shipping{
+
+    display: flex;
+    width: 100%;
+    gap: 3px;
+    background-color: rgb(65, 65, 65);
+    align-items: center;
+    margin-top: 10px;
+    border: none;
+    height: 46px;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.1s ease-in-out;
+    justify-content: center;
+
+    &:hover {
+      background: lighten( rgba(65,65,65,1), 5%);
+    }
+
+    &:active {
+      background: darken( rgba(65,65,65,1), 5%);
+    }
+    p{
+      color: #FFFFFF;
+    }
+  }
+  .checkout-options{
+    border-bottom: 1px solid rgba(65, 65, 65, 0.2);
+    padding-bottom: 30px;
+  }
+  .checkout-left-show{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(65, 65, 65, 0.2);
+    padding-bottom: 20px;
+    .checkout-left-show-text{
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 10px;
+      .checkout-open-text{
+        font-size: 15px;
+        font-family: 'Kelly Slab', sans-serif;
+        font-weight: 500;
+      }
+      h3{
+        font-size: 18px;
+        font-weight: 600;
+      }
+    }
+    .checkout-open-text{
+      opacity: 75%;
+      font-size: 15px;
+    }
+  }
+  .checkout-left__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .checkout-left__input{
+      input{
+        padding: 10px 10px 10px;
+        width: 100%;
+        margin-top: 10px;
+        background-color: #FFFFFF;
+        border: 1px solid #000000;
+      }
+    }
+  }
+  .checkout-left__input{
+    display: flex;
+    flex-direction: column;
+    input{
+      padding: 10px 10px 10px;
+      width: 100%;
+      margin-top: 10px;
+      background-color: #FFFFFF;
+      border: 1px solid #484545;
+    }
+  }
+  .radio-delivery{
+    padding-top: 20px;
+
+  }
+  .radio{
+    padding-top: 20px;
+    .radio:hover {
+      background-color: rgb(255, 0, 0);
+    }
+    .radio-button {
+      align-items: flex-start;
+      display: flex;
+      gap: 10px;
+      border: 1px solid blue;
+      padding: 15px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+
+
+      .radio-button-text{
+        flex-direction: column;
+        cursor: pointer;
+      }
+      .core-radio-button{
+        border: 1px solid blue;
+      }
+      .label{
+        padding: 10px;
+      }
+    }
+    .radio-subtext{
+      font-size: 13px;
+      margin: 10px 10px 0 ;
+    }
+  }
+  .radio__button{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    p{
+      color: #FFFFFF;
+    }
+  }
+  .checkout-left-delivery{
+    padding: 40px 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom: 1px solid rgba(65, 65, 65, 0.2);
+    p{
+      color: #727070;
+      font-size: 26px;
+    }
+  }
+  .checkout-left-delivery2{
+    padding: 40px 0;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(65, 65, 65, 0.2);
+  }
+  .checkout-left-payment{
+    padding: 40px 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom: 1px solid rgba(65, 65, 65, 0.2);
+    p{
+      color: #727070;
+      font-size: 26px;
+    }
+  }
+  .checkout-left-review{
+    padding: 40px 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom: 1px solid rgba(65, 65, 65, 0.2);
+    p{
+      color: #727070;
+      font-size: 26px;
+    }
+  }
+
+}

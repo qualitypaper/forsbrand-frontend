@@ -1,0 +1,25 @@
+.checkout-left-show-order {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(65, 65, 65, 0.2);
+  padding-top: 20px;
+
+  .checkout-open-text {
+    font-size: 13px;
+    font-family: 'Kelly Slab', sans-serif;
+    font-weight: 500;
+    padding-bottom: 20px;
+    color: rgb(100, 100, 100);
+  }
+  .checkout-left-show-text {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+
+
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+}

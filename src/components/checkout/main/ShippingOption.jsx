@@ -1,7 +1,7 @@
 import React from 'react';
 import CheckoutInput from "./CustomerDetailsForm";
 
-const ShippingOptions = ({ selectedOption, onChange, label, name,  id, value, addressValue, departmentValue, handleInputChange, handleInputChange2}) => {
+const ShippingOption = ({ selectedOption, onChange, label, name,  id, value, addressValue, departmentValue, handleInputChange, handleInputChange2}) => {
     return (
         <div>
             <div className="radio">
@@ -34,4 +34,4 @@ const ShippingOptions = ({ selectedOption, onChange, label, name,  id, value, ad
     );
 };
 
-export default ShippingOptions;
+export default ShippingOption;

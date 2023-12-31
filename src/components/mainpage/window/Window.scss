@@ -63,11 +63,33 @@
         }
       }
     }
-        .window__left-img {
-          width: 500px;
-          height: 500px;
-          justify-content: center;
-        }
+    .window__left-img {
+      width: 500px;
+      height: 500px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      justify-content: center;
+      border: 6px solid rgba(253, 253, 253, 0.9);
+      border-radius: 8px;
+      background-color: rgba(236, 236, 236, 0.7);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.6s; /* Add a smooth transition for background color */
+    }
+
+    .window__left-img:hover {
+      background-color: transparent; /* Make the background fully transparent on hover */
+    }
+
+    /* Add a shining effect on the border on hover */
+    .window__left-img:hover {
+      animation: shine 1s forwards;
+    }
+
+    @keyframes shine {
+      to {
+        border-color: rgb(218, 218, 218);
+      }
+    }
         .circle {
           display: flex;
           gap: 10px;
@@ -90,13 +112,16 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  .input_quantity{
-    padding: 10px;
-    border: 1px solid #a2a2a2;
-  }
+  width: 274px;
+
   .black_li {
     color: black;
     text-decoration: underline;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #5d5d5d;
+    }
   }
         .window__right-text {
           font-size: 16px;
@@ -106,13 +131,20 @@
           flex-direction: column;
           gap: 10px;
           text-transform: uppercase;
+          p{
+            word-break: break-all;
+          }
         }
 
         .window__right-size {
           display: flex;
           flex-direction: column;
           gap: 8px;
-
+.select_sizeWindow{
+  color: rgba(255, 0, 0, 0.55);
+  font-weight: 600;
+  font-size: 16px;
+}
           p {
             text-transform: uppercase;
 
@@ -145,16 +177,17 @@
             cursor: pointer;
             display: flex;
             flex-direction: column;
-            width: 272px;
+            width: 274px;
 
             li {
               background-color: #f5f5f5;
               list-style: none;
               padding: 5px 5px;
+              border: 3px solid rgba(161, 161, 161, 0.53);
 
               &:hover {
                 color: white;
-                background-color: #05309d;
+                background-color: #797979;
               }
             }
           }
@@ -169,6 +202,17 @@
         .window__right-btn {
           border: 1px solid black;
           padding: 15px 80px;
+          transition: border 0.3s;
+          p{
+            color: black;
+            transition: color 0.3s;
+          }
+          &:hover{
+            border: 1px solid #999997;
+            p{
+              color: #999997;
+            }
+          }
         }
       }
 
@@ -194,7 +238,7 @@
 }
 
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
   .window {
     display: none;
   }

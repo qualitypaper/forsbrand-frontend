@@ -6,6 +6,7 @@ import "./CartFullOrder.scss";
 import { Link } from "react-router-dom";
 import { AppContext } from "../../app/App";
 import QuantityInput from "../../mainpage/QuantityInput";
+import {currencyValue} from "../../../assets/constant";
 
 const CartItem = ({
   images,
@@ -22,7 +23,6 @@ const CartItem = ({
   const { cartItems, setCartItemCount, setTotalCost, removeFromOrder } =
     useContext(AppContext);
 
-  const currencyValue = "₴";
 
   const constructPrice = () => {
     if (currentPrice !== originalPrice) {

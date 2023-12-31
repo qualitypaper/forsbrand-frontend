@@ -40,11 +40,16 @@ function QuantityInput({ value, setQuantity, item, removeFromCart }) {
     //     });
     // };
     const handleDecrease = () => {
-        setQuantity(Math.max(value - 1, 1));
-        if(item) {
-            removeFromCart(item)
-        } else {
-            removeFromCart(windowItem);
+        const newQuantity = Math.max(value - 1, 1);
+        setQuantity(newQuantity);
+
+        if (newQuantity === 1) {
+            // If the quantity becomes 1, you might want to remove the item from the cart
+            if (item) {
+                removeFromCart(item);
+            } else {
+                removeFromCart(windowItem);
+            }
         }
     };
 

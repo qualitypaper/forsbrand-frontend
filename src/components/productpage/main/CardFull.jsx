@@ -4,7 +4,8 @@ import arrow_top from "../../../assets/images/arrow_top.svg";
 import "./CardFull.scss";
 import { Header } from "../header";
 import { AppContext } from "../../app/App";
-import { SIZES } from "../../../assets/constant";
+import {currencyValue, SIZES} from "../../../assets/constant";
+
 import { useNavigate } from "react-router-dom";
 
 function CardFull({ product, onClickAddToCart, openCart }) {
@@ -18,9 +19,9 @@ function CardFull({ product, onClickAddToCart, openCart }) {
   const [arrowChangeSeeSizes, setArrowChangeSeeSizes] = useState(false)
   const [openSeeSized, setOpenSeeSizes] = useState(false);
   const navigate = useNavigate();
+  const [buttonClicked, setButtonClicked] = useState(false);
   const { addToOrder, setWindowProduct } = useContext(AppContext);
 
-  const currencyValue = "₴";
 
   const { images, name, originalPrice, sizes, currentPrice, description } =
     currentClothing;
@@ -49,12 +50,19 @@ function CardFull({ product, onClickAddToCart, openCart }) {
     setOpen(false);
   };
   const handleAddToCart = () => {
-    if(!textList) return;
+    setButtonClicked(true);
+    if (!textList) {
+      // If no size is selected, handle accordingly (display an error, for example)
+      console.error("Please select a size before adding to cart");
+      return;
+    }
+
     const temp = {
       ...currentClothing,
       size: textList,
       quantity: Number.parseInt(quantity),
     };
+
     addToOrder(temp);
     navigate("/");
     openCart();
@@ -127,14 +135,15 @@ function CardFull({ product, onClickAddToCart, openCart }) {
             <div dangerouslySetInnerHTML={{__html: processDescription()}}/>
           </div>
         </div>
+        <div className=" main-product d-flex flex-column ">
+        <div className="product__page-text">
+          <p>{name}</p>
+          <p>{constructPrice()}</p>
+        </div>
         <div className="product__page">
-          <div className="product__page-text">
-            <p>{name}</p>
-            <p>{constructPrice()}</p>
-          </div>
           <div className="product__page-size">
             <div onClick={ChangeImgButton} >
-              <p>Sizes</p>
+              <p  className="opacity-8">Sizes</p>
             <button
               className="product__page-size-btn"
               onClick={() => setOpen(!open)}
@@ -143,6 +152,9 @@ function CardFull({ product, onClickAddToCart, openCart }) {
               <img src={arrowChange ? arrow_top : arrow_down} alt="" />
             </button>
             </div>
+            {buttonClicked && !textList && (
+            <p className="select_size">Виберіть розмір</p>
+            )}
             {open && (
               <div className="product__page-size-open">
                 {list.map((sort, index) => (
@@ -153,8 +165,9 @@ function CardFull({ product, onClickAddToCart, openCart }) {
               </div>
             )}
           </div>
-          <div>
-          <p>Кількість</p>
+        </div>
+          <div className="main_quantity">
+          <p  className="opacity-8">Кількість</p>
           <input
             onChange={handleQuantityChange}
             className="input_quantity"
