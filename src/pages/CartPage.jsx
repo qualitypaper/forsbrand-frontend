@@ -1,11 +1,11 @@
 import {Footer} from "../components/mainpage/footer";
 
-import CartOrderMain from "../components/cartpage/main";
 import {useContext, useEffect} from "react";
 import {AppContext} from "../components/app/App";
 import { useNavigate, useParams} from "react-router-dom";
 import {ProductJson} from "../assets/clothes";
 import "./CartPage.scss"
+import CartFullOrder from "../components/cartpage/main/CartFullOrder";
 
 const CartPage = () => {
     const {
@@ -45,24 +45,6 @@ const CartPage = () => {
     }, [id]);
     const navigate = useNavigate();
 
-    // const removeFromOrder = (item) => {
-    //     setCartItems((prevItems) => {
-    //         const updatedItems = prevItems.map(product => {
-    //             if (product.id === item.id) {
-    //                 if (product.quantity > 1) {
-    //                     product.quantity -= 1;
-    //                 } else return null;
-    //             }
-    //             return product;
-    //         }).filter(Boolean);
-    //
-    //         if (updatedItems.length === 0) {
-    //             navigate('/');
-    //         }
-    //
-    //         return updatedItems;
-    //     });
-    // };
     const deleteToOrder = (id) => {
         setCartItems((prevItems) => {
             const updatedItems = prevItems.filter(product => product.id !== id);
@@ -79,7 +61,7 @@ const CartPage = () => {
             <div className="mid">
                 <div className="mid_background1">
                     <div className="one">
-                                <CartOrderMain  deleteToOrder={deleteToOrder} cardData={cardData}  onAdd={addToOrder} product={windowItems} onClickAddToCart={addToCartFromWindow}
+                                <CartFullOrder items={cartItems} deleteToOrder={deleteToOrder} cardData={cardData}  onAdd={addToOrder} product={windowItems} onClickAddToCart={addToCartFromWindow}
                                                openCart={openCart}/>
                     </div>
                 </div>

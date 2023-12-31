@@ -1,10 +1,10 @@
 import React, {useContext, useState} from 'react'
-import CheckoutInput from "../CustomerDetailsForm";
-import Payment from "../Payment";
+import CheckoutInput from "./detailsform/CustomerDetailsForm";
+import Payment from "./payment/Payment";
 import {AppContext} from "../../../app/App";
 import "./CheckoutLeft.scss"
-import ShippingOptions from "../shippingoptions/ShippingOptions";
-import CheckoutInputs from "../checkoutinputs/CheckoutInputs";
+import ShippingOptions from "./shippingoptions/ShippingOptions";
+import CheckoutInputs from "./checkoutinputs/CheckoutInputs";
 
 const CheckoutLeft = () => {
     const {

@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
-import CheckoutInput from "../CustomerDetailsForm";
-import {AppContext} from "../../../app/App";
+import CheckoutInput from "../detailsform/CustomerDetailsForm";
+import {AppContext} from "../../../../app/App";
 import "./CheckoutInputs.scss"
 
 const CheckoutInputs = () => {
@@ -12,6 +12,7 @@ const CheckoutInputs = () => {
         setDeliveryOpenMethod,
         setDeliveryMethod,
     } = useContext(AppContext);
+    const [showError, setShowError] = React.useState(false)
     const [formData, setFormData] = React.useState({
         email: '',
         name: '',
@@ -54,13 +55,27 @@ const CheckoutInputs = () => {
         }));
     };
 
-    const handleButtonClick = () => {
-        // const areAllFieldsFilled = inputFields.every((field) => formData[field.id]);
-        setShowData(true);
-        setInputData(false);
-        setDeliveryMethod(false);
-        setDeliveryOpenMethod(true);
-    };
+    const handleButtonClick = (event) => {
+            event.preventDefault();
+
+            const form = document.getElementById('formId');
+            const areAllFieldsFilled = inputFields.every((field) => formData[field.id]);
+
+            inputFields.forEach((field) => {
+                const input = document.getElementById(field.id);
+            });
+            setShowError(true)
+            if (areAllFieldsFilled) {
+
+                setShowData(true);
+                setInputData(false);
+                setDeliveryMethod(false);
+                setDeliveryOpenMethod(true);
+            } else {
+                // Trigger HTML5 validation manually
+                form.reportValidity();
+            }
+        };
 
     const handleButtonClick2 = () => {
         setInputData(true)
@@ -92,10 +107,14 @@ const CheckoutInputs = () => {
                             id={field.id}
                             type={field.type}
                             value={formData[field.id]}
+                            required={true}
                             onChange={handleInputChange}
+                            showError={showError}
                         />
                     ))}
-                    <button onClick={handleButtonClick} className="checkout-left__button"><p>Продовжити</p></button>
+                    <form  onClick={handleButtonClick} className="checkout-left__button" id="formId" noValidate>
+                    <button><p>Продовжити</p></button>
+                    </form>
                 </div>
             }
         </>

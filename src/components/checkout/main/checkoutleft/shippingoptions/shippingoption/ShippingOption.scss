@@ -1,0 +1,31 @@
+.radio{
+  padding-top: 20px;
+  .radio:hover {
+    background-color: rgb(255, 0, 0);
+  }
+  .radio-button {
+    align-items: flex-start;
+    display: flex;
+    gap: 10px;
+    border: 1px solid blue;
+    padding: 15px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+
+
+    .radio-button-text{
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .core-radio-button{
+      border: 1px solid blue;
+    }
+    .label{
+      padding: 10px;
+    }
+  }
+  .radio-subtext{
+    font-size: 13px;
+    margin: 10px 10px 0 ;
+  }
+}

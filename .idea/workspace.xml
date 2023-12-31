@@ -1,41 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="working with CartPage and Checkout">
-      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutinputs/CheckoutInputs.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutinputs/CheckoutInputs.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/CheckoutLeft.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/CheckoutLeft.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/CheckoutRight.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/CheckoutRight.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/promocode/PromocodeOrder.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/promocode/PromocodeOrder.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/shippingoptions/ShippingOptions.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/shippingoptions/ShippingOptions.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/textarea/OrderTextArea.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/textarea/OrderTextArea.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="working with Cart Page and Checkout refactoring">
+      <change afterPath="$PROJECT_DIR$/src/components/cartpage/main/cartfullleft/CartFullOrderLeft.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/cartpage/main/cartfullleft/CartFullOrderLeft.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/cartpage/main/cartfullright/CartFullOrderRight.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/cartpage/main/cartfullright/CartFullOrderRight.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/cartpage/main/cartitem/CartItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/cartpage/main/cartitem/CartItem.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/detailsform/CustomerDetailsForm.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/shippingoptions/shippingoption/ShippingOption.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/clothes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/clothes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/constant.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/constant.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/cartpage/main/CartFullOrder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartpage/main/CartFullOrder.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/cartpage/main/CartFullOrder.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartpage/main/CartFullOrder.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkout/header/HeaderCheckout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/header/HeaderCheckout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkout/header/HeaderCheckout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/header/HeaderCheckout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/MainCheckout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/MainCheckout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/MainCheckout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/MainCheckout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/ShippingOptions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/ShippingOption.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkout/successfulorder/SuccessfulOrder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/successfulorder/SuccessfulOrder.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/QuantityInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/QuantityInput.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/drawer/drawer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/drawer/drawer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cartpage/main/Main.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cartpage/main/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/CustomerDetailsForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/detailsform/CustomerDetailsForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/Payment.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/payment/Payment.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/Payment.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/payment/Payment.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/ShippingOption.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/shippingoptions/shippingoption/ShippingOption.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/checkoutinputs/CheckoutInputs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/checkoutinputs/CheckoutInputs.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/checkoutinputs/CheckoutInputs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/checkoutinputs/CheckoutInputs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/CheckoutLeft.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/CheckoutLeft.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/CheckoutLeft.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/CheckoutLeft.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/CheckoutRight.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/CheckoutRight.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/promocode/PromocodeOrder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/promocode/PromocodeOrder.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/promocode/PromocodeOrder.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/promocode/PromocodeOrder.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/shippingoptions/ShippingOptions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/shippingoptions/ShippingOptions.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/shippingoptions/ShippingOptions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/shippingoptions/ShippingOptions.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/textarea/OrderTextArea.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/textarea/OrderTextArea.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/textarea/OrderTextArea.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/textarea/OrderTextArea.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/mainpage/drawer/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/drawer/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/window/Window.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/window/Window.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/window/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/window/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/header/Header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/CardFull.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/CardFull.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/productpage/main/CardFull.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/CardFull.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CheckoutPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CheckoutPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CartPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CartPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +70,7 @@
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\ferzy\\Desktop\\clothing-store\\clothing-store\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -87,9 +87,11 @@
       <recent name="C:\Users\ferzy\Desktop\clothing-store\clothing-store\src\components\checkout\main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ferzy\Desktop\clothing-store\clothing-store\src\components\checkout\main\checkoutright" />
-      <recent name="C:\Users\ferzy\Desktop\clothing-store\clothing-store\src\components\checkout\main\textarea" />
-      <recent name="C:\Users\ferzy\Desktop\clothing-store\clothing-store\src\components\checkout\main\promocode" />
+      <recent name="C:\Users\ferzy\Desktop\clothing-store\clothing-store\src\components\cartpage\main\cartfullleft" />
+      <recent name="C:\Users\ferzy\Desktop\clothing-store\clothing-store\src\components\cartpage\main\cartfullright" />
+      <recent name="C:\Users\ferzy\Desktop\clothing-store\clothing-store\src\components\cartpage\main\cartitem" />
+      <recent name="C:\Users\ferzy\Desktop\clothing-store\clothing-store\src\components\checkout\main\checkoutleft" />
+      <recent name="C:\Users\ferzy\Desktop\clothing-store\clothing-store\src\components\checkout\main\checkoutleft\shippingoptions" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -102,7 +104,8 @@
       <updated>1703887014920</updated>
       <workItem from="1703887020748" duration="4877000" />
       <workItem from="1703942533403" duration="9568000" />
-      <workItem from="1703973564010" duration="18437000" />
+      <workItem from="1703973564010" duration="18693000" />
+      <workItem from="1704016926303" duration="9574000" />
     </task>
     <task id="LOCAL-00001" summary="bug fixes CartFullOrder">
       <created>1703965466030</created>
@@ -131,6 +134,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="bug fixes CartFullOrder" />
     <MESSAGE value="working with CartPage and Checkout" />
-    <option name="LAST_COMMIT_MESSAGE" value="working with CartPage and Checkout" />
+    <MESSAGE value="working with Cart Page and Checkout refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="working with Cart Page and Checkout refactoring" />
   </component>
 </project>

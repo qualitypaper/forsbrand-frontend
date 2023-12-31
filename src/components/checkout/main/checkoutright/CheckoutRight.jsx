@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import {Link} from "react-router-dom";
-import PromocodeOrder from "../promocode/PromocodeOrder";
-import OrderTextArea from "../textarea/OrderTextArea";
+import PromocodeOrder from "./promocode/PromocodeOrder";
+import OrderTextArea from "./textarea/OrderTextArea";
 import {AppContext} from "../../../app/App";
 import "./CheckoutRight.scss"
 import {currencyValue} from "../../../../assets/constant";

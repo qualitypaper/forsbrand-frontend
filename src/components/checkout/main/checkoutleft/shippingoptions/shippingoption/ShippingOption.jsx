@@ -1,5 +1,6 @@
 import React from 'react';
-import CheckoutInput from "./CustomerDetailsForm";
+import CheckoutInput from "../../detailsform/CustomerDetailsForm";
+import "./ShippingOption.scss"
 
 const ShippingOption = ({ selectedOption, onChange, label, name,  id, value, addressValue, departmentValue, handleInputChange, handleInputChange2}) => {
     return (

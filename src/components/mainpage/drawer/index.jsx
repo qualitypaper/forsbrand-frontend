@@ -17,10 +17,11 @@ function Drawer({ onClickClosed, deleteToOrder,removeFromCart}) {
         handleQuantityChange,
     } = useContext(AppContext);
 
+
     return (
         <div>
-            <div className="overlay">
-                <div className="drawer">
+            <div className="overlay" >
+                <div  className="drawer">
                     <div className="header_drawer">
                         <img
                             onClick={onClickClosed}

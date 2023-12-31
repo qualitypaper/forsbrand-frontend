@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from 'react';
-import {BASE_URL} from "../../../assets/constant";
-import list1 from "../../../assets/images/list.svg";
+import {BASE_URL} from "../../../../../assets/constant";
+import list1 from "../../../../../assets/images/list.svg";
 import "./Payment.scss"
 
 export const Payment = () => {

@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react'
-import {AppContext} from "../../../app/App";
-import ShippingOption from "../ShippingOption";
+import {AppContext} from "../../../../app/App";
+import ShippingOption from "./shippingoption/ShippingOption";
 import "./ShippingOptions.scss"
 
 const ShippingOptions = () => {

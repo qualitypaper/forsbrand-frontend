@@ -1,8 +1,8 @@
 import React, {useContext, useState} from 'react'
-import {AppContext} from "../../../app/App";
+import {AppContext} from "../../../../app/App";
 import "./OrderTextArea.scss"
-import sale from "../../../../assets/images/sale.svg";
-import list1 from "../../../../assets/images/list.svg";
+import sale from "../../../../../assets/images/sale.svg";
+import list1 from "../../../../../assets/images/list.svg";
 
 const OrderTextArea = () => {
     const {
@@ -12,22 +12,23 @@ const OrderTextArea = () => {
     const [noteEdited, setNoteEdited] = useState(false);
 
     const handleCloseTextarea = () => {
-        // Close the textarea
         setOpenNote(false);
-        if (!userInput) {
-            setNoteEdited(false); // Reset noteEdited if the user input is empty
+        if (!userInput.trim()) {
+            setNoteEdited(false);
+        } else {
+            setNoteEdited(true);
         }
-        setNoteEdited(true);
     };
+
     const handleTextareaChange = (event) => {
-        setUserInput(event.target.value)
-    }
+        setUserInput(event.target.value);
+    };
     return (
         <div className="checkout-right__order-promo">
             <div className="checkout-right__list">
                 <div onClick={() => setOpenNote(!openNote)} className="cart__order-full-list2">
-                    <img width={20} height={20} src={noteEdited ? "" : list1} alt="List"/>
-                    <p>{noteEdited ? "Змінити примітку" : "Додати примітку"}</p>
+                    <img width={20} height={20} src={noteEdited ? list1 : list1} alt="List" />
+                    {noteEdited === false ? "Додати примітку" : "Змінити примітку"}
                 </div>
             </div>
             {openNote && (
@@ -37,6 +38,7 @@ const OrderTextArea = () => {
                                 placeholder="Інструкції? Спеціальні запити? Додайте їх тут."
                                 aria-invalid="false"
                                 value={userInput}
+
                                 onChange={handleTextareaChange}
                                 onBlur={handleCloseTextarea}
                             />

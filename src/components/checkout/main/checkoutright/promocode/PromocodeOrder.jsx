@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react'
-import sale from "../../../../assets/images/sale.svg";
-import {AppContext} from "../../../app/App";
+import sale from "../../../../../assets/images/sale.svg";
+import {AppContext} from "../../../../app/App";
 import "./PromocodeOrder.scss"
 
 const PromocodeOrder = () => {

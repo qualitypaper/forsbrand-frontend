@@ -1,0 +1,17 @@
+.checkout-left__input{
+  display: flex;
+  flex-direction: column;
+  input{
+    padding: 10px 10px 10px;
+    width: 100%;
+    margin-top: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #484545;
+  }
+  .error-message{
+    color: rgba(253, 15, 15, 0.75);
+    font-weight: 500;
+    margin-top: 5px;
+    font-size: 15px;
+  }
+}
