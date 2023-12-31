@@ -52,7 +52,8 @@
       flex: 1;
       overflow: auto;
       margin-bottom: 40px;
-      max-height: 390px;
+      max-height: 400px;
+      justify-content: space-between;
       overflow-x: hidden;
       .cartItems-img{
         margin-right: 20px;
@@ -78,6 +79,7 @@
             text-transform: uppercase;
             word-break: break-all;
             margin-right: 15px;
+            width: 150px;
             color: rgba(0, 0, 0, 0.85);
           }
         }
