@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import HeaderCheckout from "../components/checkout/header/HeaderCheckout";
 import "./CheckoutPage.scss"
 import MainCheckout from "../components/checkout/main/MainCheckout";
@@ -22,6 +22,9 @@ export const CheckoutPage = () => {
             setCartItems([...cartItems, { ...item, quantity: 1 }]);
         }
     };
+    useEffect(() => {
+        if(cartItems.length === 0) window.location.href = "/"
+    }, [cartItems])
 
     // const deleteToOrder = (id) => {
     //     setCartItems((prevItems) => prevItems.filter(item => item.id !== id));

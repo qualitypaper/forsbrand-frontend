@@ -43,9 +43,13 @@ const CartFullOrderRight = ({deleteToOrder}) => {
                     originalPrice={item.originalPrice}
                     availableSizes={item.availableSizes}
                     quantity={item.quantity}
+<<<<<<< HEAD
                     setQuantity={handleQuantityChange}
+=======
+                    setQuantity={(quantity) => handleQuantityChange(item, quantity)}
+>>>>>>> c5d11e7836ed250eff41a07bef2552946269d325
                     product={item}
-                    deleteToOrder={() => deleteToOrder(item.id)}
+                    deleteToOrder={() => deleteToOrder(item)}
                 />
             ))}
             <div className="cart__order-full-list">

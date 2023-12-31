@@ -48,8 +48,14 @@ export const Home = () => {
         getClothes()
     }, [])
 
-    const deleteToOrder = (id) => {
-        setCartItems((prevItems) => prevItems.filter(item => item.id !== id))
+    const deleteToOrder = (element) => {
+        const temp = cartItems.filter(item => item.id !== element.id || item.size !== element.size)
+        setCartItems(temp)
+        if(temp.length === 0){
+            localStorage.setItem('cart', null);
+        } else {
+            localStorage.setItem('cart', temp);
+        }
     };
 
     const onPlus = (product) => {
@@ -65,10 +71,6 @@ export const Home = () => {
     // const addToCartFromWindow = (item) => {
     //     addToOrder(item);
     // }
-    const removeFromCartFromWindow = (item) => {
-        removeFromOrder(item);
-    };
-
 
     const endOffset = itemOffset + clothesPerPage;
     const currentClothes = Array.isArray(currentCardData) ? currentCardData.slice(itemOffset, endOffset) : [];
@@ -91,7 +93,7 @@ export const Home = () => {
                 <div className="mid_background1">
                     <div className="one1">
                         <HeaderMain onClickCart={() => setCartOpened(true)}/>
-                        {cartOpened && <Drawer deleteToOrder={deleteToOrder} items={cartItems} removeFromCart={removeFromCartFromWindow}
+                        {cartOpened && <Drawer deleteToOrder={deleteToOrder} items={cartItems} removeFromCart={removeFromOrder}
                                                onClickClosed={() => setCartOpened(false)} />}
                         <Main
                             clothesPerPage={clothesPerPage}
@@ -112,7 +114,7 @@ export const Home = () => {
                         />
                         {windowProduct && (
                             <Window
-                                removeFromCart={removeFromCartFromWindow}
+                                removeFromCart={removeFromOrder}
                                 onClickClosedWindow={() => setWindowProduct(false)}
                                 product={windowItems}
                                 openCart={openCart}

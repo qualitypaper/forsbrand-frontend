@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import {Link} from "react-router-dom";
 import lock from "../../../../assets/images/lock.svg";
 import {AppContext} from "../../../app/App";
@@ -6,8 +6,12 @@ import "./CartFullOrderLeft.scss"
 
 const CartFullOrderLeft = () => {
     const {
-        totalCost,
+        totalCost, cartItems,
     } = useContext(AppContext);
+
+    useEffect(() => {
+        if(cartItems.length === 0) window.location.href = "/"
+    }, [cartItems])
     return (
         <div className="cart__order-full-left">
             <nav className="cart__order-full-nav">

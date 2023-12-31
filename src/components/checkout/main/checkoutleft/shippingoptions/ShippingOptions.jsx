@@ -1,7 +1,9 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useState, useEffect} from 'react'
 import {AppContext} from "../../../../app/App";
 import ShippingOption from "./shippingoption/ShippingOption";
 import "./ShippingOptions.scss"
+import { BASE_URL } from '../../../../../assets/constant';
+import axios from 'axios';
 
 const ShippingOptions = () => {
     const {
@@ -19,18 +21,19 @@ const ShippingOptions = () => {
     const [inputValue, setInputValue] = useState('');
     const [shippingOptions, setShippingOptions] = useState([]);
     const [departmentValue, setDepartmentValue] = useState('');
+    const [continueToPayment, setContinueToPayment] = useState(false);
 
     //
-    // useEffect(() => {
-    //     const fetchShippingOptions = async () => {
-    //         const res = await axios.get(`${BASE_URL}/delivery-types/getAll`);
-    //         if(res.data) {
-    //             setShippingOptions(res.data)
-    //         }
-    //     }
-    //
-    //     fetchShippingOptions().then()
-    // }, [])
+    useEffect(() => {
+        const fetchShippingOptions = async () => {
+            const res = await axios.get(`${BASE_URL}/delivery-types/getAll`);
+            if(res.data) {
+                setShippingOptions(res.data)
+            }
+        }
+    
+        fetchShippingOptions().then()
+    }, [])
 
 
     const handleInputChange2 = (event) => {
@@ -43,6 +46,7 @@ const ShippingOptions = () => {
     const handleButtonClick4 = () => {
         setOrderData(false);
         setDeliveryOpenMethod(true);
+        setContinueToPayment(true)
     };
     const handleButtonClick3 = () => {
         setOrderData(true);

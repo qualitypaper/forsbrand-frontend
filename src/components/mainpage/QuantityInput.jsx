@@ -10,18 +10,22 @@ function QuantityInput({ value, setQuantity, item }) {
         cartItems,
         windowItems: windowItem,
         setCartItems,
+<<<<<<< HEAD
+=======
+        addToOrder,
+>>>>>>> c5d11e7836ed250eff41a07bef2552946269d325
         removeFromOrder,
     } = useContext(AppContext);
 
-    const addToOrder = (item) => {
-        const temp = cartItems.find((e) => e.id === item.id && e.size === item.size);
-        if (temp) {
-            temp.quantity += 1;
-            setCartItems([...cartItems]);
-        } else {
-            setCartItems([...cartItems, { ...item, quantity: 1 }]);
-        }
-    };
+    // const handleIncrease = (item) => {
+    //     const temp = cartItems.find((e) => e.id === item.id && e.size === item.size);
+    //     if (temp) {
+    //         temp.quantity += 1;
+    //         setCartItems([...cartItems]);
+    //     } else {
+    //         setCartItems([...cartItems, { ...item, quantity: 1 }]);
+    //     }
+    // };
     // const removeFromOrder = (item) => {
     //     setCartItems((prevItems) => {
     //         const updatedItems = prevItems.map(product => {
