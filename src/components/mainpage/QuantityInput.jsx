@@ -5,11 +5,12 @@ import "./QuantityInput.scss"
 import {AppContext} from "../app/App";
 import {useNavigate} from "react-router-dom";
 
-function QuantityInput({ value, setQuantity, item, removeFromCart }) {
+function QuantityInput({ value, setQuantity, item }) {
     const {
         cartItems,
         windowItems: windowItem,
         setCartItems,
+        removeFromOrder,
     } = useContext(AppContext);
 
     const addToOrder = (item) => {
@@ -46,9 +47,9 @@ function QuantityInput({ value, setQuantity, item, removeFromCart }) {
         if (newQuantity === 1) {
             // If the quantity becomes 1, you might want to remove the item from the cart
             if (item) {
-                removeFromCart(item);
+                removeFromOrder(item);
             } else {
-                removeFromCart(windowItem);
+                removeFromOrder(windowItem);
             }
         }
     };
