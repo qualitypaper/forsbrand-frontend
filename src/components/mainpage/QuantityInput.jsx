@@ -3,17 +3,11 @@ import arrow_top_background from "../../assets/images/arrow_top_background.svg";
 import arrow_down_background from "../../assets/images/arrow_down_background.svg";
 import "./QuantityInput.scss"
 import {AppContext} from "../app/App";
-import {useNavigate} from "react-router-dom";
 
 function QuantityInput({ value, setQuantity, item }) {
     const {
-        cartItems,
         windowItems: windowItem,
-        setCartItems,
-<<<<<<< HEAD
-=======
         addToOrder,
->>>>>>> c5d11e7836ed250eff41a07bef2552946269d325
         removeFromOrder,
     } = useContext(AppContext);
 

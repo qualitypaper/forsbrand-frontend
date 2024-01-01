@@ -4,7 +4,7 @@ import PromocodeOrder from "./promocode/PromocodeOrder";
 import OrderTextArea from "./textarea/OrderTextArea";
 import {AppContext} from "../../../app/App";
 import "./CheckoutRight.scss"
-import {currencyValue} from "../../../../assets/constant";
+import {constructPrice} from "../../../../assets/constant";
 
 const CheckoutRight = () => {
     const {
@@ -12,21 +12,6 @@ const CheckoutRight = () => {
         totalCost,
         selectedOption
     } = useContext(AppContext)
-    const constructPrice = () => {
-        const { currentPrice, originalPrice } = cartItems;
-        if (currentPrice !== originalPrice) {
-            return (
-                <>
-          <span className="original_price">
-            {originalPrice + currencyValue}
-          </span>
-                    <span>{currentPrice + currencyValue}</span>
-                </>
-            );
-        } else {
-            return <span>{originalPrice + currencyValue}</span>;
-        }
-    };
     return (
         <section className="checkout-right">
             <div className="checkout-right__order">

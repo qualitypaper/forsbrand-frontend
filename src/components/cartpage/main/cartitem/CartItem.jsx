@@ -1,20 +1,18 @@
 import React, {useContext, useEffect} from "react";
 import {AppContext} from "../../../app/App";
-import {currencyValue} from "../../../../assets/constant";
+import {constructPrice} from "../../../../assets/constant";
 import QuantityInput from "../../../mainpage/QuantityInput";
 import cross from "../../../../assets/images/cross_mark.svg";
 import "./CartItem.scss"
 
 const CartItem = ({
                       images,
-                      originalPrice,
                       name,
                       size,
                       availableSizes,
                       quantity,
                       setQuantity,
                       deleteToOrder,
-                      currentPrice,
                       product,
                       removeFromOrder,
                   }) => {
@@ -22,20 +20,6 @@ const CartItem = ({
         useContext(AppContext);
 
 
-    const constructPrice = () => {
-        if (currentPrice !== originalPrice) {
-            return (
-                <>
-          <span className="original_price">
-            {originalPrice + currencyValue}
-          </span>
-                    <span>{currentPrice + currencyValue}</span>
-                </>
-            );
-        } else {
-            return <span>{originalPrice + currencyValue}</span>;
-        }
-    };
 
     useEffect(() => {
         const count = cartItems.reduce(

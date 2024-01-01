@@ -5,7 +5,7 @@ import arrow_down from "../../../assets/images/arrow_down.svg";
 import arrow_top from "../../../assets/images/arrow_top.svg";
 import { Link } from "react-router-dom";
 import { AppContext } from "../../app/App";
-import {currencyValue, SIZES} from "../../../assets/constant";
+import {constructPrice, SIZES} from "../../../assets/constant";
 import arrow_down_background from "../../../assets/images/arrow_down_background.svg";
 import arrow_top_background from "../../../assets/images/arrow_top_background.svg";
 
@@ -27,21 +27,6 @@ function Window({ openCart, onClickClosedWindow }) {
     addToOrder,
   } = useContext(AppContext);
 const [selectSize, setSelectSize] = useState(false)
-  const constructPrice = () => {
-    const { currentPrice, originalPrice } = windowItem;
-    if (currentPrice !== originalPrice) {
-      return (
-        <>
-          <span className="original_price">
-            {originalPrice + currencyValue}
-          </span>
-          <span>{currentPrice + currencyValue}</span>
-        </>
-      );
-    } else {
-      return <span>{originalPrice + currencyValue}</span>;
-    }
-  };
 
   useEffect(() => {
     const json = JSON.stringify(cartItems);

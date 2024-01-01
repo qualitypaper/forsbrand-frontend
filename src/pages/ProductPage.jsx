@@ -1,12 +1,12 @@
 import React, {useContext, useEffect} from 'react'
 import {Footer} from "../components/mainpage/footer";
 import "./ProductPage.scss"
-import ProductMain from "../components/productpage/main";
 import {ProductJson} from '../assets/clothes.js';
 import {AppContext} from "../components/app/App";
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
-import { BASE_URL } from '../assets/constant';
+import {useParams} from 'react-router-dom';
+import Drawer from "../components/mainpage/drawer";
+import CardFull from "../components/productpage/main/CardFull";
+
 export const ProductPage = () => {
     const {
         setCurrentClothing,
@@ -14,11 +14,13 @@ export const ProductPage = () => {
         windowItems,
         setWindowProduct,
         setCartOpened,
-        cartItems
+        cartItems,
+        cartOpened,
+        removeFromOrder,
     } = useContext(AppContext);
 
 
-    const { id } = useParams();
+    const {id} = useParams();
     const addToCartFromWindow = (item) => {
         addToOrder(item);
         setWindowProduct(false);
@@ -35,15 +37,11 @@ export const ProductPage = () => {
         }
     };
 
-    const openCart = () => {
-        setCartOpened(true);
-    };
-
     useEffect(() => {
         const fetchData = async () => {
             const res = {data: ProductJson.find(item => item.id === Number.parseInt(id))}
             // const res = await axios.get(`${BASE_URL}/product/get/${id}`);
-            if(res.data) {
+            if (res.data) {
                 console.log(res.data)
                 setCurrentClothing(res.data)
             }
@@ -51,17 +49,28 @@ export const ProductPage = () => {
 
         fetchData()
     }, [id, setCurrentClothing]);
+    const deleteToOrder = (element) => {
+        const temp = cartItems.filter(item => item.id !== element.id || item.size !== element.size)
+        setCartItems(temp)
+        if (temp.length === 0) {
+            localStorage.setItem('cart', null);
+        } else {
+            localStorage.setItem('cart', temp);
+        }
+    };
 
     return (
         <>
             <div className="mid">
                 <div className="mid_background1">
                     <div className="one">
-                        <ProductMain onAdd={addToOrder} product={windowItems} onClickAddToCart={addToCartFromWindow}
-                                     openCart={openCart}/>
+                        <CardFull onAdd={addToOrder} product={windowItems} onClickAddToCart={addToCartFromWindow}/>
+                        {cartOpened &&
+                            <Drawer deleteToOrder={deleteToOrder} items={cartItems} removeFromCart={removeFromOrder}
+                                    onClickClosed={() => setCartOpened(false)}/>}
                     </div>
                 </div>
-                <Footer />
+                <Footer/>
             </div>
         </>
     );

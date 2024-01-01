@@ -51,8 +51,8 @@
     .cartItems-main {
       flex: 1;
       overflow: auto;
-      margin-bottom: 40px;
-      max-height: 400px;
+      margin-bottom: 30px;
+      max-height: 55vh;
       justify-content: space-between;
       overflow-x: hidden;
       .cartItems-img{
@@ -64,7 +64,7 @@
         flex: 1 1 auto;
         display: flex;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         margin-left: 20px;
         flex-wrap: wrap;
         border-top: 1px solid #F3F3F3;
