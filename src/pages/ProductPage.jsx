@@ -6,6 +6,7 @@ import {AppContext} from "../components/app/App";
 import {useParams} from 'react-router-dom';
 import Drawer from "../components/mainpage/drawer";
 import CardFull from "../components/productpage/main/CardFull";
+import CardFullSeeBox from "../components/productpage/seebox/CardFullSeeBox";
 
 export const ProductPage = () => {
     const {
@@ -17,6 +18,8 @@ export const ProductPage = () => {
         cartItems,
         cartOpened,
         removeFromOrder,
+        imagesBoxOpened,
+        setImagesBoxOpened,
     } = useContext(AppContext);
 
 
@@ -65,9 +68,9 @@ export const ProductPage = () => {
                 <div className="mid_background1">
                     <div className="one">
                         <CardFull onAdd={addToOrder} product={windowItems} onClickAddToCart={addToCartFromWindow}/>
-                        {cartOpened &&
-                            <Drawer deleteToOrder={deleteToOrder} items={cartItems} removeFromCart={removeFromOrder}
+                        {cartOpened && <Drawer deleteToOrder={deleteToOrder} items={cartItems} removeFromCart={removeFromOrder}
                                     onClickClosed={() => setCartOpened(false)}/>}
+                        {imagesBoxOpened &&  <CardFullSeeBox />}
                     </div>
                 </div>
                 <Footer/>

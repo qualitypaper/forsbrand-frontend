@@ -65,7 +65,7 @@ const CartItem = ({
                         onClick={deleteToOrder}
                         src={cross}
                         className="m-20 cu-p"
-                        alt="Cross"
+                        alt="ClosedBox"
                     />
                 </div>
             </div>

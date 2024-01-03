@@ -7,7 +7,7 @@ export const ProductJson = [
       "sizesImage":"http://localhost:8080/static/photo_2023-02-19_14-07-16.jpg",
       "createdAt":[2023,12,10,1,16,51,910584000]},
       "images": ["https://static.wixstatic.com/media/4e6b23_9604c6c50cda4595a7636eab2e71ffa1~mv2.png/v1/fill/w_563,h_563,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/4e6b23_9604c6c50cda4595a7636eab2e71ffa1~mv2.png",
-       " https://static.wixstatic.com/media/4e6b23_cd0129fd64eb49d08f6fb8ed8f8f6d2c~mv2.png/v1/fill/w_563,h_563,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/4e6b23_cd0129fd64eb49d08f6fb8ed8f8f6d2c~mv2.png"],
+       " https://static.wixstatic.com/media/4e6b23_cd0129fd64eb49d08f6fb8ed8f8f6d2c~mv2.png/v1/fill/w_563,h_563,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/4e6b23_cd0129fd64eb49d08f6fb8ed8f8f6d2c~mv2.png", " https://static.wixstatic.com/media/4e6b23_cd0129fd64eb49d08f6fb8ed8f8f6d2c~mv2.png/v1/fill/w_563,h_563,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/4e6b23_cd0129fd64eb49d08f6fb8ed8f8f6d2c~mv2.png", " https://static.wixstatic.com/media/4e6b23_cd0129fd64eb49d08f6fb8ed8f8f6d2c~mv2.png/v1/fill/w_563,h_563,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/4e6b23_cd0129fd64eb49d08f6fb8ed8f8f6d2c~mv2.png", " https://static.wixstatic.com/media/4e6b23_cd0129fd64eb49d08f6fb8ed8f8f6d2c~mv2.png/v1/fill/w_563,h_563,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/4e6b23_cd0129fd64eb49d08f6fb8ed8f8f6d2c~mv2.png"],
     "currentPrice":32,
     "originalPrice":32,
     "totalOrdersArr":[[2023,12,10,1,17,44,305644000],[2023,12,10,1,17,53,303203000]],

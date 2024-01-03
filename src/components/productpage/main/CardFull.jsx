@@ -7,9 +7,8 @@ import CardFullRight from "./cardright/CardFullRight";
 import SeeSizes from "./SeeSizes";
 
 function CardFull({product, onClickAddToCart}) {
-    const {currentClothing, currentImageIndex} = useContext(AppContext);
-    const [openSeeSized] = useState(false);
-
+    const { currentClothing, currentImageIndex } = useContext(AppContext);
+    const [openSeeSized, setOpenSeeSized] = useState(false);
 
     const {name} =
         currentClothing;
@@ -26,7 +25,7 @@ function CardFull({product, onClickAddToCart}) {
             <>
             {openSeeSized && (
                 <div className="see_sizes-images">
-                    <img src={getSizesImage()} alt={}/>
+                    <img src={getSizesImage()} />
                 </div>
             )}
             </>
@@ -36,13 +35,13 @@ function CardFull({product, onClickAddToCart}) {
 
     return (
         <div className="card__full">
-            <Header text={name} id={currentImageIndex}/>
+            <Header text={name} id={currentImageIndex} />
             <div className="card__full-all">
-                <CardFullLeft onClickAddToCart={onClickAddToCart} product={product}/>
-                <CardFullRight/>
+                <CardFullLeft onClickAddToCart={onClickAddToCart} product={product} />
+                <CardFullRight />
             </div>
-            <SeeSizes />
-            <OpenSeeSized />
+            <SeeSizes setOpenSeeSized={setOpenSeeSized} />
+            <OpenSeeSized openSeeSized={openSeeSized} />
         </div>
     );
 }

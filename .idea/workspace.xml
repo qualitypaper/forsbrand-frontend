@@ -1,37 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="added drawer to the cart page">
-      <change afterPath="$PROJECT_DIR$/src/components/productpage/main/cardleft/CardFullLeft.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/productpage/main/cardleft/CardFullLeft.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/productpage/main/cardleft/switch/SwitchCardFull.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/productpage/main/cardleft/switch/SwitchCardFull.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/CardFullRight.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/CardFullRight.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/quantity/CardFullRightQuantity.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/quantity/CardFullRightQuantity.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/selectionbutton/SizeSelectionButton.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/selectionbutton/SizeSelectionButton.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/sizes/CardFullRightSizes.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/sizes/CardFullRightSizes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/sizesopen/CardFullRightSizesOpen.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/sizesopen/CardFullRightSizesOpen.scss" afterDir="false" />
+    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="refactoring ProductPage">
+      <change afterPath="$PROJECT_DIR$/src/components/productpage/main/SeeSizes.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/productpage/seebox/ArrowLeft.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/productpage/seebox/ArrowRight.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/productpage/seebox/CardFullSeeBox.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/productpage/seebox/CardFullSeeBox.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/productpage/seebox/ClosedBox.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/productpage/seebox/FullScreenComponent.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/productpage/seebox/ImagesBox.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/productpage/seebox/ZoomLoup.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/constant.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/constant.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/clothes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/clothes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cartpage/main/CartFullOrder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartpage/main/CartFullOrder.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/cartpage/main/cartitem/CartItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartpage/main/cartitem/CartItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/CheckoutRight.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/CheckoutRight.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/QuantityInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/QuantityInput.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/drawer/drawer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/drawer/drawer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/window/Window.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/window/Window.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/window/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/window/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/productpage/main/CardFull.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/CardFull.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/productpage/main/CardFull.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/CardFull.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/Main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/SeeSizes.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/SeeSizes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/SeeSizes.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardleft/CardFullLeft.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardleft/CardFullLeft.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardleft/CardFullLeft.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardleft/CardFullLeft.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardright/CardFullRight.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/CardFullRight.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/ProductPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProductPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProductPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProductPage.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,19 +51,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ferzy/Desktop/clothing-store/clothing-store/src/components/checkout/main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\ferzy\\Desktop\\clothing-store\\clothing-store\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/ferzy/Desktop/clothing-store/clothing-store/src/components/checkout/main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\ferzy\\Desktop\\clothing-store\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -84,11 +77,11 @@
       <recent name="C:\Users\ferzy\Desktop\clothing-store\clothing-store\src\components\checkout\main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ferzy\Desktop\clothing-store\src\components\productpage" />
       <recent name="C:\Users\ferzy\Desktop\clothing-store\clothing-store\src\components\productpage\main\cardleft\switch" />
       <recent name="C:\Users\ferzy\Desktop\clothing-store\clothing-store\src\components\productpage\main\cardright" />
       <recent name="C:\Users\ferzy\Desktop\clothing-store\clothing-store\src\components\productpage\main\cardright\sizes" />
       <recent name="C:\Users\ferzy\Desktop\clothing-store\clothing-store\src\components\productpage\main\cardright\sizesopen" />
-      <recent name="C:\Users\ferzy\Desktop\clothing-store\clothing-store\src\components\productpage\main\cardright\quantity" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -104,7 +97,9 @@
       <workItem from="1703973564010" duration="18693000" />
       <workItem from="1704016926303" duration="9574000" />
       <workItem from="1704035316161" duration="1353000" />
-      <workItem from="1704139883593" duration="12365000" />
+      <workItem from="1704139883593" duration="12613000" />
+      <workItem from="1704220808165" duration="3459000" />
+      <workItem from="1704228924628" duration="13155000" />
     </task>
     <task id="LOCAL-00001" summary="bug fixes CartFullOrder">
       <created>1703965466030</created>
@@ -120,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1704048005895</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="refactoring ProductPage">
+      <created>1704153269490</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1704153269490</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +144,24 @@
     <MESSAGE value="working with CartPage and Checkout" />
     <MESSAGE value="working with Cart Page and Checkout refactoring" />
     <MESSAGE value="added drawer to the cart page" />
-    <option name="LAST_COMMIT_MESSAGE" value="added drawer to the cart page" />
+    <MESSAGE value="refactoring ProductPage" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring ProductPage" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/mainpage/QuantityInput.jsx</url>
+          <line>4</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/productpage/seebox/ClosedBox.jsx</url>
+          <line>4</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
