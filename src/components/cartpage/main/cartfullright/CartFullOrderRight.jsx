@@ -10,7 +10,6 @@ const CartFullOrderLeft = ({deleteToOrder}) => {
         handleQuantityChange,
         openPromotionalCode,
         setOpenPromotionalCode,
-        checkPromocode,
     } = useContext(AppContext)
     // const [notification, setNotification] = useState("")
     const [promocode, setPromocode] = useState('');
@@ -72,7 +71,7 @@ const CartFullOrderLeft = ({deleteToOrder}) => {
                             placeholder="Веддіть промокод"
                             onChange={handlePromocodeChange}
                         />
-                        <button onClick={checkPromocodeField}>Застосувати</button>
+                        {/*<button onClick={checkPromocodeField}>Застосувати</button>*/}
                     </div>
                 )}
             </div>

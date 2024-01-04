@@ -13,3 +13,12 @@
     text-align: right;
   }
 }
+@media screen and (max-width: 816px) {
+  .ContactsComponent {
+    padding: 110px;
+  }
+
+  .ContactsComponent p {
+    width: 300px; /* Adjust the width for smaller screens */
+  }
+}

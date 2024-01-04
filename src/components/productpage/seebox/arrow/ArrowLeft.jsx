@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
-import arrowDownBackground from "../../../assets/images/arrow_down_background.svg";
-import {AppContext} from "../../app/App";
+import arrowDownBackground from "../../../../assets/images/arrow_down_background.svg";
+import {AppContext} from "../../../app/App";
 
 export const ArrowLeft = ({handleSwipe}) => {
     const {

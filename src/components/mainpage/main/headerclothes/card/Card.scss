@@ -13,7 +13,6 @@
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
 
-
   &.hovered {
     transform: scale(1.1);
   }
@@ -65,7 +64,17 @@
 .card9 {
   grid-area: 3 / 3 / 4 / 4;
 }
+@keyframes scrollAnimationCard {
+  0% {
+    opacity: 0;
+    filter: blur(5px);
 
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
 @media (max-width: 1200px) {
   .price_text{
     font-weight: 400;

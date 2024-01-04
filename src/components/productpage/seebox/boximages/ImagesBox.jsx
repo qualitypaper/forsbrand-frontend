@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import {AppContext} from "../../app/App";
+import {AppContext} from "../../../app/App";
 
 const ImagesBox = () => {
     const {

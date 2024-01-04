@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
-import arrowTopBackground from "../../../assets/images/arrow_top_background.svg";
-import {AppContext} from "../../app/App";
+import arrowTopBackground from "../../../../assets/images/arrow_top_background.svg";
+import {AppContext} from "../../../app/App";
 
 export const ArrowRight = ({handleSwipe, totalPages}) => {
     const {

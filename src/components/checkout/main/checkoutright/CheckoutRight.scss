@@ -81,10 +81,14 @@
 }
 
 @media (max-width: 816px) {
-  .checkout-right__order-card img {
-    width: 55px;
-    height: 55px;
-  }
+  .checkout-right{
+    .checkout-right__order{
+      .checkout-right__order-card img {
+        width: 55px;
+        height: 55px;
+      }
+    }
+    }
 
   .checkout-right__order-card-itemName {
     font-size: 0.7rem;

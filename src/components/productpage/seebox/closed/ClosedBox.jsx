@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import cross from "../../../assets/images/crossBox.svg";
-import { AppContext } from "../../app/App";
+import cross from "../../../../assets/images/crossBox.svg";
+import { AppContext } from "../../../app/App";
 
 const ClosedBox = () => {
     const {

@@ -7,6 +7,7 @@ import {useParams} from 'react-router-dom';
 import Drawer from "../components/mainpage/drawer";
 import CardFull from "../components/productpage/main/CardFull";
 import CardFullSeeBox from "../components/productpage/seebox/CardFullSeeBox";
+import {useSpring, animated} from "react-spring";
 
 export const ProductPage = () => {
     const {
@@ -19,7 +20,6 @@ export const ProductPage = () => {
         cartOpened,
         removeFromOrder,
         imagesBoxOpened,
-        setImagesBoxOpened,
     } = useContext(AppContext);
 
 
@@ -62,19 +62,47 @@ export const ProductPage = () => {
         }
     };
 
+
+
+    const productAnimation = useSpring({
+        opacity: 1,
+        filter: 'blur(0px)',
+        from: {
+            opacity: 0,
+            filter: 'blur(2px)',
+        },
+        config: {
+            mass: 1,
+            tension: 150,
+            friction: 14,
+        },
+    });
+
     return (
         <>
             <div className="mid">
                 <div className="mid_background1">
                     <div className="one">
-                        <CardFull onAdd={addToOrder} product={windowItems} onClickAddToCart={addToCartFromWindow}/>
-                        {cartOpened && <Drawer deleteToOrder={deleteToOrder} items={cartItems} removeFromCart={removeFromOrder}
-                                    onClickClosed={() => setCartOpened(false)}/>}
-                        {imagesBoxOpened &&  <CardFullSeeBox />}
+                        <animated.div style={productAnimation}>
+                            <CardFull
+                                onAdd={addToOrder}
+                                product={windowItems}
+                                onClickAddToCart={addToCartFromWindow}
+                            />
+                        </animated.div>
+                            {cartOpened && (
+                                <Drawer
+                                    deleteToOrder={deleteToOrder}
+                                    items={cartItems}
+                                    removeFromCart={removeFromOrder}
+                                    onClickClosed={() => setCartOpened(false)}
+                                />
+                            )}
+                        {imagesBoxOpened && <CardFullSeeBox />}
                     </div>
                 </div>
-                <Footer/>
+                <Footer />
             </div>
         </>
     );
-}
+};

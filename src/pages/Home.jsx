@@ -5,12 +5,10 @@ import {Main} from '../components/mainpage/main/Main';
 import Drawer from '../components/mainpage/drawer';
 import Window from '../components/mainpage/window';
 import {AppContext} from "../components/app/App";
-import axios from 'axios'
 import "./Home.scss";
 import {ProductJson} from "../assets/clothes";
 import PreLoader from "../components/preloader/PreLoader";
-import { BASE_URL } from '../assets/constant';
-import {Pages} from "../components/mainpage/main/pages";
+import { useSpring, animated } from 'react-spring';
 
 
 export const Home = () => {
@@ -25,7 +23,6 @@ export const Home = () => {
         windowProduct,
         setWindowProduct,
         setCardData,
-        currentPage,
         setCurrentPage,
         clothesPerPage,
         setLoading,
@@ -85,16 +82,29 @@ export const Home = () => {
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
-    console.log("currentPage : ", currentPage)
+
+
+    const homeAnimation = useSpring({
+        opacity: 1,
+        from: { opacity: 0 },
+    });
+
+
     return (
-        <>
+        <animated.div style={homeAnimation}>
             {logoAnimation && <PreLoader />}
             <div className="mid">
                 <div className="mid_background1">
                     <div className="one1">
-                        <HeaderMain onClickCart={() => setCartOpened(true)}/>
-                        {cartOpened && <Drawer deleteToOrder={deleteToOrder} items={cartItems} removeFromCart={removeFromOrder}
-                                               onClickClosed={() => setCartOpened(false)} />}
+                        <HeaderMain onClickCart={() => setCartOpened(true)} />
+                            {cartOpened && (
+                                <Drawer
+                                    deleteToOrder={deleteToOrder}
+                                    items={cartItems}
+                                    removeFromCart={removeFromOrder}
+                                    onClickClosed={() => setCartOpened(false)}
+                                />
+                            )}
                         <Main
                             clothesPerPage={clothesPerPage}
                             totalClothes={cardData.length}
@@ -123,8 +133,8 @@ export const Home = () => {
                         )}
                     </div>
                 </div>
-                <Footer/>
+                <Footer />
             </div>
-        </>
+        </animated.div>
     );
 };

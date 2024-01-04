@@ -27,11 +27,14 @@
     .checkout_main {
     .header__checkout {
       div {
-        padding: 40px;
+        display: flex;
+        justify-content: center;
         p {
-          display: none;
+          font-weight: bold;
+          text-transform: uppercase;
         }
         h1{
+          display: none;
         }
       }
     }

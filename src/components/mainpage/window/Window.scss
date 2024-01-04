@@ -26,6 +26,46 @@
       justify-content: flex-end;
       cursor: pointer;
 
+      .custom-input-container {
+        position: relative;
+
+        .custom-input-container-main {
+          display: flex;
+          align-items: center;
+          padding: 5px;
+          border: 3px solid rgba(190, 190, 190, 0.13);
+
+          .img_quantity1 {
+            width: 10px;
+            height: 10px;
+          }
+
+          .img_quantity {
+            width: 10px;
+            height: 10px;
+          }
+
+          .text_quantity {
+            padding-right: 10px;
+            padding-left: 10px;
+          }
+        }
+
+        .inp {
+          padding: 5px;
+        }
+      }
+
+      .arrow-icon {
+        position: absolute;
+        top: 50%;
+        right: 8px; /* Adjust the right spacing as needed */
+        transform: translateY(-50%);
+        width: 16px; /* Adjust the width as needed */
+        height: 16px; /* Adjust the height as needed */
+        cursor: pointer; /* Optional: Add a pointer cursor */
+      }
+
       .cross {
       }
     }

@@ -7,7 +7,7 @@ export const currencyValue = "₴";
 
 export const constructPrice = (currentClothing) => {
     if (!currentClothing) {
-        return null; // or handle the case when currentClothing is undefined or null
+        return "";
     }
 
     const { currentPrice, originalPrice } = currentClothing;
@@ -25,14 +25,11 @@ export const constructPrice = (currentClothing) => {
         return <span>{originalPrice + currencyValue}</span>;
     }
 };
-// Example usage inside a component
 const SomeComponent = () => {
     const { currentClothing } = useContext(AppContext);
 
-    // Use constructPrice function
-    const priceMarkup = constructPrice(currentClothing);
 
-    return <div>{priceMarkup}</div>;
+    return <div>{constructPrice(currentClothing)}</div>;
 };
 
 export default SomeComponent;

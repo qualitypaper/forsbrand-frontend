@@ -33,7 +33,20 @@
 
 
 }
+@keyframes scrollAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+}
 
+.headerClothes {
+  animation: scrollAnimation 1s ease-in-out;
+}
 @media (max-width: 575px) {
   .content__top {
     .switch-categories {

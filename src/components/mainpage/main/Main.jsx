@@ -25,6 +25,19 @@ export const Main = ({
                          currentPage,
 
                      }) => {
+
+    // const isFirstVisit = !localStorage.getItem('visited');
+    // const headerClothes = useSpring({
+    //     from: { transform: 'translateY(0)', opacity: 0, filter: isFirstVisit ? 'blur(5px)' : 'blur(0px)', position: "fixed"},
+    //     to: { opacity: 1, transform: 'translateY(0)', filter: 'blur(0px)' },
+    //     config: { duration: 1000 },
+    // });
+    //
+    // // Set the visited flag in localStorage
+    // if (isFirstVisit) {
+    //     localStorage.setItem('visited', 'true');
+    // }
+
     return (
         <div className="background">
             <LogoMain/>

@@ -1,15 +1,15 @@
-import React, { useContext } from 'react';
+import React, {useContext, useEffect} from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { FullScreen, useFullScreenHandle } from 'react-full-screen';
 import './CardFullSeeBox.scss';
 import { AppContext } from '../../app/App';
 
-import {ArrowLeft} from "./ArrowLeft";
-import ImagesBox from "./ImagesBox";
-import {ArrowRight} from "./ArrowRight";
-import ZoomLoup from "./ZoomLoup";
-import FullScreenComponent from "./FullScreenComponent";
-import ClosedBox from "./ClosedBox";
+import {ArrowLeft} from "./arrow/ArrowLeft";
+import ImagesBox from "./boximages/ImagesBox";
+import {ArrowRight} from "./arrow/ArrowRight";
+import ZoomLoup from "./zoom/ZoomLoup";
+import FullScreenComponent from "./fullscreen/FullScreenComponent";
+import ClosedBox from "./closed/ClosedBox";
 
 const CardFullSeeBox = () => {
     const { currentClothing, setCurrentPage } = useContext(AppContext);
@@ -32,6 +32,10 @@ const CardFullSeeBox = () => {
         }
     };
     const handle = useFullScreenHandle();
+
+    useEffect(() => {
+        setCurrentPage(0); // Set the initial page to 0 (first image)
+    }, []); // Run this effect only once, on component mount
 
 
 

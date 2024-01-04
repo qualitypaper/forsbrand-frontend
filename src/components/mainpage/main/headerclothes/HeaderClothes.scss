@@ -122,3 +122,8 @@
   }
 
 }
+@media screen and (max-width: 816px) {
+  .header__clothes-card .card .card-button-container .card-button {
+    display: none;
+  }
+}

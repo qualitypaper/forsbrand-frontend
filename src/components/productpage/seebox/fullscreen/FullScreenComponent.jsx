@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import fullscreenExit from "../../../assets/images/fullscreen_exit.svg";
-import fullscreen from "../../../assets/images/fullscreen.svg";
+import fullscreenExit from "../../../../assets/images/fullscreen_exit.svg";
+import fullscreen from "../../../../assets/images/fullscreen.svg";
 
 const FullScreenComponent = ({handle}) => {
     const [isFullscreen, setIsFullscreen] = useState(false);

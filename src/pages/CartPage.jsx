@@ -2,40 +2,22 @@ import { Footer } from "../components/mainpage/footer";
 
 import { useContext, useEffect } from "react";
 import { AppContext } from "../components/app/App";
-import { useNavigate, useParams } from "react-router-dom";
+import {useParams } from "react-router-dom";
 import { ProductJson } from "../assets/clothes";
 import "./CartPage.scss";
 import CartFullOrder from "../components/cartpage/main/CartFullOrder";
+import {useSpring, animated} from "react-spring";
 
 const CartPage = () => {
   const {
-    cardData,
     setCardData,
     setCartItems,
-    windowItems,
-    setWindowProduct,
-    setCartOpened,
     cartItems,
   } = useContext(AppContext);
 
   const { id } = useParams();
-  const addToCartFromWindow = (item) => {
-    addToOrder(item);
-    setWindowProduct(false);
-  };
-  const openCart = () => {
-    setCartOpened(true);
-  };
 
-  const addToOrder = (item) => {
-    const temp = cartItems.find((e) => e.id === item.id);
-    if (temp) {
-      temp.quantity += 1;
-      setCartItems([...cartItems]);
-    } else {
-      setCartItems([...cartItems, { ...item, quantity: 1 }]);
-    }
-  };
+
   useEffect(() => {
     const selectedCard = ProductJson.find(
       (item) => item.id === Number.parseInt(id)
@@ -44,8 +26,7 @@ const CartPage = () => {
       setCardData(selectedCard);
     }
   }, [id]);
-  
-  const navigate = useNavigate();
+
 
   const deleteToOrder = (element) => {
     const temp = cartItems.filter(item => item.id !== element.id || item.size !== element.size)
@@ -56,13 +37,21 @@ const CartPage = () => {
         localStorage.setItem('cart', temp);
     }
 };
+  const cartPageAnimation = useSpring({
+    opacity: 1,
+    from: {
+      opacity: 0,
+    },
+  });
 
   return (
     <>
       <div className="mid">
         <div className="mid_background1">
           <div className="one">
+            <animated.div style={cartPageAnimation}>
             <CartFullOrder deleteToOrder={deleteToOrder} />
+            </animated.div>
           </div>
         </div>
         <Footer />

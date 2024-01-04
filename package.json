@@ -22,7 +22,9 @@
     "react-paginate": "^8.2.0",
     "react-router-dom": "^6.20.1",
     "react-scripts": "^5.0.1",
+    "react-spring": "^9.7.3",
     "react-swipeable": "^7.0.1",
+    "react-transition-group": "^4.4.5",
     "sass": "^1.69.5",
     "typescript": "^3.2.1",
     "web-vitals": "^2.1.4"
