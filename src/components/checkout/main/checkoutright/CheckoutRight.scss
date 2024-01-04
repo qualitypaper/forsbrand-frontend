@@ -1,30 +1,39 @@
-.checkout-right{
+.checkout-right {
   position: sticky;
   top: 30px;
   padding-bottom: 60px;
-  .checkout-right__order{
+
+  .checkout-right__order {
     background-color: #d5d2d2;
     padding: 20px;
     border-radius: 4px;
     width: 400px;
 
-    .checkout-right__order-header{
+    .checkout-right__order-header {
       display: flex;
       justify-content: space-between;
       padding-bottom: 20px;
       width: 100%;
       border-bottom: 1px solid rgba(65, 65, 65, 0.2);
-      p{
+
+      p {
         color: black;
       }
-      .checkout-right__order-header-data{
-        font-size: 20px;
+
+      .checkout-right__order-header-data {
+        font-size: 1.25rem; /* Use rem or em for relative font size */
       }
     }
+
     .checkout-right__order-card {
       padding: 20px 0;
       display: flex;
       border-bottom: 1px solid rgba(65, 65, 65, 0.2);
+
+      img{
+        width: 70px;
+        height: 70px;
+      }
 
       .checkout-right__order-card-text {
         margin-left: 20px;
@@ -34,8 +43,10 @@
           display: flex;
           justify-content: space-between;
           width: 100%;
-          .checkout-right__order-card-itemName{
+
+          .checkout-right__order-card-itemName {
             word-break: break-all;
+            text-transform: uppercase;
           }
         }
       }
@@ -51,9 +62,9 @@
       .cart__order-full-price {
         display: flex;
         justify-content: space-between;
-
       }
     }
+
     .card__order-full-btn {
       padding-top: 20px;
 
@@ -62,9 +73,51 @@
         justify-content: space-between;
 
         p {
-          font-size: 20px;
+          font-size: 1.25rem; /* Adjust the font size as needed using rem or em */
         }
       }
     }
   }
 }
+
+@media (max-width: 816px) {
+  .checkout-right__order-card img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .checkout-right__order-card-itemName {
+    font-size: 0.7rem;
+  }
+  .checkout-right__order-card-price{
+    font-size: 0.8rem;
+  }
+  .checkout-right__order-card-quantity{
+    font-size: 0.8rem;
+  }
+  .checkout-right__order-card-size{
+    font-size: 0.8rem;
+  }
+}
+
+//@media (max-width: 816px) {
+//  .checkout-right {
+//    .checkout-right__order {
+//      .checkout-right__order-card {
+//        img{
+//          width: 55px;
+//          height: 55px;
+//        }
+//        .checkout-right__order-card-text {
+//          .checkout-right__order-card-mainText {
+//            .checkout-right__order-card-mainText {
+//              .checkout-right__order-card-itemName {
+//                font-size: 0.900rem; /* Adjust the font size as needed for smaller screens */
+//              }
+//            }
+//          }
+//        }
+//      }
+//    }
+//  }
+//}

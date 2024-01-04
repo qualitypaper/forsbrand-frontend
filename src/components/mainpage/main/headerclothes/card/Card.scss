@@ -141,3 +141,25 @@
     }
   }
 }
+
+@media  (max-width: 319px) {
+  .header__clothes-card{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    .header__clothes-card-img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  .card {
+    .card-button-container{
+    }
+    .card-button-container {
+      .card-button {
+        padding: 6px 6px;
+      }
+    }
+  }
+}

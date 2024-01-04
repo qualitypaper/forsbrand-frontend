@@ -4,7 +4,7 @@ import lock from "../../../../assets/images/lock.svg";
 import {AppContext} from "../../../app/App";
 import "./CartFullOrderLeft.scss"
 
-const CartFullOrderLeft = () => {
+const CartFullOrderRight = () => {
     const {
         totalCost, cartItems,
     } = useContext(AppContext);
@@ -37,4 +37,4 @@ const CartFullOrderLeft = () => {
         </div>
     )
 }
-export default CartFullOrderLeft
+export default CartFullOrderRight

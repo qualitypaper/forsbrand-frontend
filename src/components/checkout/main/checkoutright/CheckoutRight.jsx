@@ -4,7 +4,7 @@ import PromocodeOrder from "./promocode/PromocodeOrder";
 import OrderTextArea from "./textarea/OrderTextArea";
 import {AppContext} from "../../../app/App";
 import "./CheckoutRight.scss"
-import {constructPrice} from "../../../../assets/constant";
+import SomeComponent from "../../../../assets/constant";
 
 const CheckoutRight = () => {
     const {
@@ -12,6 +12,12 @@ const CheckoutRight = () => {
         totalCost,
         selectedOption
     } = useContext(AppContext)
+
+    const discountedTotal = selectedOption.promoCodeDiscount
+        ? totalCost - (selectedOption.promoCodeDiscount / 100) * totalCost
+        : totalCost;
+
+
     return (
         <section className="checkout-right">
             <div className="checkout-right__order">
@@ -24,15 +30,14 @@ const CheckoutRight = () => {
                 {cartItems.map((item, index) => (
                     <div key={index}>
                         <div className="checkout-right__order-card">
-                            <img width={70} height={70} src={item.images[0]} alt="" />
+                            <img src={item.images[0]} alt="" />
                             <div className="checkout-right__order-card-text">
                                 <div className="checkout-right__order-card-mainText">
                                     <p className="checkout-right__order-card-itemName">{item.name}</p>
-                                    {/* TODO: use method construct price */} <p>{constructPrice}</p>
-                                    <p className="checkout-right__order-card-price">{item.currentPrice}₴</p>
+                                    <p className="checkout-right__order-card-price">{SomeComponent()}</p>
                                 </div>
-                                <p>К-сть: {item.quantity}</p>
-                                <p>Розмір: {item.size}</p>
+                                <p className="checkout-right__order-card-quantity">К-сть: {item.quantity}</p>
+                                <p className="checkout-right__order-card-size" >Розмір: {item.size}</p>
                             </div>
                         </div>
                     </div>
@@ -55,13 +60,24 @@ const CheckoutRight = () => {
                                 </p>
                             </li>
                         </li>
+                        <div className="cart__order-full-price">
+                            <p>Промокод</p>
+                            {selectedOption.promoCodeDiscount !== undefined ? (
+                                <p>{selectedOption.promoCodeDiscount}%</p>
+                            ) : (
+                                <p>Немає промокоду</p>
+                            )}
+                        </div>
                         <p></p>
                     </ul>
                 </div>
                 <div className="card__order-full-btn">
                     <div className="card__order-full-btn-text">
                         <p className="card__order-full-btn-text-main">Загалом</p>
-                        <p>{Number.parseInt(totalCost) + (selectedOption.price ? Number.parseInt(selectedOption.price) : 0)}₴</p>
+                        <p>
+                            {Number.parseInt(discountedTotal) +
+                                (selectedOption.price ? Number.parseInt(selectedOption.price) : 0)}₴
+                        </p>
                     </div>
                 </div>
             </div>

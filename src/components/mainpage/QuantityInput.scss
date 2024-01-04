@@ -3,28 +3,68 @@
   font-size: 14px;
   border-radius: 3px;
   margin-top: 7px;
-  .custom-input-container {
-    display: flex;
-    border: 3px solid rgba(77, 75, 75, 0.04);
-    padding: 5px;
-    justify-content: center;
-    .custom-input{
-      padding: 5px;
-    }
-    .custom-input-container-img{
-      display: flex;
-      flex-direction: column;
-      align-self: center;
-      border: 1px solid #fff0f0;
-      margin: 5px 0 0 10px;
-      .img_quantity1{
-        position: absolute;
+
+
+    .custom-input-container {
+      position: relative;
+
+      .custom-input-container-main {
+        display: flex;
+        align-items: center;
+        padding-top: 5px;
+        border: 3px solid rgba(190, 190, 190, 0.13);
+
+        .img_quantity1 {
+          width: 10px;
+          height: 10px;
+        }
+
+        .img_quantity {
+          width: 10px;
+          height: 10px;
+        }
+
+        .text_quantity {
+          padding-right: 10px;
+          padding-left: 10px;
+        }
       }
-    .img_quantity{
-      margin-top:20px;
+
+      .inp {
+        padding: 5px;
+      }
     }
+
+    .arrow-icon {
+      position: absolute;
+      top: 50%;
+      right: 8px; /* Adjust the right spacing as needed */
+      transform: translateY(-50%);
+      width: 16px; /* Adjust the width as needed */
+      height: 16px; /* Adjust the height as needed */
+      cursor: pointer; /* Optional: Add a pointer cursor */
     }
   }
-.quantity {
-}
+
+
+@media (max-width: 816px) {
+  .quantity-input {
+    .custom-input-container{
+      padding: 4px;
+      .custom-input-container-main{
+        font-size: 11px;
+        .img_quantity1{
+          width: 7px;
+          height: 7px;
+        }
+        .img_quantity{
+          width: 7px;
+          height: 7px;
+        }
+        .text_quantity{
+          font-size: 12px;
+        }
+      }
+    }
+  }
 }

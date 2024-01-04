@@ -5,7 +5,7 @@ import arrow_down from "../../../assets/images/arrow_down.svg";
 import arrow_top from "../../../assets/images/arrow_top.svg";
 import { Link } from "react-router-dom";
 import { AppContext } from "../../app/App";
-import {constructPrice, SIZES} from "../../../assets/constant";
+import SomeComponent, {SIZES} from "../../../assets/constant";
 import arrow_down_background from "../../../assets/images/arrow_down_background.svg";
 import arrow_top_background from "../../../assets/images/arrow_top_background.svg";
 
@@ -79,7 +79,7 @@ const [selectSize, setSelectSize] = useState(false)
   };
 
   const handleDecrease = () => {
-    setQuantity((prev) => prev - 1);
+    setQuantity(prev => Math.max(prev - 1, 1));
   };
 
   //    const firstImages = product.images[0];
@@ -174,7 +174,7 @@ const [selectSize, setSelectSize] = useState(false)
             <div className="window__right">
               <div className="window__right-text">
                 <p>{windowItem.name}</p>
-                <p>{constructPrice()}</p>
+                <p>{SomeComponent()}</p>
               </div>
               <div className="window__right-size">
                 <p>Sizes</p>
@@ -231,8 +231,6 @@ const [selectSize, setSelectSize] = useState(false)
                       <img
                         onClick={handleIncrease}
                         className="img_quantity1 cu-p"
-                        width={10}
-                        height={10}
                         src={arrow_top_background}
                         alt=""
                       />

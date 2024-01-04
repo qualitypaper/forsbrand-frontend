@@ -65,21 +65,17 @@ function QuantityInput({ value, setQuantity, item }) {
     return (
         <div className="quantity-input">
             <div className="custom-input-container">
-                <div className="d-flex align-center pt-5">
+                <div className="custom-input-container-main">
                     <img
                         onClick={handleDecrease}
                         className="img_quantity cu-p"
-                        width={10}
-                        height={10}
                         src={arrow_down_background}
                         alt=""
                     />
-                    <p className="pr-10 pl-10">{value}</p>
+                    <p className="text_quantity">{value}</p>
                     <img
                         onClick={handleIncrease}
                         className="img_quantity1 cu-p"
-                        width={10}
-                        height={10}
                         src={arrow_top_background}
                         alt=""
                     />

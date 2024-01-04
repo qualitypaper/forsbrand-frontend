@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import "./drawer.scss";
 import arrow_right from "../../../assets/images/arrow_right.svg";
 import logo_img from "../../../assets/images/logo_img.PNG";
@@ -6,11 +6,10 @@ import cross from "../../../assets/images/cross_mark.svg";
 import { Link } from "react-router-dom";
 import QuantityInput from "../QuantityInput";
 import { AppContext } from "../../app/App";
-import { SIZES } from "../../../assets/constant";
+import SomeComponent from "../../../assets/constant";
 
 function Drawer({ onClickClosed, deleteToOrder, removeFromCart }) {
   const [hoveredItemId, setHoveredItemId] = useState({});
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const { cartItems, totalCost, handleQuantityChange } = useContext(AppContext);
 
   return (
@@ -40,12 +39,13 @@ function Drawer({ onClickClosed, deleteToOrder, removeFromCart }) {
                     onMouseLeave={() => setHoveredItemId({})}
                     className="cartItem"
                   >
-                    <img src={item.images[0]} width={80} height={80} alt="" />
+                    <img className="img_cartItem" src={item.images[0]} alt="" />
                     <div className="cart_item">
                       <p className="text">{item.name}</p>
-                      <b>
-                        {item.originalPrice} ₴ {item.size}
-                      </b>
+                      <div className="sizePlusPrice">
+                        <b className="sizePlusPrice-Price">{SomeComponent()}</b>
+                        <p className="sizePlusPrice-Size">Розмір: {item.size}</p>
+                      </div>
                       <QuantityInput
                         removeFromCart={removeFromCart}
                         setQuantity={(quantity) =>

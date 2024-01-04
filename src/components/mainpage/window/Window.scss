@@ -216,33 +216,16 @@
         }
       }
 
-.quantity-input {
-
-  .custom-input-container {
-    position: relative;
-
-    .inp {
-      padding: 5px;
-    }
-  }
-
-  .arrow-icon {
-    position: absolute;
-    top: 50%;
-    right: 8px; /* Adjust the right spacing as needed */
-    transform: translateY(-50%);
-    width: 16px; /* Adjust the width as needed */
-    height: 16px; /* Adjust the height as needed */
-    cursor: pointer; /* Optional: Add a pointer cursor */
-  }
-}
 
 
-@media (max-width: 600px) {
+
+@media (max-width: 888px) {
   .window {
     display: none;
   }
 }
+
+
 
 .original_price {
   text-decoration: line-through;

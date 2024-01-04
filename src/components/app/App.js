@@ -5,6 +5,9 @@ import {Home} from "../../pages/Home";
 import {ProductPage} from "../../pages/ProductPage";
 import CartPage from "../../pages/CartPage";
 import {CheckoutPage} from "../../pages/CheckoutPage";
+import Delivery from "../../pages/Delivery";
+import PrivacyPolicy from "../../pages/PrivacyPolicy";
+import Contacts from "../../pages/Contacts";
 
 export const AppContext = createContext();
 
@@ -227,6 +230,9 @@ const App = () => {
                     <Route path="/" element={<Home itemsPerPage={9}/>}/>
                     <Route path="/product-page/:id" element={<ProductPage/>}/>
                     <Route path="/cart-page" element={<CartPage/>}/>
+                    <Route path="/delivery" element={<Delivery />}/>
+                    <Route path="/contacts" element={<Contacts />} />
+                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                     <Route path="/checkout" element={<CheckoutPage/>}/>
                 </Routes>
             </Router>

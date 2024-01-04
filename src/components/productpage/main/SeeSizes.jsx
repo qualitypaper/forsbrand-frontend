@@ -17,8 +17,6 @@ const SeeSizes = ({ setOpenSeeSized }) => {
                 <p className="see_sizes-text">Посмотреть размеры</p>
                 <img
                     className="see_sizes-img"
-                    width={30}
-                    height={30}
                     src={arrowChangeSeeSizes ? arrow_top : arrow_down}
                     alt=""
                 />

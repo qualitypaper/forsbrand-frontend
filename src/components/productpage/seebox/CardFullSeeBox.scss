@@ -139,3 +139,14 @@
     transform: translateY(-50%);
   }
 }
+
+@media (max-width: 816px) {
+  .imagesBoxOpened {
+    display: none;
+    .imagesBoxOpenedBackground {
+      img {
+
+      }
+    }
+  }
+}

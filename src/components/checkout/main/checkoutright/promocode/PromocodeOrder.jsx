@@ -3,30 +3,42 @@ import sale from "../../../../../assets/images/sale.svg";
 import {AppContext} from "../../../../app/App";
 import "./PromocodeOrder.scss"
 
+
 const PromocodeOrder = () => {
-    const  {
+    const {
         openPromotionalCode,
         setOpenPromotionalCode,
         checkPromocode
-    } = useContext(AppContext)
+    } = useContext(AppContext);
+
     const [promocode, setPromocode] = useState('');
+    const [notification, setNotification] = useState("");
 
     const checkPromo = async () => {
         const res = await checkPromocode(promocode);
-        if(res) {
-            if(res.valid) {
-                // make a notification, that promocode is valid and the discount which user will get
+        if (res) {
+            if (res.valid) {
+                setNotification({
+                    type: 'success',
+                    message: `Промокод дійсний! Знижка: ${res.discount}%`
+                });
             } else {
-                // make a notification, that the promocode is not valid
-
+                setNotification({
+                    type: 'error',
+                    message: 'Промокод недійсний. Спробуйте ще раз.'
+                });
             }
         }
-    }
+    };
+
+    const closeNotification = () => {
+        setNotification("");
+    };
 
     return (
         <div className="checkout-right__order-promo-main">
             <div className="checkout-right__order-promo-text">
-                <img width={20} height={20} src={sale} alt="Sale"/>
+                <img width={20} height={20} src={sale} alt="Sale" />
                 <p onClick={() => setOpenPromotionalCode(!openPromotionalCode)}>Введіть промокод</p>
             </div>
             {openPromotionalCode && (
@@ -34,14 +46,22 @@ const PromocodeOrder = () => {
                     <input
                         className="inp2"
                         type="text"
-                        placeholder="Веддіть промокод"
+                        placeholder="Введіть промокод"
+                        value={promocode}
+                        onChange={(e) => setPromocode(e.target.value)}
                     />
                     <button onClick={checkPromo}>
                         <p>Застосувати</p>
                     </button>
                 </div>
             )}
+            {notification && (
+                <div className={`notification ${notification.type}`} onClick={closeNotification}>
+                    {notification.message}
+                </div>
+            )}
         </div>
-    )
-}
-export default PromocodeOrder
+    );
+};
+
+export default PromocodeOrder;

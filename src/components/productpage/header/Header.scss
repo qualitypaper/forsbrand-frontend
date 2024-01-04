@@ -42,18 +42,19 @@
     }
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 816px) {
   .header{
     .containerHeader {
       .header__product{
-        flex-direction: column;
-        align-items: center;
+
         gap: 20px;
         margin-bottom: 0;
         .header__product-nav {
           .header__product-navigation{
+            display: block;
             p{
               font: normal normal normal 11px/17px "courier new", courier-ps-w01, courier-ps-w02, courier-ps-w10, monospace;
+              word-break: break-all;
             }
           }
         }

@@ -36,3 +36,9 @@
       background: darken( rgb(91, 91, 91), 5%);
     }
 }
+
+@media (max-width: 400px) {
+    .cart__order-full-list2{
+      font-size: 0.8rem;
+    }
+}

@@ -1,9 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { AppContext } from "../../../app/App";
 import "./CardFullLeft.scss";
-import zoom from "../../../../assets/images/zoom.svg";
+import fullscreen from "../../../../assets/images/fullscreen.svg";
 import { SwitchCardFull } from "./switch/SwitchCardFull";
-import CardFullSeeBox from "../../seebox/CardFullSeeBox";
 
 const CardFullLeft = () => {
     const { currentClothing, currentImageIndex, setImagesBoxOpened, imagesBoxOpened } = useContext(AppContext);
@@ -41,7 +40,7 @@ const CardFullLeft = () => {
                 <div className="images_zoom">
                     {isHovered && (
                         <div className="images_zoom_background">
-                            <img onClick={() => setImagesBoxOpened(!imagesBoxOpened)} src={zoom} alt="" />
+                            <img onClick={() => setImagesBoxOpened(!imagesBoxOpened)} src={fullscreen} alt="" />
                         </div>
                     )}
                 </div>

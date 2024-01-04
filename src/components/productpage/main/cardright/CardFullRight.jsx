@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react'
 import "./CardFullRight.scss"
-import {constructPrice, SIZES} from "../../../../assets/constant";
+import SomeComponent, {SIZES} from "../../../../assets/constant";
 import CardFullRightSizes from "./sizes/CardFullRightSizes";
 import CardFullRightQuantity from "./quantity/CardFullRightQuantity";
 import {AppContext} from "../../../app/App";
@@ -43,7 +43,7 @@ const CardFullRight = () => {
         return(
             <div className="product__page-text">
                 <p>{name}</p>
-                <p>{constructPrice()}</p>
+                <p>{SomeComponent()}</p>
             </div>
         )
 

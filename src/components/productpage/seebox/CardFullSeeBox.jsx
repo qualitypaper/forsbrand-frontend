@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { FullScreen, useFullScreenHandle } from 'react-full-screen';
 import './CardFullSeeBox.scss';
@@ -15,7 +15,7 @@ const CardFullSeeBox = () => {
     const { currentClothing, setCurrentPage } = useContext(AppContext);
     const { images } = currentClothing;
 
-    const imagesPerPage = 1; // Adjust this value based on your design
+    const imagesPerPage = 1;
 
     const totalPages = Math.max(1, Math.ceil(images.length / imagesPerPage));
 
@@ -33,9 +33,11 @@ const CardFullSeeBox = () => {
     };
     const handle = useFullScreenHandle();
 
+
+
     return (
         <FullScreen handle={handle}>
-            <div className={`imagesBoxOpened }`} {...handlers}>
+            <div className={`imagesBoxOpened }`} {...handlers} >
                 <ArrowLeft handleSwipe={() => handleSwipe('Left')} />
                 <ImagesBox />
                 <ArrowRight handleSwipe={() => handleSwipe("Right")} totalPages={totalPages}/>

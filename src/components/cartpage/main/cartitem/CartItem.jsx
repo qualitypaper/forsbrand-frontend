@@ -1,6 +1,6 @@
 import React, {useContext, useEffect} from "react";
 import {AppContext} from "../../../app/App";
-import {constructPrice} from "../../../../assets/constant";
+import SomeComponent from "../../../../assets/constant";
 import QuantityInput from "../../../mainpage/QuantityInput";
 import cross from "../../../../assets/images/cross_mark.svg";
 import "./CartItem.scss"
@@ -50,11 +50,11 @@ const CartItem = ({
                         <p className="opacity-9">Розмір: {size}</p>
                     </div>
                     <div className="cart__order-full-right-price">
-                        <b>Ціна: {constructPrice()}</b>
+                        <b>Ціна: {SomeComponent()}</b>
                         <p>{availableSizes}</p>
                     </div>
                 </div>
-                <div className="d-flex quantity">
+                <div className="quantity1">
                     <QuantityInput
                         item={product}
                         removeFromCart={removeFromOrder}

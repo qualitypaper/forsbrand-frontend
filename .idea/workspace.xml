@@ -1,30 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="refactoring ProductPage">
-      <change afterPath="$PROJECT_DIR$/src/components/productpage/main/SeeSizes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/productpage/seebox/ArrowLeft.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/productpage/seebox/ArrowRight.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/productpage/seebox/CardFullSeeBox.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/productpage/seebox/CardFullSeeBox.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/productpage/seebox/ClosedBox.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/productpage/seebox/FullScreenComponent.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/productpage/seebox/ImagesBox.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/productpage/seebox/ZoomLoup.jsx" afterDir="false" />
+    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="fixed bugs">
+      <change afterPath="$PROJECT_DIR$/src/components/contacts/ContactsComponent.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/contacts/ContactsComponent.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/delivery/DeliveryComponent.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/delivery/DeliveryComponent.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/privacypolicy/PrivacyPolicyComponent.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/privacypolicy/PrivacyPolicyComponent.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Contacts.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Contacts.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Delivery.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Delivery.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/PrivacyPolicy.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/clothes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/clothes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cartpage/main/CartFullOrder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartpage/main/CartFullOrder.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cartpage/header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartpage/header/Header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cartpage/main/CartFullOrder.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartpage/main/CartFullOrder.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cartpage/main/cartfullleft/CartFullOrderLeft.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartpage/main/cartfullleft/CartFullOrderLeft.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cartpage/main/cartfullleft/CartFullOrderLeft.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartpage/main/cartfullleft/CartFullOrderLeft.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cartpage/main/cartfullright/CartFullOrderRight.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartpage/main/cartfullright/CartFullOrderRight.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cartpage/main/cartfullright/CartFullOrderRight.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartpage/main/cartfullright/CartFullOrderRight.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/cartpage/main/cartitem/CartItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartpage/main/cartitem/CartItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/CardFull.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/CardFull.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/CardFull.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/CardFull.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cartpage/main/cartitem/CartItem.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartpage/main/cartitem/CartItem.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/header/HeaderCheckout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/header/HeaderCheckout.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/MainCheckout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/MainCheckout.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/payment/Payment.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/payment/Payment.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/CheckoutRight.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/CheckoutRight.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/CheckoutRight.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/CheckoutRight.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/promocode/PromocodeOrder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/promocode/PromocodeOrder.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/promocode/PromocodeOrder.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/promocode/PromocodeOrder.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/textarea/OrderTextArea.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/textarea/OrderTextArea.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/QuantityInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/QuantityInput.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/QuantityInput.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/QuantityInput.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/drawer/drawer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/drawer/drawer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/drawer/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/drawer/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/footer/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/footer/Footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/footer/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/footer/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/main/headerclothes/card/Card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/main/headerclothes/card/Card.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/window/Window.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/window/Window.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/window/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/window/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productpage/header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/header/Header.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/productpage/main/SeeSizes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/SeeSizes.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/SeeSizes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/SeeSizes.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardleft/CardFullLeft.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardleft/CardFullLeft.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardleft/CardFullLeft.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardleft/CardFullLeft.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardright/CardFullRight.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/CardFullRight.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardright/CardFullRight.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/CardFullRight.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProductPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProductPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardright/sizesopen/CardFullRightSizesOpen.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/sizesopen/CardFullRightSizesOpen.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productpage/seebox/CardFullSeeBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/seebox/CardFullSeeBox.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productpage/seebox/CardFullSeeBox.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/seebox/CardFullSeeBox.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,19 +76,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/ferzy/Desktop/clothing-store/clothing-store/src/components/checkout/main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\ferzy\\Desktop\\clothing-store\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ferzy/Desktop/clothing-store/clothing-store/src/components/checkout/main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\ferzy\\Desktop\\clothing-store\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -99,7 +124,10 @@
       <workItem from="1704035316161" duration="1353000" />
       <workItem from="1704139883593" duration="12613000" />
       <workItem from="1704220808165" duration="3459000" />
-      <workItem from="1704228924628" duration="13155000" />
+      <workItem from="1704228924628" duration="13395000" />
+      <workItem from="1704292317179" duration="5493000" />
+      <workItem from="1704308762039" duration="4576000" />
+      <workItem from="1704314190488" duration="14037000" />
     </task>
     <task id="LOCAL-00001" summary="bug fixes CartFullOrder">
       <created>1703965466030</created>
@@ -122,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1704153269490</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="made seeBox">
+      <created>1704244257892</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1704244257892</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,7 +180,9 @@
     <MESSAGE value="working with Cart Page and Checkout refactoring" />
     <MESSAGE value="added drawer to the cart page" />
     <MESSAGE value="refactoring ProductPage" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring ProductPage" />
+    <MESSAGE value="made seeBox" />
+    <MESSAGE value="fixed bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -158,7 +195,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/productpage/seebox/ClosedBox.jsx</url>
           <line>4</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>

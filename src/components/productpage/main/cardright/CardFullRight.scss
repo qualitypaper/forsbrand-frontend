@@ -65,3 +65,21 @@
     }
   }
 }
+
+@media (max-width: 320px) {
+  .main-product {
+    display: flex;
+    flex-direction: column;
+    width: 246px;
+    .product__page-btn{
+      font-size: 10px;
+    }
+    .product__page-text {
+      margin-top: 10px;
+    }
+
+    .product__page {
+      gap: 18px;
+    }
+  }
+}

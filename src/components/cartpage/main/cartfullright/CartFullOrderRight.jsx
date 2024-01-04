@@ -4,7 +4,7 @@ import sale from "../../../../assets/images/sale.svg";
 import "./CartFullOrderRight.scss"
 import {AppContext} from "../../../app/App";
 
-const CartFullOrderRight = ({deleteToOrder}) => {
+const CartFullOrderLeft = ({deleteToOrder}) => {
     const {
         cartItems,
         handleQuantityChange,
@@ -12,21 +12,29 @@ const CartFullOrderRight = ({deleteToOrder}) => {
         setOpenPromotionalCode,
         checkPromocode,
     } = useContext(AppContext)
+    // const [notification, setNotification] = useState("")
     const [promocode, setPromocode] = useState('');
 
     const handlePromocodeChange = (e) => {
         setPromocode(e.target.value);
     }
 
-    const checkPromocodeField = () => {
-        const res = checkPromocode(promocode);
-        if(res.valid) {
-            const {discount} = res;
-            // TODO: show the discount, and calculate the new total cost with the discount
-        } else {
-            // TODO: make an error message of invalid promocode
-        }
-    }
+    // const checkPromocodeField = () => {
+    //     const res = await checkPromocode(promocode);
+    //     if (res) {
+    //         if (res.valid) {
+    //             setNotification({
+    //                 type: 'success',
+    //                 message: `Промокод дійсний! Знижка: ${res.discount}%`
+    //             });
+    //         } else {
+    //             setNotification({
+    //                 type: 'error',
+    //                 message: 'Промокод недійсний. Спробуйте ще раз.'
+    //             });
+    //         }
+    //     }
+    // };
     return (
         <div className="cart__order-full-right">
             <nav className="cart__order-full-nav">
@@ -71,4 +79,4 @@ const CartFullOrderRight = ({deleteToOrder}) => {
         </div>
     )
 }
-export default CartFullOrderRight
+export default CartFullOrderLeft

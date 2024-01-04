@@ -1,12 +1,12 @@
 
-
 .checkout {
   display: flex;
   gap: 20px;
   padding-top: 60px;
 
 }
-@media (max-width: 928px) {
+
+@media (max-width: 400px) {
   .checkout {
     flex-direction: column;
     padding: 40px;
@@ -18,9 +18,26 @@
     .checkout-right {
       .checkout-right__order {
         width: 100%;
-        .checkout-right__order-header{
-          .checkout-right__order-header-data{
-            font-size: 15px;
+        padding: 10px;
+
+        .cart__order-full-delivery {
+          .cart__order-full-price {
+            font-size: 0.8rem;
+          }
+        }
+.card__order-full-btn{
+  .card__order-full-btn-text{
+    p{
+      font-size: 0.8rem;
+    }
+
+  }
+}
+        .checkout-right__order-header {
+          font-size: 0.8rem;
+
+          .checkout-right__order-header-data {
+            font-size: 0.8rem;
           }
         }
       }
