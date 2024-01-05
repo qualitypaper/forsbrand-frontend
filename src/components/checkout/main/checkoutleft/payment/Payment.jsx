@@ -1,9 +1,8 @@
 import React, { useEffect, useState} from 'react';
 import {BASE_URL} from "../../../../../assets/constant";
-import list1 from "../../../../../assets/images/list.svg";
 import "./Payment.scss"
 
-export const Payment = () => {
+export const Payment = ({ submitOrder}) => {
     const [url, setUrl] = useState()
     const orderId = 1
 
@@ -25,9 +24,14 @@ export const Payment = () => {
         document.body.appendChild(scriptTag);
     }, []);
 
-    const handler = () => {
-        console.log('redirecting to ' + url);
-        window.location.href = url
+
+    const handler = async () => {
+        if(submitOrder()){
+            console.log('redirecting to ' + url);
+            window.location.href = url
+        } else {
+            // show notification message about unsuccessful order creation
+        }
     }
 
     return (

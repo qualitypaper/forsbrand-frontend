@@ -1,23 +1,23 @@
-import React, {useContext, useState} from 'react'
-import CheckoutInput from "./detailsform/CustomerDetailsForm";
+import React, {useContext} from 'react'
 import Payment from "./payment/Payment";
 import {AppContext} from "../../../app/App";
 import "./CheckoutLeft.scss"
 import ShippingOptions from "./shippingoptions/ShippingOptions";
 import CheckoutInputs from "./checkoutinputs/CheckoutInputs";
 
-const   CheckoutLeft = () => {
+const CheckoutLeft = ({ handleChange, submitOrder }) => {
     const {
         showPay,
         showPayOpen,
     } = useContext(AppContext);
+    
     return (
         <section className="checkout-left">
-            <CheckoutInputs/>
-            <ShippingOptions/>
+            <CheckoutInputs handleChange={handleChange}/>
+            <ShippingOptions handleChange={handleChange}/>
             {showPayOpen &&
                 <div className="checkout-left-delivery2">
-                    <Payment/>
+                    <Payment submitOrder={submitOrder}/>
                 </div>
             }
             {showPay &&

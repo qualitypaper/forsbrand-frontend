@@ -8,7 +8,8 @@ import Drawer from "../components/mainpage/drawer";
 import CardFull from "../components/productpage/main/CardFull";
 import CardFullSeeBox from "../components/productpage/seebox/CardFullSeeBox";
 import {useSpring, animated} from "react-spring";
-
+import { BASE_URL } from '../assets/constant';
+import axios from 'axios';
 export const ProductPage = () => {
     const {
         setCurrentClothing,
@@ -42,8 +43,8 @@ export const ProductPage = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const res = {data: ProductJson.find(item => item.id === Number.parseInt(id))}
-            // const res = await axios.get(`${BASE_URL}/product/get/${id}`);
+            // const res = {data: ProductJson.find(item => item.id === Number.parseInt(id))}
+            const res = await axios.get(`${BASE_URL}/product/get/${id}`);
             if (res.data) {
                 console.log(res.data)
                 setCurrentClothing(res.data)

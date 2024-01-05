@@ -8,6 +8,8 @@ import {CheckoutPage} from "../../pages/CheckoutPage";
 import Delivery from "../../pages/Delivery";
 import PrivacyPolicy from "../../pages/PrivacyPolicy";
 import Contacts from "../../pages/Contacts";
+import axios from "axios";
+import { BASE_URL } from "../../assets/constant";
 
 export const AppContext = createContext();
 
@@ -48,6 +50,7 @@ const App = () => {
     const [deliveryOpenMethod, setDeliveryOpenMethod] = useState(false);
     const [selectedOption, setSelectedOption] = React.useState({});
     const [buttonClicked, setButtonClicked] = useState(false);
+    const [promocode, setPromocode ] = useState({});
 
     const addToOrder = (item) => {
         console.log(item);
@@ -100,7 +103,7 @@ const App = () => {
         console.log("quantity", quantity);
         setCartItems(
             cartItems.map((i) =>
-                i.id === item.id && i.size == item.size
+                i.id === item.id && i.size === item.size
                     ? {...item, quantity: quantity}
                     : {...i}
             )
@@ -135,22 +138,27 @@ const App = () => {
         );
     }, [cartItems]);
     //
-    // const checkPromocode = async (promocode) => {
-    //   const res = await axios.get(
-    //     `${BASE_URL}/promocodes/check?promocode=${promocode}`
-    //   );
-    //   if (res.data) {
-    //     if (res.data.valid) {
-    //       return { valid: true, discount: Number.parseInt(res.data.discount) };
-    //     } else {
-    //       return { valid: false };
-    //     }
-    //   }
-    // };
+    const checkPromocode = async (promocode) => {
+      const res = await axios.get(
+        `${BASE_URL}/promocodes/check?promocode=${promocode}`
+      );
+
+      if(res.status === 401) return { valid: false};
+      if (res.data) {
+        if (res.data.valid) {
+          return { valid: true, discount: Number.parseInt(res.data.discount) };
+        } else {
+          return { valid: false };
+        }
+      }
+    };
 
     return (
         <AppContext.Provider
             value={{
+                promocode,
+                setPromocode,
+                checkPromocode,    
                 addToOrder,
                 handleQuantityChange,
                 removeFromOrder,

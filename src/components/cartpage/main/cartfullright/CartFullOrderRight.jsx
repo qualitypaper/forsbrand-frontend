@@ -56,25 +56,7 @@ const CartFullOrderLeft = ({deleteToOrder}) => {
                     deleteToOrder={() => deleteToOrder(item)}
                 />
             ))}
-            <div className="cart__order-full-list">
-                <div className="cart__order-full-list1">
-                    <img width={20} height={20} src={sale} alt="Sale" />
-                    <p onClick={() => setOpenPromotionalCode(!openPromotionalCode)}>
-                        Введіть промокод
-                    </p>
-                </div>
-                {openPromotionalCode && (
-                    <div className="cart__order-full-list1-open">
-                        <input
-                            className="inp2"
-                            type="text"
-                            placeholder="Веддіть промокод"
-                            onChange={handlePromocodeChange}
-                        />
-                        {/*<button onClick={checkPromocodeField}>Застосувати</button>*/}
-                    </div>
-                )}
-            </div>
+            
         </div>
     )
 }

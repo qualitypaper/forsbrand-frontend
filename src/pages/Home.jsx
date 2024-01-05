@@ -7,8 +7,10 @@ import Window from '../components/mainpage/window';
 import {AppContext} from "../components/app/App";
 import "./Home.scss";
 import {ProductJson} from "../assets/clothes";
+import { BASE_URL } from '../assets/constant';
 import PreLoader from "../components/preloader/PreLoader";
 import { useSpring, animated } from 'react-spring';
+import axios from 'axios';
 
 
 export const Home = () => {
@@ -36,8 +38,8 @@ export const Home = () => {
     useEffect(() => {
         const getClothes = async () => {
             setLoading(true);
-            const res = {data: ProductJson}
-            // const res = await axios.get(`${BASE_URL}/product/getAll`)
+            // const res = {data: ProductJson}
+            const res = await axios.get(`${BASE_URL}/product/getAll`)
             setCardData(res.data);
             setCurrentCardData(res.data); //
             setLoading(false);

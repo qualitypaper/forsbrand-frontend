@@ -5,7 +5,7 @@ import "./ShippingOptions.scss"
 import { BASE_URL } from '../../../../../assets/constant';
 import axios from 'axios';
 
-const ShippingOptions = () => {
+const ShippingOptions = ({ handleChange }) => {
     const {
         orderData,
         setOrderData,
@@ -38,9 +38,11 @@ const ShippingOptions = () => {
 
     const handleInputChange2 = (event) => {
         setInputValue(event.target.value);
+        handleChange("deliveryAddress", event.target.value);
     };
     const handleInputChange3 = (event) => {
         setDepartmentValue(event.target.value);
+        handleChange("departmentNumber", event.target.value);
     };
 
     const handleButtonClick4 = () => {
@@ -53,6 +55,11 @@ const ShippingOptions = () => {
         setDeliveryOpenMethod(false);
         setShowPay(false)
         setShowPayOpen(true)
+        console.log('id', selectedOption.id)
+        handleChange("deliveryTypeId", selectedOption.id);
+        handleChange("deliveryAddress", inputValue)
+        handleChange("departmentNumber", departmentValue)
+        
     };
     const handleShippingOptionChange = (option) => {
         console.log(option)
@@ -60,6 +67,9 @@ const ShippingOptions = () => {
         setInputValue('')
         setDepartmentValue('')
         setSelectedOption(option);
+        handleChange("deliveryAddress", '')
+        handleChange("departmentNumber", '')
+        handleChange("deliveryTypeId", option.id)
     };
 
     return (
@@ -85,6 +95,7 @@ const ShippingOptions = () => {
                     </div>
                     {shippingOptions.map((shipping) => (
                         <ShippingOption
+                            key={shipping.id}
                             id={shipping.id}
                             label={shipping.name}
                             selectedOption={selectedOption}

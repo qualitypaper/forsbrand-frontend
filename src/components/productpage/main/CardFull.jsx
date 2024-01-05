@@ -13,8 +13,6 @@ function CardFull({product, onClickAddToCart}) {
     const {name} =
         currentClothing;
 
-
-
     const getSizesImage = () => {
         if (currentClothing.group) {
             return currentClothing.group.sizesImage;

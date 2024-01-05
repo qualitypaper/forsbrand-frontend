@@ -3,7 +3,7 @@ import CheckoutInput from "../detailsform/CustomerDetailsForm";
 import {AppContext} from "../../../../app/App";
 import "./CheckoutInputs.scss"
 
-const CheckoutInputs = () => {
+const CheckoutInputs = ({handleChange}) => {
     const {
         showData,
         setShowData,
@@ -16,25 +16,26 @@ const CheckoutInputs = () => {
     const [ showNext, setShowNext] = React.useState(true)
     const [formData, setFormData] = React.useState({
         email: '',
-        name: '',
-        surname: '',
-        phone: '',
+        fisrtName: '',
+        lastName: '',
+        phoneNumber: '',
         country: '',
-        town: '',
-        postcode: '',
-        label: '',
+        city: '',
+        postalCode: '',
+        region: '',
         description: '',
     });
 
 
     const inputFields = [
         {label: 'Ел. пошта для підтвердження замовлення*', id: 'email', type: 'text'},
-        {label: 'Ім’я*', id: 'name', type: 'text'},
-        {label: 'Прізвище*', id: 'surname', type: 'text'},
-        {label: 'Телефон*', id: 'phone', type: 'tel'},
+        {label: 'Ім’я*', id: 'firstName', type: 'text'},
+        {label: 'Прізвище*', id: 'lastName', type: 'text'},
+        {label: 'Телефон*', id: 'phoneNumber', type: 'tel'},
         {label: 'Країна*', id: 'country', type: 'text'},
-        {label: 'Місто*', id: 'town', type: 'text'},
-        {label: 'Поштовий індекс*', id: 'postcode', type: 'text'},
+        {label: 'Місто*', id: 'city', type: 'text'},
+        {label: 'Регион', id: 'region', type: 'text'},
+        {label: 'Поштовий індекс*', id: 'postalCode', type: 'text'},
     ];
     //
     // useEffect(() => {
@@ -48,12 +49,13 @@ const CheckoutInputs = () => {
     //     fetchShippingOptions().then()
     // }, [])
 
-    const handleInputChange = (event) => {
+    const handleInputChange = (event, fieldName) => {
         const {id, value} = event.target;
         setFormData((prevData) => ({
             ...prevData,
             [id]: value,
         }));
+        handleChange(id, value);
     };
 
     const handleButtonClick = (event) => {
@@ -81,6 +83,7 @@ const CheckoutInputs = () => {
     const handleButtonClick2 = () => {
         setInputData(true)
         setShowData(false);
+        setDeliveryOpenMethod(false)
         setShowNext(false)
     };
 
@@ -110,7 +113,7 @@ const CheckoutInputs = () => {
                             type={field.type}
                             value={formData[field.id]}
                             required={true}
-                            onChange={handleInputChange}
+                            onChange={(e) => handleInputChange(e, field.id)}
                             showError={showError}
                         />
                     ))}

@@ -16,8 +16,8 @@ export const SwitchClothes = () => {
     
     useEffect(() => {
         const fetchData = async () => {
-            // const res = await axios.get(`${BASE_URL}/group/getAll`)
-            const res = {data: ProductJson}
+            const res = await axios.get(`${BASE_URL}/group/getAll`)
+            // const res = {data: ProductJson}
             const temp = ["All"]
             if (res.data) {
                 for (let element of res.data) {

@@ -21,11 +21,11 @@ const ShippingOption = ({ selectedOption, onChange, label, name,  id, value, add
                         </div>
                     </fieldset>
                     {selectedOption.id === id && (
-                        <div className="radio-subtext">
+                        <div className="radio-subtext" key={id}>
                             <p>{selectedOption.description}</p>
                             {selectedOption.requiredFieldsList.map((field) => (
-                                field === "ADDRESS_INPUT" ? <CheckoutInput value={addressValue} onChange={handleInputChange}  type="text" placeholder="Address"/> :
-                                    <CheckoutInput value={departmentValue} onChange={handleInputChange2}  type="text" placeholder="Department"/>
+                                field === "ADDRESS_INPUT" ? <CheckoutInput key={field} value={addressValue} onChange={handleInputChange}  type="text" placeholder="Address"/> :
+                                    <CheckoutInput key={field} value={departmentValue} onChange={handleInputChange2}  type="text" placeholder="Department"/>
                                 ))}
                         </div>
                     )}

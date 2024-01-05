@@ -22,9 +22,6 @@ export const CheckoutPage = () => {
             setCartItems([...cartItems, { ...item, quantity: 1 }]);
         }
     };
-    useEffect(() => {
-        if(cartItems.length === 0) window.location.href = "/"
-    }, [cartItems])
 
     // const deleteToOrder = (id) => {
     //     setCartItems((prevItems) => prevItems.filter(item => item.id !== id));
@@ -34,7 +31,7 @@ export const CheckoutPage = () => {
         <>
             <div className="mid1">
                      <HeaderCheckout />
-                     <MainCheckout    onAdd={addToOrder}
+                     <MainCheckout  onAdd={addToOrder}
                                       product={windowItems}/>
             </div>
         </>

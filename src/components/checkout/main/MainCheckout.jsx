@@ -1,7 +1,11 @@
-import React from 'react'
+import React, {useContext, useState} from 'react'
 import "./MainCheckout.scss"
 import CheckoutRight from "./checkoutright/CheckoutRight";
 import CheckoutLeft from "./checkoutleft/CheckoutLeft";
+import axios from 'axios';
+import { BASE_URL } from '../../../assets/constant';
+import { AppContext } from '../../app/App';
+
 // [{
 //     id: 0,
 //     name: 'ДОСТАВКА ПО УКРАЇНІ (NOVA POST)',
@@ -36,10 +40,41 @@ import CheckoutLeft from "./checkoutleft/CheckoutLeft";
 //     ]
 // },]
 const MainCheckout = () => {
+    const { cartItems } = useContext(AppContext);
+    const [updateChanges, setUpdateChanges] = useState({}); 
+
+    const handleChange = (key, value, firstKey=null) => {
+        if(key === 'deliveryTypeId') {
+            const temp = {...updateChanges, "deliveryTypeId": value};
+            console.log(temp);
+            setUpdateChanges(temp)
+        }
+        if(firstKey) {
+            const temp = {...updateChanges};
+            temp[firstKey][key] = value;
+            setUpdateChanges(temp)
+        } else {
+            setUpdateChanges({...updateChanges, [key]: value})
+        }
+    }
+
+    const constructProducts = () => {
+        const productArr = cartItems.map(product => ({quantity: product.quantity, size: product.size, productId: product.id}))
+        return {...updateChanges, products: productArr }
+    }
+
+    const submitOrder = async () => {
+        const result = constructProducts();
+        const res = await axios.post(`${BASE_URL}/order/create`, result)
+        if(res.data) {
+            /// send notification about the successful order creation
+        }
+    }
+
     return (
         <div className="checkout">
-            <CheckoutLeft />
-            <CheckoutRight />
+            <CheckoutLeft handleChange={handleChange} submitOrder={submitOrder}/>
+            <CheckoutRight handleChange={handleChange}/>
         </div>
     )
 }

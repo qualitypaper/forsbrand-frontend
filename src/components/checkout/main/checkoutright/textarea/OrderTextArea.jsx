@@ -1,10 +1,8 @@
-import React, {useContext, useState} from 'react'
-import {AppContext} from "../../../../app/App";
+import React, {useState} from 'react'
 import "./OrderTextArea.scss"
 import list1 from "../../../../../assets/images/list.svg";
 
-const OrderTextArea = () => {
-    const {} = useContext(AppContext);
+const OrderTextArea = ({ handleChange }) => {
     const [openNote, setOpenNote] = useState(false);
     const [userInput, setUserInput] = useState("");
     const [noteEdited, setNoteEdited] = useState(false);
@@ -20,6 +18,7 @@ const OrderTextArea = () => {
 
     const handleTextareaChange = (event) => {
         setUserInput(event.target.value);
+        handleChange("description", event.target.value)
     };
 
     const handleToggleNote = () => {
