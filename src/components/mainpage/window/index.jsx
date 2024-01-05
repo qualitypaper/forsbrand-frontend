@@ -6,8 +6,8 @@ import arrow_top from "../../../assets/images/arrow_top.svg";
 import { Link } from "react-router-dom";
 import { AppContext } from "../../app/App";
 import SomeComponent, {SIZES} from "../../../assets/constant";
-import arrow_down_background from "../../../assets/images/arrow_down_background.svg";
-import arrow_top_background from "../../../assets/images/arrow_top_background.svg";
+import arrow_down_background from "../../../assets/images/minus.svg";
+import arrow_top_background from "../../../assets/images/plus.svg";
 
 function Window({ openCart, onClickClosedWindow }) {
   const {
@@ -174,7 +174,7 @@ const [selectSize, setSelectSize] = useState(false)
             <div className="window__right">
               <div className="window__right-text">
                 <p>{windowItem.name}</p>
-                <p>{SomeComponent()}</p>
+                <p><SomeComponent currentClothing={windowItem} /></p>
               </div>
               <div className="window__right-size">
                 <p>Sizes</p>

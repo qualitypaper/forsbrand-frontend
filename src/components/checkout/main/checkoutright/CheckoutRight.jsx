@@ -34,7 +34,7 @@ const CheckoutRight = () => {
                             <div className="checkout-right__order-card-text">
                                 <div className="checkout-right__order-card-mainText">
                                     <p className="checkout-right__order-card-itemName">{item.name}</p>
-                                    <p className="checkout-right__order-card-price">{SomeComponent()}</p>
+                                    <p className="checkout-right__order-card-price"><SomeComponent currentClothing={item} /></p>
                                 </div>
                                 <p className="checkout-right__order-card-quantity">К-сть: {item.quantity}</p>
                                 <p className="checkout-right__order-card-size" >Розмір: {item.size}</p>

@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
-import arrow_top_background from "../../assets/images/arrow_top_background.svg";
-import arrow_down_background from "../../assets/images/arrow_down_background.svg";
+import arrow_top_background from "../../assets/images/plus.svg";
+import arrow_down_background from "../../assets/images/minus.svg";
 import "./QuantityInput.scss"
 import {AppContext} from "../app/App";
 

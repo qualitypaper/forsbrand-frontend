@@ -43,7 +43,7 @@ const CardFullRight = () => {
         return(
             <div className="product__page-text">
                 <p>{name}</p>
-                <p>{SomeComponent()}</p>
+                <p><SomeComponent currentClothing={currentClothing} /></p>
             </div>
         )
 

@@ -53,7 +53,7 @@ function Drawer({ onClickClosed, deleteToOrder, removeFromCart }) {
                           <div className="cart_item">
                             <p className="text">{item.name}</p>
                             <div className="sizePlusPrice">
-                              <b className="sizePlusPrice-Price">{SomeComponent()}</b>
+                              <b className="sizePlusPrice-Price"><SomeComponent currentClothing={item}/></b>
                               <p className="sizePlusPrice-Size">Розмір: {item.size}</p>
                             </div>
                             <QuantityInput

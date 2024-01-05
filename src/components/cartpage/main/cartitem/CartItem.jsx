@@ -50,7 +50,7 @@ const CartItem = ({
                         <p className="opacity-9">Розмір: {size}</p>
                     </div>
                     <div className="cart__order-full-right-price">
-                        <b>Ціна: {SomeComponent()}</b>
+                        <b>Ціна: <SomeComponent currentClothing={product  || {}} /></b>
                         <p>{availableSizes}</p>
                     </div>
                 </div>

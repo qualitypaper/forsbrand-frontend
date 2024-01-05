@@ -2,8 +2,9 @@
 import "./Card.scss"
 import React, { useState } from 'react';
 import {Link} from "react-router-dom";
+import SomeComponent from "../../../../../assets/constant";
 
-function Card({ card, onPlus, onPage }) {
+function Card({ card, onPlus }) {
     const [isHovered, setIsHovered] = useState(false);
 
     const handleMouseOver = () => {
@@ -21,7 +22,7 @@ function Card({ card, onPlus, onPage }) {
     };
 
     const {
-        images, originalPrice, currentPrice
+        images
     } = card;
 
     const imgSrc = isHovered ? images[1] : images[0];
@@ -36,7 +37,7 @@ function Card({ card, onPlus, onPage }) {
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
             />
-            <p className="price_text">{originalPrice}₴</p>
+            <p className="price_text"><SomeComponent currentClothing={card} /></p>
             </Link>
             <div className="card-button-container">
                 <button
