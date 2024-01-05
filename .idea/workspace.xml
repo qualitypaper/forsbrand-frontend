@@ -3,18 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="fixed bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/constant.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/constant.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cartpage/main/cartitem/CartItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartpage/main/cartitem/CartItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cartpage/main/cartitem/CartItem.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartpage/main/cartitem/CartItem.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/CheckoutRight.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/CheckoutRight.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/QuantityInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/QuantityInput.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/QuantityInput.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/QuantityInput.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/drawer/drawer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/drawer/drawer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/drawer/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/drawer/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/main/headerclothes/card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/main/headerclothes/card/Card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/window/Window.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/window/Window.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/window/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/window/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardright/CardFullRight.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/CardFullRight.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/privacypolicy/PrivacyPolicyComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/privacypolicy/PrivacyPolicyComponent.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +86,7 @@
       <workItem from="1704401275825" duration="3298000" />
       <workItem from="1704405549590" duration="6193000" />
       <workItem from="1704466968518" duration="3340000" />
-      <workItem from="1704471641643" duration="811000" />
+      <workItem from="1704471641643" duration="1500000" />
     </task>
     <task id="LOCAL-00001" summary="bug fixes CartFullOrder">
       <created>1703965466030</created>
@@ -141,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1704412069403</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fixed bugs">
+      <created>1704472688790</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1704472688790</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
