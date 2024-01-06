@@ -120,7 +120,7 @@ const [selectSize, setSelectSize] = useState(false)
       <div className="window">
         <div className="drawer1">
           <div className="cross-container" onClick={onClickClosedWindow}>
-            <img className="cross" width={20} height={20} src={cross} alt="" />
+            <img className="cross-window" width={20} height={20} src={cross} alt="" />
           </div>
           <div className="windowAll">
             <div className="window__left ">

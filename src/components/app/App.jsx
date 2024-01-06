@@ -20,6 +20,7 @@ const App = () => {
     //const [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem("cart")));
     const [windowProduct, setWindowProduct] = useState(false);
     const [imagesBoxOpened, setImagesBoxOpened] = useState(false);
+    const [openSeeSized, setOpenSeeSized] = useState(false);
     const [cardData, setCardData] = useState([]);
     const [currentCardData, setCurrentCardData] = useState([]);
     const [quantity, setQuantity] = useState(1);
@@ -231,6 +232,8 @@ const App = () => {
                 setSelectedButton,
                 buttonClicked,
                 setButtonClicked,
+                openSeeSized,
+                setOpenSeeSized,
             }}
         >
             <Router>

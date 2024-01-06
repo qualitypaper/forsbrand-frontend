@@ -25,9 +25,6 @@ const CheckoutLeft = ({ handleChange, submitOrder }) => {
                     <p>Оплата</p>
                 </div>
             }
-            <div className="checkout-left-review">
-                <p>Перегляньте та розмістіть замовлення</p>
-            </div>
         </section>
     )
 }

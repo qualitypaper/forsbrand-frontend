@@ -38,8 +38,8 @@ export const Home = () => {
     useEffect(() => {
         const getClothes = async () => {
             setLoading(true);
-            // const res = {data: ProductJson}
-            const res = await axios.get(`${BASE_URL}/product/getAll`)
+            const res = {data: ProductJson}
+            // const res = await axios.get(`${BASE_URL}/product/getAll`)
             setCardData(res.data);
             setCurrentCardData(res.data); //
             setLoading(false);

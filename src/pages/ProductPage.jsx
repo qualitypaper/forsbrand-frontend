@@ -43,8 +43,8 @@ export const ProductPage = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            // const res = {data: ProductJson.find(item => item.id === Number.parseInt(id))}
-            const res = await axios.get(`${BASE_URL}/product/get/${id}`);
+            const res = {data: ProductJson.find(item => item.id === Number.parseInt(id))}
+            // const res = await axios.get(`${BASE_URL}/product/get/${id}`);
             if (res.data) {
                 console.log(res.data)
                 setCurrentClothing(res.data)
@@ -66,11 +66,12 @@ export const ProductPage = () => {
 
 
     const productAnimation = useSpring({
-        opacity: 1,
-        filter: 'blur(0px)',
+        to: {
+            opacity: 1,
+        },
+
         from: {
             opacity: 0,
-            filter: 'blur(2px)',
         },
         config: {
             mass: 1,

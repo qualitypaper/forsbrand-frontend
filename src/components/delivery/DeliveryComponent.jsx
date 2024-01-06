@@ -3,6 +3,7 @@ import "./DeliveryComponent.scss"
 
 const DeliveryComponent = () => {
     return (
+
         <div className="DeliveryComponent">
             <p>
                 Доставка по Україні:<br/>

@@ -5,11 +5,12 @@ import { AppContext } from "../../app/App";
 import CardFullLeft from "./cardleft/CardFullLeft";
 import CardFullRight from "./cardright/CardFullRight";
 import SeeSizes from "./SeeSizes";
+import ClosedBox from "../seebox/closed/ClosedBox";
+import {FullScreen, useFullScreenHandle} from "react-full-screen";
+import FullScreenComponent from "../seebox/fullscreen/FullScreenComponent";
 
 function CardFull({product, onClickAddToCart}) {
-    const { currentClothing, currentImageIndex } = useContext(AppContext);
-    const [openSeeSized, setOpenSeeSized] = useState(false);
-
+    const { currentClothing, currentImageIndex, openSeeSized, setOpenSeeSized } = useContext(AppContext);
     const {name} =
         currentClothing;
 
@@ -19,14 +20,16 @@ function CardFull({product, onClickAddToCart}) {
         }
     };
     const OpenSeeSized = () => {
+        const clickOpenSeeSized = () => {
+            setOpenSeeSized(false);
+        };
         return(
-            <>
-            {openSeeSized && (
+            <div className="main-see_sizes-images">
                 <div className="see_sizes-images">
                     <img src={getSizesImage()} />
                 </div>
-            )}
-            </>
+             <ClosedBox />
+            </div>
         )
     }
 
@@ -39,7 +42,7 @@ function CardFull({product, onClickAddToCart}) {
                 <CardFullRight />
             </div>
             <SeeSizes setOpenSeeSized={setOpenSeeSized} />
-            <OpenSeeSized openSeeSized={openSeeSized} />
+            {openSeeSized && ( <OpenSeeSized />)}
         </div>
     );
 }

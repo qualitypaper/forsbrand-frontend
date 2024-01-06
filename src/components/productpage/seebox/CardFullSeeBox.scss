@@ -67,32 +67,7 @@
     background-color: rgba(220, 220, 220, 0.46);
   }
 
-  .cross {
-    position: absolute;
-    top: 0;
-    background-color: rgba(153, 153, 151, 0);
-    right: 0;
-    margin-right: 25px;
-    margin-top: 30px;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-    width: 50px; /* Adjust as needed */
-    height: 50px; /* Adjust as needed */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.5s;
 
-    img {
-      width: 20px;
-      height: 20px;
-    }
-  }
-
-  .cross:hover {
-    background-color: rgba(220, 220, 220, 0.46);
-  }
 
   .arrow {
     background-color: rgba(183, 183, 183, 0);

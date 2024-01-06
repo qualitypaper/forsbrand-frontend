@@ -1,12 +1,13 @@
 import { Footer } from "../components/mainpage/footer";
 
-import { useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { AppContext } from "../components/app/App";
 import {useParams } from "react-router-dom";
 import { ProductJson } from "../assets/clothes";
 import "./CartPage.scss";
 import CartFullOrder from "../components/cartpage/main/CartFullOrder";
 import {useSpring, animated} from "react-spring";
+import {Header} from "../components/productpage/header";
 
 const CartPage = () => {
   const {
@@ -49,6 +50,7 @@ const CartPage = () => {
       <div className="mid">
         <div className="mid_background1">
           <div className="one">
+            <Header text="CartPage" />
             <animated.div style={cartPageAnimation}>
             <CartFullOrder deleteToOrder={deleteToOrder} />
             </animated.div>
