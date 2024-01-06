@@ -1,33 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="fixed bugs">
-      <change afterPath="$PROJECT_DIR$/src/components/productpage/seebox/closed/ClosedBox.scss" afterDir="false" />
+    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="add page with sizes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/app/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cartpage/main/CartFullOrder.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartpage/main/CartFullOrder.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/MainCheckout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/MainCheckout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/CheckoutLeft.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/CheckoutLeft.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/CheckoutLeft.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/CheckoutLeft.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/contacts/ContactsComponent.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/contacts/ContactsComponent.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/delivery/DeliveryComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/delivery/DeliveryComponent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/delivery/DeliveryComponent.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/delivery/DeliveryComponent.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/window/Window.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/window/Window.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/clothes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/clothes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/main/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/main/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/main/pages/Pages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/main/pages/Pages.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/mainpage/window/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/window/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/privacypolicy/PrivacyPolicyComponent.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/privacypolicy/PrivacyPolicyComponent.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/header/Header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/CardFull.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/CardFull.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/CardFull.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/CardFull.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/SeeSizes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/SeeSizes.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/SeeSizes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/SeeSizes.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/seebox/CardFullSeeBox.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/seebox/CardFullSeeBox.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/seebox/closed/ClosedBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/seebox/closed/ClosedBox.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CartPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CartPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Contacts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Contacts.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Delivery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Delivery.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productpage/seebox/CardFullSeeBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/seebox/CardFullSeeBox.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/PrivacyPolicy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/PrivacyPolicy.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProductPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProductPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +94,7 @@
       <workItem from="1704405549590" duration="6193000" />
       <workItem from="1704466968518" duration="3340000" />
       <workItem from="1704471641643" duration="5165000" />
-      <workItem from="1704497978770" duration="5204000" />
+      <workItem from="1704497978770" duration="11327000" />
     </task>
     <task id="LOCAL-00001" summary="bug fixes CartFullOrder">
       <created>1703965466030</created>
@@ -169,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1704473486197</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add page with sizes">
+      <created>1704554920118</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1704554920118</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,7 +184,8 @@
     <MESSAGE value="refactoring ProductPage" />
     <MESSAGE value="made seeBox" />
     <MESSAGE value="fixed bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed bugs" />
+    <MESSAGE value="add page with sizes" />
+    <option name="LAST_COMMIT_MESSAGE" value="add page with sizes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -213,6 +204,12 @@
           <url>file://$PROJECT_DIR$/src/pages/CartPage.jsx</url>
           <line>14</line>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/mainpage/main/Main.jsx</url>
+          <line>46</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

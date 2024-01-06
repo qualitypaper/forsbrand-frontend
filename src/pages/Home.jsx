@@ -75,12 +75,10 @@ export const Home = () => {
     const currentClothes = Array.isArray(currentCardData) ? currentCardData.slice(itemOffset, endOffset) : [];
     const pageCount = Math.ceil(currentCardData.length / clothesPerPage);
 
-    const handlePageClick = (event) => {
-        const newOffset = (event.selected * clothesPerPage) % cardData.length;
+    const handlePageClick = (pageNumber) => {
+        const newOffset = ((pageNumber - 1) * clothesPerPage) % cardData.length;
         setItemOffset(newOffset);
     };
-    // const firstIndex = currentPage === 0 ? 0 : ((currentPage-1)*9) + 1
-    // const currentClothes = ProductJson.slice(firstIndex, currentPage*2)
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
     };

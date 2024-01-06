@@ -7,6 +7,8 @@ import arrow_top_background from "../../../assets/images/arrow_top_background.sv
 import arrow_down_background from "../../../assets/images/arrow_down_background.svg";
 import ReactPaginate from "react-paginate";
 import {StyledEngineProvider, Typography} from "@mui/material";
+import {ConfigProvider, Pagination} from 'antd';
+import {CaretUpOutlined, CaretDownOutlined, CaretLeftOutlined, CaretRightOutlined} from '@ant-design/icons';
 
 export const Main = ({
                          onAdd,
@@ -23,7 +25,7 @@ export const Main = ({
                          onPageChange,
                          pageCount,
                          currentPage,
-
+                         clothesPerPage
                      }) => {
 
     // const isFirstVisit = !localStorage.getItem('visited');
@@ -39,54 +41,47 @@ export const Main = ({
     // }
 
     return (
-        <div className="background">
-            <LogoMain/>
-            <SwitchClothes/>
-            <Typography>
-                <HeaderClothes
-                    currentItems={currentItems}
-                    card={card}
-                    onAdd={onAdd}
-                    setWindowVisible={setWindowVisible}
-                    onPlus={onPlus}
-                    onPage={onPage}
+        <ConfigProvider
+            theme={{
+                token: {
+                    colorPrimary: '#360d0d',
+                    borderRadius: 2,
+                    colorBgContainer: 'rgba(166,166,166,0.51)',
+                },
+            }}
+        >
+            <div className="background">
+                <LogoMain />
+                <SwitchClothes />
+                <Typography>
+                    <HeaderClothes
+                        currentItems={currentItems}
+                        card={card}
+                        onAdd={onAdd}
+                        setWindowVisible={setWindowVisible}
+                        onPlus={onPlus}
+                        onPage={onPage}
+                    />
+                </Typography>
+                <Pagination
+                    current={currentPage}
+                    total={totalClothes}
+                    pageSize={clothesPerPage}
+                    onChange={onPageChange}
+                    defaultCurrent={currentPage}
+                    showSizeChanger={false}
+                    className="pagination"
+                    itemRender={(current, type, originalElement) => {
+                        if (type === 'prev') {
+                            return <CaretLeftOutlined className="img-arrow2" />;
+                        }
+                        if (type === 'next') {
+                            return <CaretRightOutlined className="img-arrow1" />;
+                        }
+                        return originalElement;
+                    }}
                 />
-            </Typography>
-            <StyledEngineProvider injectFirst>
-                {/*<Pages*/}
-                {/*    previousPage={previousPage}*/}
-                {/*    totalClothes={totalClothes}*/}
-                {/*    paginate={paginate}*/}
-                {/*    clothesPerPage={9}*/}
-                {/*    breakLabel={breakLabel}*/}
-                {/*    onPageChange={onPageChange}*/}
-                {/*    renderOnZeroPageCount={renderOnZeroPageCount}*/}
-                {/*    containerClassName={"pagination"}*/}
-                {/*    pageLinkClassName={"page-number"}*/}
-                {/*    previousLinkClassName={"page-number"}*/}
-                {/*    nextLinkClassName={"page-number"}*/}
-                {/*    activeLinkClassName={"active"}*/}
-                {/*    forcePage={currentPage}*/}
-                {/*/>*/}
-            </StyledEngineProvider>
-            <ReactPaginate
-                previousPage={previousPage}
-                totalClothes={totalClothes}
-                paginate={paginate}
-                breakLabel={breakLabel}
-                onPageChange={onPageChange}
-                pageCount={pageCount}
-                renderOnZeroPageCount={renderOnZeroPageCount}
-                containerClassName={"pagination"}
-                pageLinkClassName={"page-number"}
-                previousLinkClassName={"page-number"}
-                nextLinkClassName={"page-number"}
-                pageRangeDisplayed={2}
-                nextLabel={<img  className="img-arrow1" src={arrow_top_background} alt="Next" />}
-                previousLabel={<img  className="img-arrow2"  src={arrow_down_background} alt="Next" />}
-                activeLinkClassName={"active"}
-                forcePage={currentPage}
-            />
-        </div>
+            </div>
+        </ConfigProvider>
     );
 };

@@ -45,7 +45,6 @@ const CardFullSeeBox = () => {
                 <ArrowLeft handleSwipe={() => handleSwipe('Left')} />
                 <ImagesBox />
                 <ArrowRight handleSwipe={() => handleSwipe("Right")} totalPages={totalPages}/>
-                <ZoomLoup />
                 <FullScreenComponent handle={handle}/>
                 <ClosedBox />
             </div>

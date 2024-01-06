@@ -8,6 +8,8 @@ import { AppContext } from "../../app/App";
 import SomeComponent, {SIZES} from "../../../assets/constant";
 import arrow_down_background from "../../../assets/images/minus.svg";
 import arrow_top_background from "../../../assets/images/plus.svg";
+import { Button } from 'antd';
+import { Cascader } from 'antd';
 
 function Window({ openCart, onClickClosedWindow }) {
   const {
@@ -27,7 +29,41 @@ function Window({ openCart, onClickClosedWindow }) {
     addToOrder,
   } = useContext(AppContext);
 const [selectSize, setSelectSize] = useState(false)
-
+  const options = [
+    {
+      label: 'Light',
+      value: 'light',
+      children: new Array(20).fill(null).map((_, index) => ({
+        label: `Number ${index}`,
+        value: index,
+      })),
+    },
+    {
+      label: 'Bamboo',
+      value: 'bamboo',
+      children: [
+        {
+          label: 'Little',
+          value: 'little',
+          children: [
+            {
+              label: 'Toy Fish',
+              value: 'fish',
+              disableCheckbox: true,
+            },
+            {
+              label: 'Toy Cards',
+              value: 'cards',
+            },
+            {
+              label: 'Toy Bird',
+              value: 'bird',
+            },
+          ],
+        },
+      ],
+    },
+  ];
   useEffect(() => {
     const json = JSON.stringify(cartItems);
     localStorage.setItem("cart", json);
@@ -178,7 +214,8 @@ const [selectSize, setSelectSize] = useState(false)
               </div>
               <div className="window__right-size">
                 <p>Sizes</p>
-                <button
+                <Button
+                    type=""
                   className="window__right-size-btn cu-p"
                   onClick={() => setOpen(!open)}
                 >
@@ -190,7 +227,16 @@ const [selectSize, setSelectSize] = useState(false)
                     src={open ? arrow_top : arrow_down}
                     alt=""
                   />
-                </button>
+                </Button>
+                {/*<Cascader*/}
+                {/*    style={{*/}
+                {/*      width: '100%',*/}
+                {/*    }}*/}
+                {/*    options={options}  // Замените на свой список опций*/}
+                {/*    onChange={onClickSorting}  // Замените на ваш обработчик изменения*/}
+                {/*    multiple*/}
+                {/*    maxTagCount="responsive"*/}
+                {/*/>*/}
                 {selectSize && !textList && (
                 <p className="select_sizeWindow">Виберіть розмір</p>
                 )}
@@ -208,7 +254,6 @@ const [selectSize, setSelectSize] = useState(false)
                   </div>
                 )}
               </div>
-
               <div className="window__right-number">
                 <p>Кількість</p>
                 {/*<QuantityInput*/}

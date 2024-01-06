@@ -23,7 +23,6 @@
   gap: 13px;
   padding: 60px 0 20px;
 }
-
 .page-number {
   align-items: center;
   justify-content: center;
@@ -48,4 +47,7 @@
 .active {
   /* Styles for the active (selected) page link */
   color: #999997; /* Example color */
+}
+.itemBg{
+  color: black;
 }
