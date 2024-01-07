@@ -15,6 +15,7 @@ const CartItem = ({
                       deleteToOrder,
                       product,
                       removeFromOrder,
+
                   }) => {
     const { cartItems, setCartItemCount, setTotalCost } =
         useContext(AppContext);
@@ -39,37 +40,38 @@ const CartItem = ({
     }, [cartItems]);
 
     return (
-        <div className="cartItems">
-            <div className="cartItems-left">
-                <div className="cartItems-img">
-                    <img src={images[0]} width={100} height={105} alt="" />
+    <div className="cartItems">
+        <div className="cartItems-left">
+            <div className="cartItems-img">
+                <img src={images[0]} width={100} height={105} alt=""/>
+            </div>
+            <div className="cart__order-full-right-text">
+                <div className="cart__order-full-right-name">
+                    <p className="text">{name}</p>
+                    <p className="opacity-9">Розмір: {size}</p>
                 </div>
-                <div className="cart__order-full-right-text">
-                    <div className="cart__order-full-right-name">
-                        <p className="text">{name}</p>
-                        <p className="opacity-9">Розмір: {size}</p>
-                    </div>
-                    <div className="cart__order-full-right-price">
-                        <b>Ціна: <SomeComponent currentClothing={product  || {}} /></b>
-                        <p>{availableSizes}</p>
-                    </div>
-                </div>
-                <div className="quantity1">
-                    <QuantityInput
-                        item={product}
-                        removeFromCart={removeFromOrder}
-                        value={quantity}
-                        setQuantity={setQuantity}
-                    />
-                    <img
-                        onClick={deleteToOrder}
-                        src={cross}
-                        className="m-20 cu-p"
-                        alt="ClosedBox"
-                    />
+                <div className="cart__order-full-right-price">
+                    <b>Ціна: <SomeComponent currentClothing={product || {}}/></b>
+                    <p>{availableSizes}</p>
                 </div>
             </div>
+            <div className="quantity1">
+                <QuantityInput
+                    item={product}
+                    removeFromCart={removeFromOrder}
+                    value={quantity}
+                    setQuantity={setQuantity}
+                />
+                <img
+                    onClick={deleteToOrder}
+                    src={cross}
+                    className="m-20 cu-p"
+                    alt="ClosedBox"
+                />
+            </div>
         </div>
+    </div>
+
     );
 };
 

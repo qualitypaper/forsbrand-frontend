@@ -17,9 +17,9 @@ const CardFullRight = () => {
 
     const { name } = currentClothing;
 
-    const handleQuantityChange = (event) => {
-        event.preventDefault();
-        setQuantity(event.target.value);
+
+    const handleQuantityChange = (value) => {
+        setQuantity(value);
     };
 
     const handleAddToCart = () => {

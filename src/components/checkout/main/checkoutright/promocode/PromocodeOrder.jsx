@@ -2,19 +2,19 @@ import React, {useContext, useState} from 'react'
 import sale from "../../../../../assets/images/sale.svg";
 import {AppContext} from "../../../../app/App";
 import "./PromocodeOrder.scss"
-
+import { App} from 'antd';
 
 const PromocodeOrder = ({ handlePromocodeChange } ) => {
     const {
         openPromotionalCode,
         setOpenPromotionalCode,
         checkPromocode,
-        promocode, 
+        promocode,
         setPromocode
     } = useContext(AppContext);
-
+    const { message, modal, notification } = App.useApp();
     const [promocodeText, setPromocodeText] = useState('');
-    const [notification, setNotification] = useState("");
+    const [notifications, setNotifications] = useState("");
 
     const checkPromo = async () => {
         const res = await checkPromocode(promocodeText);
@@ -23,33 +23,32 @@ const PromocodeOrder = ({ handlePromocodeChange } ) => {
                 setPromocode({promocode: promocodeText, discount: res.discount})
                 handlePromocodeChange(promocodeText)
                 setPromocodeText('')
-                setNotification({
-                    type: 'success',
-                    message: `Промокод дійсний! Знижка: ${res.discount}%`
-                });
+                showNotification('success', 'Промокод дійсний. Спробуйте ще раз.');
                 setTimeout(() => {
-                    setOpenPromotionalCode(false)                    
+                    setOpenPromotionalCode(false)
                     closeNotification()
                 }, 2000)
             } else {
                 setOpenPromotionalCode(true)
-                setNotification({
-                    type: 'error',
-                    message: 'Промокод недійсний. Спробуйте ще раз.'
-                });
+                showNotification('error', 'Промокод недійсний. Спробуйте ще раз.');
             }
         }
     };
-
+    const showNotification = (type, message) => {
+        notification[type]({
+            message: message,
+            placement: 'topLeft',
+        });
+    };
     const closeNotification = () => {
-        setNotification("");
+        setNotifications("");
     };
 
     return (
         <div className="checkout-right__order-promo-main">
             <div className="checkout-right__order-promo-text">
                 <img width={20} height={20} src={sale} alt="Sale" />
-                <p onClick={() => !promocode.promocode && setOpenPromotionalCode(!openPromotionalCode)}>Введіть промокод</p>
+                <p onClick={() => setOpenPromotionalCode(!openPromotionalCode)}>Введіть промокод</p>
             </div>
             {(!promocode || openPromotionalCode) && (
                 <div className="checkout-right__order-promo-open">
@@ -65,9 +64,9 @@ const PromocodeOrder = ({ handlePromocodeChange } ) => {
                     </button>
                 </div>
             )}
-            {notification && (
-                <div className={`notification ${notification.type}`} onClick={closeNotification}>
-                    {notification.message}
+            {notifications && (
+                <div className={`notification ${notifications.type}`} onClick={closeNotification}>
+                    {notifications.message}
                 </div>
             )}
         </div>

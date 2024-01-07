@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="add page with sizes">
+    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="changed pagination">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/clothes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/clothes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/main/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/main/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/main/pages/Pages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/main/pages/Pages.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cartpage/main/cartitem/CartItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartpage/main/cartitem/CartItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/promocode/PromocodeOrder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/promocode/PromocodeOrder.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/main/headerclothes/card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/main/headerclothes/card/Card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/window/Window.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/window/Window.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/mainpage/window/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/window/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/seebox/CardFullSeeBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/seebox/CardFullSeeBox.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardleft/CardFullLeft.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardleft/CardFullLeft.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardright/CardFullRight.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/CardFullRight.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardright/quantity/CardFullRightQuantity.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/quantity/CardFullRightQuantity.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardright/quantity/CardFullRightQuantity.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/quantity/CardFullRightQuantity.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardright/sizes/CardFullRightSizes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/sizes/CardFullRightSizes.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardright/sizes/CardFullRightSizes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/sizes/CardFullRightSizes.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +97,9 @@
       <workItem from="1704405549590" duration="6193000" />
       <workItem from="1704466968518" duration="3340000" />
       <workItem from="1704471641643" duration="5165000" />
-      <workItem from="1704497978770" duration="11327000" />
+      <workItem from="1704497978770" duration="11412000" />
+      <workItem from="1704576067164" duration="6135000" />
+      <workItem from="1704583455384" duration="5362000" />
     </task>
     <task id="LOCAL-00001" summary="bug fixes CartFullOrder">
       <created>1703965466030</created>
@@ -159,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1704554920118</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="changed pagination">
+      <created>1704561758556</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1704561758556</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,7 +197,8 @@
     <MESSAGE value="made seeBox" />
     <MESSAGE value="fixed bugs" />
     <MESSAGE value="add page with sizes" />
-    <option name="LAST_COMMIT_MESSAGE" value="add page with sizes" />
+    <MESSAGE value="changed pagination" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed pagination" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -208,8 +221,12 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/mainpage/main/Main.jsx</url>
           <line>46</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/productpage/main/cardright/quantity/CardFullRightQuantity.jsx</url>
+          <line>22</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

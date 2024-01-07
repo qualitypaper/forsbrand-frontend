@@ -101,6 +101,7 @@
         }
       }
     }
+
     .window__left-img {
       width: 500px;
       height: 500px;
@@ -128,21 +129,22 @@
         border-color: rgb(218, 218, 218);
       }
     }
-        .circle {
-          display: flex;
-          gap: 10px;
-          justify-content: center;
-          position: relative;
-          width: calc(5 * calc(4 * 4px));
-          overflow: hidden;
-          margin: 0 auto;
 
-          input {
-            color: black;
-            margin-top: 30px;
-          }
-        }
+    .circle {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      position: relative;
+      width: calc(5 * calc(4 * 4px));
+      overflow: hidden;
+      margin: 0 auto;
+
+      input {
+        color: black;
+        margin-top: 30px;
       }
+    }
+  }
 }
 
 
@@ -161,100 +163,112 @@
       color: #5d5d5d;
     }
   }
-        .window__right-text {
-          font-size: 16px;
-          line-height: 15px;
-          font-weight: 600;
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          text-transform: uppercase;
-          p{
-            word-break: break-all;
-          }
-        }
 
-        .window__right-size {
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-.select_sizeWindow{
-  color: rgba(255, 0, 0, 0.55);
-  font-weight: 600;
-  font-size: 16px;
-}
-          p {
-            text-transform: uppercase;
+  .window__right-text {
+    font-size: 16px;
+    line-height: 15px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-transform: uppercase;
 
-          }
+    p {
+      word-break: break-all;
+    }
+  }
 
-          .window__right-size-btn {
-            display: flex;
-            border: 1px solid black;
-            padding: 10px;
-            cursor: pointer;
-            align-items: center; /* Align items vertically in the center */
+  .window__right-size {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    .select{
+      border-radius: 0;
+      cursor: pointer;
+      border: 1px solid #858585;
+    }
 
-            p {
-              flex: 1; /* Take up remaining space */
-            }
+    .select_sizeWindow {
+      color: rgba(255, 0, 0, 0.55);
+      font-weight: 600;
+      font-size: 16px;
+    }
 
-            img {
-              margin-left: 10px; /* Adjust the margin as needed */
-              max-width: 100px; /* Set a maximum width for the image */
-              height: auto; /* Maintain the aspect ratio of the image */
-            }
-          }
+    p {
+      text-transform: uppercase;
 
-          .window__right-size-open {
-            object-fit: contain;
-            object-position: center center;
-            z-index: 1;
-            position: absolute;
-            margin: 66px 0;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            width: 274px;
+    }
 
-            li {
-              background-color: #f5f5f5;
-              list-style: none;
-              padding: 5px 5px;
-              border: 1px solid rgba(161, 161, 161, 0.53);
+    .window__right-size-btn {
+      display: flex;
+      border: 1px solid black;
+      padding: 10px;
+      cursor: pointer;
+      align-items: center; /* Align items vertically in the center */
 
-              &:hover {
-                color: white;
-                background-color: #797979;
-              }
-            }
-          }
-        }
-
-        .window__right-number {
-          input {
-            border: 1px solid black;
-          }
-        }
-
-        .window__right-btn {
-          border: 1px solid black;
-          padding: 15px 80px;
-          transition: border 0.3s;
-          p{
-            color: black;
-            transition: color 0.3s;
-          }
-          &:hover{
-            border: 1px solid #999997;
-            p{
-              color: #999997;
-            }
-          }
-        }
+      p {
+        flex: 1; /* Take up remaining space */
       }
 
+      img {
+        margin-left: 10px; /* Adjust the margin as needed */
+        max-width: 100px; /* Set a maximum width for the image */
+        height: auto; /* Maintain the aspect ratio of the image */
+      }
+    }
 
+    .window__right-size-open {
+      object-fit: contain;
+      object-position: center center;
+      z-index: 1;
+      position: absolute;
+      margin: 66px 0;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      width: 274px;
+
+      li {
+        background-color: #f5f5f5;
+        list-style: none;
+        padding: 5px 5px;
+        border: 1px solid rgba(161, 161, 161, 0.53);
+
+        &:hover {
+          color: white;
+          background-color: #797979;
+        }
+      }
+    }
+  }
+
+
+
+  .window__right-number {
+    input {
+      border: 1px solid black;
+    }
+  }
+
+  .window__right-btn {
+    border: 1px solid black;
+    padding: 15px 80px;
+    transition: border 0.3s;
+
+    p {
+      color: black;
+      transition: color 0.3s;
+    }
+
+    &:hover {
+      border: 1px solid #999997;
+
+      p {
+        color: #999997;
+      }
+    }
+  }
+}
 
 
 @media (max-width: 888px) {
@@ -262,7 +276,6 @@
     display: none;
   }
 }
-
 
 
 .original_price {

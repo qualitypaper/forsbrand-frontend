@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import {SIZES} from "../../../../../assets/constant";
-import CardFullRightSizesOpen from "../sizesopen/CardFullRightSizesOpen";
 import "./CardFullRightSizes.scss"
-import SizeSelectionButton from "../selectionbutton/SizeSelectionButton";
+import {ConfigProvider, Select} from "antd";
 
 const CardFullRightSizes = ({ buttonClicked, selected, setSelected, chosenSize }) => {
     const [isOpen, setOpen] = useState(false);
@@ -17,19 +16,46 @@ const CardFullRightSizes = ({ buttonClicked, selected, setSelected, chosenSize }
 
     return (
         <div className="product__page-size">
-            <SizeSelectionButton
-                textList={textList}
-                setOpen={setOpen}
-                open={isOpen}
+        <ConfigProvider
+            theme={{
+                components: {
+                    Select: {
+                        colorPrimary: '#eb2f96',
+                        borderRadius: '0',
+                        colorBgContainer: '#ffffff',
+                        optionSelectedBg: '#ffffff',
+                        borderRadiusXS: '0',
+                        borderRadiusLG: '0',
+                        borderRadiusSM: '0',
+                    }
+                },
+            }}
+        >
+            <p className="opacity-8">Sizes</p>
+            <Select
+                style={{
+                    width: 170,
+
+                }}
+                allowClear
+                placeholder="Виберіть розмір"
+                className="select"
+                optionFilterProp="children"
+                filterOption={(button, option) => (option?.label ?? '').includes(button)}
+                options={list.map((sort, index) => ({
+                    value: sort,
+                    label: (
+                        <li key={index} onClick={() => onClickSorting(index)}>
+                            {sort}
+                        </li>
+                    ),
+                }))}
             />
-            <CardFullRightSizesOpen
-                open={isOpen}
-                list={list}
-                onClickSorting={onClickSorting}
-            />
+
             {buttonClicked && !textList && (
                 <p className="select_size">{chosenSize}</p>
             )}
+        </ConfigProvider>
         </div>
     );
 };

@@ -1,18 +1,28 @@
 import React from 'react';
 import "./CardFullRightQuantity.scss"
+import {InputNumber} from "antd";
+import {ConfigProvider} from "antd/lib";
 
-const CardFullRightQuantity = ({ handleQuantityChange, sizes, open, quantityText }) => {
+const CardFullRightQuantity = ({handleQuantityChange, quantityText}) => {
     return (
-        <div className="main_quantity">
-            <p className="opacity-8">{quantityText}</p>
-            <input
-                onChange={handleQuantityChange}
-                className="input_quantity"
-                type="number"
-                min={1}
-                max={sizes[open] || 100}
-            />
-        </div>
+        <>
+            <ConfigProvider
+                theme={{
+                    components: {
+                        InputNumber: {
+                            colorPrimary: '#eb2f96',
+                            borderRadius: '0',
+                            colorBgContainer: '#ff0000'
+                        }
+                    },
+                }}
+            >
+                <div className="main_quantity">
+                    <p className="opacity-8">{quantityText}</p>
+                    <InputNumber className="quantity-card" onChange={handleQuantityChange} min={1} max={100} />
+                </div>
+            </ConfigProvider>
+        </>
     );
 };
 

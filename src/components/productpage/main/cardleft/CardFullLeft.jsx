@@ -4,6 +4,7 @@ import "./CardFullLeft.scss";
 import fullscreen from "../../../../assets/images/fullscreen.svg";
 import { SwitchCardFull } from "./switch/SwitchCardFull";
 
+
 const CardFullLeft = () => {
     const { currentClothing, currentImageIndex, setImagesBoxOpened, imagesBoxOpened } = useContext(AppContext);
 
@@ -40,6 +41,7 @@ const CardFullLeft = () => {
                 <div className="images_zoom">
                     {isHovered && (
                         <div className="images_zoom_background">
+
                             <img onClick={() => setImagesBoxOpened(!imagesBoxOpened)} src={fullscreen} alt="" />
                         </div>
                     )}
@@ -49,6 +51,14 @@ const CardFullLeft = () => {
                     src={images[currentImageIndex]}
                     alt=""
                 />
+                {/*<Image.PreviewGroup*/}
+                {/*    items={images}*/}
+                {/*>*/}
+                {/*    <Image*/}
+                {/*        width={500}*/}
+                {/*        src={images[currentImageIndex]}*/}
+                {/*    />*/}
+                {/*</Image.PreviewGroup>*/}
             </div>
         );
     };
