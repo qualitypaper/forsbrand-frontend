@@ -220,10 +220,10 @@ function Window({openCart, onClickClosedWindow}) {
                                         style={{
                                             width: 170,
                                         }}
-                                        allowClear
                                         placeholder="Виберіть розмір"
                                         className="select"
                                         optionFilterProp="children"
+                                        value={textList}
                                         filterOption={(button, option) => (option?.label ?? '').includes(button)}
                                         options={list.map((sort, index) => ({
                                             value: sort,
@@ -235,7 +235,7 @@ function Window({openCart, onClickClosedWindow}) {
                                         }))}
                                     />
                                     {selectSize && !textList && (
-                                        <p className="select_sizeWindow"> <Stack sx={{ width: '100%' }} spacing={2}>
+                                        <p className="select_sizeWindow"> <Stack sx={{ width: '100%' }} spacing={1}>
                                                <Alert severity="error">Виберіть розмір</Alert>
                                             </Stack>
                                         </p>

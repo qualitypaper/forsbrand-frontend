@@ -46,9 +46,9 @@ const CardFullRightSizes = ({ buttonClicked, selected, setSelected, chosenSize }
                     width: 170,
 
                 }}
-                allowClear
                 placeholder="Виберіть розмір"
                 className="select"
+                value={textList}
                 optionFilterProp="children"
                 filterOption={(button, option) => (option?.label ?? '').includes(button)}
                 options={list.map((sort, index) => ({
