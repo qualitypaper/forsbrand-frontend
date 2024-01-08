@@ -9,7 +9,7 @@ const Delivery = () => {
         <div className="mid">
             <div className="mid_background2">
                 <div className="one1">
-                    <Header text="Delivery" />
+                    <Header maintext="Головна /" text="Delivery" />
             <DeliveryComponent />
         </div>
             </div>

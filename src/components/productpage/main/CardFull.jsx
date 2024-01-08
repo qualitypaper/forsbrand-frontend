@@ -36,7 +36,7 @@ function CardFull({product, onClickAddToCart}) {
 
     return (
         <div className="card__full">
-            <Header text={name} id={currentImageIndex} />
+            <Header text={name} maintext="Головна /" id={currentImageIndex} />
             <div className="card__full-all">
                 <CardFullLeft onClickAddToCart={onClickAddToCart} product={product} />
                 <CardFullRight />

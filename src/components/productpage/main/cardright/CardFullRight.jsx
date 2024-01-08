@@ -10,7 +10,7 @@ const CardFullRight = () => {
     const [buttonClicked, setButtonClicked] = useState(false);
     const [selected, setSelected] = useState(false);
     const { addToOrder, setWindowProduct, currentClothing, setCartOpened } = useContext(AppContext);
-
+    const [open, setOpen] = useState(false)
     const openCart = () => {
         setCartOpened(true);
     };
@@ -34,6 +34,8 @@ const CardFullRight = () => {
             size: SIZES[selected],
             quantity: Number.parseInt(quantity),
         };
+
+        setOpen(true)
 
         addToOrder(temp);
         openCart();
@@ -67,6 +69,7 @@ const CardFullRight = () => {
                 <CardFullRightSizes
                     buttonClicked={buttonClicked}
                     selected={selected}
+                    
                     setSelected={setSelected}
                     chosenSize="Виберіть розмір"
                 />

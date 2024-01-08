@@ -17,7 +17,7 @@
           .header__product-navigation-bold {
             font-weight: bold;
             color: black;
-
+            font-size: 22px;
           }
 
           .header__product-navigation-opacity {
@@ -50,6 +50,9 @@
         gap: 20px;
         .header__product-nav {
           .header__product-navigation{
+            .header__product-navigation-bold{
+              font-size: 12px;
+            }
             p{
               font: normal normal normal 11px/17px "courier new", courier-ps-w01, courier-ps-w02, courier-ps-w10, monospace;
               word-break: break-all;

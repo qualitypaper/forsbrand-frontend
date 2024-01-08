@@ -6,8 +6,10 @@ import {AppContext} from "../../app/App";
 import SomeComponent, {SIZES} from "../../../assets/constant";
 import arrow_down_background from "../../../assets/images/minus.svg";
 import arrow_top_background from "../../../assets/images/plus.svg";
-import {Alert, ConfigProvider, Select, Spin} from 'antd';
+import {ConfigProvider, Select, Spin} from 'antd';
 import {LoadingOutlined} from "@ant-design/icons";
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
 
 function Window({openCart, onClickClosedWindow}) {
     const {
@@ -198,7 +200,18 @@ function Window({openCart, onClickClosedWindow}) {
                                                 borderRadiusLG: '0',
                                                 borderRadiusSM: '0',
                                                 colorBorderHover: '#ffffff'
-                                            }
+                                            },
+                                                Alert: {
+                                                    colorPrimary: '#eb2f96',
+                                                    borderRadius: '0',
+                                                    colorBgContainer: '#ffffff',
+                                                    optionSelectedBg: '#ffffff',
+                                                    borderRadiusXS: '0',
+                                                    borderRadiusLG: '0',
+                                                    borderRadiusSM: '0',
+                                                    colorBorderHover: '#ffffff'
+                                                }
+                                    
                                         },
                                     }}
                                 >
@@ -222,8 +235,10 @@ function Window({openCart, onClickClosedWindow}) {
                                         }))}
                                     />
                                     {selectSize && !textList && (
-                                        <p className="select_sizeWindow"><Alert message="Виберіть Розмір" type="error"
-                                                                                showIcon/></p>
+                                        <p className="select_sizeWindow"> <Stack sx={{ width: '100%' }} spacing={2}>
+                                               <Alert severity="error">Виберіть розмір</Alert>
+                                            </Stack>
+                                        </p>
                                     )}
                                 </ConfigProvider>
                             </div>

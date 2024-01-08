@@ -1,9 +1,15 @@
-.pagination {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
+.background{
+  margin-bottom: 40px;
+.paginations{
+  .pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+  }
 }
+}
+
 
 .page-number {
   cursor: pointer;

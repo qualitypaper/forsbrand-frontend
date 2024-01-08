@@ -50,7 +50,7 @@ const CartPage = () => {
       <div className="mid">
         <div className="mid_background1">
           <div className="one">
-            <Header text="CartPage" />
+            <Header maintext="НАЗАД"  />
             <animated.div style={cartPageAnimation}>
             <CartFullOrder deleteToOrder={deleteToOrder} />
             </animated.div>

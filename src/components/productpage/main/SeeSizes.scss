@@ -39,21 +39,6 @@
 }
 
 
-@media (max-width: 325px) {
-  .see_sizes{
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    .see_sizes-btn{
-      padding: 5px;
-      width: 80%;
-      flex-wrap: nowrap;
-      .see_sizes-text{
-        font-size: 13px;
-      }
-    }
-  }
-}
 @media (max-width: 816px) {
   .see_sizes{
     justify-content: center;
@@ -65,13 +50,28 @@
     margin-bottom: 15px;
     .see_sizes-btn{
       padding: 5px;
-      width: 80%;
+      width: 296px;
       .see_sizes-text{
         font-size: 15px;
       }
       .see_sizes-img{
         width: 20px;
         height: 20px;
+      }
+    }
+  }
+}
+@media (max-width: 325px) {
+  .see_sizes{
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    .see_sizes-btn{
+      padding: 5px;
+      width: 245px;
+      flex-wrap: nowrap;
+      .see_sizes-text{
+        font-size: 13px;
       }
     }
   }

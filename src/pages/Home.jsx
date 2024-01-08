@@ -89,14 +89,14 @@ export const Home = () => {
         from: { opacity: 0 },
     });
 
-
+    const cartItemCount = cartItems.length;
     return (
         <animated.div style={homeAnimation}>
             {logoAnimation && <PreLoader />}
             <div className="mid">
                 <div className="mid_background1">
                     <div className="one1">
-                        <HeaderMain onClickCart={() => setCartOpened(true)} />
+                        <HeaderMain cartItemCount={cartItemCount} onClickCart={() => setCartOpened(true)} />
                             {cartOpened && (
                                 <Drawer
                                     deleteToOrder={deleteToOrder}

@@ -2,7 +2,7 @@ import React from 'react'
 import "./Header.scss"
 import {Link} from "react-router-dom";
 
-export const Header = ({ text }) => {
+export const Header = ({ text, maintext }) => {
     // const [currentId, setCurrentId] = useState(0);
 
     // const handleNextClick = () => {
@@ -18,7 +18,7 @@ export const Header = ({ text }) => {
                     <div className="header__product-nav">
                         <nav className="header__product-navigation">
                             <Link to="/">
-                                <p className="header__product-navigation-bold">Головна / </p>
+                                <p className="header__product-navigation-bold">{maintext}</p>
                             </Link>
                             <p className="header__product-navigation-opacity">{text}</p>
                         </nav>

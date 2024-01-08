@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {SIZES} from "../../../../../assets/constant";
 import "./CardFullRightSizes.scss"
-import {ConfigProvider, Select} from "antd";
+import {ConfigProvider, Select, Alert} from "antd";
 
 const CardFullRightSizes = ({ buttonClicked, selected, setSelected, chosenSize }) => {
     const [isOpen, setOpen] = useState(false);
@@ -20,6 +20,15 @@ const CardFullRightSizes = ({ buttonClicked, selected, setSelected, chosenSize }
             theme={{
                 components: {
                     Select: {
+                        colorPrimary: '#eb2f96',
+                        borderRadius: '0',
+                        colorBgContainer: '#ffffff',
+                        optionSelectedBg: '#ffffff',
+                        borderRadiusXS: '0',
+                        borderRadiusLG: '0',
+                        borderRadiusSM: '0',
+                    },
+                    Alert: {
                         colorPrimary: '#eb2f96',
                         borderRadius: '0',
                         colorBgContainer: '#ffffff',
@@ -53,7 +62,8 @@ const CardFullRightSizes = ({ buttonClicked, selected, setSelected, chosenSize }
             />
 
             {buttonClicked && !textList && (
-                <p className="select_size">{chosenSize}</p>
+                <p className="select_size"><Alert message="Виберіть Розмір" type="error"
+                showIcon/></p>
             )}
         </ConfigProvider>
         </div>

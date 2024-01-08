@@ -9,7 +9,7 @@ const PrivacyPolicy = () => {
         <div className="mid">
             <div className="mid_background2">
                 <div className="one1">
-                    <Header text="PrivacyPolicy" />
+                    <Header maintext="Головна /" text="PrivacyPolicy" />
                     <PrivacyPolicyComponent />
                 </div>
             </div>

@@ -9,7 +9,7 @@ const Contacts = () => {
         <div className="mid">
             <div className="mid_background2">
                 <div className="one1">
-                    <Header text="Contacts" />
+                    <Header maintext="Головна /" text="Contacts" />
                     <ContactsComponent />
                 </div>
             </div>

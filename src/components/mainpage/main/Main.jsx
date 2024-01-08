@@ -8,7 +8,7 @@ import arrow_down_background from "../../../assets/images/arrow_down_background.
 import ReactPaginate from "react-paginate";
 import {StyledEngineProvider, Typography} from "@mui/material";
 import {ConfigProvider, Pagination} from 'antd';
-import {CaretUpOutlined, CaretDownOutlined, CaretLeftOutlined, CaretRightOutlined} from '@ant-design/icons';
+import {CaretUpOutlined, CaretDownOutlined, CaretLeftOutlined, ArrowLeftOutlined, ArrowRightOutlined} from '@ant-design/icons';
 
 export const Main = ({
                          onAdd,
@@ -44,11 +44,12 @@ export const Main = ({
         <ConfigProvider
             theme={{
                 token: {
-                    colorPrimary: '#360d0d',
+                    colorPrimary: '#0000000',
                     borderRadius: 2,
-                    colorBgContainer: 'rgba(166,166,166,0.51)',
+                    colorBgContainer: '#fffffff',
                 },
             }}
+    
         >
             <div className="background">
                 <LogoMain />
@@ -63,6 +64,9 @@ export const Main = ({
                         onPage={onPage}
                     />
                 </Typography>
+                <div className='paginations'>
+
+    
                 <Pagination
                     current={currentPage}
                     total={totalClothes}
@@ -70,17 +74,19 @@ export const Main = ({
                     onChange={onPageChange}
                     defaultCurrent={currentPage}
                     showSizeChanger={false}
+                    style={{ marginBottom: '20px' }}
                     className="pagination"
                     itemRender={(current, type, originalElement) => {
                         if (type === 'prev') {
-                            return <CaretLeftOutlined className="img-arrow2" />;
+                            return <ArrowLeftOutlined  className="img-arrow2" />;
                         }
                         if (type === 'next') {
-                            return <CaretRightOutlined className="img-arrow1" />;
+                            return <ArrowRightOutlined  className="img-arrow1" />;
                         }
                         return originalElement;
                     }}
                 />
+                      </div>
             </div>
         </ConfigProvider>
     );
