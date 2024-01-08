@@ -19,7 +19,7 @@ const CardFullRightQuantity = ({handleQuantityChange, quantityText}) => {
             >
                 <div className="main_quantity">
                     <p className="opacity-8">{quantityText}</p>
-                    <InputNumber className="quantity-card" onChange={handleQuantityChange} min={1} max={100} />
+                    <InputNumber className="quantity-card" defaultValue={1} onChange={handleQuantityChange} min={1} max={100} />
                 </div>
             </ConfigProvider>
         </>

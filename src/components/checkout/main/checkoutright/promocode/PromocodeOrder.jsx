@@ -23,23 +23,18 @@ const PromocodeOrder = ({ handlePromocodeChange } ) => {
                 setPromocode({promocode: promocodeText, discount: res.discount})
                 handlePromocodeChange(promocodeText)
                 setPromocodeText('')
-                showNotification('success', 'Промокод дійсний. Спробуйте ще раз.');
+                setNotifications({ message: `Промокод дійсний! ${res.discount}%`});
                 setTimeout(() => {
                     setOpenPromotionalCode(false)
                     closeNotification()
                 }, 2000)
             } else {
                 setOpenPromotionalCode(true)
-                showNotification('error', 'Промокод недійсний. Спробуйте ще раз.');
+                setNotifications({ message: 'Промокод недійсний. Спробуйте ще раз.'});
             }
         }
     };
-    const showNotification = (type, message) => {
-        notification[type]({
-            message: message,
-            placement: 'topLeft',
-        });
-    };
+ 
     const closeNotification = () => {
         setNotifications("");
     };

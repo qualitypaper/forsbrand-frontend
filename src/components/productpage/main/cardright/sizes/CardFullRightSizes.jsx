@@ -20,7 +20,6 @@ const CardFullRightSizes = ({ buttonClicked, selected, setSelected, chosenSize }
             theme={{
                 components: {
                     Select: {
-                        colorPrimary: '#eb2f96',
                         borderRadius: '0',
                         colorBgContainer: '#ffffff',
                         optionSelectedBg: '#ffffff',
@@ -29,7 +28,6 @@ const CardFullRightSizes = ({ buttonClicked, selected, setSelected, chosenSize }
                         borderRadiusSM: '0',
                     },
                     Alert: {
-                        colorPrimary: '#eb2f96',
                         borderRadius: '0',
                         colorBgContainer: '#ffffff',
                         optionSelectedBg: '#ffffff',
@@ -42,10 +40,6 @@ const CardFullRightSizes = ({ buttonClicked, selected, setSelected, chosenSize }
         >
             <p className="opacity-8">Sizes</p>
             <Select
-                style={{
-                    width: 170,
-
-                }}
                 placeholder="Виберіть розмір"
                 className="select"
                 value={textList}
@@ -55,7 +49,7 @@ const CardFullRightSizes = ({ buttonClicked, selected, setSelected, chosenSize }
                     value: sort,
                     label: (
                         <li key={index} onClick={() => onClickSorting(index)}>
-                            {sort}
+                            <b>{sort}</b>
                         </li>
                     ),
                 }))}
