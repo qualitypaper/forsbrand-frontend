@@ -74,7 +74,6 @@ export const Main = ({
                     onChange={onPageChange}
                     defaultCurrent={currentPage}
                     showSizeChanger={false}
-                    style={{ marginBottom: '20px' }}
                     className="pagination"
                     itemRender={(current, type, originalElement) => {
                         if (type === 'prev') {

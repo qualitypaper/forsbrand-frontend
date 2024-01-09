@@ -215,11 +215,8 @@ function Window({openCart, onClickClosedWindow}) {
                                         },
                                     }}
                                 >
-                                    <p>Sizes</p>
+                                    <p>Розмір</p>
                                     <Select
-                                        style={{
-                                            width: 170,
-                                        }}
                                         placeholder="Виберіть розмір"
                                         className="select"
                                         optionFilterProp="children"

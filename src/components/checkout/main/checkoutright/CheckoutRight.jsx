@@ -64,7 +64,7 @@ const CheckoutRight = ({ handleChange }) => {
                 <p>
                   {selectedOption && selectedOption.price !== undefined
                     ? `${selectedOption.price}₴`
-                    : "Выберите доставку"}
+                    : "Виберіть доставку"}
                 </p>
               </li>
             </li>

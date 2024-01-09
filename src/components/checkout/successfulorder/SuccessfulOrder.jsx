@@ -7,7 +7,7 @@ import {useNavigate} from "react-router-dom";
      const  navigate = useNavigate()
 
      useEffect(() => {
-             localStorage.removeItem('cart');
+             localStorage.setItem('cart', []);
      }, []);
 
      const onClickOnButton = () => {

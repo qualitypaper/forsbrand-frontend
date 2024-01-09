@@ -10,7 +10,11 @@
       display: flex;
       gap: 3px;
       align-items: center;
-      p{
+      .shopping-cart {
+        width: 24px;
+        height: 24px;
+      }
+      p {
         font-weight: 200;
         font-size: 15px;
       }
@@ -24,7 +28,7 @@
       align-items: center;
       border: 1px solid #000000;
     }
-    .popup{
+    .popup {
       position: absolute;
       background: #ffffff;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.09);
@@ -46,11 +50,9 @@
             }
           }
 
-          .active  {
+          .active {
             background: rgba(30, 254, 79, 0.11);
           }
-
-
         }
       }
     }
@@ -61,13 +63,14 @@
   .header {
     .header__main {
       position: sticky;
+      gap: 0;
       justify-content: flex-end;
     }
-      .header__main {
-        .header__main-btn{
-          display: none;
-        }
+    .header__main {
+      .header__main-btn {
+        display: none;
       }
+    }
     .header__main {
       .header__main-cart {
         p {

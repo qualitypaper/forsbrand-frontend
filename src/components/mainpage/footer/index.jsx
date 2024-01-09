@@ -15,7 +15,7 @@ export const Footer = () => {
                         <img src={instagram} alt=""/>
                     </div>
                     <div className="footer__img-text">
-                        <p>Copyright © 2023, Кирилл Буданов представляет</p>
+                        <p>Copyright © 2024, Forsbrand all rights reserved.</p>
                     </div>
                 </div>
                 <div className="footer-top">

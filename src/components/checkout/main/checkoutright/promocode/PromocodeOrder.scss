@@ -50,8 +50,17 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 430px) {
 .checkout-right__order-promo-main{
   font-size: 0.8rem;
+  .checkout-right__order-promo-open{
+    input{
+      padding: 8px;
+    }
+     button{
+      height: 28px;
+     }
+  }
 }
+
 }

@@ -1,5 +1,5 @@
-import React, {useContext, useState, useEffect} from 'react'
-import {AppContext} from "../../../../app/App";
+import React, { useContext, useState, useEffect } from 'react'
+import { AppContext } from "../../../../app/App";
 import ShippingOption from "./shippingoption/ShippingOption";
 import "./ShippingOptions.scss"
 import { BASE_URL } from '../../../../../assets/constant';
@@ -21,17 +21,19 @@ const ShippingOptions = ({ handleChange }) => {
     const [inputValue, setInputValue] = useState('');
     const [shippingOptions, setShippingOptions] = useState([]);
     const [departmentValue, setDepartmentValue] = useState('');
+    const [addressError, setAddressError] = useState('');
+    const [departmentError, setDepartmentError] = useState('');
     const [continueToPayment, setContinueToPayment] = useState(false);
 
     //
     useEffect(() => {
         const fetchShippingOptions = async () => {
             const res = await axios.get(`${BASE_URL}/delivery-types/getAll`);
-            if(res.data) {
+            if (res.data) {
                 setShippingOptions(res.data)
             }
         }
-    
+
         fetchShippingOptions().then()
     }, [])
 
@@ -48,9 +50,35 @@ const ShippingOptions = ({ handleChange }) => {
     const handleButtonClick4 = () => {
         setOrderData(false);
         setDeliveryOpenMethod(true);
-        setContinueToPayment(true)
+        setContinueToPayment(true);
+        setShowPay(false);
+        setShowPayOpen(true);
     };
     const handleButtonClick3 = () => {
+        console.log(inputValue)
+        if (selectedOption.requiredFieldsList.length === 2) {
+            if (inputValue === undefined || inputValue === "") {
+                setAddressError("Please provide an address");
+                if (departmentValue === undefined || departmentValue === "") {
+                    setDepartmentError("Please provide an department number");
+                }
+                return;
+            }
+        } else {
+            if (selectedOption.requiredFieldsList[0] === "ADDRESS_INPUT") {
+                if (inputValue === undefined || inputValue === "") {
+                    setAddressError("Please provide an address");
+                    return;
+                }
+            } else {
+                if (departmentValue === undefined || departmentValue === "") {
+                    setDepartmentError("Please provide an department number");
+                    return;
+                }
+            }
+        }
+
+
         setOrderData(true);
         setDeliveryOpenMethod(false);
         setShowPay(false)
@@ -59,7 +87,7 @@ const ShippingOptions = ({ handleChange }) => {
         handleChange("deliveryTypeId", selectedOption.id);
         handleChange("deliveryAddress", inputValue)
         handleChange("departmentNumber", departmentValue)
-        
+
     };
     const handleShippingOptionChange = (option) => {
         console.log(option)
@@ -96,6 +124,8 @@ const ShippingOptions = ({ handleChange }) => {
                     {shippingOptions.map((shipping) => (
                         <ShippingOption
                             key={shipping.id}
+                            showErrorAddress={addressError}
+                            showErrorDepartmentNumber={departmentError}
                             id={shipping.id}
                             label={shipping.name}
                             selectedOption={selectedOption}

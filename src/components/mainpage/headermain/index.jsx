@@ -1,13 +1,8 @@
-import React from 'react';
-import logo_cart from "../../../assets/images/cart_logo.svg";
-import arrow_down from "../../../assets/images/arrow_down.svg";
-import arrow_top from "../../../assets/images/arrow_top.svg";
-import "./HeaderMain.scss";
-import StyledBadge from '@mui/material/Badge';
-import Badge from '@mui/material/Badge';
-import { styled } from '@mui/material/styles';
-import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import StyledBadge from '@mui/material/Badge';
+import IconButton from '@mui/material/IconButton';
+import React from 'react';
+import "./HeaderMain.scss";
 
 export const HeaderMain = ({ onClickCart, cartItemCount }) => {
   const list = ["UAH ₴"];
@@ -25,20 +20,20 @@ export const HeaderMain = ({ onClickCart, cartItemCount }) => {
       <div className="containerHeader">
         <div className="header__main">
           <div onClick={onClickCart} className="header__main-cart cu-p">
-          <IconButton  aria-label="cart">
-               <StyledBadge badgeContent={cartItemCount} color="secondary" style={{ transform: 'translateY(-5%)' }}>
-            <ShoppingCartIcon  />
-          </StyledBadge>
-                 </IconButton>
+            <IconButton aria-label="cart">
+              <StyledBadge badgeContent={cartItemCount} color="info" style={{ transform: 'translateY(-5%)' }}>
+                <ShoppingCartIcon className="shopping-cart" classes={{width: "100px"}}/>
+              </StyledBadge>
+            </IconButton>
 
           </div>
           <div className="plant-shopping-right-sorting-popup">
-            <ul>
+            {/* <ul>
               <button onClick={() => setOpen(!open)} className="header__main-btn">
                 <p>{waluta}</p>
                 <img onClick={() => setOpen(!open)} src={open ? arrow_top : arrow_down} alt="" />
               </button>
-            </ul>
+            </ul> */}
             {open && (
               <div className="popup">
                 <ul>

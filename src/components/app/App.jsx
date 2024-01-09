@@ -35,7 +35,6 @@ const App = () => {
     const [cartItemCount, setCartItemCount] = useState(0);
     const [totalCost, setTotalCost] = useState(0);
     const [currentPage, setCurrentPage] = React.useState(1);
-    const [clothesPerPage] = React.useState(9);
     const [pageNumber, setPageNumber] = React.useState(1);
     const [selected, setSelected] = React.useState(false);
     const [open, setOpen] = React.useState(false);
@@ -52,6 +51,25 @@ const App = () => {
     const [selectedOption, setSelectedOption] = React.useState({});
     const [buttonClicked, setButtonClicked] = useState(false);
     const [promocode, setPromocode ] = useState({});
+    const [clothesPerPage, setClothesPerPage] = useState(9);
+  
+
+    const handleResize = () => {
+        if (window.innerWidth <= 813) {
+          setClothesPerPage(10);
+        } else {
+          setClothesPerPage(9);
+        }
+      };
+    
+    
+      React.useEffect(() => {
+        window.addEventListener('resize', handleResize);
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []); 
+
 
     const addToOrder = (item) => {
         console.log(item);
@@ -62,7 +80,6 @@ const App = () => {
         console.log(cartItems);
 
         if (temp) {
-            // Item with the same id and size already exists in the cart
             if (item.quantity) {
                 temp.quantity += item.quantity;
             } else {
@@ -70,7 +87,7 @@ const App = () => {
             }
             setCartItems([...cartItems]);
         } else {
-            // Item with the same id and size doesn't exist in the cart
+        
             if (!item.quantity) {
                 setCartItems([...cartItems, {...item, quantity: 1}]);
             } else {
@@ -79,7 +96,6 @@ const App = () => {
         }
         console.log(cartItems);
     };
-
     const removeFromOrder = (item) => {
         const temp = cartItems.find(
             (e) => e.id === item.id && e.size === item.size

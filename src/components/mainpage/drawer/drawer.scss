@@ -1,5 +1,6 @@
 .overlay {
   transition: opacity 0.5s ease-in-out;
+  z-index: 99;
   top: 0;
   right: 0;
   width: 100%;
@@ -45,6 +46,7 @@
         font-size: 25px;
         color: #ffffff;
         padding: 40px 0;
+        letter-spacing: 1px
       }
 
     }
@@ -79,11 +81,8 @@
         .cart_item{
           margin-left: 20px;
           flex: 1;
-.sizePlusPrice{
-
-}
           .text {
-            margin-bottom: 5px;
+            margin-bottom: 2px;
             text-transform: uppercase;
             word-break: break-all;
             margin-right: 15px;
@@ -233,6 +232,7 @@
       .Btn {
         width: 85%;
         font-size: 13px;
+        margin: 26px;
       }
     }
   }
@@ -253,6 +253,7 @@
       .Btn {
         width: 85%;
         font-size: 13px;
+        margin: 22px;
       }
     }
   }
@@ -290,7 +291,9 @@
       .Btn {
         width: 85%;
         font-size: 13px;
+        margin: 16px;
       }
+    
     }
   }
 }
@@ -309,7 +312,7 @@
         }
       }
       .Btn {
-        width: 85%;
+        width: 90%;
         font-size: 13px;
       }
     }

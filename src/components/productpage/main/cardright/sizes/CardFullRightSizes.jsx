@@ -27,7 +27,6 @@ const CardFullRightSizes = ({ buttonClicked, selected, setSelected, chosenSize }
                         borderRadiusXS: '0',
                         borderRadiusLG: '0',
                         borderRadiusSM: '0',
-                        colorBorderInfo
                     },
                     Alert: {
                         colorPrimary: '#eb2f96',
@@ -43,9 +42,6 @@ const CardFullRightSizes = ({ buttonClicked, selected, setSelected, chosenSize }
         >
             <p className="opacity-8">Sizes</p>
             <Select
-                style={{
-                    width: 180,
-                }}
                 placeholder="Виберіть розмір"
                 className="select"
                 value={textList}

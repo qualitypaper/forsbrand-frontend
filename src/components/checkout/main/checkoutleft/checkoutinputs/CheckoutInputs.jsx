@@ -95,11 +95,11 @@ const CheckoutInputs = ({handleChange}) => {
                         <p>Деталі клієнта й доставки:</p>
                         <p onClick={handleButtonClick2} className="cu-p">Змінити</p>
                     </div>
-                    <p className="checkout-open-text"> {formData.name} {formData.surname} </p>
+                    <p className="checkout-open-text"> {formData.name} {formData.lastName} </p>
                     <p className="checkout-open-text"> {formData.email}</p>
-                    <p className="checkout-open-text"> {formData.phone}</p>
-                    <p className="checkout-open-text"> {formData.country}, {formData.town}</p>
-                    <p className="checkout-open-text"> {formData.address} {formData.postcode}</p>
+                    <p className="checkout-open-text"> {formData.phoneNumber}</p>
+                    <p className="checkout-open-text"> {formData.country}, {formData.city}</p>
+                    <p className="checkout-open-text"> {formData.address} {formData.postalCode}</p>
                 </div>
             }
             {inputData &&

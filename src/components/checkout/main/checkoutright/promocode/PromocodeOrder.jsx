@@ -12,7 +12,6 @@ const PromocodeOrder = ({ handlePromocodeChange } ) => {
         promocode,
         setPromocode
     } = useContext(AppContext);
-    const { message, modal, notification } = App.useApp();
     const [promocodeText, setPromocodeText] = useState('');
     const [notifications, setNotifications] = useState("");
 
@@ -23,23 +22,18 @@ const PromocodeOrder = ({ handlePromocodeChange } ) => {
                 setPromocode({promocode: promocodeText, discount: res.discount})
                 handlePromocodeChange(promocodeText)
                 setPromocodeText('')
-                showNotification('success', 'Промокод дійсний. Спробуйте ще раз.');
+                setNotifications({ message: <div className='mt-3'>`Промокод дійсний! <b>${res.discount}%`</b> </div>});
                 setTimeout(() => {
                     setOpenPromotionalCode(false)
                     closeNotification()
                 }, 2000)
             } else {
                 setOpenPromotionalCode(true)
-                showNotification('error', 'Промокод недійсний. Спробуйте ще раз.');
+                setNotifications({ message: <div className='mt-3'>Промокод недійсний. Спробуйте ще раз.</div>});
             }
         }
     };
-    const showNotification = (type, message) => {
-        notification[type]({
-            message: message,
-            placement: 'topLeft',
-        });
-    };
+ 
     const closeNotification = () => {
         setNotifications("");
     };

@@ -8,6 +8,7 @@ import "./CartPage.scss";
 import CartFullOrder from "../components/cartpage/main/CartFullOrder";
 import {useSpring, animated} from "react-spring";
 import {Header} from "../components/productpage/header";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const CartPage = () => {
   const {
@@ -50,7 +51,10 @@ const CartPage = () => {
       <div className="mid">
         <div className="mid_background1">
           <div className="one">
-            <Header maintext="НАЗАД"  />
+            <Header maintext={<div className="header_back"> 
+                <ArrowBackIcon /> 
+                 <h4 className="BACK">НАЗАД</h4>
+            </div>} />
             <animated.div style={cartPageAnimation}>
             <CartFullOrder deleteToOrder={deleteToOrder} />
             </animated.div>

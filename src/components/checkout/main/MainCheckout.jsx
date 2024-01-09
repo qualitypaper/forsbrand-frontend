@@ -44,6 +44,7 @@ const MainCheckout = () => {
     const [updateChanges, setUpdateChanges] = useState({}); 
 
     const handleChange = (key, value, firstKey=null) => {
+        console.log("key: ", key, "value: ", value)
         if(key === 'deliveryTypeId') {
             const temp = {...updateChanges, "deliveryTypeId": value};
             console.log(temp);
@@ -66,10 +67,13 @@ const MainCheckout = () => {
     const submitOrder = async () => {
         const result = constructProducts();
         const res = await axios.post(`${BASE_URL}/order/create`, result)
+        debugger
         if(res.data) {
             /// send notification about the successful order creation
         }
     }
+
+    console.log(updateChanges.products)
 
     return (
         <div className="checkout">

@@ -36,7 +36,7 @@ function Drawer({ onClickClosed, deleteToOrder, removeFromCart }) {
                   alt="Remove"
               />
               <div className="header_drawer-main">
-                <h2 className="header_text fz-20 text-uppercase">Cart</h2>
+                <h2 className="header_text fz-18 text-uppercase">Кошик</h2>
               </div>
             </div>
             {cartItems.length > 0 ? (
@@ -95,16 +95,16 @@ function Drawer({ onClickClosed, deleteToOrder, removeFromCart }) {
                   </div>
                 </div>
             ) : (
-                <div className="cartEmpty d-flex align-center justify-center flex-column flex">
+                <div className=" m-10 cartEmpty d-flex align-center justify-center flex-column flex">
                   <img
-                      className="mb-20"
+                      className=""
                       width="240"
                       height="240"
                       src={logo_img}
                       alt="Empty"
                   />
                   <h2>Нічого немає</h2>
-                  <p className="opacity-6 m-20">Додайте хочаб одну річ</p>
+                  <p className="opacity-6 ">Додайте хочаб одну річ</p>
                   <button onClick={onClickClosed} className="Btn">
                     <img
                         className="Arrow2"
