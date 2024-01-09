@@ -51,14 +51,14 @@ const CardFullLeft = () => {
                     src={images[currentImageIndex]}
                     alt=""
                 />
-                {/*<Image.PreviewGroup*/}
+                {/* <Image.PreviewGroup*/}
                 {/*    items={images}*/}
                 {/*>*/}
                 {/*    <Image*/}
                 {/*        width={500}*/}
                 {/*        src={images[currentImageIndex]}*/}
                 {/*    />*/}
-                {/*</Image.PreviewGroup>*/}
+                {/*</Image.PreviewGroup> */}
             </div>
         );
     };

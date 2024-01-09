@@ -25,9 +25,9 @@ export const HeaderMain = ({ onClickCart, cartItemCount }) => {
       <div className="containerHeader">
         <div className="header__main">
           <div onClick={onClickCart} className="header__main-cart cu-p">
-          <IconButton aria-label="cart">
-               <StyledBadge badgeContent={cartItemCount}   color="info"  style={{ transform: 'translateY(-5%)' }}>
-            <ShoppingCartIcon />
+          <IconButton  aria-label="cart">
+               <StyledBadge badgeContent={cartItemCount} color="secondary" style={{ transform: 'translateY(-5%)' }}>
+            <ShoppingCartIcon  />
           </StyledBadge>
                  </IconButton>
 
