@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import Payment from "./payment/Payment";
 import {AppContext} from "../../../app/App";
 import "./CheckoutLeft.scss"
@@ -10,11 +10,12 @@ const CheckoutLeft = ({ handleChange, submitOrder }) => {
         showPay,
         showPayOpen,
     } = useContext(AppContext);
+    const [deliveryState, setDeliveryState] = useState(false);
     
     return (
         <section className="checkout-left">
-            <CheckoutInputs handleChange={handleChange}/>
-            <ShippingOptions handleChange={handleChange}/>
+            <CheckoutInputs handleChange={handleChange} deliveryState={deliveryState}/>
+            <ShippingOptions handleChange={handleChange} setDeliveryState={setDeliveryState}/>
             {showPayOpen &&
                 <div className="checkout-left-delivery2">
                     <Payment submitOrder={submitOrder}/>

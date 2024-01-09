@@ -20,13 +20,10 @@ function CardFull({product, onClickAddToCart}) {
         }
     };
     const OpenSeeSized = () => {
-        const clickOpenSeeSized = () => {
-            setOpenSeeSized(false);
-        };
         return(
             <div className="main-see_sizes-images">
                 <div className="see_sizes-images">
-                    <img src={getSizesImage()} />
+                    <img src={getSizesImage()} alt="sizes"/>
                 </div>
              <ClosedBox />
             </div>

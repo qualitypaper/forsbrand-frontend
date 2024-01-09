@@ -67,7 +67,6 @@ const MainCheckout = () => {
     const submitOrder = async () => {
         const result = constructProducts();
         const res = await axios.post(`${BASE_URL}/order/create`, result)
-        debugger
         if(res.data) {
             /// send notification about the successful order creation
         }

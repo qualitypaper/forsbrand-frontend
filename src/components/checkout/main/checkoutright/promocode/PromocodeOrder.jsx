@@ -19,7 +19,6 @@ const PromocodeOrder = ({ handlePromocodeChange } ) => {
         const res = await checkPromocode(promocodeText);
         if (res) {
             if (res.valid) {
-                setPromocode({promocode: promocodeText, discount: res.discount})
                 handlePromocodeChange(promocodeText)
                 setPromocodeText('')
                 setNotifications({ message: <div className='mt-3'>`Промокод дійсний! <b>${res.discount}%`</b> </div>});
@@ -27,6 +26,7 @@ const PromocodeOrder = ({ handlePromocodeChange } ) => {
                     setOpenPromotionalCode(false)
                     closeNotification()
                 }, 2000)
+                setPromocode({promocode: promocodeText, discount: res.discount})
             } else {
                 setOpenPromotionalCode(true)
                 setNotifications({ message: <div className='mt-3'>Промокод недійсний. Спробуйте ще раз.</div>});
@@ -59,7 +59,7 @@ const PromocodeOrder = ({ handlePromocodeChange } ) => {
                 </div>
             )}
             {notifications && (
-                <div className={`notification ${notifications.type}`} onClick={closeNotification}>
+                <div className={`notification mt-10 ${notifications.type}`} onClick={closeNotification}>
                     {notifications.message}
                 </div>
             )}

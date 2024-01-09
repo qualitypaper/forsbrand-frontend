@@ -9,7 +9,9 @@ export const SwitchCardFull = () => {
     } = useContext(AppContext)
     const { images } =
         currentClothing;
+
     const [selectedButton, setSelectedButton] = useState(0);
+    
     const isButtonSelected = (index) => {
         return selectedButton === index;
     };
@@ -17,6 +19,7 @@ export const SwitchCardFull = () => {
         setCurrentImageIndex(index);
         setSelectedButton(index);
     };
+
     return (
         <div className="switch_cardfull">
             {images &&

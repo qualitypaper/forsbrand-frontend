@@ -6,13 +6,15 @@ import {ConfigProvider, Select, Alert} from "antd";
 const CardFullRightSizes = ({ buttonClicked, selected, setSelected, chosenSize }) => {
     const [isOpen, setOpen] = useState(false);
 
-    const list = SIZES;
-    const textList = list[selected];
-
+    const [textList, setTextList] = useState(SIZES[selected]);
+    
     const onClickSorting = (i) => {
         setSelected(i);
+        setTextList(SIZES[i]);
         setOpen(false);
     };
+    
+    console.log(textList)
 
     return (
         <div className="product__page-size">
@@ -20,7 +22,6 @@ const CardFullRightSizes = ({ buttonClicked, selected, setSelected, chosenSize }
             theme={{
                 components: {
                     Select: {
-                        colorPrimary: '#eb2f96',
                         borderRadius: '0',
                         colorBgContainer: '#ffffff',
                         optionSelectedBg: '#ffffff',
@@ -29,7 +30,6 @@ const CardFullRightSizes = ({ buttonClicked, selected, setSelected, chosenSize }
                         borderRadiusSM: '0',
                     },
                     Alert: {
-                        colorPrimary: '#eb2f96',
                         borderRadius: '0',
                         colorBgContainer: '#ffffff',
                         optionSelectedBg: '#ffffff',
@@ -47,7 +47,7 @@ const CardFullRightSizes = ({ buttonClicked, selected, setSelected, chosenSize }
                 value={textList}
                 optionFilterProp="children"
                 filterOption={(button, option) => (option?.label ?? '').includes(button)}
-                options={list.map((sort, index) => ({
+                options={SIZES.map((sort, index) => ({
                     value: sort,
                     label: (
                         <li key={index} onClick={() => onClickSorting(index)}>

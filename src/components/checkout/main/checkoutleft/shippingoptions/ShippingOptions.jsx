@@ -5,7 +5,7 @@ import "./ShippingOptions.scss"
 import { BASE_URL } from '../../../../../assets/constant';
 import axios from 'axios';
 
-const ShippingOptions = ({ handleChange }) => {
+const ShippingOptions = ({ handleChange, setDeliveryState }) => {
     const {
         orderData,
         setOrderData,
@@ -78,11 +78,11 @@ const ShippingOptions = ({ handleChange }) => {
             }
         }
 
-
         setOrderData(true);
         setDeliveryOpenMethod(false);
-        setShowPay(false)
-        setShowPayOpen(true)
+        setShowPay(false);
+        setShowPayOpen(true);
+        setDeliveryState(true);
         console.log('id', selectedOption.id)
         handleChange("deliveryTypeId", selectedOption.id);
         handleChange("deliveryAddress", inputValue)

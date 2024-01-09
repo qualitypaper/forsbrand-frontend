@@ -3,7 +3,7 @@ import CheckoutInput from "../detailsform/CustomerDetailsForm";
 import {AppContext} from "../../../../app/App";
 import "./CheckoutInputs.scss"
 
-const CheckoutInputs = ({handleChange}) => {
+const CheckoutInputs = ({handleChange, deliveryState}) => {
     const {
         showData,
         setShowData,
@@ -73,7 +73,7 @@ const CheckoutInputs = ({handleChange}) => {
                 setShowData(true);
                 setInputData(false);
                 setDeliveryMethod(false);
-                showNext && setDeliveryOpenMethod(true);
+                !deliveryState && setDeliveryOpenMethod(true);
             } else {
                 // Trigger HTML5 validation manually
                 form.reportValidity();

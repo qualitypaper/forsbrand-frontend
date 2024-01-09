@@ -25,7 +25,7 @@ const CardFullLeft = () => {
         };
 
         return (
-            <div className="window__left-text">
+            <div className="window__left-text mt-10 mb-10">
                 <div dangerouslySetInnerHTML={{ __html: processDescription() }} />
             </div>
         );

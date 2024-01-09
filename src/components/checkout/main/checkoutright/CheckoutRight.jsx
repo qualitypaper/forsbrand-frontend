@@ -14,9 +14,9 @@ const CheckoutRight = ({ handleChange }) => {
     ? totalCost - (promocode.discount / 100) * totalCost
     : totalCost;
 
-    const handlePromocodeChange = (promocode) => {
-        handleChange("promocode", promocode);
-    }
+  const handlePromocodeChange = (promocode) => {
+    handleChange("promocode", promocode);
+  }
 
   return (
     <section className="checkout-right">
@@ -50,8 +50,8 @@ const CheckoutRight = ({ handleChange }) => {
             </div>
           </div>
         ))}
-        <PromocodeOrder handlePromocodeChange={handlePromocodeChange}/>
-        <OrderTextArea handleChange={handleChange}/>
+        {(!promocode || !promocode.discount) && <PromocodeOrder handlePromocodeChange={handlePromocodeChange} />}
+        <OrderTextArea handleChange={handleChange} />
         <div>
           <ul className="cart__order-full-delivery">
             <li className="cart__order-full-price">
@@ -70,7 +70,7 @@ const CheckoutRight = ({ handleChange }) => {
             </li>
             <div className="cart__order-full-price">
               <p>Промокод</p>
-              {promocode.discount ? (
+              {promocode && promocode.discount ? (
                 <p>{promocode.discount}%</p>
               ) : (
                 <p>Немає промокоду</p>
