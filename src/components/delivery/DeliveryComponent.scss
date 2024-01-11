@@ -1,20 +1,29 @@
 .DeliveryComponent {
-  padding-bottom: 140px;
+  padding-bottom: 60px;
   margin: 0 auto;
 
   p {
     font-size: normal normal normal 28px/1.4em proxima-n-w01-reg,proxima-n-w05-reg,sans-serif;
     line-height: 1.3em;
     margin-bottom: 50px; /* Adjust the value to your preference */
+    width: 800px;
   }
 }
 
 @media screen and (max-width: 816px) {
   .DeliveryComponent {
     padding: 20px;
+    p {
+      width: 357px;
+  } 
   }
+}
 
-  .ContactsComponent p {
-    width: 300px;
+@media screen and (max-width: 320px) {
+  .DeliveryComponent {
+    padding: 20px;
+    p {
+      width: 254px;
+  } 
   }
 }

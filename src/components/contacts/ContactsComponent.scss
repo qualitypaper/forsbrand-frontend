@@ -16,9 +16,19 @@
 @media screen and (max-width: 816px) {
   .ContactsComponent {
     padding: 110px;
-  }
-
-  .ContactsComponent p {
-    width: 300px; /* Adjust the width for smaller screens */
+   p{
+  width: 300px;
+    }
+   /* Adjust the width for smaller screens */
   }
 }
+
+@media screen and (max-width: 320px) {
+  .DeliveryComponent {
+    padding: 20px;
+    p {
+      width: 254px;
+  } 
+  }
+}
+

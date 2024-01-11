@@ -44,8 +44,8 @@ export const ProductPage = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            // const res = {data: ProductJson.find(item => item.id === Number.parseInt(id))}
-            const res = await axios.get(`${BASE_URL}/product/get/${id}`)
+            const res = {data: ProductJson.find(item => item.id === Number.parseInt(id))}
+            // const res = await axios.get(`${BASE_URL}/product/get/${id}`)
             if (res.data) {
                 console.log(res.data)
                 setCurrentClothing(res.data)

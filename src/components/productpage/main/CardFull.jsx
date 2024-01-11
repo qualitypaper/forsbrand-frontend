@@ -13,22 +13,31 @@ function CardFull({product, onClickAddToCart}) {
     const { currentClothing, currentImageIndex, openSeeSized, setOpenSeeSized } = useContext(AppContext);
     const {name} =
         currentClothing;
-
-    const getSizesImage = () => {
-        if (currentClothing.group) {
-            return currentClothing.group.sizesImage;
-        }
-    };
-    const OpenSeeSized = () => {
-        return(
-            <div className="main-see_sizes-images">
-                <div className="see_sizes-images">
-                    <img src={getSizesImage()} alt="sizes"/>
-                </div>
-             <ClosedBox />
-            </div>
-        )
-    }
+        const getSizesImage = () => {
+            if (currentClothing.group && currentClothing.group.sizesImage) {
+                return currentClothing.group.sizesImage;
+            } else if (currentClothing.group && currentClothing.group.oneSize) {
+                return ["One Size"];
+            } else {
+                return ["Немає розмірів"];
+            }
+        };
+        
+        const OpenSeeSized = () => {
+            const sizesImage = getSizesImage();
+        
+    
+            if (sizesImage) {
+                return (
+                    <div className="main-see_sizes-images">
+                        <div className="see_sizes-images">
+                            <img src={sizesImage} alt="sizes"/>
+                        </div>
+                        <ClosedBox />
+                    </div>
+                );
+            }
+        };
 
 
     return (
