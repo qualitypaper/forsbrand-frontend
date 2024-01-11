@@ -36,6 +36,9 @@
       .footer__img {
         display: flex;
         gap: 5px;
+        .footer__img-link{
+          color: #4c4a4a;
+        }
       }
     }
   }

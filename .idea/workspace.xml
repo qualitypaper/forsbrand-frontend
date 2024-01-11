@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="changed pagination">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cartpage/main/cartitem/CartItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartpage/main/cartitem/CartItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/promocode/PromocodeOrder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/promocode/PromocodeOrder.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/main/headerclothes/card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/main/headerclothes/card/Card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/window/Window.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/window/Window.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cartpage/main/cartitem/CartItem.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartpage/main/cartitem/CartItem.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/contacts/ContactsComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/contacts/ContactsComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/contacts/ContactsComponent.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/contacts/ContactsComponent.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/footer/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/footer/Footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/footer/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/footer/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/mainpage/window/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/window/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardleft/CardFullLeft.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardleft/CardFullLeft.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardright/CardFullRight.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/CardFullRight.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardright/quantity/CardFullRightQuantity.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/quantity/CardFullRightQuantity.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardright/quantity/CardFullRightQuantity.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/quantity/CardFullRightQuantity.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardright/sizes/CardFullRightSizes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/sizes/CardFullRightSizes.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardright/sizes/CardFullRightSizes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/sizes/CardFullRightSizes.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +30,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2aEc7k42j8RsnAAQNDgXwvQCgMP" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -45,11 +46,14 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ferzy/Desktop/clothing-store/clothing-store/src/components/checkout/main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/react_projects/clothing_store&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\ferzy\\Desktop\\clothing-store\\node_modules\\typescript\\lib&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\react_projects\\clothing_store\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -100,6 +104,10 @@
       <workItem from="1704497978770" duration="11412000" />
       <workItem from="1704576067164" duration="6135000" />
       <workItem from="1704583455384" duration="5362000" />
+      <workItem from="1704935880180" duration="850000" />
+      <workItem from="1704936743504" duration="813000" />
+      <workItem from="1704967768499" duration="2779000" />
+      <workItem from="1705010041269" duration="2296000" />
     </task>
     <task id="LOCAL-00001" summary="bug fixes CartFullOrder">
       <created>1703965466030</created>

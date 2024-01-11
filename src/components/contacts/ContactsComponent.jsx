@@ -5,15 +5,15 @@ const ContactsComponent = () => {
     return (
         <div className="ContactsComponent">
             <p>
-               Наші контанкти:<br/>
-              Хз єслі чесно.<br/>
+               Наші контакти:<br/>
+                <a href="mailto:forsbrandua@gmail.com">forsbrandua@gmail.com</a><br/>
             </p>
             <p className="ContactsComponent-p">
                 <p>
                     Публічна інформація<br/>
                 </p>
                <p>
-                   Назва "Буданов" являється торговою маркою і захищена.
+                   Назва "Forsbrand" являється торговою маркою і захищена.
                </p>
             </p>
         </div>

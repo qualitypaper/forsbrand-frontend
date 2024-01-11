@@ -30,7 +30,7 @@ function Window({openCart, onClickClosedWindow}) {
         setLoading,
     } = useContext(AppContext);
     const [selectSize, setSelectSize] = useState(false)
-
+    const [textList, setTextList] = useState(SIZES[selected]);
     useEffect(() => {
         const json = JSON.stringify(cartItems);
         localStorage.setItem("cart", json);
@@ -53,11 +53,9 @@ function Window({openCart, onClickClosedWindow}) {
     useEffect(() => {
         setSelected(currentImageIndex[idActiveCircle]);
     }, [idActiveCircle]);
-
-    const textList = list[selected];
-
     const onClickSorting = (i) => {
         setSelected(i);
+        setTextList(SIZES[i]);
         setOpen(false);
     };
 
@@ -222,7 +220,7 @@ function Window({openCart, onClickClosedWindow}) {
                                         optionFilterProp="children"
                                         value={textList}
                                         filterOption={(button, option) => (option?.label ?? '').includes(button)}
-                                        options={list.map((sort, index) => ({
+                                        options={SIZES.map((sort, index) => ({
                                             value: sort,
                                             label: (
                                                 <li key={index} onClick={() => onClickSorting(index)}>

@@ -15,7 +15,7 @@
 }
 @media screen and (max-width: 816px) {
   .ContactsComponent {
-    padding: 110px;
+    padding: 20px;
    p{
   width: 300px;
     }
@@ -31,4 +31,8 @@
   } 
   }
 }
-
+@media screen and (max-width: 300px) {
+.ContactsComponent p {
+  width: 252px;
+}
+}
