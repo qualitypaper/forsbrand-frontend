@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="changed pagination">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cartpage/main/cartitem/CartItem.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartpage/main/cartitem/CartItem.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/contacts/ContactsComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/contacts/ContactsComponent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/contacts/ContactsComponent.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/contacts/ContactsComponent.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/footer/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/footer/Footer.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/mainpage/footer/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/footer/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/mainpage/window/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/window/index.jsx" afterDir="false" />
     </list>
@@ -108,6 +104,7 @@
       <workItem from="1704936743504" duration="813000" />
       <workItem from="1704967768499" duration="2779000" />
       <workItem from="1705010041269" duration="2296000" />
+      <workItem from="1705053687802" duration="3253000" />
     </task>
     <task id="LOCAL-00001" summary="bug fixes CartFullOrder">
       <created>1703965466030</created>

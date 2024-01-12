@@ -25,9 +25,6 @@ export const Footer = () => {
                         <p>Copyright © 2024, Forsbrand all rights reserved.</p>
                     </div>
                 </div>
-                <div>
-                    <a className="footer__img-link" href="mailto:forsbrandua@gmail.com">forsbrandua@gmail.com</a>
-                </div>
                 <div className="footer-top">
                     <ul>
                         <Link to="/delivery">
