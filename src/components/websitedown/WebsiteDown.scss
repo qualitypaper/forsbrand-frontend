@@ -1,0 +1,189 @@
+.website-down {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(60.97% 60.97% at 50% 50%, #423F3F 0%, #443E3E 62.27%, #3E3C3C 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.6s ease-out;
+  .website-down-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 74px;
+    .website-down-title-down{
+      color: #CCB0B0;
+      font-size: 150px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 61.719%;
+    }
+    .website-down-title {
+      color: #FFF;
+      text-align: center;
+      font-size: 150px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 98.719%;
+    }
+    .website-down-subtitle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      .website-down-subtitle-text {
+        color: #ffffff;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 61.719%;
+        text-align: center;
+      }
+      .website-down-social {
+        display: flex;
+        gap: 25px;
+        .website-down-social-item-button-tiktok {
+          border: 1px solid #CCB0B0;
+          border-radius: 5px;
+          background-color: transparent;
+          padding: 10px;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            background-color: #CCB0B0;
+            transform: scale(1.1);
+            .website-down-social-tiktok {
+              color: #000000;
+            }
+          }
+          .website-down-social-tiktok {
+            color: #CCB0B0;
+          }
+        }
+        .website-down-social-item-button-instagram {
+          border: 1px solid #CCB0B0;
+          border-radius: 5px;
+          background-color: transparent;
+          padding: 10px;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            background-color: #CCB0B0;
+            transform: scale(1.1);
+            .website-down-social-instagram {
+              color: #000000;
+            }
+          }
+          .website-down-social-instagram {
+            color: #CCB0B0;
+          }
+        }
+        .website-down-social-item-button-telegram {
+          border: 1px solid #CCB0B0;
+          border-radius: 5px;
+          background-color: transparent;
+          padding: 10px;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            background-color: #CCB0B0;
+            transform: scale(1.1);
+            .website-down-social-telegram {
+              color: #000000;
+            }
+          }
+          .website-down-social-telegram {
+            color: #CCB0B0;
+          }
+        }
+      }
+    }
+    .website-down-footer-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .website-down-text-footer {
+        color: #CCB0B0;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 61.719%;
+        text-align: center;
+      }
+
+
+    }
+  }
+}
+@media (max-width: 768px) {
+  .website-down {
+    .website-down-content {
+      .website-down-title {
+        font-size: 60px;
+      }
+      .website-down-title-down{
+        font-size: 60px;
+      }
+      .website-down-subtitle {
+        .website-down-subtitle-text {
+          font-size: 24px;
+        }
+      }
+      .website-down-footer-wrapper {
+        .website-down-text-footer {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 590px) {
+  .website-down {
+    .website-down-content {
+      .website-down-title {
+        font-size: 43px;
+      }
+      .website-down-title-down{
+        font-size: 43px;
+      }
+      .website-down-subtitle {
+        .website-down-subtitle-text {
+          font-size: 18px;
+        }
+      }
+      .website-down-footer-wrapper {
+        .website-down-text-footer {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 320px) {
+  .website-down {
+    .website-down-content {
+      .website-down-title {
+        font-size: 37px;
+      }
+      .website-down-title-down{
+        font-size: 37px;
+      }
+      .website-down-subtitle {
+        .website-down-subtitle-text {
+          font-size: 15px;
+        }
+      }
+      .website-down-footer-wrapper {
+        .website-down-text-footer {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+}

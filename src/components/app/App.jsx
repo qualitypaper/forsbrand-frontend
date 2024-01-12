@@ -10,6 +10,8 @@ import PrivacyPolicy from "../../pages/PrivacyPolicy";
 import Contacts from "../../pages/Contacts";
 import axios from "axios";
 import { BASE_URL } from "../../assets/constant";
+import Error from "../../pages/Error";
+import DownWebSite from "../../pages/DownWebSite";
 
 export const AppContext = createContext();
 
@@ -258,6 +260,8 @@ const App = () => {
                     <Route path="/product-page/:id" element={<ProductPage/>}/>
                     <Route path="/cart-page" element={<CartPage/>}/>
                     <Route path="/delivery" element={<Delivery />}/>
+                    <Route path="*" element={<Error />}/>
+                    <Route path="/website-down" element={<DownWebSite />}/>
                     <Route path="/contacts" element={<Contacts />} />
                     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                     <Route path="/checkout" element={<CheckoutPage/>}/>
