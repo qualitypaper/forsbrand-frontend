@@ -40,7 +40,7 @@ import { AppContext } from '../../app/App';
 //     ]
 // },]
 const MainCheckout = () => {
-    const { cartItems } = useContext(AppContext);
+    const { cartItems, setPromocode } = useContext(AppContext);
     const [updateChanges, setUpdateChanges] = useState({}); 
 
     const handleChange = (key, value, firstKey=null) => {
@@ -69,6 +69,8 @@ const MainCheckout = () => {
         const res = await axios.post(`${BASE_URL}/order/create`, result)
         if(res.data) {
             /// send notification about the successful order creation
+
+            setPromocode(null);
         }
     }
 

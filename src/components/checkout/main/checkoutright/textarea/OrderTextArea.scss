@@ -1,15 +1,15 @@
-.checkout-right__order-promo{
+.checkout-right__order-promo {
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid rgba(65, 65, 65, 0.2);
-  .userInput{
+  .userInput {
     color: rgba(52, 52, 52, 0.71);
-    font-size: 15px;
+    font-size: 0.8rem;
     font-weight: 500;
     word-break: break-all;
     margin-bottom: 10px;
   }
-  .checkout-right__list{
+  .checkout-right__list {
     gap: 10px;
     display: flex;
     cursor: pointer;
@@ -20,11 +20,14 @@
 }
 
 @media (max-width: 430px) {
-  .checkout-right__order-promo{
-  .userInput{
-    font-size: 12px;
+  .checkout-right__order-promo {
+    .userInput {
+      font-size: 0.8px;
+    }
   }
-  }
-  
-  }
-  
+}
+
+.add-note {
+  font-size: 0.8rem;
+  margin-right: 8px;
+}

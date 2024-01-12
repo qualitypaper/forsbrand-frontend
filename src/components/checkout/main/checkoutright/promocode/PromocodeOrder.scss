@@ -1,12 +1,12 @@
-.checkout-right__order-promo-main{
+.checkout-right__order-promo-main {
   flex-direction: column;
   padding: 20px 0;
-  .checkout-right__order-promo-text{
+  .checkout-right__order-promo-text {
     display: flex;
     cursor: pointer;
     gap: 5px;
   }
-  .checkout-right__order-promo-open{
+  .checkout-right__order-promo-open {
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -14,14 +14,14 @@
     margin-top: 10px;
     justify-content: flex-start;
     align-items: center;
-    input{
-      background-color: #FFFFFF;
+    input {
+      background-color: #ffffff;
       border: 1px solid black;
       width: 100%;
       padding: 15px;
     }
-    button{
 
+    button {
       display: flex;
       width: 100%;
       gap: 3px;
@@ -29,7 +29,7 @@
       align-items: center;
       border: none;
       height: 35px;
-      color: #FFFFFF;
+      color: #ffffff;
       font-size: 16px;
       font-weight: 500;
       cursor: pointer;
@@ -37,30 +37,29 @@
       justify-content: center;
 
       &:hover {
-        background: lighten( rgba(65,65,65,1), 5%);
+        background: lighten(rgba(65, 65, 65, 1), 5%);
       }
 
       &:active {
-        background: darken( rgba(65,65,65,1), 5%);
+        background: darken(rgba(65, 65, 65, 1), 5%);
       }
-      p{
-        color: #FFFFFF;
+      p {
+        color: #ffffff;
       }
     }
   }
 }
 
 @media (max-width: 430px) {
-.checkout-right__order-promo-main{
-  font-size: 0.8rem;
-  .checkout-right__order-promo-open{
-    input{
-      padding: 8px;
+  .checkout-right__order-promo-main {
+    font-size: 0.8rem;
+    .checkout-right__order-promo-open {
+      input {
+        padding: 8px;
+      }
+      button {
+        height: 28px;
+      }
     }
-     button{
-      height: 28px;
-     }
   }
-}
-
 }

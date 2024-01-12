@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import "./OrderTextArea.scss"
 import list1 from "../../../../../assets/images/list.svg";
 
-const OrderTextArea = ({ handleChange }) => {
+const    OrderTextArea = ({ handleChange }) => {
     const [openNote, setOpenNote] = useState(false);
     const [userInput, setUserInput] = useState("");
     const [noteEdited, setNoteEdited] = useState(false);
@@ -34,7 +34,7 @@ const OrderTextArea = ({ handleChange }) => {
             <div className="checkout-right__list">
                 <div onClick={handleToggleNote} className="cart__order-full-list2">
                     <img width={20} height={20} src={noteEdited ? list1 : list1} alt="List" />
-                    {noteEdited === false ? "Додати примітку" : "Змінити примітку"}
+                    <span className='add-note'>{noteEdited === false ? "Додати примітку" : "Змінити примітку"}</span>
                 </div>
             </div>
             {openNote && (

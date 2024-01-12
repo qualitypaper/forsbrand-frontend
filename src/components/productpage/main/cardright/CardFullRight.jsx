@@ -1,14 +1,15 @@
-import React, {useContext, useState} from 'react'
+import React, { useContext, useState } from 'react'
 import "./CardFullRight.scss"
-import SomeComponent, {SIZES} from "../../../../assets/constant";
+import SomeComponent, { SIZES } from "../../../../assets/constant";
 import CardFullRightSizes from "./sizes/CardFullRightSizes";
 import CardFullRightQuantity from "./quantity/CardFullRightQuantity";
-import {AppContext} from "../../../app/App";
+import { AppContext } from "../../../app/App";
 
 const CardFullRight = () => {
     const [quantity, setQuantity] = useState(1);
     const [buttonClicked, setButtonClicked] = useState(false);
-    const [selected, setSelected] = useState(false);
+    const [selected, setSelected] = useState(-1);
+    const [addButonDisabled, setAddButtonDisabled] = useState(false);
     const { addToOrder, setWindowProduct, currentClothing, setCartOpened } = useContext(AppContext);
 
     const openCart = () => {
@@ -24,7 +25,7 @@ const CardFullRight = () => {
 
     const handleAddToCart = () => {
         setButtonClicked(true);
-        if (selected === false) {
+        if (selected === -1) {
             console.error("Please select a size before adding to cart");
             return;
         }
@@ -39,8 +40,8 @@ const CardFullRight = () => {
         openCart();
         setWindowProduct(false);
     };
-    const CardFullRightText = ({name}) => {
-        return(
+    const CardFullRightText = ({ name }) => {
+        return (
             <div className="product__page-text">
                 <p>{name}</p>
                 <p><SomeComponent currentClothing={currentClothing} /></p>
@@ -48,15 +49,22 @@ const CardFullRight = () => {
         )
 
     }
-    const CardFullRightButton = ({AddToCart}) => {
-        return(
-            <button onClick={handleAddToCart} className="product__page-btn cu-p">
+    const CardFullRightButton = ({ AddToCart,disabled }) => {
+        return (
+            <button onClick={handleAddToCart} disabled={disabled} className="product__page-btn cu-p mb-20">
                 <p>{AddToCart}</p>
             </button>
         )
 
     }
 
+    const handleSizesChange = (e) => {
+        setAddButtonDisabled(true);
+        setSelected(e);
+        setTimeout(() => {
+            setAddButtonDisabled(false);
+        }, 700);
+    }
 
     return (
         <div className="main-product">
@@ -67,7 +75,7 @@ const CardFullRight = () => {
                 <CardFullRightSizes
                     buttonClicked={buttonClicked}
                     selected={selected}
-                    setSelected={setSelected}
+                    setSelected={handleSizesChange}
                     chosenSize="Виберіть розмір"
                 />
             </div>
@@ -78,6 +86,7 @@ const CardFullRight = () => {
                 quantityText="Кількість"
             />
             <CardFullRightButton
+                disabled={addButonDisabled}
                 AddToCart="Додати до кошика"
             />
         </div>

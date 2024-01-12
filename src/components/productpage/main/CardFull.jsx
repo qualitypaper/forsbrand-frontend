@@ -6,38 +6,41 @@ import CardFullLeft from "./cardleft/CardFullLeft";
 import CardFullRight from "./cardright/CardFullRight";
 import SeeSizes from "./SeeSizes";
 import ClosedBox from "../seebox/closed/ClosedBox";
-import {FullScreen, useFullScreenHandle} from "react-full-screen";
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import FullScreenComponent from "../seebox/fullscreen/FullScreenComponent";
 
-function CardFull({product, onClickAddToCart}) {
-    const { currentClothing, currentImageIndex, openSeeSized, setOpenSeeSized } = useContext(AppContext);
-    const {name} =
-        currentClothing;
-        const getSizesImage = () => {
-            if (currentClothing.group && currentClothing.group.sizesImage) {
-                return currentClothing.group.sizesImage;
-            } else if (currentClothing.group && currentClothing.group.oneSize) {
-                return ["One Size"];
-            } else {
-                return ["Немає розмірів"];
-            }
-        };
-        
-        const OpenSeeSized = () => {
-            const sizesImage = getSizesImage();
-        
+function CardFull({ product, onClickAddToCart }) {
+    const { currentClothing, currentImageIndex } = useContext(AppContext);
+    const [openSeeSized, setOpenSeeSized] = useState(false);
+
+    const { name } = currentClothing;
     
-            if (sizesImage) {
-                return (
-                    <div className="main-see_sizes-images">
-                        <div className="see_sizes-images">
-                            <img src={sizesImage} alt="sizes"/>
-                        </div>
-                        <ClosedBox />
-                    </div>
-                );
+    const getSizesImage = () => {
+        if(currentClothing.group) {
+            if (currentClothing.group.sizesImage) {
+                return currentClothing.group.sizesImage;
+            } else if (currentClothing.group.oneSize) {
+                return;
+            } else {
+                return "Немає розмірів";
             }
-        };
+        }
+    };
+
+    const OpenSeeSized = () => {
+        const sizesImage = getSizesImage();
+
+        if (sizesImage) {
+            return (
+                <div className="main-see_sizes-images">
+                    <div className="see_sizes-images">
+                        <img src={sizesImage} alt="sizes" />
+                    </div>
+                    <ClosedBox />
+                </div>
+            );
+        }
+    };
 
 
     return (
@@ -47,8 +50,8 @@ function CardFull({product, onClickAddToCart}) {
                 <CardFullLeft onClickAddToCart={onClickAddToCart} product={product} />
                 <CardFullRight />
             </div>
-            <SeeSizes setOpenSeeSized={setOpenSeeSized} />
-            {openSeeSized && ( <OpenSeeSized />)}
+            {currentClothing.group && !currentClothing.group.oneSize && (<SeeSizes setOpenSeeSized={setOpenSeeSized} />) }
+            {openSeeSized && (<OpenSeeSized />)}
         </div>
     );
 }

@@ -21,7 +21,8 @@ function Drawer({ onClickClosed, deleteToOrder, removeFromCart }) {
   const closeDrawer = () => {
     setDrawerActive(false);
   };
-
+  console.log("cartItems", cartItems);
+  
   return (
       <div>
         <div className={`overlay ${drawerActive ? 'active' : ''}`} onClick={closeDrawer}>
