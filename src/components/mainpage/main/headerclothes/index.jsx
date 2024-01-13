@@ -2,7 +2,7 @@
 import "./HeaderClothes.scss";
 import "../../../adaptive/mainpage/MainPageAdaptive.scss"
 import Card from "./card/Card";
-
+import Skeleton from '@mui/material/Skeleton';
 export const HeaderClothes = ({ onPlus, currentItems }) => {
 
     return (
@@ -15,7 +15,9 @@ export const HeaderClothes = ({ onPlus, currentItems }) => {
                             onPlus={onPlus}
                             card={card}
                         />
-                    ))}
+
+                    ))
+                }
             </section>
         </div>
     );
