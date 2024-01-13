@@ -33,7 +33,7 @@ export const Home = () => {
         removeFromOrder
     } = useContext(AppContext);
     const [itemOffset, setItemOffset] = useState(0);
-    const logoAnimation = sessionStorage.getItem('logo') === undefined ? true : false;
+    const logoAnimation = sessionStorage.getItem('logo') === 'false' ? true : false;
     const navigate = useNavigate();
 
     useEffect(() => {

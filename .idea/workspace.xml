@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="added icons in footer (delivery, privacy policy, contacts)">
+    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="changed BASE_URL">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/constant.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/constant.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/preloader/PreLoader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/preloader/PreLoader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/websitedown/WebsiteDown.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/websitedown/WebsiteDown.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/websitedown/WebsiteDown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/websitedown/WebsiteDown.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,22 +39,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/react_projects/forsbrand-frontend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "D:\\react_projects\\clothing_store\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/react_projects/forsbrand-frontend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\react_projects\\clothing_store\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -109,7 +112,8 @@
       <workItem from="1705080137900" duration="2658000" />
       <workItem from="1705091178506" duration="10296000" />
       <workItem from="1705145278653" duration="2839000" />
-      <workItem from="1705174077623" duration="603000" />
+      <workItem from="1705174077623" duration="1135000" />
+      <workItem from="1705175231998" duration="2012000" />
     </task>
     <task id="LOCAL-00001" summary="bug fixes CartFullOrder">
       <created>1703965466030</created>
@@ -213,7 +217,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705151926055</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="changed BASE_URL">
+      <option name="closed" value="true" />
+      <created>1705174786585</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1705174786585</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +255,8 @@
     <MESSAGE value="fixed little bugs" />
     <MESSAGE value="added pages error, website down and changed successful and unsuccessful" />
     <MESSAGE value="added icons in footer (delivery, privacy policy, contacts)" />
-    <option name="LAST_COMMIT_MESSAGE" value="added icons in footer (delivery, privacy policy, contacts)" />
+    <MESSAGE value="changed BASE_URL" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed BASE_URL" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

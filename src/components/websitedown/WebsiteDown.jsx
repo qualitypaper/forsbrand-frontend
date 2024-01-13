@@ -5,7 +5,7 @@ function WebsiteDown() {
     return (
         <div className="website-down">
             <div className="website-down-content">
-                <h1 className="website-down-title">Нажаль ми зараз
+                <h1 className="website-down-title">Нажаль ми зара
                     <h3 className="website-down-title-down"> не працюємо <SentimentVeryDissatisfiedIcon  fontSize="larg"/> </h3></h1>
 
                 <div className="website-down-subtitle">
