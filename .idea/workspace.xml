@@ -4,21 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="fixed little bugs">
-      <change afterPath="$PROJECT_DIR$/src/components/404/error404.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/404/error404.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/websitedown/WebsiteDown.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/websitedown/WebsiteDown.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/DownWebSite.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Error.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Error.scss" afterDir="false" />
+    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="added pages error, website down and changed successful and unsuccessful">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/app/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkout/successfulorder/SuccesfulOrder.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/successfulorder/SuccesfulOrder.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkout/successfulorder/SuccessfulOrder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/successfulorder/SuccessfulOrder.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkout/unsuccessfulorder/UnsuccessfulOrder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/unsuccessfulorder/UnsuccessfulOrder.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkout/unsuccessfulorder/UnsuccessfulOrder.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/unsuccessfulorder/UnsuccessfulOrder.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CheckoutPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CheckoutPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/footer/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/footer/Footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/footer/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/footer/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +25,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -120,7 +109,8 @@
       <workItem from="1705010041269" duration="2296000" />
       <workItem from="1705053687802" duration="3892000" />
       <workItem from="1705080137900" duration="2658000" />
-      <workItem from="1705091178506" duration="9441000" />
+      <workItem from="1705091178506" duration="10296000" />
+      <workItem from="1705145278653" duration="1725000" />
     </task>
     <task id="LOCAL-00001" summary="bug fixes CartFullOrder">
       <created>1703965466030</created>
@@ -200,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705078473007</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added pages error, website down and changed successful and unsuccessful">
+      <option name="closed" value="true" />
+      <created>1705100872484</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1705100872484</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +226,8 @@
     <MESSAGE value="add page with sizes" />
     <MESSAGE value="changed pagination" />
     <MESSAGE value="fixed little bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed little bugs" />
+    <MESSAGE value="added pages error, website down and changed successful and unsuccessful" />
+    <option name="LAST_COMMIT_MESSAGE" value="added pages error, website down and changed successful and unsuccessful" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

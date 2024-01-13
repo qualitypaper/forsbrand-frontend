@@ -4,7 +4,9 @@ import "./Footer.scss"
 // import instagram from "../../../assets/images/instagram.webp"
 import {Link} from "react-router-dom";
 // import telegram from "../../../assets/images/telegram.webp"
-
+import LocalShippingTwoToneIcon from '@mui/icons-material/LocalShippingTwoTone';
+import PolicyTwoToneIcon from '@mui/icons-material/PolicyTwoTone';
+import CallTwoToneIcon from '@mui/icons-material/CallTwoTone';
 export const Footer = () => {
     return (
         <footer className="footer">
@@ -28,13 +30,13 @@ export const Footer = () => {
                 <div className="footer-top">
                     <ul>
                         <Link to="/delivery">
-                            <li>Delivery</li>
+                            <li className="d-flex align-center icons">   <LocalShippingTwoToneIcon fontSize="medium" />  Delivery</li>
                         </Link>
                         <Link to="/privacy-policy">
-                            <li>Privacy Policy</li>
+                            <li className="d-flex align-center  icons"> <PolicyTwoToneIcon fontSize="medium" />Privacy Policy</li>
                         </Link>
                         <Link to="/contacts">
-                            <li>Contacts</li>
+                            <li className="d-flex align-center icons"> <CallTwoToneIcon fontSize="medium" />Contacts</li>
                         </Link>
                     </ul>
                 </div>
