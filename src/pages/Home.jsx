@@ -33,7 +33,7 @@ export const Home = () => {
         removeFromOrder
     } = useContext(AppContext);
     const [itemOffset, setItemOffset] = useState(0);
-    const logoAnimation = sessionStorage.getItem('logo') === 'false' ? true : false;
+    const logoAnimation = sessionStorage.getItem('logo') === 'logo' ? true : false;
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -102,7 +102,7 @@ export const Home = () => {
     const cartItemCount = cartItems.length;
     return (
         <animated.div style={homeAnimation}>
-            {logoAnimation && <PreLoader />}
+          <PreLoader />
             <div className="mid">
                 <div className="mid_background1">
                     <div className="one1">
