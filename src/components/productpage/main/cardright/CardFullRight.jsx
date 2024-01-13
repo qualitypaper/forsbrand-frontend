@@ -25,14 +25,15 @@ const CardFullRight = () => {
 
     const handleAddToCart = () => {
         setButtonClicked(true);
-        if (selected === -1) {
+
+        if (!currentClothing.group.oneSize && selected === -1) {
             console.error("Please select a size before adding to cart");
             return;
         }
 
         const temp = {
             ...currentClothing,
-            size: SIZES[selected],
+            size: currentClothing.group.oneSize ? 'One Size' : SIZES[selected],
             quantity: Number.parseInt(quantity),
         };
 
@@ -40,6 +41,7 @@ const CardFullRight = () => {
         openCart();
         setWindowProduct(false);
     };
+    
     const CardFullRightText = ({ name }) => {
         return (
             <div className="product__page-text">

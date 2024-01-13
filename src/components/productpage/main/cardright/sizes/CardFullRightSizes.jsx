@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { SIZES } from "../../../../../assets/constant";
 import "./CardFullRightSizes.scss"
 import { ConfigProvider, Select, Alert } from "antd";
+import { AppContext } from '../../../../app/App';
 
 const CardFullRightSizes = ({ buttonClicked, selected, setSelected, chosenSize }) => {
     const [isOpen, setOpen] = useState(false);
+    const { currentClothing } = useContext(AppContext)
 
     const [textList, setTextList] = useState(SIZES[selected]);
 
@@ -13,8 +15,28 @@ const CardFullRightSizes = ({ buttonClicked, selected, setSelected, chosenSize }
         setTextList(SIZES[i]);
         setOpen(false);
     };
-
+    const oneSizeChange = () => {
+        setSelected(Math.random() + 1)
+    }
+    
     console.log(textList)
+
+    const constructSizes = () => {
+        
+        if(currentClothing && currentClothing.group && currentClothing.group.oneSize) {
+            return [{ value: "One Size", label: (<li key={Math.random()} onClick={() => oneSizeChange()}>One Size</li>)}]
+        } else {
+            return SIZES.map((sort, index) => ({
+                value: sort,
+                label: (
+                    <li key={index} onClick={() => onClickSorting(index)}>
+                        {sort}
+                    </li>
+                ),
+            }))
+        }
+        
+    }
 
     return (
         <div className="product__page-size">
@@ -47,17 +69,10 @@ const CardFullRightSizes = ({ buttonClicked, selected, setSelected, chosenSize }
                     value={textList}
                     optionFilterProp="children"
                     filterOption={(button, option) => (option?.label ?? '').includes(button)}
-                    options={SIZES.map((sort, index) => ({
-                        value: sort,
-                        label: (
-                            <li key={index} onClick={() => onClickSorting(index)}>
-                                {sort}
-                            </li>
-                        ),
-                    }))}
+                    options={constructSizes()}
                 />
 
-                {buttonClicked && !textList && (
+                {(currentClothing && currentClothing.group && !currentClothing.group.oneSize) && buttonClicked && !textList && (
                     <div className="select_size">
                         <Alert message="Виберіть Розмір" type="error" showIcon />
                     </div>
