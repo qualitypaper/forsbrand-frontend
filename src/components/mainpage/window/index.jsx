@@ -29,7 +29,8 @@ function Window({openCart, onClickClosedWindow}) {
         loading,
         setLoading,
     } = useContext(AppContext);
-    const [selectSize, setSelectSize] = useState(false)
+    const [selectSize, setSelectSize] = useState(false);
+    const [addButtonDisabled, setAddButtonDisabled] = useState(false);
     useEffect(() => {
         const json = JSON.stringify(cartItems);
         localStorage.setItem("cart", json);
@@ -48,15 +49,22 @@ function Window({openCart, onClickClosedWindow}) {
     // const sizes = ProductJson.reduce((acc, product) => {
     //     return {...acc, ...product.sizes}
     // }, {})
-    const list = SIZES;
+    
     useEffect(() => {
         setSelected(currentImageIndex[idActiveCircle]);
-    }, [idActiveCircle]);
+    }, [currentImageIndex, idActiveCircle, setSelected]);
+
     const onClickSorting = (i) => {
+        setAddButtonDisabled(true);
         setSelected(i);
         setOpen(false);
+        setTimeout(() => {
+            setAddButtonDisabled(false);
+        }, 1000)
+
     };
-    const textList = list[selected]
+
+    const textList = SIZES[selected]
     const handleAddToCart = () => {
         setSelectSize(true);
         if (!textList) return;
@@ -218,7 +226,7 @@ function Window({openCart, onClickClosedWindow}) {
                                         optionFilterProp="children"
                                         value={textList}
                                         filterOption={(button, option) => (option?.label ?? '').includes(button)}
-                                        options={list.map((sort, index) => ({
+                                        options={SIZES.map((sort, index) => ({
                                             value: sort,
                                             label: (
                                                 <li key={index} onClick={() => onClickSorting(index)}>
@@ -273,6 +281,7 @@ function Window({openCart, onClickClosedWindow}) {
                             >
                             <button
                                 onClick={handleAddToCart}
+                                disabled={addButtonDisabled}
                                 className="window__right-btn cu-p"
                             >
                                 <p>{loading ? (

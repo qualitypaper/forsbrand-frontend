@@ -2,12 +2,12 @@ import { Footer } from "../components/mainpage/footer";
 
 import React, { useContext, useEffect } from "react";
 import { AppContext } from "../components/app/App";
-import {useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { ProductJson } from "../assets/clothes";
 import "./CartPage.scss";
 import CartFullOrder from "../components/cartpage/main/CartFullOrder";
-import {useSpring, animated} from "react-spring";
-import {Header} from "../components/productpage/header";
+import { useSpring, animated } from "react-spring";
+import { Header } from "../components/productpage/header";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const CartPage = () => {
@@ -27,18 +27,18 @@ const CartPage = () => {
     if (selectedCard) {
       setCardData(selectedCard);
     }
-  }, [id]);
+  }, [id, setCardData]);
 
 
   const deleteToOrder = (element) => {
     const temp = cartItems.filter(item => item.id !== element.id || item.size !== element.size)
     setCartItems(temp)
-    if(temp.length === 0){
-        localStorage.setItem('cart', null);
+    if (temp.length === 0) {
+      localStorage.setItem('cart', null);
     } else {
-        localStorage.setItem('cart', temp);
+      localStorage.setItem('cart', temp);
     }
-};
+  };
   const cartPageAnimation = useSpring({
     opacity: 1,
     from: {
@@ -51,12 +51,12 @@ const CartPage = () => {
       <div className="mid">
         <div className="mid_background1">
           <div className="one">
-            <Header maintext={<div className="header_back"> 
-                <ArrowBackIcon /> 
-                 <h4 className="BACK">НАЗАД</h4>
+            <Header maintext={<div className="header_back">
+              <ArrowBackIcon />
+              <h4 className="BACK">НАЗАД</h4>
             </div>} />
             <animated.div style={cartPageAnimation}>
-            <CartFullOrder deleteToOrder={deleteToOrder} />
+              <CartFullOrder deleteToOrder={deleteToOrder} />
             </animated.div>
           </div>
         </div>

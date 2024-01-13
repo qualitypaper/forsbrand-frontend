@@ -1,10 +1,10 @@
-import React, {createContext, useEffect, useState} from "react";
+import React, { createContext, useEffect, useState } from "react";
 import "./App.scss";
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import {Home} from "../../pages/Home";
-import {ProductPage} from "../../pages/ProductPage";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Home } from "../../pages/Home";
+import { ProductPage } from "../../pages/ProductPage";
 import CartPage from "../../pages/CartPage";
-import {CheckoutPage} from "../../pages/CheckoutPage";
+import { CheckoutPage } from "../../pages/CheckoutPage";
 import Delivery from "../../pages/Delivery";
 import PrivacyPolicy from "../../pages/PrivacyPolicy";
 import Contacts from "../../pages/Contacts";
@@ -12,6 +12,8 @@ import axios from "axios";
 import { BASE_URL } from "../../assets/constant";
 import Error from "../../pages/Error";
 import DownWebSite from "../../pages/DownWebSite";
+import SuccessfulOrder from "../checkout/successfulorder/SuccessfulOrder";
+import UnsuccessfulOrder from "../checkout/unsuccessfulorder/UnsuccessfulOrder";
 
 export const AppContext = createContext();
 
@@ -52,25 +54,25 @@ const App = () => {
     const [deliveryOpenMethod, setDeliveryOpenMethod] = useState(false);
     const [selectedOption, setSelectedOption] = React.useState({});
     const [buttonClicked, setButtonClicked] = useState(false);
-    const [promocode, setPromocode ] = useState({});
+    const [promocode, setPromocode] = useState({});
     const [clothesPerPage, setClothesPerPage] = useState(9);
-  
+
 
     const handleResize = () => {
         if (window.innerWidth <= 813) {
-          setClothesPerPage(10);
+            setClothesPerPage(10);
         } else {
-          setClothesPerPage(9);
+            setClothesPerPage(9);
         }
-      };
-    
-    
-      React.useEffect(() => {
+    };
+
+
+    React.useEffect(() => {
         window.addEventListener('resize', handleResize);
         return () => {
-          window.removeEventListener('resize', handleResize);
+            window.removeEventListener('resize', handleResize);
         };
-      }, []); 
+    }, []);
 
 
     const addToOrder = (item) => {
@@ -89,11 +91,11 @@ const App = () => {
             }
             setCartItems([...cartItems]);
         } else {
-        
+
             if (!item.quantity) {
-                setCartItems([...cartItems, {...item, quantity: 1}]);
+                setCartItems([...cartItems, { ...item, quantity: 1 }]);
             } else {
-                setCartItems([...cartItems, {...item}]);
+                setCartItems([...cartItems, { ...item }]);
             }
         }
         console.log(cartItems);
@@ -123,8 +125,8 @@ const App = () => {
         setCartItems(
             cartItems.map((i) =>
                 i.id === item.id && i.size === item.size
-                    ? {...item, quantity: quantity}
-                    : {...i}
+                    ? { ...item, quantity: quantity }
+                    : { ...i }
             )
         );
     };
@@ -144,8 +146,8 @@ const App = () => {
             }
         }
         catch (error) {
-        console.error("Error parsing JSON:", error);
-    }
+            console.error("Error parsing JSON:", error);
+        }
     }, []);
 
     useEffect(() => {
@@ -163,18 +165,18 @@ const App = () => {
     }, [cartItems]);
     //
     const checkPromocode = async (promocode) => {
-      const res = await axios.get(
-        `${BASE_URL}/promocodes/check?promocode=${promocode}`
-      );
+        const res = await axios.get(
+            `${BASE_URL}/promocodes/check?promocode=${promocode}`
+        );
 
-      if(res.status === 401) return { valid: false};
-      if (res.data) {
-        if (res.data.valid) {
-          return { valid: true, discount: Number.parseInt(res.data.discount) };
-        } else {
-          return { valid: false };
+        if (res.status === 401) return { valid: false };
+        if (res.data) {
+            if (res.data.valid) {
+                return { valid: true, discount: Number.parseInt(res.data.discount) };
+            } else {
+                return { valid: false };
+            }
         }
-      }
     };
 
     return (
@@ -182,7 +184,7 @@ const App = () => {
             value={{
                 promocode,
                 setPromocode,
-                checkPromocode,    
+                checkPromocode,
                 addToOrder,
                 handleQuantityChange,
                 removeFromOrder,
@@ -261,15 +263,17 @@ const App = () => {
         >
             <Router>
                 <Routes>
-                    <Route path="/" element={<Home itemsPerPage={9}/>}/>
-                    <Route path="/product-page/:id" element={<ProductPage/>}/>
-                    <Route path="/cart-page" element={<CartPage/>}/>
-                    <Route path="/delivery" element={<Delivery />}/>
-                    <Route path="*" element={<Error />}/>
-                    <Route path="/website-down" element={<DownWebSite />}/>
+                    <Route path="/" element={<Home itemsPerPage={9} />} />
+                    <Route path="/product-page/:id" element={<ProductPage />} />
+                    <Route path="/cart-page" element={<CartPage />} />
+                    <Route path="/delivery" element={<Delivery />} />
+                    <Route path="*" element={<Error />} />
+                    <Route path="/website-down" element={<DownWebSite />} />
                     <Route path="/contacts" element={<Contacts />} />
                     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                    <Route path="/checkout" element={<CheckoutPage/>}/>
+                    <Route path="/checkout" element={<CheckoutPage />} />
+                    <Route path="/success" element={<SuccessfulOrder />} />
+                    <Route path="/failure" element={<UnsuccessfulOrder />} />
                 </Routes>
             </Router>
         </AppContext.Provider>

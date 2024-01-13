@@ -48,7 +48,7 @@ export const CheckoutPage = () => {
     return (
         <>
             <div className="mid1">
-                <SuccessfulOrder />
+                {/* <SuccessfulOrder /> */}
                 <HeaderCheckout clearState={clearState} />
                 <MainCheckout />
             </div>
