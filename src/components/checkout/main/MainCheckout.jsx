@@ -42,6 +42,7 @@ import { AppContext } from '../../app/App';
 const MainCheckout = () => {
     const { cartItems, setPromocode } = useContext(AppContext);
     const [updateChanges, setUpdateChanges] = useState({}); 
+    const [orderId, setOrderId] = useState();
 
     const handleChange = (key, value, firstKey=null) => {
         console.log("key: ", key, "value: ", value)
@@ -67,18 +68,21 @@ const MainCheckout = () => {
     const submitOrder = async () => {
         const result = constructProducts();
         const res = await axios.post(`${BASE_URL}/order/create`, result)
+        console.log(res.data)
+        debugger
         if(res.data) {
             /// send notification about the successful order creation
-
+            setOrderId(Number.parseInt(res.data.id));
             setPromocode(null);
         }
+        return res.data ? res.data : null;
     }
 
     console.log(updateChanges.products)
 
     return (
         <div className="checkout">
-            <CheckoutLeft handleChange={handleChange} submitOrder={submitOrder}/>
+            <CheckoutLeft handleChange={handleChange} submitOrder={submitOrder} orderId={orderId}/>
             <CheckoutRight handleChange={handleChange}/>
         </div>
     )
