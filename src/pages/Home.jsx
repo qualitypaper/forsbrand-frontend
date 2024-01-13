@@ -10,7 +10,7 @@ import { BASE_URL, ERROR_HREF } from '../assets/constant';
 import PreLoader from "../components/preloader/PreLoader";
 import { useSpring, animated } from 'react-spring';
 import axios from 'axios';
-import  {ProductJson} from '../assets/clothes.js';
+// import  {ProductJson} from '../assets/clothes.js';
 import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
@@ -39,15 +39,15 @@ export const Home = () => {
     useEffect(() => {
         const getClothes = async () => {
             setLoading(true);
-            const res = {data: ProductJson}
-            // let res;
-            // try {
-            //     res = await axios.get(`${BASE_URL}/product/getAll`)
-            // } catch (e) {
-            //     console.error(e);
-            //     navigate(ERROR_HREF)
-            //     return;
-            // }
+            // const res = {data: ProductJson}
+            let res;
+            try {
+                res = await axios.get(`${BASE_URL}/product/getAll`)
+            } catch (e) {
+                console.error(e);
+                navigate(ERROR_HREF)
+                return;
+            }
 
             setCardData(res.data);
             setCurrentCardData(res.data); //
