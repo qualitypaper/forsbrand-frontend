@@ -137,10 +137,15 @@ const App = () => {
     }, [cartItems]);
 
     useEffect(() => {
-        const localStorageItem = JSON.parse(localStorage.getItem("cart"));
-        if (localStorageItem) {
-            setCartItems(localStorageItem);
+        try {
+            const localStorageItem = JSON.parse(localStorage.getItem("cart"));
+            if (localStorageItem) {
+                setCartItems(localStorageItem);
+            }
         }
+        catch (error) {
+        console.error("Error parsing JSON:", error);
+    }
     }, []);
 
     useEffect(() => {

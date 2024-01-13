@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="added pages error, website down and changed successful and unsuccessful">
+    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="added icons in footer (delivery, privacy policy, contacts)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/footer/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/footer/Footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/footer/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/footer/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/constant.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/constant.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/app/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/App.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +111,7 @@
       <workItem from="1705053687802" duration="3892000" />
       <workItem from="1705080137900" duration="2658000" />
       <workItem from="1705091178506" duration="10296000" />
-      <workItem from="1705145278653" duration="1725000" />
+      <workItem from="1705145278653" duration="2839000" />
     </task>
     <task id="LOCAL-00001" summary="bug fixes CartFullOrder">
       <created>1703965466030</created>
@@ -198,7 +199,23 @@
       <option name="project" value="LOCAL" />
       <updated>1705100872484</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="added icons in footer (delivery, privacy policy, contacts)">
+      <option name="closed" value="true" />
+      <created>1705151888059</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1705151888059</updated>
+    </task>
+    <task id="LOCAL-00014" summary="added icons in footer (delivery, privacy policy, contacts)">
+      <option name="closed" value="true" />
+      <created>1705151926055</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1705151926055</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,7 +244,8 @@
     <MESSAGE value="changed pagination" />
     <MESSAGE value="fixed little bugs" />
     <MESSAGE value="added pages error, website down and changed successful and unsuccessful" />
-    <option name="LAST_COMMIT_MESSAGE" value="added pages error, website down and changed successful and unsuccessful" />
+    <MESSAGE value="added icons in footer (delivery, privacy policy, contacts)" />
+    <option name="LAST_COMMIT_MESSAGE" value="added icons in footer (delivery, privacy policy, contacts)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
