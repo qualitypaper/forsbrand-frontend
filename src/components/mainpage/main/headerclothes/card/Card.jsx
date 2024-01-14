@@ -9,19 +9,12 @@ function Card({ card, onPlus }) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        setLoading(true);
-        const loadImage = () => {
-            const image = new Image();
-
-            image.src = card.images[0];
-
-            image.onload = () => setLoading(false);
-            image.onerror = () => setLoading(false);
-
+        const img = new Image();
+        img.src = card.images[0];
+        img.onload = () => {
+            setLoading(false);
         };
-
-        loadImage();
-    }, [card]);
+    }, [card.images[0]]);
 
     const handleMouseOver = () => {
         setIsHovered(true);
@@ -42,7 +35,6 @@ function Card({ card, onPlus }) {
             {loading ? (
                 <div className="loading-skeleton">
                     <Skeleton variant="rectangular" height={200} width={300} />
-                    <Skeleton variant="text" width={100} />
                 </div>
             ) : (
                 <>
