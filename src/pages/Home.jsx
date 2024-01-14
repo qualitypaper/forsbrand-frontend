@@ -60,7 +60,7 @@ export const Home = () => {
         };
 
         getClothes();
-    }, [setLoading, setCardData, setCurrentCardData, Cookies, axios, navigate]);
+    }, [navigate]);
 
     const deleteToOrder = (element) => {
         const temp = cartItems.filter(item => item.id !== element.id || item.size !== element.size);
