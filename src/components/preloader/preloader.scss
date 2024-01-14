@@ -48,3 +48,9 @@
     height: 320px;
   }
 }
+@media (max-width: 320px) {
+  .preloader-images img{
+    width: 270px;
+    height: 270px;
+  }
+}
