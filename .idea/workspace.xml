@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="fixes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/main/switch/SwitchClothes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/main/switch/SwitchClothes.scss" afterDir="false" />
-    </list>
+    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="fixes switch-categories" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -110,7 +107,7 @@
       <workItem from="1705091178506" duration="10296000" />
       <workItem from="1705145278653" duration="2839000" />
       <workItem from="1705174077623" duration="1135000" />
-      <workItem from="1705175231998" duration="7590000" />
+      <workItem from="1705175231998" duration="7771000" />
     </task>
     <task id="LOCAL-00001" summary="bug fixes CartFullOrder">
       <created>1703965466030</created>
@@ -286,7 +283,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705189376963</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="fixes switch-categories">
+      <option name="closed" value="true" />
+      <created>1705192062654</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1705192062654</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,7 +326,8 @@
     <MESSAGE value="img size" />
     <MESSAGE value="Skeleton" />
     <MESSAGE value="fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixes" />
+    <MESSAGE value="fixes switch-categories" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes switch-categories" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
