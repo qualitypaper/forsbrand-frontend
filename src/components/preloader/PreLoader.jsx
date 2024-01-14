@@ -10,7 +10,7 @@ const PreLoader = () => {
             setLoading(!loading);
             setTimeout(() => {
                 setLoading(true);
-            }, 3000);
+            }, 5000);
             sessionStorage.setItem('logo', false);
         };
 
