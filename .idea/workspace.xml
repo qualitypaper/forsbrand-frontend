@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="preloader">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/constant.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/constant.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +113,7 @@
       <workItem from="1705145278653" duration="2839000" />
       <workItem from="1705174077623" duration="1135000" />
       <workItem from="1705175231998" duration="8824000" />
-      <workItem from="1705193473460" duration="2803000" />
+      <workItem from="1705193473460" duration="4062000" />
     </task>
     <task id="LOCAL-00001" summary="bug fixes CartFullOrder">
       <created>1703965466030</created>
@@ -368,7 +369,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705195837870</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="preloader">
+      <option name="closed" value="true" />
+      <created>1705196629683</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1705196629683</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -10,8 +10,8 @@ import { BASE_URL, ERROR_HREF, COOKIE_EXPIRATION_DAYS } from '../assets/constant
 import PreLoader from "../components/preloader/PreLoader";
 import { useSpring, animated } from 'react-spring';
 import axios from 'axios';
-import Cookies from 'js-cookie';
 import { useNavigate } from "react-router-dom";
+
 export const Home = () => {
     const {
         cartOpened,
@@ -32,14 +32,13 @@ export const Home = () => {
         removeFromOrder
     } = useContext(AppContext);
     const [itemOffset, setItemOffset] = useState(0);
-    const logoAnimation = Cookies.get('logo') === 'logo';
     const navigate = useNavigate();
 
     useEffect(() => {
         const getClothes = async () => {
             setLoading(true);
 
-            const cachedData = Cookies.get('clothesData');
+            const cachedData = localStorage.getItem('clothesData');
             if (cachedData) {
                 setCardData(JSON.parse(cachedData));
                 setCurrentCardData(JSON.parse(cachedData));
@@ -51,7 +50,8 @@ export const Home = () => {
                 const response = await axios.get(`${BASE_URL}/product/getAll`);
                 setCardData(response.data);
                 setCurrentCardData(response.data);
-                Cookies.set('clothesData', JSON.stringify(response.data), { expires: COOKIE_EXPIRATION_DAYS });
+                localStorage.setItem('clothesData', JSON.stringify(response.data));
+
             } catch (e) {
                 console.error(e);
                 navigate(ERROR_HREF);
@@ -66,7 +66,7 @@ export const Home = () => {
         const temp = cartItems.filter(item => item.id !== element.id || item.size !== element.size);
         setCartItems(temp);
         if (temp.length === 0) {
-            localStorage.setItem('cart', null);
+            localStorage.removeItem('cart');
         } else {
             localStorage.setItem('cart', JSON.stringify(temp));
         }
@@ -81,10 +81,6 @@ export const Home = () => {
     const openCart = () => {
         setCartOpened(true);
     };
-
-    // const addToCartFromWindow = (item) => {
-    //     addToOrder(item);
-    // }
 
     const endOffset = itemOffset + clothesPerPage;
     const currentClothes = Array.isArray(currentCardData) ? currentCardData.slice(itemOffset, endOffset) : [];
@@ -107,7 +103,7 @@ export const Home = () => {
     const cartItemCount = cartItems.length;
     return (
         <animated.div style={homeAnimation}>
-          <PreLoader />
+            <PreLoader />
             <div className="mid">
                 <div className="mid_background1">
                     <div className="one1">
