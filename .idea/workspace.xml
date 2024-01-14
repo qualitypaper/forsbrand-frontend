@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="preloader">
+    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="localstorage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +111,7 @@
       <workItem from="1705145278653" duration="2839000" />
       <workItem from="1705174077623" duration="1135000" />
       <workItem from="1705175231998" duration="8824000" />
-      <workItem from="1705193473460" duration="4062000" />
+      <workItem from="1705193473460" duration="4878000" />
     </task>
     <task id="LOCAL-00001" summary="bug fixes CartFullOrder">
       <created>1703965466030</created>
@@ -377,7 +375,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705196629683</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="localstorage">
+      <option name="closed" value="true" />
+      <created>1705197552500</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1705197552500</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -416,7 +422,8 @@
     <MESSAGE value="loading" />
     <MESSAGE value="background-image" />
     <MESSAGE value="preloader" />
-    <option name="LAST_COMMIT_MESSAGE" value="preloader" />
+    <MESSAGE value="localstorage" />
+    <option name="LAST_COMMIT_MESSAGE" value="localstorage" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
