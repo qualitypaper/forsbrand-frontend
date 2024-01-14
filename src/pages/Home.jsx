@@ -46,7 +46,7 @@ export const Home = () => {
                     setCurrentCardData(JSON.parse(cachedData));
                 } else {
 
-                    const response = await axios.get(`${BASE_URL}/product/getAll`);
+                    const response = await axios.get(`${BASE_URL}/product/getAll`, { withCredentials: true });
                     setCardData(response.data);
                     setCurrentCardData(response.data);
                     Cookies.set('clothesData', JSON.stringify(response.data), { expires: COOKIE_EXPIRATION_DAYS, sameSite: 'None' });
