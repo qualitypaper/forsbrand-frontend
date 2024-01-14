@@ -45,11 +45,10 @@ export const Home = () => {
                     setCardData(JSON.parse(cachedData));
                     setCurrentCardData(JSON.parse(cachedData));
                 } else {
-
-                    const response = await axios.get(`${BASE_URL}/product/getAll`, { withCredentials: true });
+                    const response = await axios.get(`${BASE_URL}/product/getAll`);
+                    localStorage.setItem('clothesData', JSON.stringify(response.data));
                     setCardData(response.data);
                     setCurrentCardData(response.data);
-                    localStorage.setItem('clothesData', JSON.stringify(response.data));
                 }
             } catch (error) {
                 console.error(error);
