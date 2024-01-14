@@ -45,10 +45,11 @@ export const Home = () => {
                     setCardData(JSON.parse(cachedData));
                     setCurrentCardData(JSON.parse(cachedData));
                 } else {
+
                     const response = await axios.get(`${BASE_URL}/product/getAll`);
                     setCardData(response.data);
                     setCurrentCardData(response.data);
-                    Cookies.set('clothesData', JSON.stringify(response.data), { expires: COOKIE_EXPIRATION_DAYS });
+                    Cookies.set('clothesData', JSON.stringify(response.data), { expires: COOKIE_EXPIRATION_DAYS, sameSite: 'None' });
                 }
             } catch (error) {
                 console.error(error);
