@@ -6,13 +6,12 @@ import Drawer from '../components/mainpage/drawer';
 import Window from '../components/mainpage/window';
 import { AppContext } from "../components/app/App";
 import "./Home.scss";
-import { BASE_URL, ERROR_HREF } from '../assets/constant';
+import { BASE_URL, ERROR_HREF, COOKIE_EXPIRATION_DAYS } from '../assets/constant';
 import PreLoader from "../components/preloader/PreLoader";
 import { useSpring, animated } from 'react-spring';
 import axios from 'axios';
-// import  {ProductJson} from '../assets/clothes.js';
+import Cookies from 'js-cookie';
 import { useNavigate } from "react-router-dom";
-
 export const Home = () => {
     const {
         cartOpened,
@@ -33,37 +32,43 @@ export const Home = () => {
         removeFromOrder
     } = useContext(AppContext);
     const [itemOffset, setItemOffset] = useState(0);
-    const logoAnimation = sessionStorage.getItem('logo') === 'logo' ? true : false;
+    const logoAnimation = Cookies.get('logo') === 'logo';
     const navigate = useNavigate();
 
     useEffect(() => {
         const getClothes = async () => {
             setLoading(true);
-            // const res = {data: ProductJson}
-            let res;
-            try {
-                res = await axios.get(`${BASE_URL}/product/getAll`)
-            } catch (e) {
-                console.error(e);
-                navigate(ERROR_HREF)
+
+            const cachedData = Cookies.get('clothesData');
+            if (cachedData) {
+                setCardData(JSON.parse(cachedData));
+                setCurrentCardData(JSON.parse(cachedData));
+                setLoading(false);
                 return;
             }
 
-            setCardData(res.data);
-            setCurrentCardData(res.data); //
-            setLoading(false);
+            try {
+                const response = await axios.get(`${BASE_URL}/product/getAll`);
+                setCardData(response.data);
+                setCurrentCardData(response.data);
+                Cookies.set('clothesData', JSON.stringify(response.data), { expires: COOKIE_EXPIRATION_DAYS });
+            } catch (e) {
+                console.error(e);
+                navigate(ERROR_HREF);
+            } finally {
+                setLoading(false);
+            }
         };
-        getClothes()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+        getClothes();
+    }, [navigate]);
 
     const deleteToOrder = (element) => {
-        const temp = cartItems.filter(item => item.id !== element.id || item.size !== element.size)
-        setCartItems(temp)
+        const temp = cartItems.filter(item => item.id !== element.id || item.size !== element.size);
+        setCartItems(temp);
         if (temp.length === 0) {
             localStorage.setItem('cart', null);
         } else {
-            localStorage.setItem('cart', temp);
+            localStorage.setItem('cart', JSON.stringify(temp));
         }
     };
 
