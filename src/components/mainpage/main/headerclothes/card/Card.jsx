@@ -4,21 +4,24 @@ import { Link } from "react-router-dom";
 import SomeComponent from "../../../../../assets/constant";
 import Skeleton from '@mui/material/Skeleton';
 
-function Card({ card, onPlus, onMinus }) {
+function Card({ card, onPlus }) {
     const [isHovered, setIsHovered] = useState(false);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Simulating an asynchronous operation (e.g., loading an image)
+        setLoading(true);
         const loadImage = () => {
             const image = new Image();
+
             image.src = card.images[0];
+
             image.onload = () => setLoading(false);
             image.onerror = () => setLoading(false);
+
         };
 
         loadImage();
-    }, [card.images]);
+    }, [card]);
 
     const handleMouseOver = () => {
         setIsHovered(true);
@@ -39,6 +42,7 @@ function Card({ card, onPlus, onMinus }) {
             {loading ? (
                 <div className="loading-skeleton">
                     <Skeleton variant="rectangular" height={200} width={300} />
+                    <Skeleton variant="text" width={100} />
                 </div>
             ) : (
                 <>
@@ -51,9 +55,11 @@ function Card({ card, onPlus, onMinus }) {
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
                             />
+
                         </div>
                         <p className="price_text">
                             <SomeComponent currentClothing={card} />
+
                         </p>
                     </Link>
                     <div className="card-button-container">
