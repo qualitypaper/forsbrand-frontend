@@ -40,7 +40,7 @@ export const Home = () => {
             setLoading(true);
 
             try {
-                const cachedData = Cookies.get('clothesData');
+                const cachedData = localStorage.getItem('clothesData');
                 if (cachedData) {
                     setCardData(JSON.parse(cachedData));
                     setCurrentCardData(JSON.parse(cachedData));
@@ -49,11 +49,10 @@ export const Home = () => {
                     const response = await axios.get(`${BASE_URL}/product/getAll`, { withCredentials: true });
                     setCardData(response.data);
                     setCurrentCardData(response.data);
-                    Cookies.set('clothesData', JSON.stringify(response.data), { expires: COOKIE_EXPIRATION_DAYS, sameSite: 'None' });
+                    localStorage.setItem('clothesData', JSON.stringify(response.data));
                 }
             } catch (error) {
                 console.error(error);
-                // Display an error message to the user or handle it appropriately.
                 navigate(ERROR_HREF);
             } finally {
                 setLoading(false);
