@@ -6,15 +6,21 @@ const PreLoader = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const preLoaderAnim = () => {
-            setLoading(!loading);
-            setTimeout(() => {
-                setLoading(true);
-            }, 5000);
-            sessionStorage.setItem('logo', false);
-        };
+        // Check if the preloader has already been shown
+        const preloaderShown = sessionStorage.getItem('preloaderShown');
 
-        preLoaderAnim();
+        if (!preloaderShown) {
+            const preLoaderAnim = () => {
+                setLoading(!loading);
+                setTimeout(() => {
+                    setLoading(true);
+                    // Set sessionStorage to indicate that the preloader has been shown
+                    sessionStorage.setItem('preloaderShown', true);
+                }, 5000);
+            };
+
+            preLoaderAnim();
+        }
     }, []);
 
     return (
