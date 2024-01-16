@@ -52,7 +52,7 @@ export const Main = ({
     
         >
             <div className="background">
-                <LogoMain />
+                {/*<LogoMain />*/}
                 <SwitchClothes />
                 <Typography>
                     <HeaderClothes

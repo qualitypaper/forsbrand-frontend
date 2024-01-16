@@ -2,7 +2,7 @@
   .header__main {
     display: flex;
     gap: 25px;
-    justify-content: flex-end;
+    justify-content: space-between;
     position: relative;
     margin: 12px 8px 39px calc((100% - 980px) * 0.5);
     left: 200px;
@@ -11,8 +11,8 @@
       gap: 3px;
       align-items: center;
       .shopping-cart {
-        width: 24px;
-        height: 24px;
+        width: 35px;
+        height: 35px;
       }
       p {
         font-weight: 200;
@@ -64,7 +64,6 @@
     .header__main {
       position: sticky;
       gap: 0;
-      justify-content: flex-end;
     }
     .header__main {
       .header__main-btn {
@@ -73,6 +72,10 @@
     }
     .header__main {
       .header__main-cart {
+        .shopping-cart {
+          width: 24px;
+          height: 24px;
+        }
         p {
           display: none;
         }

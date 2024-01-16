@@ -6,7 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="localstorage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/header/HeaderCheckout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/header/HeaderCheckout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/contacts/ContactsComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/contacts/ContactsComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/contacts/ContactsComponent.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/contacts/ContactsComponent.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/footer/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/footer/Footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/footer/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/footer/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/headermain/HeaderMain.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/headermain/HeaderMain.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/headermain/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/headermain/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/main/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/main/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productpage/header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/header/Header.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +69,7 @@
         <entry key="com.haulmont.rcb.reactInspector" value="false" />
         <entry key="com.intellij.reactbuddy.reactComponents" value="false" />
         <entry key="com.intellij.reactbuddy.reactInspector" value="false" />
+        <entry key="com.intellij.reactbuddy.storybook" value="false" />
       </map>
     </option>
   </component>
@@ -112,7 +123,10 @@
       <workItem from="1705174077623" duration="1135000" />
       <workItem from="1705175231998" duration="8824000" />
       <workItem from="1705193473460" duration="6012000" />
-      <workItem from="1705233655641" duration="442000" />
+      <workItem from="1705233655641" duration="1465000" />
+      <workItem from="1705272501347" duration="73000" />
+      <workItem from="1705345625413" duration="3770000" />
+      <workItem from="1705389656179" duration="4349000" />
     </task>
     <task id="LOCAL-00001" summary="bug fixes CartFullOrder">
       <created>1703965466030</created>
@@ -408,7 +422,23 @@
       <option name="project" value="LOCAL" />
       <updated>1705233743822</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="localstorage">
+      <option name="closed" value="true" />
+      <created>1705234105604</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1705234105604</updated>
+    </task>
+    <task id="LOCAL-00040" summary="localstorage">
+      <option name="closed" value="true" />
+      <created>1705234374245</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1705234374245</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

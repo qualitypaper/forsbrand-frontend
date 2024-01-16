@@ -7,9 +7,7 @@ const HeaderCheckout = ({ clearState }) => {
         <div className="checkout_main">
             <header className="header__checkout">
                 <div>
-                    <Link to="/">
                         <h1>БЕЗПЕЧНЕ ЗАМОВЛЕННЯ</h1>
-                    </Link>
                     <Link to="/" onClick={() => clearState()}>
                         <p>Продовжити перегляд</p>
                     </Link>

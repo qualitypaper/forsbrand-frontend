@@ -2,7 +2,9 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import StyledBadge from '@mui/material/Badge';
 import IconButton from '@mui/material/IconButton';
 import React from 'react';
+import logo from "../../../assets/images/logo_img.PNG";
 import "./HeaderMain.scss";
+import logoFors from "../../../assets/images/logo-fors.PNG";
 
 export const HeaderMain = ({ onClickCart, cartItemCount }) => {
   const list = ["UAH ₴"];
@@ -18,14 +20,17 @@ export const HeaderMain = ({ onClickCart, cartItemCount }) => {
   return (
     <header className="header">
       <div className="containerHeader">
+        <div className="header__main-logo">
+          <img src={logoFors} alt="logo"/>
+          <img src={logo} alt="logo"/>
+        </div>
         <div className="header__main">
           <div onClick={onClickCart} className="header__main-cart cu-p">
             <IconButton aria-label="cart">
-              <StyledBadge badgeContent={cartItemCount} color="info" style={{ transform: 'translateY(-5%)' }}>
-                <ShoppingCartIcon className="shopping-cart" classes={{width: "100px"}}/>
+              <StyledBadge badgeContent={cartItemCount} color="info" style={{transform: 'translateY(-5%)'}}>
+                <ShoppingCartIcon className="shopping-cart"/>
               </StyledBadge>
             </IconButton>
-
           </div>
           <div className="plant-shopping-right-sorting-popup">
             {/* <ul>
@@ -35,15 +40,16 @@ export const HeaderMain = ({ onClickCart, cartItemCount }) => {
               </button>
             </ul> */}
             {open && (
-              <div className="popup">
-                <ul>
-                  {list.map((sort, index) => (
-                    <li key={index} onClick={() => onClickSorting(index)} className={selected === index ? "active" : ""}>
-                      {sort}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                <div className="popup">
+                  <ul>
+                    {list.map((sort, index) => (
+                        <li key={index} onClick={() => onClickSorting(index)}
+                            className={selected === index ? "active" : ""}>
+                          {sort}
+                        </li>
+                    ))}
+                  </ul>
+                </div>
             )}
           </div>
         </div>

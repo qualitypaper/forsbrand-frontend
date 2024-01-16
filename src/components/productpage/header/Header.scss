@@ -1,11 +1,30 @@
 .header {
   .containerHeader {
+    display: flex;
+    justify-content: space-between;
+    .header__main-logo{
+      display: flex;
+      gap: 10px;
+
+      img{
+        width: 50px;
+        height: 50px;
+        margin-top: 10px;
+        margin-left: 5px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: all 0.4s ease-in-out;
+        &:hover{
+          transform: scale(1.1);
+          filter: drop-shadow(0 0 0.75rem #fdfdfd);
+        }
+      }
+    }
     .header__product {
       display: flex;
       color: #414141;
       margin-top: 35px;
       margin-bottom: 60px;
-      justify-content: space-between;
 
       .header__product-nav {
         flex: 1 1 0;
@@ -45,6 +64,12 @@
 @media (max-width: 816px) {
   .header{
     .containerHeader {
+      .header__main-logo{
+        img{
+          width: 35px;
+          height: 35px;
+        }
+      }
       .header__product{
         padding-left: 21px;
         gap: 20px;

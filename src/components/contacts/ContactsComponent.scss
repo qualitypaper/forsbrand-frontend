@@ -5,12 +5,11 @@
   p {
     font-size: normal normal normal 28px/1.4em proxima-n-w01-reg,proxima-n-w05-reg,sans-serif;
     line-height: 1.3em;
-    margin-bottom: 50px; /* Adjust the value to your preference */
+    margin-bottom: 50px;
     width: 1000px;
-  }
-  .ContactsComponent-p{
-    font-size: 10px;
-    text-align: right;
+    a{
+      margin-left: 3px;
+    }
   }
 }
 @media screen and (max-width: 816px) {

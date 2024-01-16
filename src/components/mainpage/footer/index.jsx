@@ -7,6 +7,9 @@ import {Link} from "react-router-dom";
 import LocalShippingTwoToneIcon from '@mui/icons-material/LocalShippingTwoTone';
 import PolicyTwoToneIcon from '@mui/icons-material/PolicyTwoTone';
 import CallTwoToneIcon from '@mui/icons-material/CallTwoTone';
+import instagram from "../../../assets/images/instagram.png";
+import telegram from "../../../assets/images/telegram.PNG";
+import tiktok from "../../../assets/images/tiktok.PNG";
 export const Footer = () => {
     return (
         <footer className="footer">
@@ -14,14 +17,18 @@ export const Footer = () => {
 
                 <div className="footer-top">
                     <div className="footer__img">
-                        {/*<img src={facebook} alt=""/>*/}
-                        {/*<img src={instagram} alt=""/>*/}
-                        {/*<img width={35}  height={40} src={telegram} alt=""/>*/}
-                        <a className="footer__img-link"
-                           href="https://www.instagram.com/fors.brand?igsh=MXQ1ZHJwdmtmeDYyYw==">Instagram,</a>
-                        <a className="footer__img-link" href="https://t.me/forsbrand">Telegram,</a>
-                        <a className="footer__img-link" href="https://www.tiktok.com/@fors.brand?_t=8iuxjoLny3J&_r=1">Tik
-                            Tok</a>
+                        {/*<img width={35} height={35} src={tiktok} alt=""/>*/}
+                        {/*<img width={35} height={35} src={instagram} alt=""/>*/}
+                        {/*<img width={35}  height={35} src={telegram} alt=""/>*/}
+                        <a className="footer__img-link" href="https://www.instagram.com/fors.brand?igsh=MXQ1ZHJwdmtmeDYyYw==">
+                            <img width={35} height={35} src={instagram} alt=""/>
+                        </a>
+                        <a className="footer__img-link" href="https://t.me/forsbrand">
+                            <img width={35} height={35} src={telegram} alt=""/>
+                        </a>
+                        <a className="footer__img-link" href="https://www.tiktok.com/@fors.brand?_t=8iuxjoLny3J&_r=1">
+                            <img width={35} height={35} src={tiktok} alt=""/>
+                        </a>
                     </div>
                     <div className="footer__img-text">
                         <p>Copyright © 2024, Forsbrand all rights reserved.</p>

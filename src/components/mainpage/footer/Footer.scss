@@ -2,7 +2,7 @@
   display: grid;
   margin: 0 auto;
   max-width: 1000px;
-  padding: 60px 0 20px;
+  padding: 30px 0 20px;
 
   .footer-all {
     display: flex;
@@ -54,7 +54,7 @@
 
 @media(max-width: 1200px) {
   .footer {
-    padding: 60px 30px 20px;
+    padding: 30px 30px 20px;
     .footer-all {
 
       .footer-top {
