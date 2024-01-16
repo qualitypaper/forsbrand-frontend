@@ -16,18 +16,36 @@
     flex-direction: column;
     padding: 20px 0;
     border-top: 1px solid rgba(65, 65, 65, 0.2);
+    .cart__order-full-list2{
+      display: flex;
+      gap: 5px;
+      .add-note {
+
+      }
+    }
   }
 }
 
 @media (max-width: 430px) {
   .checkout-right__order-promo {
+    .checkout-right__list {
+      gap: 10px;
+      display: flex;
+      cursor: pointer;
+      flex-direction: column;
+      padding: 20px 0;
+      border-top: 1px solid rgba(65, 65, 65, 0.2);
+      .cart__order-full-list2{
+        .add-note {
+          font-size: 0.8rem;
+          margin-right: 8px;
+        }
+      }
+    }
     .userInput {
       font-size: 0.8px;
     }
   }
 }
 
-.add-note {
-  font-size: 0.8rem;
-  margin-right: 8px;
-}
+
