@@ -46,6 +46,13 @@
         gap: 5px;
         .footer__img-link{
           color: #4c4a4a;
+          img{
+            transition: all 0.4s;
+          }
+          img:hover{
+              transform: scale(1.1);
+              filter: drop-shadow(0 0 10px #e1e1e1);
+          }
         }
       }
     }
