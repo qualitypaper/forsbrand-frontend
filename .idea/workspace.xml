@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="localstorage">
+    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="img">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkout/header/HeaderCheckout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/header/HeaderCheckout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/contacts/ContactsComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/contacts/ContactsComponent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/contacts/ContactsComponent.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/contacts/ContactsComponent.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/footer/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/footer/Footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/footer/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/footer/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/headermain/HeaderMain.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/headermain/HeaderMain.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/headermain/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/headermain/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/main/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/main/Main.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/productpage/header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/header/Header.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -126,7 +116,7 @@
       <workItem from="1705233655641" duration="1465000" />
       <workItem from="1705272501347" duration="73000" />
       <workItem from="1705345625413" duration="3770000" />
-      <workItem from="1705389656179" duration="4349000" />
+      <workItem from="1705389656179" duration="4988000" />
     </task>
     <task id="LOCAL-00001" summary="bug fixes CartFullOrder">
       <created>1703965466030</created>
@@ -438,7 +428,23 @@
       <option name="project" value="LOCAL" />
       <updated>1705234374245</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="minor corrections logo, added new icon for footer">
+      <option name="closed" value="true" />
+      <created>1705397551606</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1705397551606</updated>
+    </task>
+    <task id="LOCAL-00042" summary="img">
+      <option name="closed" value="true" />
+      <created>1705397808791</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1705397808792</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,7 +485,9 @@
     <MESSAGE value="preloader" />
     <MESSAGE value="Cookies" />
     <MESSAGE value="localstorage" />
-    <option name="LAST_COMMIT_MESSAGE" value="localstorage" />
+    <MESSAGE value="minor corrections logo, added new icon for footer" />
+    <MESSAGE value="img" />
+    <option name="LAST_COMMIT_MESSAGE" value="img" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
