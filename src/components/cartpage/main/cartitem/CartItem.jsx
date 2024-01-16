@@ -33,7 +33,7 @@ const CartItem = ({
     useEffect(() => {
         setTotalCost(
             cartItems.reduce(
-                (total, cartItem) => total + cartItem.originalPrice * cartItem.quantity,
+                (total, cartItem) => total + cartItem.currentPrice * cartItem.quantity,
                 0
             )
         );
