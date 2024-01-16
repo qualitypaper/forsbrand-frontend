@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="fixed bugs with Current Price in Drawer">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/back_cartpage.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/back_cartpage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/background.webp" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/background.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/textarea/OrderTextArea.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/textarea/OrderTextArea.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/CardFull.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/CardFull.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/seebox/closed/ClosedBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/seebox/closed/ClosedBox.jsx" afterDir="false" />
+    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="img">
+      <change beforePath="$PROJECT_DIR$/src/assets/images/backgr.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/backgr.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/CartPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CartPage.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +118,7 @@
       <workItem from="1705345625413" duration="3770000" />
       <workItem from="1705389656179" duration="6646000" />
       <workItem from="1705405872188" duration="561000" />
-      <workItem from="1705428198036" duration="5687000" />
+      <workItem from="1705428198036" duration="5994000" />
     </task>
     <task id="LOCAL-00001" summary="bug fixes CartFullOrder">
       <created>1703965466030</created>
@@ -483,7 +478,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705432356481</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="img">
+      <option name="closed" value="true" />
+      <created>1705448486026</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1705448486027</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,10 +526,10 @@
     <MESSAGE value="Cookies" />
     <MESSAGE value="localstorage" />
     <MESSAGE value="minor corrections logo, added new icon for footer" />
-    <MESSAGE value="img" />
     <MESSAGE value="correction sizes for logo" />
     <MESSAGE value="fixed bugs with Current Price in Drawer" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed bugs with Current Price in Drawer" />
+    <MESSAGE value="img" />
+    <option name="LAST_COMMIT_MESSAGE" value="img" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
