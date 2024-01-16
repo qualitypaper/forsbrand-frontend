@@ -58,7 +58,7 @@ const CardFullLeft = () => {
                 >
                     <Image
                         width={isMobile ? 250 : 500}
-                        height={isMobile ? 300 : 550}
+                        height={isMobile ? 300 : 520}
                         src={images[currentImageIndex]}
                     />
                 </Image.PreviewGroup>

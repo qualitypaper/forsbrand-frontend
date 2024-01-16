@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="correction sizes for logo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/app/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/drawer/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/drawer/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/privacypolicy/PrivacyPolicyComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/privacypolicy/PrivacyPolicyComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardleft/CardFullLeft.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardleft/CardFullLeft.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +120,8 @@
       <workItem from="1705272501347" duration="73000" />
       <workItem from="1705345625413" duration="3770000" />
       <workItem from="1705389656179" duration="6646000" />
+      <workItem from="1705405872188" duration="561000" />
+      <workItem from="1705428198036" duration="2032000" />
     </task>
     <task id="LOCAL-00001" summary="bug fixes CartFullOrder">
       <created>1703965466030</created>
