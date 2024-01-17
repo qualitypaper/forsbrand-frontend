@@ -32,10 +32,10 @@ export const Home = () => {
     } = useContext(AppContext);
     const [itemOffset, setItemOffset] = useState(0);
     const navigate = useNavigate();
-
     useEffect(() => {
         const getClothes = async () => {
             setLoading(true);
+<<<<<<< HEAD
 
             // try {
             //     const cachedData = localStorage.getItem('clothesData');
@@ -54,6 +54,18 @@ export const Home = () => {
             // } finally {
             //     setLoading(false);
             // }
+=======
+            try {
+                const response = await axios.get(`${BASE_URL}/product/getAll`);
+                setCardData(response.data);
+                setCurrentCardData(response.data);
+            } catch (error) {
+                console.error(error);
+                navigate(ERROR_HREF);
+            } finally {
+                setLoading(false);
+            }
+>>>>>>> c2d0fe1f33340832107a7816ef95d31f0a3cf5cf
         };
 
         getClothes();

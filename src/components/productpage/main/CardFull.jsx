@@ -27,7 +27,7 @@ function CardFull({ product, onClickAddToCart }) {
         }
     };
 
-    const OpenSeeSized = () => {
+    const OpenSeeSized = ({setOpenSeeSized}) => {
         const sizesImage = getSizesImage();
 
         if (sizesImage) {
@@ -36,7 +36,7 @@ function CardFull({ product, onClickAddToCart }) {
                     <div className="see_sizes-images">
                         <img src={sizesImage} alt="sizes" />
                     </div>
-                    <ClosedBox />
+                    <ClosedBox setOpenSeeSized={setOpenSeeSized}/>
                 </div>
             );
         }
@@ -51,7 +51,7 @@ function CardFull({ product, onClickAddToCart }) {
                 <CardFullRight />
             </div>
             {currentClothing.group && !currentClothing.group.oneSize && (<SeeSizes setOpenSeeSized={setOpenSeeSized} />) }
-            {openSeeSized && (<OpenSeeSized />)}
+            {openSeeSized && (<OpenSeeSized setOpenSeeSized={setOpenSeeSized} />)}
         </div>
     );
 }

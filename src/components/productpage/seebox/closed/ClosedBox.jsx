@@ -3,10 +3,9 @@ import cross from "../../../../assets/images/crossBox.svg";
 import {AppContext} from "../../../app/App";
 import "./ClosedBox.scss"
 
-const ClosedBox = () => {
+const ClosedBox = ({setOpenSeeSized}) => {
     const {
         setImagesBoxOpened,
-        setOpenSeeSized,
     } = useContext(AppContext);
     const closedBox = () => {
         setImagesBoxOpened(false)

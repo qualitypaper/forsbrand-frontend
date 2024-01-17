@@ -19,7 +19,7 @@ export const Main = ({
                          card,
                          onPageChange,
                          currentPage,
-                         clothesPerPage
+                         clothesPerPage,
                      }) => {
 
     // const isFirstVisit = !localStorage.getItem('visited');

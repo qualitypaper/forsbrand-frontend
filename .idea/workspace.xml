@@ -4,12 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="minor changes to image loading">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/clothing_store/FileContentIndex/754d67f3-34ff-49a4-8eba-6d5defc3add8.vsidx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/clothing_store/v17/.wsuo" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/slnx.sqlite" beforeDir="false" />
+=======
+    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="img">
+      <change afterPath="$PROJECT_DIR$/src/components/img/img.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/main/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/main/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/main/headerclothes/card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/main/headerclothes/card/Card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
+>>>>>>> c2d0fe1f33340832107a7816ef95d31f0a3cf5cf
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +56,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -62,8 +74,25 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\kolom\\IdeaProjects\\forsbrand_frontend\\front\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/react_projects/react_sneakers",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "D:\\react_projects\\forsbrand-frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+>>>>>>> c2d0fe1f33340832107a7816ef95d31f0a3cf5cf
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -130,9 +159,18 @@
       <workItem from="1705345625413" duration="3770000" />
       <workItem from="1705389656179" duration="6646000" />
       <workItem from="1705405872188" duration="561000" />
+<<<<<<< HEAD
       <workItem from="1705428198036" duration="2752000" />
       <workItem from="1705495069248" duration="3309000" />
       <workItem from="1705520017258" duration="17000" />
+=======
+      <workItem from="1705428198036" duration="6634000" />
+      <workItem from="1705482566442" duration="1101000" />
+      <workItem from="1705484060018" duration="709000" />
+      <workItem from="1705510309642" duration="4912000" />
+      <workItem from="1705515582914" duration="122000" />
+      <workItem from="1705515735174" duration="4816000" />
+>>>>>>> c2d0fe1f33340832107a7816ef95d31f0a3cf5cf
     </task>
     <task id="LOCAL-00001" summary="bug fixes CartFullOrder">
       <created>1703965466030</created>
@@ -484,7 +522,31 @@
       <option name="project" value="LOCAL" />
       <updated>1705430694093</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="fixed bugs with Current Price in Drawer">
+      <option name="closed" value="true" />
+      <created>1705432356481</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1705432356481</updated>
+    </task>
+    <task id="LOCAL-00047" summary="img">
+      <option name="closed" value="true" />
+      <created>1705448486026</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1705448486027</updated>
+    </task>
+    <task id="LOCAL-00048" summary="img">
+      <option name="closed" value="true" />
+      <created>1705448779884</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1705448779884</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,11 +585,15 @@
     <MESSAGE value="Cookies" />
     <MESSAGE value="localstorage" />
     <MESSAGE value="minor corrections logo, added new icon for footer" />
-    <MESSAGE value="img" />
     <MESSAGE value="correction sizes for logo" />
     <MESSAGE value="fixed bugs with Current Price in Drawer" />
+<<<<<<< HEAD
     <MESSAGE value="minor changes to image loading" />
     <option name="LAST_COMMIT_MESSAGE" value="minor changes to image loading" />
+=======
+    <MESSAGE value="img" />
+    <option name="LAST_COMMIT_MESSAGE" value="img" />
+>>>>>>> c2d0fe1f33340832107a7816ef95d31f0a3cf5cf
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -556,6 +622,17 @@
           <url>file://$PROJECT_DIR$/src/components/productpage/main/cardright/quantity/CardFullRightQuantity.jsx</url>
           <line>22</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/mainpage/main/headerclothes/card/Card.jsx</url>
+          <line>6</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/mainpage/headermain/index.jsx</url>
+          <line>26</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
