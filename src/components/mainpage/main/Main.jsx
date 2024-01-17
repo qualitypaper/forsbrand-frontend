@@ -25,7 +25,7 @@ export const Main = ({
                          onPageChange,
                          pageCount,
                          currentPage,
-                         clothesPerPage
+                         clothesPerPage,
                      }) => {
 
     // const isFirstVisit = !localStorage.getItem('visited');

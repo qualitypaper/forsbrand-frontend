@@ -34,22 +34,13 @@ export const Home = () => {
     const [itemOffset, setItemOffset] = useState(0);
     const logoAnimation = Cookies.get('logo') === 'logo';
     const navigate = useNavigate();
-
     useEffect(() => {
         const getClothes = async () => {
             setLoading(true);
-
             try {
-                const cachedData = localStorage.getItem('clothesData');
-                if (cachedData) {
-                    setCardData(JSON.parse(cachedData));
-                    setCurrentCardData(JSON.parse(cachedData));
-                } else {
-                    const response = await axios.get(`${BASE_URL}/product/getAll`);
-                    // localStorage.setItem('clothesData', JSON.stringify(response.data));
-                    setCardData(response.data);
-                    setCurrentCardData(response.data);
-                }
+                const response = await axios.get(`${BASE_URL}/product/getAll`);
+                setCardData(response.data);
+                setCurrentCardData(response.data);
             } catch (error) {
                 console.error(error);
                 navigate(ERROR_HREF);
