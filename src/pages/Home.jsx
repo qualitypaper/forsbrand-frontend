@@ -10,7 +10,6 @@ import { BASE_URL, ERROR_HREF, COOKIE_EXPIRATION_DAYS } from '../assets/constant
 import PreLoader from "../components/preloader/PreLoader";
 import { useSpring, animated } from 'react-spring';
 import axios from 'axios';
-import Cookies from 'js-cookie';
 import { useNavigate } from "react-router-dom";
 export const Home = () => {
     const {
@@ -32,34 +31,33 @@ export const Home = () => {
         removeFromOrder
     } = useContext(AppContext);
     const [itemOffset, setItemOffset] = useState(0);
-    const logoAnimation = Cookies.get('logo') === 'logo';
     const navigate = useNavigate();
 
     useEffect(() => {
         const getClothes = async () => {
             setLoading(true);
 
-            try {
-                const cachedData = localStorage.getItem('clothesData');
-                if (cachedData) {
-                    setCardData(JSON.parse(cachedData));
-                    setCurrentCardData(JSON.parse(cachedData));
-                } else {
-                    const response = await axios.get(`${BASE_URL}/product/getAll`);
-                    localStorage.setItem('clothesData', JSON.stringify(response.data));
-                    setCardData(response.data);
-                    setCurrentCardData(response.data);
-                }
-            } catch (error) {
-                console.error(error);
-                navigate(ERROR_HREF);
-            } finally {
-                setLoading(false);
-            }
+            // try {
+            //     const cachedData = localStorage.getItem('clothesData');
+            //     if (cachedData) {
+            //         setCardData(JSON.parse(cachedData));
+            //         setCurrentCardData(JSON.parse(cachedData));
+            //     } else {
+            const response = await axios.get(`${BASE_URL}/product/getAll`);
+            localStorage.setItem('clothesData', JSON.stringify(response.data));
+            setCardData(response.data);
+            setCurrentCardData(response.data);
+            //     
+            // } catch (error) {
+            //     console.error(error);
+            //     navigate(ERROR_HREF);
+            // } finally {
+            //     setLoading(false);
+            // }
         };
 
         getClothes();
-    }, [navigate]);
+    }, [navigate, setCardData, setCurrentCardData, setLoading]);
 
     const deleteToOrder = (element) => {
         const temp = cartItems.filter(item => item.id !== element.id || item.size !== element.size);
@@ -106,7 +104,7 @@ export const Home = () => {
     const cartItemCount = cartItems.length;
     return (
         <animated.div style={homeAnimation}>
-          <PreLoader />
+            <PreLoader />
             <div className="mid">
                 <div className="mid_background1">
                     <div className="one1">
