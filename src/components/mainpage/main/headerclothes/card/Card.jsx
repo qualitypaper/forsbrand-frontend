@@ -2,7 +2,6 @@ import "./Card.scss";
 import React, {useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
 import SomeComponent from "../../../../../assets/constant";
-import {Skeleton} from "antd";
 import SkeletonImage from "antd/es/skeleton/Image";
 
 function Card({card, onPlus}) {
@@ -23,8 +22,6 @@ function Card({card, onPlus}) {
         event.preventDefault();
         event.stopPropagation();
     };
-
-
 
     const {images} = card;
     const imgSrc = isHovered ? images[1] : images[0];

@@ -1,17 +1,10 @@
 import React from 'react'
-import {LogoMain} from "./logomain";
 import {SwitchClothes} from "./switch";
 import {HeaderClothes} from "./headerclothes";
 import "./Main.scss"
-import arrow_top_background from "../../../assets/images/arrow_top_background.svg";
-import arrow_down_background from "../../../assets/images/arrow_down_background.svg";
-import ReactPaginate from "react-paginate";
-import {StyledEngineProvider, Typography} from "@mui/material";
+import { Typography} from "@mui/material";
 import {ConfigProvider, Pagination} from 'antd';
 import {
-    CaretUpOutlined,
-    CaretDownOutlined,
-    CaretLeftOutlined,
     ArrowLeftOutlined,
     ArrowRightOutlined
 } from '@ant-design/icons';
