@@ -3,8 +3,8 @@ import "./MainCheckout.scss"
 import CheckoutRight from "./checkoutright/CheckoutRight";
 import CheckoutLeft from "./checkoutleft/CheckoutLeft";
 import axios from 'axios';
-import { BASE_URL } from '../../../assets/constant';
-import { AppContext } from '../../app/App';
+import {BASE_URL} from '../../../assets/constant';
+import {AppContext} from '../../app/App';
 
 // [{
 //     id: 0,

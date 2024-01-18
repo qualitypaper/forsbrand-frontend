@@ -2,6 +2,7 @@ import React from 'react';
 import './error404.scss';
 import arrow from '../../assets/images/arrow_right.svg';
 import {Link} from "react-router-dom";
+
 function Error404() {
     return (
         <div className="error_404-wrapper">

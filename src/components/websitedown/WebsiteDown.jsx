@@ -1,6 +1,7 @@
 import React from 'react';
 import "./WebsiteDown.scss";
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
+
 function WebsiteDown() {
     return (
         <div className="website-down">

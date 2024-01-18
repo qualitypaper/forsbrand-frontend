@@ -2,12 +2,9 @@ import React from 'react'
 import {SwitchClothes} from "./switch";
 import {HeaderClothes} from "./headerclothes";
 import "./Main.scss"
-import { Typography} from "@mui/material";
+import {Typography} from "@mui/material";
 import {ConfigProvider, Pagination} from 'antd';
-import {
-    ArrowLeftOutlined,
-    ArrowRightOutlined
-} from '@ant-design/icons';
+import {ArrowLeftOutlined, ArrowRightOutlined} from '@ant-design/icons';
 
 export const Main = ({
                          onAdd,

@@ -1,13 +1,12 @@
 import React, {useContext, useEffect} from 'react';
-import { useSwipeable } from 'react-swipeable';
-import { FullScreen, useFullScreenHandle } from 'react-full-screen';
+import {useSwipeable} from 'react-swipeable';
+import {FullScreen, useFullScreenHandle} from 'react-full-screen';
 import './CardFullSeeBox.scss';
-import { AppContext } from '../../app/App';
+import {AppContext} from '../../app/App';
 
 import {ArrowLeft} from "./arrow/ArrowLeft";
 import ImagesBox from "./boximages/ImagesBox";
 import {ArrowRight} from "./arrow/ArrowRight";
-import ZoomLoup from "./zoom/ZoomLoup";
 import FullScreenComponent from "./fullscreen/FullScreenComponent";
 import ClosedBox from "./closed/ClosedBox";
 

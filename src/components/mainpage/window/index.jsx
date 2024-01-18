@@ -1,9 +1,9 @@
-import React, {useState, useEffect, useContext} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import "./Window.scss";
 import cross from "../../../assets/images/cross_mark.svg";
 import {Link} from "react-router-dom";
 import {AppContext} from "../../app/App";
-import SomeComponent, {SIZES} from "../../../assets/constant";
+import SomeComponent from "../../../assets/constant";
 import arrow_down_background from "../../../assets/images/minus.svg";
 import arrow_top_background from "../../../assets/images/plus.svg";
 import {ConfigProvider, Select, Spin} from 'antd';
@@ -29,8 +29,9 @@ function Window({openCart, onClickClosedWindow}) {
         loading,
         setLoading,
     } = useContext(AppContext);
-    const [selectSize, setSelectSize] = useState(false);
+    const [selectSize, setSelectSize] = useState(true);
     const [addButtonDisabled, setAddButtonDisabled] = useState(false);
+
     useEffect(() => {
         const json = JSON.stringify(cartItems);
         localStorage.setItem("cart", json);
@@ -49,7 +50,7 @@ function Window({openCart, onClickClosedWindow}) {
     // const sizes = ProductJson.reduce((acc, product) => {
     //     return {...acc, ...product.sizes}
     // }, {})
-    
+
     useEffect(() => {
         setSelected(currentImageIndex[idActiveCircle]);
     }, [currentImageIndex, idActiveCircle, setSelected]);
@@ -64,10 +65,17 @@ function Window({openCart, onClickClosedWindow}) {
 
     };
 
-    const textList = SIZES[selected]
+    const textList = selected && Object.keys(windowItem).find((key) => {
+        return key === selected;
+    });
+
     const handleAddToCart = () => {
+        if (!selected) {
+            setSelectSize(false);
+            return;
+        }
+
         setSelectSize(true);
-        if (!textList) return;
 
         setLoading(true);
 
@@ -82,10 +90,10 @@ function Window({openCart, onClickClosedWindow}) {
             addToOrder(productToAdd);
             openCart();
             setWindowProduct(false);
-            setSelectSize(false);
             setLoading(false);
             console.log(textList);
         }, 1000);
+        setSelectSize(false);
     };
 
     const handleIncrease = () => {
@@ -143,6 +151,7 @@ function Window({openCart, onClickClosedWindow}) {
                                 <img
                                     className="window__left-img"
                                     src={windowItem.images[currentImageIndex]}
+                                    loading="lazy"
                                     alt=""
                                     width={500}
                                     height={500}
@@ -205,16 +214,16 @@ function Window({openCart, onClickClosedWindow}) {
                                                 borderRadiusSM: '0',
                                                 colorBorderHover: '#ffffff'
                                             },
-                                                Alert: {
-                                                    colorPrimary: '#eb2f96',
-                                                    borderRadius: '0',
-                                                    colorBgContainer: '#ffffff',
-                                                    optionSelectedBg: '#ffffff',
-                                                    borderRadiusXS: '0',
-                                                    borderRadiusLG: '0',
-                                                    borderRadiusSM: '0',
-                                                    colorBorderHover: '#ffffff'
-                                                }
+                                            Alert: {
+                                                colorPrimary: '#eb2f96',
+                                                borderRadius: '0',
+                                                colorBgContainer: '#ffffff',
+                                                optionSelectedBg: '#ffffff',
+                                                borderRadiusXS: '0',
+                                                borderRadiusLG: '0',
+                                                borderRadiusSM: '0',
+                                                colorBorderHover: '#ffffff'
+                                            }
 
                                         },
                                     }}
@@ -226,19 +235,19 @@ function Window({openCart, onClickClosedWindow}) {
                                         optionFilterProp="children"
                                         value={textList}
                                         filterOption={(button, option) => (option?.label ?? '').includes(button)}
-                                        options={SIZES.map((sort, index) => ({
-                                            value: sort,
+                                        options={Object.entries(windowItem.sizes).map(([key, value], index) => ({
+                                            value: key,
                                             label: (
-                                                <li key={index} onClick={() => onClickSorting(index)}>
-                                                    {sort}
+                                                <li key={index} onClick={() => onClickSorting(key)}>
+                                                    {key}
                                                 </li>
                                             ),
                                         }))}
                                     />
-                                    {selectSize && !textList && (
-                                        <p className="select_sizeWindow"> <Stack sx={{ width: '100%' }} spacing={1}>
-                                               <Alert severity="error">Виберіть розмір</Alert>
-                                            </Stack>
+                                    {!selectSize && !selected &&(
+                                        <p className="select_sizeWindow"><Stack sx={{width: '100%'}} spacing={1}>
+                                            <Alert severity="error">Виберіть розмір</Alert>
+                                        </Stack>
                                         </p>
                                     )}
                                 </ConfigProvider>
@@ -274,24 +283,24 @@ function Window({openCart, onClickClosedWindow}) {
                                 theme={{
                                     components: {
                                         Spin: {
-                                           colorPrimary: '#7c7c7c'
+                                            colorPrimary: '#7c7c7c'
                                         },
                                     },
                                 }}
                             >
-                            <button
-                                onClick={handleAddToCart}
-                                disabled={addButtonDisabled}
-                                className="window__right-btn cu-p"
-                            >
-                                <p>{loading ? (
-                                    <Spin
-                                        indicator={<LoadingOutlined style={{fontSize: 24}} spin/>}
-                                    />
-                                ) : (
-                                    <p>Додати до кошика</p>
-                                )}</p>
-                            </button>
+                                <button
+                                    onClick={handleAddToCart}
+                                    disabled={addButtonDisabled}
+                                    className="window__right-btn cu-p"
+                                >
+                                    <p>{loading ? (
+                                        <Spin
+                                            indicator={<LoadingOutlined style={{fontSize: 24}} spin/>}
+                                        />
+                                    ) : (
+                                        <p>Додати до кошика</p>
+                                    )}</p>
+                                </button>
                             </ConfigProvider>
                             <Link to={`/product-page/${windowItem.id}`}>
                                 <p className="black_li">Подробиці</p>

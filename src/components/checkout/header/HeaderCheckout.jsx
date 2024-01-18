@@ -1,6 +1,6 @@
 import React from 'react'
 import "./HeaderCheckout.scss"
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const HeaderCheckout = ({ clearState }) => {
     return (

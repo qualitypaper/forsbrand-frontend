@@ -1,9 +1,8 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { AppContext } from "../../../app/App";
+import React, {useContext, useEffect, useState} from 'react';
+import {AppContext} from "../../../app/App";
 import "./CardFullLeft.scss";
-import fullscreen from "../../../../assets/images/fullscreen.svg";
-import { SwitchCardFull } from "./switch/SwitchCardFull";
-import { Image } from 'antd';
+import {SwitchCardFull} from "./switch/SwitchCardFull";
+import {Image} from 'antd';
 
 
 const CardFullLeft = () => {

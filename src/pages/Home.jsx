@@ -6,9 +6,9 @@ import Drawer from '../components/mainpage/drawer';
 import Window from '../components/mainpage/window';
 import {AppContext} from "../components/app/App";
 import "./Home.scss";
-import {BASE_URL, ERROR_HREF } from '../assets/constant';
+import {BASE_URL, ERROR_HREF} from '../assets/constant';
 import PreLoader from "../components/preloader/PreLoader";
-import {useSpring, animated} from 'react-spring';
+import {animated, useSpring} from 'react-spring';
 import axios from 'axios';
 import {useNavigate} from "react-router-dom";
 

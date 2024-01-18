@@ -1,9 +1,8 @@
-import React, { useContext } from 'react'
+import React, {useContext} from 'react'
 import HeaderCheckout from "../components/checkout/header/HeaderCheckout";
 import "./CheckoutPage.scss"
 import MainCheckout from "../components/checkout/main/MainCheckout";
-import { AppContext } from "../components/app/App";
-import SuccessfulOrder from "../components/checkout/successfulorder/SuccessfulOrder";
+import {AppContext} from "../components/app/App";
 
 
 export const CheckoutPage = () => {

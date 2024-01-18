@@ -1,13 +1,13 @@
-import { Footer } from "../components/mainpage/footer";
+import {Footer} from "../components/mainpage/footer";
 
-import React, { useContext, useEffect } from "react";
-import { AppContext } from "../components/app/App";
-import { useParams } from "react-router-dom";
-import { ProductJson } from "../assets/clothes";
+import React, {useContext, useEffect} from "react";
+import {AppContext} from "../components/app/App";
+import {useParams} from "react-router-dom";
+import {ProductJson} from "../assets/clothes";
 import "./CartPage.scss";
 import CartFullOrder from "../components/cartpage/main/CartFullOrder";
-import { useSpring, animated } from "react-spring";
-import { Header } from "../components/productpage/header";
+import {animated, useSpring} from "react-spring";
+import {Header} from "../components/productpage/header";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const CartPage = () => {

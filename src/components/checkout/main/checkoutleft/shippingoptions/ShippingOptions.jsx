@@ -1,8 +1,8 @@
-import React, { useContext, useState, useEffect } from 'react'
-import { AppContext } from "../../../../app/App";
+import React, {useContext, useEffect, useState} from 'react'
+import {AppContext} from "../../../../app/App";
 import ShippingOption from "./shippingoption/ShippingOption";
 import "./ShippingOptions.scss"
-import { BASE_URL } from '../../../../../assets/constant';
+import {BASE_URL} from '../../../../../assets/constant';
 import axios from 'axios';
 
 const ShippingOptions = ({ handleChange, setDeliveryState }) => {

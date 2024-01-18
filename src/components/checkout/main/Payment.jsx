@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {BASE_URL} from "../../../assets/constant";
 import "./Payment.scss"
 
