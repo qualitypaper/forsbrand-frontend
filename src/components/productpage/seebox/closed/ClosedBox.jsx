@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import cross from "../../../../assets/images/crossBox.svg";
 import {AppContext} from "../../../app/App";
 import "./ClosedBox.scss"

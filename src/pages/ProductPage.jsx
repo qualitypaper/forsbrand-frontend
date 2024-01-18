@@ -7,8 +7,8 @@ import {useParams} from 'react-router-dom';
 import Drawer from "../components/mainpage/drawer";
 import CardFull from "../components/productpage/main/CardFull";
 import CardFullSeeBox from "../components/productpage/seebox/CardFullSeeBox";
-import {useSpring, animated} from "react-spring";
-import { BASE_URL } from '../assets/constant';
+import {animated, useSpring} from "react-spring";
+import {BASE_URL} from '../assets/constant';
 import axios from 'axios';
 
 export const ProductPage = () => {
@@ -63,8 +63,6 @@ export const ProductPage = () => {
             localStorage.setItem('cart', temp);
         }
     };
-
-
 
     const productAnimation = useSpring({
         to: {

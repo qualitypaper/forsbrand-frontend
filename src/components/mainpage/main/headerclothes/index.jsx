@@ -1,15 +1,13 @@
-
 import "./HeaderClothes.scss";
 import "../../../adaptive/mainpage/MainPageAdaptive.scss"
 import Card from "./card/Card";
 
-export const HeaderClothes = ({ onPlus, currentItems }) => {
+export const HeaderClothes = ({onPlus, currentItems}) => {
 
     return (
         <div className="container">
             <section className="header__clothes-card">
-                {currentItems &&
-                    currentItems.map((card) => (
+                {currentItems && currentItems.map((card) => (
                         <Card
                             key={card.id}
                             onPlus={onPlus}

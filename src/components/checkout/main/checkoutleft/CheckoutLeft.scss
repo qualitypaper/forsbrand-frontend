@@ -57,6 +57,13 @@
   .checkout-options{
     border-bottom: 1px solid rgba(65, 65, 65, 0.2);
     padding-bottom: 30px;
+    .select_sizeCheckout{
+      color: rgba(255, 0, 0, 0.55);
+      font-weight: 600;
+      font-size: 16px;
+      padding-top: 10px;
+
+    }
   }
   .checkout-left-show{
     display: flex;

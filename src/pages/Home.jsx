@@ -1,17 +1,17 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Footer } from '../components/mainpage/footer';
-import { HeaderMain } from '../components/mainpage/headermain';
-import { Main } from '../components/mainpage/main/Main';
+import React, {useContext, useEffect, useState} from 'react';
+import {Footer} from '../components/mainpage/footer';
+import {HeaderMain} from '../components/mainpage/headermain';
+import {Main} from '../components/mainpage/main/Main';
 import Drawer from '../components/mainpage/drawer';
 import Window from '../components/mainpage/window';
-import { AppContext } from "../components/app/App";
+import {AppContext} from "../components/app/App";
 import "./Home.scss";
-import { BASE_URL, ERROR_HREF, COOKIE_EXPIRATION_DAYS } from '../assets/constant';
+import {BASE_URL, ERROR_HREF} from '../assets/constant';
 import PreLoader from "../components/preloader/PreLoader";
-import { useSpring, animated } from 'react-spring';
+import {animated, useSpring} from 'react-spring';
 import axios from 'axios';
-import Cookies from 'js-cookie';
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
+
 export const Home = () => {
     const {
         cartOpened,
@@ -32,11 +32,28 @@ export const Home = () => {
         removeFromOrder
     } = useContext(AppContext);
     const [itemOffset, setItemOffset] = useState(0);
-    const logoAnimation = Cookies.get('logo') === 'logo';
     const navigate = useNavigate();
     useEffect(() => {
         const getClothes = async () => {
             setLoading(true);
+
+            // try {
+            //     const cachedData = localStorage.getItem('clothesData');
+            //     if (cachedData) {
+            //         setCardData(JSON.parse(cachedData));
+            //         setCurrentCardData(JSON.parse(cachedData));
+            //     } else {
+            // const response = await axios.get(`${BASE_URL}/product/getAll`);
+            // localStorage.setItem('clothesData', JSON.stringify(response.data));
+            // setCardData(response.data);
+            // setCurrentCardData(response.data);
+            //
+            // } catch (error) {
+            //     console.error(error);
+            //     navigate(ERROR_HREF);
+            // } finally {
+            //     setLoading(false);
+            // }
             try {
                 const response = await axios.get(`${BASE_URL}/product/getAll`);
                 setCardData(response.data);
@@ -50,7 +67,7 @@ export const Home = () => {
         };
 
         getClothes();
-    }, [navigate]);
+    }, [navigate, setCardData, setCurrentCardData, setLoading]);
 
     const deleteToOrder = (element) => {
         const temp = cartItems.filter(item => item.id !== element.id || item.size !== element.size);
@@ -91,17 +108,17 @@ export const Home = () => {
 
     const homeAnimation = useSpring({
         opacity: 1,
-        from: { opacity: 0 },
+        from: {opacity: 0},
     });
 
     const cartItemCount = cartItems.length;
     return (
         <animated.div style={homeAnimation}>
-          <PreLoader />
+            <PreLoader/>
             <div className="mid">
                 <div className="mid_background1">
                     <div className="one1">
-                        <HeaderMain cartItemCount={cartItemCount} onClickCart={() => setCartOpened(true)} />
+                        <HeaderMain cartItemCount={cartItemCount} onClickCart={() => setCartOpened(true)}/>
                         {cartOpened && (
                             <Drawer
                                 deleteToOrder={deleteToOrder}
@@ -138,7 +155,7 @@ export const Home = () => {
                         )}
                     </div>
                 </div>
-                <Footer />
+                <Footer/>
             </div>
         </animated.div>
     );

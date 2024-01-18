@@ -1,29 +1,20 @@
 import React from 'react'
-import {LogoMain} from "./logomain";
 import {SwitchClothes} from "./switch";
 import {HeaderClothes} from "./headerclothes";
 import "./Main.scss"
-import arrow_top_background from "../../../assets/images/arrow_top_background.svg";
-import arrow_down_background from "../../../assets/images/arrow_down_background.svg";
-import ReactPaginate from "react-paginate";
-import {StyledEngineProvider, Typography} from "@mui/material";
+import {Typography} from "@mui/material";
 import {ConfigProvider, Pagination} from 'antd';
-import {CaretUpOutlined, CaretDownOutlined, CaretLeftOutlined, ArrowLeftOutlined, ArrowRightOutlined} from '@ant-design/icons';
+import {ArrowLeftOutlined, ArrowRightOutlined} from '@ant-design/icons';
 
 export const Main = ({
                          onAdd,
-                         renderOnZeroPageCount,
-                         breakLabel,
-                         previousPage,
                          setWindowVisible,
                          onPlus,
                          onPage,
                          currentItems,
                          totalClothes,
                          card,
-                         paginate,
                          onPageChange,
-                         pageCount,
                          currentPage,
                          clothesPerPage,
                      }) => {
@@ -49,11 +40,11 @@ export const Main = ({
                     colorBgContainer: '#fffffff',
                 },
             }}
-    
+
         >
             <div className="background">
                 {/*<LogoMain />*/}
-                <SwitchClothes />
+                <SwitchClothes/>
                 <Typography>
                     <HeaderClothes
                         currentItems={currentItems}
@@ -66,26 +57,26 @@ export const Main = ({
                 </Typography>
                 <div className='paginations'>
 
-    
-                <Pagination
-                    current={currentPage}
-                    total={totalClothes}
-                    pageSize={clothesPerPage}
-                    onChange={onPageChange}
-                    defaultCurrent={currentPage}
-                    showSizeChanger={false}
-                    className="pagination"
-                    itemRender={(current, type, originalElement) => {
-                        if (type === 'prev') {
-                            return <ArrowLeftOutlined  className="img-arrow2" />;
-                        }
-                        if (type === 'next') {
-                            return <ArrowRightOutlined  className="img-arrow1" />;
-                        }
-                        return originalElement;
-                    }}
-                />
-                      </div>
+
+                    <Pagination
+                        current={currentPage}
+                        total={totalClothes}
+                        pageSize={clothesPerPage}
+                        onChange={onPageChange}
+                        defaultCurrent={currentPage}
+                        showSizeChanger={false}
+                        className="pagination"
+                        itemRender={(current, type, originalElement) => {
+                            if (type === 'prev') {
+                                return <ArrowLeftOutlined className="img-arrow2"/>;
+                            }
+                            if (type === 'next') {
+                                return <ArrowRightOutlined className="img-arrow1"/>;
+                            }
+                            return originalElement;
+                        }}
+                    />
+                </div>
             </div>
         </ConfigProvider>
     );

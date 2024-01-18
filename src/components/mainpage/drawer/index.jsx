@@ -1,11 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, {useContext, useState} from "react";
 import "./drawer.scss";
 import arrow_right from "../../../assets/images/arrow_right.svg";
 import logo_img from "../../../assets/images/logo_img.PNG";
 import cross from "../../../assets/images/cross_mark.svg";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import QuantityInput from "../QuantityInput";
-import { AppContext } from "../../app/App";
+import {AppContext} from "../../app/App";
 import SomeComponent from "../../../assets/constant";
 
 

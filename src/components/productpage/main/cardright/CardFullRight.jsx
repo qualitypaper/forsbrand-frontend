@@ -1,14 +1,14 @@
-import React, { useContext, useState } from 'react'
+import React, {useContext, useState} from 'react'
 import "./CardFullRight.scss"
-import SomeComponent, { SIZES } from "../../../../assets/constant";
+import SomeComponent from "../../../../assets/constant";
 import CardFullRightSizes from "./sizes/CardFullRightSizes";
 import CardFullRightQuantity from "./quantity/CardFullRightQuantity";
-import { AppContext } from "../../../app/App";
+import {AppContext} from "../../../app/App";
 
 const CardFullRight = () => {
     const [quantity, setQuantity] = useState(1);
     const [buttonClicked, setButtonClicked] = useState(false);
-    const [selected, setSelected] = useState(-1);
+    const [selected, setSelected] = useState();
     const [addButonDisabled, setAddButtonDisabled] = useState(false);
     const { addToOrder, setWindowProduct, currentClothing, setCartOpened } = useContext(AppContext);
 
@@ -26,14 +26,15 @@ const CardFullRight = () => {
     const handleAddToCart = () => {
         setButtonClicked(true);
 
-        if (!currentClothing.group.oneSize && selected === -1) {
+        if (!selected) {
+            setButtonClicked(true);
             console.error("Please select a size before adding to cart");
             return;
         }
 
         const temp = {
             ...currentClothing,
-            size: currentClothing.group.oneSize ? 'One Size' : SIZES[selected],
+            size: currentClothing.sizes[selected],
             quantity: Number.parseInt(quantity),
         };
 
@@ -75,6 +76,7 @@ const CardFullRight = () => {
             />
             <div className="product__page">
                 <CardFullRightSizes
+                    sizes={currentClothing.sizes}
                     buttonClicked={buttonClicked}
                     selected={selected}
                     setSelected={handleSizesChange}
@@ -83,7 +85,7 @@ const CardFullRight = () => {
             </div>
             <CardFullRightQuantity
                 handleQuantityChange={handleQuantityChange}
-                sizes={SIZES}
+                sizes={currentClothing.sizes}
                 open={selected}
                 quantityText="Кількість"
             />

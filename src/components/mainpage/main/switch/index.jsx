@@ -1,10 +1,9 @@
-import React, { useContext, useEffect } from 'react'
+import React, {useContext, useEffect} from 'react'
 import "./SwitchClothes.scss"
 import "../../../adaptive/mainpage/MainPageAdaptive.scss"
-import { AppContext } from '../../../app/App'
-import {ProductJson} from "../../../../assets/clothes";
+import {AppContext} from '../../../app/App'
 import axios from 'axios';
-import { BASE_URL } from '../../../../assets/constant';
+import {BASE_URL} from '../../../../assets/constant';
 
 export const SwitchClothes = () => {
     const {

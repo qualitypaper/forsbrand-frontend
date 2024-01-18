@@ -1,9 +1,12 @@
-import React, { useContext, useState, useEffect } from 'react'
-import { AppContext } from "../../../../app/App";
+import React, {useContext, useEffect, useState} from 'react'
+import {AppContext} from "../../../../app/App";
 import ShippingOption from "./shippingoption/ShippingOption";
 import "./ShippingOptions.scss"
-import { BASE_URL } from '../../../../../assets/constant';
+import {BASE_URL} from '../../../../../assets/constant';
 import axios from 'axios';
+import ErrorList from "antd/es/form/ErrorList";
+import Stack from "@mui/material/Stack";
+import Alert from "@mui/material/Alert";
 
 const ShippingOptions = ({ handleChange, setDeliveryState }) => {
     const {
@@ -121,29 +124,41 @@ const ShippingOptions = ({ handleChange, setDeliveryState }) => {
                     <div className="radio-delivery">
                         <p>Спосіб доставки:</p>
                     </div>
-                    {shippingOptions.map((shipping) => (
-                        <ShippingOption
-                            key={shipping.id}
-                            showErrorAddress={addressError}
-                            showErrorDepartmentNumber={departmentError}
-                            id={shipping.id}
-                            label={shipping.name}
-                            selectedOption={selectedOption}
-                            onChange={() => handleShippingOptionChange(shipping)}
-                            addressValue={inputValue}
-                            departmentValue={departmentValue}
-                            handleInputChange={handleInputChange2}
-                            handleInputChange2={handleInputChange3}
-                        />
-                    ))}
-                    <button onClick={handleButtonClick3} className="checkout-left__shipping">
-                        <p>Продовжити</p>
-                    </button>
+                    {shippingOptions.length > 0 ? (
+                        shippingOptions.map((shipping) => (
+                            <ShippingOption
+                                key={shipping.id}
+                                showErrorAddress={addressError}
+                                showErrorDepartmentNumber={departmentError}
+                                id={shipping.id}
+                                label={shipping.name}
+                                selectedOption={selectedOption}
+                                onChange={() => handleShippingOptionChange(shipping)}
+                                addressValue={inputValue}
+                                departmentValue={departmentValue}
+                                handleInputChange={handleInputChange2}
+                                handleInputChange2={handleInputChange3}
+                            />
+                        ))
+                    ) : (
+                        <div>
+                            <p className="select_sizeCheckout"><Stack sx={{width: '100%'}} spacing={1}>
+                            <Alert severity="error">Вибачте в данний час ми не можемо доставити ваш товар! Дякую за розуміння</Alert>
+                            </Stack></p>
+                        </div>
+                    )}
+                    {shippingOptions.length > 0 ? (
+                        <>
+                            <button onClick={handleButtonClick3} className="checkout-left__shipping">
+                                <p>Продовжити</p>
+                            </button>
+                        </>
+                    ) : null}
                 </div>
             )}
             {deliveryMethod &&
                 <div className="checkout-left-delivery">
-                    <p>Спосіб доставки</p>
+                <p>Спосіб доставки</p>
                 </div>
             }
         </>

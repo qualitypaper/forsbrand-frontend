@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 import "./CartFullOrder.scss";
 import CartFullOrderRight from "./cartfullright/CartFullOrderRight";
 import CartFullOrderLeft from "./cartfullleft/CartFullOrderLeft";

@@ -1,5 +1,6 @@
 import React from 'react'
 import "./PrivacyPolicyComponent.scss"
+
 const PrivacyPolicyComponent = () => {
     return (
         <div className="PrivacyPolicyComponent">

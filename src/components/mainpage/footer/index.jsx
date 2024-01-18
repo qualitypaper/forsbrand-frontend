@@ -10,6 +10,7 @@ import CallTwoToneIcon from '@mui/icons-material/CallTwoTone';
 import instagram from "../../../assets/images/instagram.png";
 import telegram from "../../../assets/images/telegram.PNG";
 import tiktok from "../../../assets/images/tiktok.PNG";
+
 export const Footer = () => {
     return (
         <footer className="footer">

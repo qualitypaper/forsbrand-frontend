@@ -1,6 +1,5 @@
 import React, {useContext, useState} from 'react'
 import CartItem from "../cartitem/CartItem";
-import sale from "../../../../assets/images/sale.svg";
 import "./CartFullOrderRight.scss"
 import {AppContext} from "../../../app/App";
 
