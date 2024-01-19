@@ -4,7 +4,6 @@ import ShippingOption from "./shippingoption/ShippingOption";
 import "./ShippingOptions.scss"
 import {BASE_URL} from '../../../../../assets/constant';
 import axios from 'axios';
-import ErrorList from "antd/es/form/ErrorList";
 import Stack from "@mui/material/Stack";
 import Alert from "@mui/material/Alert";
 
@@ -26,7 +25,7 @@ const ShippingOptions = ({ handleChange, setDeliveryState }) => {
     const [departmentValue, setDepartmentValue] = useState('');
     const [addressError, setAddressError] = useState('');
     const [departmentError, setDepartmentError] = useState('');
-    const [continueToPayment, setContinueToPayment] = useState(false);
+    const [ setContinueToPayment] = useState(false);
 
     //
     useEffect(() => {
