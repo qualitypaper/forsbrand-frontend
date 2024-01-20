@@ -5,30 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="img">
-      <change afterPath="$PROJECT_DIR$/src/dev/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dev/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dev/palette.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dev/previews.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dev/useInitial.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/logo-fors.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/logo-fors.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/adaptive/mainpage/MainPageAdaptive.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cartpage/main/cartfullright/CartFullOrderRight.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartpage/main/cartfullright/CartFullOrderRight.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/checkoutinputs/CheckoutInputs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/checkoutinputs/CheckoutInputs.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/shippingoptions/ShippingOptions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/shippingoptions/ShippingOptions.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/promocode/PromocodeOrder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutright/promocode/PromocodeOrder.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/headermain/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/headermain/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/main/headerclothes/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/main/headerclothes/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/main/logomain/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/main/logomain/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage/main/switch/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/main/switch/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardleft/CardFullLeft.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardleft/CardFullLeft.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardright/CardFullRight.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/CardFullRight.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/main/cardright/sizes/CardFullRightSizes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/main/cardright/sizes/CardFullRightSizes.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productpage/seebox/CardFullSeeBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productpage/seebox/CardFullSeeBox.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProductPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProductPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/payment/Payment.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/payment/Payment.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +44,9 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="q5m415kb" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -83,23 +64,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/react_projects/react_sneakers&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\react_projects\\forsbrand-frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/react_projects/react_sneakers",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "C:\\Users\\kolom\\IdeaProjects\\forsbrand_frontend\\front\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -644,7 +625,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/pages/ProductPage.jsx</url>
           <line>4</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
