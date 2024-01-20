@@ -7,6 +7,19 @@ import SkeletonImage from "antd/es/skeleton/Image";
 function Card({card, onPlus}) {
     const [isHovered, setIsHovered] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
+    const [width, setWidth] = useState(window.innerWidth);
+
+    function handleWindowSizeChange() {
+        setWidth(window.innerWidth);
+    }
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        }
+    }, []);
+
+    const isMobile = width <= 768;
 
     const handleMouseOver = () => {
         card.images.length > 1 && setIsHovered(true);
@@ -59,7 +72,7 @@ function Card({card, onPlus}) {
                 )}
                 {
                     isLoading && (
-                       <SkeletonImage style={{width: "310px", height: "310px"}} />
+                       <SkeletonImage style={{width: isMobile ? "150px" : "310px", height: isMobile ? "150px" :"310px"}} />
                     )
                 }
                 <p className="price_text">

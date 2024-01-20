@@ -25,7 +25,6 @@ const CardFullRight = () => {
 
     const handleAddToCart = () => {
         setButtonClicked(true);
-        debugger
         if (selected !== 0) {
             if (!selected) {
                 setButtonClicked(true);

@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="img">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/payment/Payment.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/payment/Payment.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainpage/main/headerclothes/card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage/main/headerclothes/card/Card.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +70,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/react_projects/react_sneakers",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -156,6 +158,8 @@
       <workItem from="1705600560985" duration="3063000" />
       <workItem from="1705652360125" duration="506000" />
       <workItem from="1705683931956" duration="2973000" />
+      <workItem from="1705747416843" duration="7000" />
+      <workItem from="1705767014250" duration="1508000" />
     </task>
     <task id="LOCAL-00001" summary="bug fixes CartFullOrder">
       <created>1703965466030</created>

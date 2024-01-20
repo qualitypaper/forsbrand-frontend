@@ -34,7 +34,7 @@ const CheckoutInputs = ({handleChange, deliveryState}) => {
         {label: 'Телефон*', id: 'phoneNumber', type: 'tel'},
         {label: 'Країна*', id: 'country', type: 'text'},
         {label: 'Місто*', id: 'city', type: 'text'},
-        {label: 'Регион', id: 'region', type: 'text'},
+        {label: 'Область', id: 'region', type: 'text'},
         {label: 'Поштовий індекс*', id: 'postalCode', type: 'text'},
     ];
     //
