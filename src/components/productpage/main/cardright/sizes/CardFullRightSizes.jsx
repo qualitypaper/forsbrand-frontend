@@ -4,7 +4,7 @@ import {Alert, ConfigProvider, Select} from "antd";
 import {AppContext} from '../../../../app/App';
 
 const CardFullRightSizes = ({sizes,buttonClicked,  selected, setSelected}) => {
-        const [, setOpen] = useState(false);
+        const [open, setOpen] = useState(false);
         const {currentClothing} = useContext(AppContext)
 
         const [textList, setTextList] = useState();

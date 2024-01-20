@@ -16,7 +16,7 @@ const CardFullRight = () => {
         setCartOpened(true);
     };
 
-    const {name} = currentClothing;
+    const { name } = currentClothing;
 
 
     const handleQuantityChange = (value) => {

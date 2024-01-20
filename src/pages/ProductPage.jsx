@@ -1,7 +1,7 @@
 import React, {useContext, useEffect} from 'react'
 import {Footer} from "../components/mainpage/footer";
 import "./ProductPage.scss"
-// import {ProductJson} from '../assets/clothes.js';
+
 import {AppContext} from "../components/app/App";
 import {useParams} from 'react-router-dom';
 import Drawer from "../components/mainpage/drawer";

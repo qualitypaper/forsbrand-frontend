@@ -13,7 +13,7 @@ const CheckoutInputs = ({handleChange, deliveryState}) => {
         setDeliveryMethod,
     } = useContext(AppContext);
     const [showError, setShowError] = React.useState(false)
-    const [ showNext, setShowNext] = React.useState(true)
+    const [ setShowNext] = React.useState(true)
     const [formData, setFormData] = React.useState({
         email: '',
         fisrtName: '',
@@ -65,7 +65,7 @@ const CheckoutInputs = ({handleChange, deliveryState}) => {
             const areAllFieldsFilled = inputFields.every((field) => formData[field.id]);
 
             inputFields.forEach((field) => {
-                const input = document.getElementById(field.id);
+                // const input = document.getElementById(field.id);
             });
             setShowError(true)
             if (areAllFieldsFilled) {

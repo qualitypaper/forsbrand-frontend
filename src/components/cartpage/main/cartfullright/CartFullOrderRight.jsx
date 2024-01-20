@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext} from 'react'
 import CartItem from "../cartitem/CartItem";
 import "./CartFullOrderRight.scss"
 import {AppContext} from "../../../app/App";
@@ -7,15 +7,13 @@ const CartFullOrderLeft = ({deleteToOrder}) => {
     const {
         cartItems,
         handleQuantityChange,
-        openPromotionalCode,
-        setOpenPromotionalCode,
     } = useContext(AppContext)
     // const [notification, setNotification] = useState("")
-    const [promocode, setPromocode] = useState('');
+    // const [setPromocode] = useState('');
 
-    const handlePromocodeChange = (e) => {
-        setPromocode(e.target.value);
-    }
+    // const handlePromocodeChange = (e) => {
+    //     setPromocode(e.target.value);
+    // }
 
     // const checkPromocodeField = () => {
     //     const res = await checkPromocode(promocode);

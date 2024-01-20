@@ -6,7 +6,6 @@ import "./PromocodeOrder.scss"
 const PromocodeOrder = ({ handlePromocodeChange } ) => {
     const {
         checkPromocode,
-        promocode,
         setPromocode
     } = useContext(AppContext);
     const [promocodeText, setPromocodeText] = useState('');

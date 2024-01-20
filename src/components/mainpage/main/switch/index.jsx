@@ -1,6 +1,5 @@
 import React, {useContext, useEffect} from 'react'
 import "./SwitchClothes.scss"
-import "../../../adaptive/mainpage/MainPageAdaptive.scss"
 import {AppContext} from '../../../app/App'
 import axios from 'axios';
 import {BASE_URL} from '../../../../assets/constant';

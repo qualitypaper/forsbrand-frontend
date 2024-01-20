@@ -6,7 +6,7 @@ import {Image} from 'antd';
 
 
 const CardFullLeft = () => {
-    const { currentClothing, currentImageIndex, setImagesBoxOpened, imagesBoxOpened } = useContext(AppContext);
+    const { currentClothing, currentImageIndex} = useContext(AppContext);
 
     if (!currentClothing || !currentClothing.images || currentImageIndex === undefined) {
         return "";

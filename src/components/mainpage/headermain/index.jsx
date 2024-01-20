@@ -10,7 +10,6 @@ export const HeaderMain = ({ onClickCart, cartItemCount }) => {
   const list = ["UAH ₴"];
   const [open, setOpen] = React.useState(false);
   const [selected, setSelected] = React.useState(0);
-  const waluta = list[selected];
 
   const onClickSorting = (i) => {
     setSelected(i);

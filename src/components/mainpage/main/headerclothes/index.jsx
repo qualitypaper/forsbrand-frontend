@@ -1,5 +1,4 @@
 import "./HeaderClothes.scss";
-import "../../../adaptive/mainpage/MainPageAdaptive.scss"
 import Card from "./card/Card";
 
 export const HeaderClothes = ({onPlus, currentItems}) => {

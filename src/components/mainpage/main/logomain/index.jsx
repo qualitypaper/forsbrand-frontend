@@ -1,7 +1,6 @@
 import React from 'react'
 import logo from "../../../../assets/images/logo_img.PNG"
 import "./LogoMain.scss"
-import "./../../../adaptive/mainpage/MainPageAdaptive.scss"
 import {Link} from "react-router-dom";
 
 
