@@ -6,14 +6,18 @@
     position: relative;
     margin: 6px 8px 39px calc((100% - 980px) * 0.5);
     left: 200px;
+
     .header__main-cart {
       display: flex;
       gap: 3px;
       align-items: center;
+      margin-top: 10px;
+
       .shopping-cart {
         width: 35px;
         height: 35px;
       }
+
       p {
         font-weight: 200;
         font-size: 15px;
@@ -28,6 +32,7 @@
       align-items: center;
       border: 1px solid #000000;
     }
+
     .popup {
       position: absolute;
       background: #ffffff;
@@ -38,13 +43,16 @@
       display: flex;
       width: 177px;
       align-items: center;
+
       ul {
         overflow: hidden;
 
         li {
           padding: 12px 5px;
+
           .active {
             color: #000000;
+
             :hover {
               background-color: #414141;
             }
@@ -65,17 +73,20 @@
       position: sticky;
       gap: 0;
     }
+
     .header__main {
       .header__main-btn {
         display: none;
       }
     }
+
     .header__main {
       .header__main-cart {
         .shopping-cart {
           width: 24px;
           height: 24px;
         }
+
         p {
           display: none;
         }

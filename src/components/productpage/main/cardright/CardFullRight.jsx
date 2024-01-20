@@ -10,13 +10,13 @@ const CardFullRight = () => {
     const [buttonClicked, setButtonClicked] = useState(false);
     const [selected, setSelected] = useState();
     const [addButonDisabled, setAddButtonDisabled] = useState(false);
-    const { addToOrder, setWindowProduct, currentClothing, setCartOpened } = useContext(AppContext);
+    const {addToOrder, setWindowProduct, currentClothing, setCartOpened} = useContext(AppContext);
 
     const openCart = () => {
         setCartOpened(true);
     };
 
-    const { name } = currentClothing;
+    const {name} = currentClothing;
 
 
     const handleQuantityChange = (value) => {
@@ -25,16 +25,20 @@ const CardFullRight = () => {
 
     const handleAddToCart = () => {
         setButtonClicked(true);
-
-        if (!selected) {
-            setButtonClicked(true);
-            console.error("Please select a size before adding to cart");
-            return;
+        debugger
+        if (selected !== 0) {
+            if (!selected) {
+                setButtonClicked(true);
+                console.error("Please select a size before adding to cart");
+                return;
+            }
         }
 
         const temp = {
             ...currentClothing,
-            size: currentClothing.sizes[selected],
+            size: Object.keys(currentClothing.sizes).find((key, index) => {
+                return index === selected;
+            }),
             quantity: Number.parseInt(quantity),
         };
 
@@ -42,17 +46,17 @@ const CardFullRight = () => {
         openCart();
         setWindowProduct(false);
     };
-    
-    const CardFullRightText = ({ name }) => {
+
+    const CardFullRightText = ({name}) => {
         return (
             <div className="product__page-text">
                 <p>{name}</p>
-                <p><SomeComponent currentClothing={currentClothing} /></p>
+                <p><SomeComponent currentClothing={currentClothing}/></p>
             </div>
         )
 
     }
-    const CardFullRightButton = ({ AddToCart,disabled }) => {
+    const CardFullRightButton = ({AddToCart, disabled}) => {
         return (
             <button onClick={handleAddToCart} disabled={disabled} className="product__page-btn cu-p mb-20">
                 <p>{AddToCart}</p>

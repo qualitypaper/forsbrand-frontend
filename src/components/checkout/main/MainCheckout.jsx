@@ -40,18 +40,19 @@ import {AppContext} from '../../app/App';
 //     ]
 // },]
 const MainCheckout = () => {
-    const { cartItems, setPromocode } = useContext(AppContext);
-    const [updateChanges, setUpdateChanges] = useState({}); 
+    const {cartItems, setPromocode} = useContext(AppContext);
+    const [updateChanges, setUpdateChanges] = useState({});
     const [orderId, setOrderId] = useState();
+    const [amountToPay, setAmountToPay] = useState(100000);
 
-    const handleChange = (key, value, firstKey=null) => {
+    const handleChange = (key, value, firstKey = null) => {
         console.log("key: ", key, "value: ", value)
-        if(key === 'deliveryTypeId') {
+        if (key === 'deliveryTypeId') {
             const temp = {...updateChanges, "deliveryTypeId": value};
             console.log(temp);
             setUpdateChanges(temp)
         }
-        if(firstKey) {
+        if (firstKey) {
             const temp = {...updateChanges};
             temp[firstKey][key] = value;
             setUpdateChanges(temp)
@@ -61,8 +62,12 @@ const MainCheckout = () => {
     }
 
     const constructProducts = () => {
-        const productArr = cartItems.map(product => ({quantity: product.quantity, size: product.size, productId: product.id}))
-        return {...updateChanges, products: productArr }
+        const productArr = cartItems.map(product => ({
+            quantity: product.quantity,
+            size: product.size,
+            productId: product.id
+        }))
+        return {...updateChanges, products: productArr}
     }
 
     const submitOrder = async () => {
@@ -70,10 +75,13 @@ const MainCheckout = () => {
         const res = await axios.post(`${BASE_URL}/order/create`, result)
         console.log(res.data)
         debugger
-        if(res.data) {
+        if (res.data) {
             /// send notification about the successful order creation
-            setOrderId(Number.parseInt(res.data.id));
-            setPromocode(null);
+            setTimeout(() => {
+                setOrderId(Number.parseInt(res.data.id));
+                setAmountToPay(res.data.totalPrice);
+                setPromocode(null);
+            }, 1000)
         }
         return res.data ? res.data : null;
     }
@@ -82,7 +90,8 @@ const MainCheckout = () => {
 
     return (
         <div className="checkout">
-            <CheckoutLeft handleChange={handleChange} submitOrder={submitOrder} orderId={orderId}/>
+            <CheckoutLeft handleChange={handleChange} submitOrder={submitOrder} amountToPay={amountToPay}
+                          orderId={orderId}/>
             <CheckoutRight handleChange={handleChange}/>
         </div>
     )

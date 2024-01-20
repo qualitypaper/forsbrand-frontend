@@ -24,9 +24,19 @@ export const Payment = () => {
         document.body.appendChild(scriptTag);
     }, []);
 
-    const handler = () => {
-        console.log('redirecting to ' + url);
-        window.location.href = url
+    const handler = async () => {
+        const result = await submitOrder();
+        console.log(result);
+        if(result){
+            setOrderId(result.id);
+            setTimeout(() => {
+                console.log('redirecting to ' + url);
+                window.location.href = url
+            }, 2000);
+        } else {
+            // show notification message about unsuccessful order creation
+            alert("Пиздец сайт лежит, напишите в тг пж. А то я не понимаю почему и где????")
+        }
     }
 
     return (

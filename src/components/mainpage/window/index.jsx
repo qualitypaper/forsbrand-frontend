@@ -65,7 +65,7 @@ function Window({openCart, onClickClosedWindow}) {
 
     };
 
-    const textList = selected && Object.keys(windowItem).find((key) => {
+    const textList = selected && Object.keys(windowItem.sizes).find((key) => {
         return key === selected;
     });
 

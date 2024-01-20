@@ -65,7 +65,7 @@ const CardFullRightSizes = ({sizes,buttonClicked,  selected, setSelected}) => {
                         options={constructSizes()}
                     />
 
-                    {buttonClicked && !selected && (
+                    {buttonClicked && (selected !== 0 && !selected) && (
                         <div className="select_size">
                             <Alert message="Виберіть Розмір" type="error" showIcon/>
                         </div>

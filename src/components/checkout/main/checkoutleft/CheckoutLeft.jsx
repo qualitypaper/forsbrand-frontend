@@ -5,7 +5,7 @@ import "./CheckoutLeft.scss"
 import ShippingOptions from "./shippingoptions/ShippingOptions";
 import CheckoutInputs from "./checkoutinputs/CheckoutInputs";
 
-const CheckoutLeft = ({ handleChange, submitOrder, orderId }) => {
+const CheckoutLeft = ({ handleChange, submitOrder, orderId, amountToPay }) => {
     const {
         showPay,
         showPayOpen,
@@ -18,7 +18,7 @@ const CheckoutLeft = ({ handleChange, submitOrder, orderId }) => {
             <ShippingOptions handleChange={handleChange} setDeliveryState={setDeliveryState}/>
             {showPayOpen &&
                 <div className="checkout-left-delivery2">
-                    <Payment submitOrder={submitOrder} orderId={orderId}/>
+                    <Payment submitOrder={submitOrder} orderId={orderId} amountToPay={amountToPay} />
                 </div>
             }
             {showPay &&
