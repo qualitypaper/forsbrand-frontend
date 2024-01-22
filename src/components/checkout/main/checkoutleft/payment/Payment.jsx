@@ -76,7 +76,7 @@ export const Payment = ({submitOrder}) => {
             //eslint-disable-next-line
             const button = $ipsp.get('button');
             button.setMerchantId(1396424);
-            button.setAmount(result.totalPrice, 'UAH');
+            button.setAmount(result.totalPrice, 'UAH', true);
             button.setHost('pay.fondy.eu');
             result.id
                 ? button.setResponseUrl(`${BASE_URL}/order/payment?order_id=${result.id}`)
