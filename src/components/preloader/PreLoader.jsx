@@ -16,7 +16,7 @@ const PreLoader = () => {
                     setLoading(true);
                     // Set sessionStorage to indicate that the preloader has been shown
                     sessionStorage.setItem('preloaderShown', true);
-                }, 5000);
+                }, 2000);
             };
 
             preLoaderAnim();

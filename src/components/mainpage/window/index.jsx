@@ -57,7 +57,7 @@ function Window({openCart, onClickClosedWindow}) {
 
     const onClickSorting = (i) => {
         setAddButtonDisabled(true);
-        setSelected(i);
+        setSelected(i.size);
         setOpen(false);
         setTimeout(() => {
             setAddButtonDisabled(false);
@@ -65,9 +65,6 @@ function Window({openCart, onClickClosedWindow}) {
 
     };
 
-    const textList = selected && Object.keys(windowItem.sizes).find((key) => {
-        return key === selected;
-    });
 
     const handleAddToCart = () => {
         if (!selected) {
@@ -82,7 +79,7 @@ function Window({openCart, onClickClosedWindow}) {
         const productToAdd = {
             ...windowItem,
             quantity: quantity,
-            size: textList,
+            size: selected,
         };
 
 
@@ -91,7 +88,6 @@ function Window({openCart, onClickClosedWindow}) {
             openCart();
             setWindowProduct(false);
             setLoading(false);
-            console.log(textList);
         }, 1000);
         setSelectSize(false);
     };
@@ -233,13 +229,13 @@ function Window({openCart, onClickClosedWindow}) {
                                         placeholder="Виберіть розмір"
                                         className="select"
                                         optionFilterProp="children"
-                                        value={textList}
+                                        value={selected && selected}
                                         filterOption={(button, option) => (option?.label ?? '').includes(button)}
-                                        options={Object.entries(windowItem.sizes).map(([key, value], index) => ({
-                                            value: key,
+                                        options={windowItem.sizes.map((size, index) => ({
+                                            value: size.size,
                                             label: (
-                                                <li key={index} onClick={() => onClickSorting(key)}>
-                                                    {key}
+                                                <li key={size.id} onClick={() => onClickSorting(size)}>
+                                                    {size.size}
                                                 </li>
                                             ),
                                         }))}
