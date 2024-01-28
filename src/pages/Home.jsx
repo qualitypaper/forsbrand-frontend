@@ -115,7 +115,9 @@ export const Home = () => {
     return (
         <animated.div style={homeAnimation}>
             <PreLoader/>
-            <div className="mid">
+            <div className="mid" style={{
+                backgroundImage: "url(../assets/images/background_image.png)"
+            }}>
                 <div className="mid_background1">
                     <div className="one1">
                         <HeaderMain cartItemCount={cartItemCount} onClickCart={() => setCartOpened(true)}/>

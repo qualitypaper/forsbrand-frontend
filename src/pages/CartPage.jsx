@@ -48,7 +48,9 @@ const CartPage = () => {
 
   return (
     <>
-      <div className="mid">
+      <div className="mid" style={{
+        backgroundImage: "url(../assets/images/background_image.png)"
+      }}>
         <div className="mid_background1">
           <div className="one">
             <Header maintext={<div className="header_back">

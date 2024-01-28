@@ -30,12 +30,12 @@ const CardFullRight = () => {
                 setButtonClicked(true);
                 console.error("Please select a size before adding to cart");
                 return;
-            }
+            } 
         }
 
         const temp = {
             ...currentClothing,
-            size: Object.keys(currentClothing.sizes).find((key, index) => {
+            size: currentClothing.sizes.find((_, index) => {
                 return index === selected;
             }),
             quantity: Number.parseInt(quantity),

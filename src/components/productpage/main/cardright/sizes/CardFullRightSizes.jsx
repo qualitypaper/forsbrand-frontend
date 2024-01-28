@@ -59,7 +59,7 @@ const CardFullRightSizes = ({ sizes, buttonClicked, selected, setSelected }) => 
                 <Select
                     placeholder="Виберіть розмір"
                     className="select"
-                    value={textList}
+                    value={textList && textList.size}
                     optionFilterProp="children"
                     filterOption={(button, option) => (option?.label ?? '').includes(button)}
                     options={constructSizes()}

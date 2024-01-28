@@ -1,23 +1,24 @@
-.background{
+.background {
   margin-bottom: 40px;
-.paginations{
-  .pagination {
-    display: flex;
-    margin-top: 30px;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
+  .paginations {
+    .pagination {
+      display: flex;
+      margin-top: 30px;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+    }
   }
 }
-}
-
 
 .page-number {
   cursor: pointer;
   padding: 8px;
   border-radius: 4px;
   color: #555;
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .page-number.active {
@@ -33,7 +34,9 @@
   border: 2px solid #ccc;
   border-radius: 4px;
   color: #555;
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .page-number.previous.disabled,

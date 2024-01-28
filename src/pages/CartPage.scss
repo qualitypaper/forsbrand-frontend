@@ -1,16 +1,19 @@
 .mid {
   .mid_background1 {
     background-repeat: no-repeat;
-    background-color: rgb(228, 232, 233);
-    background-size: cover;
     background-position: center;
     display: grid;
     left: 33px;
     justify-content: center;
 
-    background-image: url("../assets/images/backgr.jpg");
-
-
+    // background-image: url("../assets/images/backgr.jpg");
+    background-image: url("../assets/images/background_image_right_space.png");
+    // background-image: url("../assets/images/fon (2).png");
+    
+    @media screen and (max-width: 768px) {
+      background-image: url("../assets/images/background_image-.png");
+      
+    }
     .one {
       .header_back {
         display: flex;

@@ -18,9 +18,7 @@
   grid-column-gap: 1;
   grid-row-gap: 0;
 
-
   .card {
-
     .card-button-container {
       position: relative;
       bottom: 79px;
@@ -28,7 +26,9 @@
       width: 100%;
       opacity: 0;
       transform-origin: bottom center;
-      transition: opacity 0.3s ease-in-out, transform 0.3s ease-out;
+      transition:
+        opacity 0.3s ease-in-out,
+        transform 0.3s ease-out;
 
       .card-button {
         cursor: pointer;
@@ -54,7 +54,7 @@
       }
     }
   }
-  .price_text{
+  .price_text {
     font-weight: 600;
     font-size: 16px;
     color: black;
@@ -67,14 +67,10 @@
     object-fit: cover;
     transition: transform 0.3s ease-in-out;
 
-
     &.hovered {
       transform: scale(1.1);
     }
   }
-
-
-
 
   .card1 {
     grid-area: 1 / 1 / 2 / 2;
@@ -120,7 +116,6 @@
     grid-area: 3 / 3 / 4 / 4;
     text-align: left;
   }
-
 }
 @media screen and (max-width: 816px) {
   .header__clothes-card .card .card-button-container .card-button {

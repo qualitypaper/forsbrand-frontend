@@ -56,8 +56,6 @@ export const Main = ({
                     />
                 </Typography>
                 <div className='paginations'>
-
-
                     <Pagination
                         current={currentPage}
                         total={totalClothes}

@@ -4,7 +4,7 @@ import IconButton from '@mui/material/IconButton';
 import React from 'react';
 import logo from "../../../assets/images/logo_img.PNG";
 import "./HeaderMain.scss";
-import logoFors from "../../../assets/images/logo-fors.PNG";
+import logoFors from "../../../assets/images/logo_1.PNG";
 
 export const HeaderMain = ({ onClickCart, cartItemCount }) => {
   const list = ["UAH ₴"];
