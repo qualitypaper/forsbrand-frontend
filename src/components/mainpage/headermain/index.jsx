@@ -20,8 +20,8 @@ export const HeaderMain = ({ onClickCart, cartItemCount }) => {
     <header className="header">
       <div className="containerHeader">
         <div className="header__main-logo">
-          <img src={logoFors} alt="logo"/>
-          <img src={logo} alt="logo"/>
+          <img className="header__main-logo-fors" src={logoFors} alt="logo"/>
+          <img className="header__main-logo-img" src={logo} alt="logo"/>
         </div>
         <div className="header__main">
           <div onClick={onClickCart} className="header__main-cart cu-p">
