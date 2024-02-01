@@ -5,6 +5,7 @@ import "./Main.scss"
 import {Typography} from "@mui/material";
 import {ConfigProvider, Pagination} from 'antd';
 import {ArrowLeftOutlined, ArrowRightOutlined} from '@ant-design/icons';
+import {LogoMain} from "./logomain";
 
 export const Main = ({
                          onAdd,
@@ -43,7 +44,7 @@ export const Main = ({
 
         >
             <div className="background">
-                {/*<LogoMain />*/}
+                <LogoMain />
                 <SwitchClothes/>
                 <Typography>
                     <HeaderClothes

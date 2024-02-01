@@ -2,7 +2,6 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import StyledBadge from '@mui/material/Badge';
 import IconButton from '@mui/material/IconButton';
 import React from 'react';
-import logo from "../../../assets/images/logo_img.PNG";
 import "./HeaderMain.scss";
 import logoFors from "../../../assets/images/logo_1.PNG";
 
@@ -21,7 +20,6 @@ export const HeaderMain = ({ onClickCart, cartItemCount }) => {
       <div className="containerHeader">
         <div className="header__main-logo">
           <img className="header__main-logo-fors" src={logoFors} alt="logo"/>
-          <img className="header__main-logo-img" src={logo} alt="logo"/>
         </div>
         <div className="header__main">
           <div onClick={onClickCart} className="header__main-cart cu-p">

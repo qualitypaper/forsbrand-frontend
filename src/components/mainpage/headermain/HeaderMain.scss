@@ -14,8 +14,8 @@
       margin-top: 10px;
 
       .shopping-cart {
-        width: 35px;
-        height: 35px;
+        width: 40px;
+        height: 38px;
       }
 
       p {
@@ -67,7 +67,34 @@
   }
 }
 
-@media (max-width: 817px) {
+@media (max-width: 816px) {
+  .header {
+    .header__main {
+      position: sticky;
+      gap: 0;
+    }
+
+    .header__main {
+      .header__main-btn {
+        display: none;
+      }
+    }
+
+    .header__main {
+      .header__main-cart {
+        .shopping-cart {
+          width: 40px;
+          height: 40px;
+        }
+
+        p {
+          display: none;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 320px) {
   .header {
     .header__main {
       position: sticky;
