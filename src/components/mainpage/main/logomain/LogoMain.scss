@@ -28,3 +28,12 @@
     margin: 10px 0 20px 0;
   }
 }
+
+@media (max-width: 320px) {
+  .logo_main {
+    img{
+      height: 150px;
+      width: 250px;
+    }
+  }
+}

@@ -5,7 +5,6 @@
     justify-content: space-between;
     position: relative;
     margin: 6px 8px 39px calc((100% - 980px) * 0.5);
-    left: 200px;
 
     .header__main-cart {
       display: flex;
@@ -14,7 +13,6 @@
       margin-top: 10px;
 
       .shopping-cart {
-        margin-left: auto;
         width: 40px;
         height: 38px;
       }
