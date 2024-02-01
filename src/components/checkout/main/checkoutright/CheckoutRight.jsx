@@ -10,7 +10,7 @@ const CheckoutRight = ({ handleChange }) => {
   const { cartItems, totalCost, selectedOption, promocode } =
     useContext(AppContext);
 
-  const discountedTotal = promocode.discount
+  const discountedTotal = (promocode && promocode.discount)
     ? totalCost - (promocode.discount / 100) * totalCost
     : totalCost;
 
@@ -70,8 +70,8 @@ const CheckoutRight = ({ handleChange }) => {
             </li>
             <div className="cart__order-full-price">
               <p>Промокод</p>
-              {promocode && promocode.discount ? (
-                <p>{promocode.discount}%</p>
+              {promocode ? (
+                <p>{promocode.discount || 0}%</p>
               ) : (
                 <p>Немає промокоду</p>
               )}
