@@ -2,20 +2,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
+  margin-top: 40px;
   img {
-    width: 550px;
-    height: 550px;
+    height: 420px;
   }
 }
-
-
 
 @media (max-width: 616px) {
   .logo_main {
     img {
-      width: 400px;
-      height: 400px;
+      width: 420px;
+      height: 300px;
     }
   }
 }
@@ -23,8 +20,8 @@
 @media (max-width: 460px) {
   .logo_main {
     img {
-      width: 250px;
-      height: 250px;
+      height: 200px;
+      width: 330px;
     }
   }
 }
