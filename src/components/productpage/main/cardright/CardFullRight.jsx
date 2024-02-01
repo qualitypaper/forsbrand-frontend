@@ -25,6 +25,7 @@ const CardFullRight = () => {
 
     const handleAddToCart = () => {
         setButtonClicked(true);
+        debugger
         if (selected !== 0) {
             if (!selected) {
                 setButtonClicked(true);
@@ -37,7 +38,7 @@ const CardFullRight = () => {
             ...currentClothing,
             size: currentClothing.sizes.find((_, index) => {
                 return index === selected;
-            }),
+            }).size,
             quantity: Number.parseInt(quantity),
         };
 
