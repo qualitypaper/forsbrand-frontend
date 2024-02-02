@@ -56,6 +56,7 @@ const CardFullLeft = () => {
                     items={images}
                 >
                     <Image
+                        className='product_image'
                         width={isMobile ? 250 : 500}
                         height={isMobile ? 275 : 520}
                         src={images[currentImageIndex]}
