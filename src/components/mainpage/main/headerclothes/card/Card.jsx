@@ -6,7 +6,7 @@ import SkeletonImage from "antd/es/skeleton/Image";
 
 function Card({card, onPlus}) {
     const [isHovered, setIsHovered] = useState(false);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
     const [width, setWidth] = useState(window.innerWidth);
 
     function handleWindowSizeChange() {
@@ -39,23 +39,23 @@ function Card({card, onPlus}) {
     const {images} = card;
     const imgSrc = isHovered ? images[1] : images[0];
 
-    useEffect(() => {
-        const cacheImages = async (images) => {
-            const promises = await images.map(image => {
-                return new Promise((resolve, reject) => {
-                    const img = new Image();
-                    img.src = image;
-                    img.onload = () => resolve();
-                    img.onerror = () => reject();
-                });
-            });
-            await Promise.all(promises);
+    // useEffect(() => {
+    //     const cacheImages = async (images) => {
+    //         const promises = await images.map(image => {
+    //             return new Promise((resolve, reject) => {
+    //                 const img = new Image();
+    //                 img.src = image;
+    //                 img.onload = () => resolve();
+    //                 img.onerror = () => reject();
+    //             });
+    //         });
+    //         await Promise.all(promises);
 
-            setIsLoading(false);
-        };
+    //         setIsLoading(false);
+    //     };
 
-        cacheImages(card.images).then(r => console.log(r));
-    }, [card.images]);
+    //     cacheImages(card.images).then(r => console.log(r));
+    // }, [card.images]);
 
     return (
         <div className="card">
