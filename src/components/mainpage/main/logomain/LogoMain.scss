@@ -37,3 +37,13 @@
     }
   }
 }
+
+@media (max-width: 280px) {
+  .logo_main {
+    img{
+      height: 120px;
+      width: 200px;
+    }
+    margin: 0 10px ;
+  }
+}

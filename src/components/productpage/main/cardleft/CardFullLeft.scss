@@ -4,6 +4,9 @@
     position: relative;
     transition: filter 0.3s ease-out;
 
+    .product_image {
+      object-fit: contain;
+    }
     &:hover {
       filter: grayscale(0%);
     }
