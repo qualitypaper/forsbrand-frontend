@@ -48,7 +48,7 @@ const CheckoutInputs = ({handleChange, deliveryState}) => {
     //     fetchShippingOptions().then()
     // }, [])
 
-    const handleInputChange = (event, fieldName) => {
+    const handleInputChange = (event) => {
         const {id, value} = event.target;
         setFormData((prevData) => ({
             ...prevData,
@@ -58,26 +58,30 @@ const CheckoutInputs = ({handleChange, deliveryState}) => {
     };
 
     const handleButtonClick = (event) => {
-            event.preventDefault();
+        event.preventDefault();
 
-            const form = document.getElementById('formId');
-            const areAllFieldsFilled = inputFields.every((field) => formData[field.id]);
-
-            inputFields.forEach((field) => {
-                // const input = document.getElementById(field.id);
-            });
-            setShowError(true)
-            if (areAllFieldsFilled) {
-
-                setShowData(true);
-                setInputData(false);
-                setDeliveryMethod(false);
-                !deliveryState && setDeliveryOpenMethod(true);
+        const form = document.getElementById('formId');
+        const areAllFieldsFilled = inputFields.every((field) => {
+            if (field.id === 'postalCode') {
+                // Если поле "Поштовий індекс", проверяем, не пустое ли оно
+                return true; // Возвращаем true для пропуска проверки на заполнение
             } else {
-                // Trigger HTML5 validation manually
-                form.reportValidity();
+                // Для всех остальных полей проверяем их заполненность
+                return formData[field.id];
             }
-        };
+        });
+
+        setShowError(!areAllFieldsFilled);
+
+        if (areAllFieldsFilled) {
+            setShowData(true);
+            setInputData(false);
+            setDeliveryMethod(false);
+            !deliveryState && setDeliveryOpenMethod(true);
+        } else {
+            form.reportValidity();
+        }
+    };
 
     const handleButtonClick2 = () => {
         setInputData(true)
