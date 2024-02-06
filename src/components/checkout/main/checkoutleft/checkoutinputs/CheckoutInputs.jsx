@@ -21,7 +21,6 @@ const CheckoutInputs = ({handleChange, deliveryState}) => {
         phoneNumber: '',
         country: '',
         city: '',
-        postalCode: '',
         region: '',
         description: '',
     });
