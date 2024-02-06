@@ -111,7 +111,7 @@ const CheckoutInputs = ({handleChange, deliveryState}) => {
                             id={field.id}
                             type={field.type}
                             value={formData[field.id]}
-                            required={true}
+                            required={field.id !== 'postalCode'}
                             onChange={(e) => handleInputChange(e, field.id)}
                             showError={showError}
                         />
