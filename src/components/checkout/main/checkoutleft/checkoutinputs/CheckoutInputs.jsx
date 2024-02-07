@@ -34,7 +34,7 @@ const CheckoutInputs = ({handleChange, deliveryState}) => {
         {label: 'Країна*', id: 'country', type: 'text'},
         {label: 'Місто*', id: 'city', type: 'text'},
         {label: 'Область', id: 'region', type: 'text'},
-        {label: 'Поштовий індекс*', id: 'postalCode', type: 'text'},
+        {label: 'Поштовий індекс', id: 'postalCode', type: 'text'},
     ];
     //
     // useEffect(() => {

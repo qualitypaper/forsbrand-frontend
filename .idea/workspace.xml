@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="img">
+    <list default="true" id="d45cdc3e-ff66-40f5-88a1-c6f60f8a77d5" name="Changes" comment="ывыф">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/checkoutinputs/CheckoutInputs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/main/checkoutleft/checkoutinputs/CheckoutInputs.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +263,7 @@
       <workItem from="1705951312108" duration="10000" />
       <workItem from="1706211614771" duration="103000" />
       <workItem from="1706212524761" duration="62000" />
-      <workItem from="1707262037935" duration="459000" />
+      <workItem from="1707262037935" duration="1428000" />
     </task>
     <task id="LOCAL-00001" summary="bug fixes CartFullOrder">
       <created>1703965466030</created>
@@ -335,22 +334,6 @@
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
       <updated>1704561758556</updated>
-    </task>
-    <task id="LOCAL-00011" summary="fixed little bugs">
-      <option name="closed" value="true" />
-      <created>1705078473007</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1705078473007</updated>
-    </task>
-    <task id="LOCAL-00012" summary="added pages error, website down and changed successful and unsuccessful">
-      <option name="closed" value="true" />
-      <created>1705100872484</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1705100872484</updated>
     </task>
     <task id="LOCAL-00013" summary="added icons in footer (delivery, privacy policy, contacts)">
       <option name="closed" value="true" />
@@ -648,7 +631,23 @@
       <option name="project" value="LOCAL" />
       <updated>1705598731590</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="ыв">
+      <option name="closed" value="true" />
+      <created>1707262513100</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1707262513101</updated>
+    </task>
+    <task id="LOCAL-00051" summary="ывыф">
+      <option name="closed" value="true" />
+      <created>1707262840890</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1707262840891</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -666,8 +665,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added drawer to the cart page" />
-    <MESSAGE value="refactoring ProductPage" />
     <MESSAGE value="made seeBox" />
     <MESSAGE value="fixed bugs" />
     <MESSAGE value="add page with sizes" />
@@ -691,7 +688,9 @@
     <MESSAGE value="fixed bugs with Current Price in Drawer" />
     <MESSAGE value="error" />
     <MESSAGE value="img" />
-    <option name="LAST_COMMIT_MESSAGE" value="img" />
+    <MESSAGE value="ыв" />
+    <MESSAGE value="ывыф" />
+    <option name="LAST_COMMIT_MESSAGE" value="ывыф" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
