@@ -62,7 +62,7 @@ const CheckoutInputs = ({handleChange, deliveryState}) => {
 
         const form = document.getElementById('formId');
         const areAllFieldsFilled = inputFields.every((field) => {
-            if (field.id === 'postalCode' && field.id === 'region') {
+            if (field.id === 'postalCode' || field.id === 'region') {
                 return true;
             } else {
                 return formData[field.id];
