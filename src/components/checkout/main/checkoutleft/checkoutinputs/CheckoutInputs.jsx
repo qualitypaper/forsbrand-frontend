@@ -21,7 +21,6 @@ const CheckoutInputs = ({handleChange, deliveryState}) => {
         phoneNumber: '',
         country: '',
         city: '',
-        postalCode: '',
         region: '',
         description: '',
     });
@@ -35,7 +34,7 @@ const CheckoutInputs = ({handleChange, deliveryState}) => {
         {label: 'Країна*', id: 'country', type: 'text'},
         {label: 'Місто*', id: 'city', type: 'text'},
         {label: 'Область', id: 'region', type: 'text'},
-        {label: 'Поштовий індекс*', id: 'postalCode', type: 'text'},
+        {label: 'Поштовий індекс', id: 'postalCode', type: 'text'},
     ];
     //
     // useEffect(() => {
@@ -49,7 +48,7 @@ const CheckoutInputs = ({handleChange, deliveryState}) => {
     //     fetchShippingOptions().then()
     // }, [])
 
-    const handleInputChange = (event, fieldName) => {
+    const handleInputChange = (event) => {
         const {id, value} = event.target;
         setFormData((prevData) => ({
             ...prevData,
@@ -59,26 +58,30 @@ const CheckoutInputs = ({handleChange, deliveryState}) => {
     };
 
     const handleButtonClick = (event) => {
-            event.preventDefault();
+        event.preventDefault();
 
-            const form = document.getElementById('formId');
-            const areAllFieldsFilled = inputFields.every((field) => formData[field.id]);
-
-            inputFields.forEach((field) => {
-                // const input = document.getElementById(field.id);
-            });
-            setShowError(true)
-            if (areAllFieldsFilled) {
-
-                setShowData(true);
-                setInputData(false);
-                setDeliveryMethod(false);
-                !deliveryState && setDeliveryOpenMethod(true);
+        const form = document.getElementById('formId');
+        const areAllFieldsFilled = inputFields.every((field) => {
+            if (field.id === 'postalCode') {
+                // Если поле "Поштовий індекс", проверяем, не пустое ли оно
+                return true; // Возвращаем true для пропуска проверки на заполнение
             } else {
-                // Trigger HTML5 validation manually
-                form.reportValidity();
+                // Для всех остальных полей проверяем их заполненность
+                return formData[field.id];
             }
-        };
+        });
+
+        setShowError(!areAllFieldsFilled);
+
+        if (areAllFieldsFilled) {
+            setShowData(true);
+            setInputData(false);
+            setDeliveryMethod(false);
+            !deliveryState && setDeliveryOpenMethod(true);
+        } else {
+            form.reportValidity();
+        }
+    };
 
     const handleButtonClick2 = () => {
         setInputData(true)
@@ -112,7 +115,7 @@ const CheckoutInputs = ({handleChange, deliveryState}) => {
                             id={field.id}
                             type={field.type}
                             value={formData[field.id]}
-                            required={true}
+                            required={field.id !== 'postalCode'}
                             onChange={(e) => handleInputChange(e, field.id)}
                             showError={showError}
                         />
