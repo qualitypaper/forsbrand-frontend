@@ -105,6 +105,7 @@ export const Home = () => {
         debugger
         const newOffset = ((pageNumber - 1) * clothesPerPage) % cardData.length;
         setItemOffset(newOffset);
+        setCurrentPage(pageNumber);
     };
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
@@ -133,6 +134,7 @@ export const Home = () => {
                         )}
                         <Main
                             clothesPerPage={clothesPerPage}
+                            currentPage={currentPage}
                             totalClothes={currentCardData.length}
                             items={windowItems}
                             previousPage={paginate}

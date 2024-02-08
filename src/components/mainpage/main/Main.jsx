@@ -31,7 +31,7 @@ export const Main = ({
     // if (isFirstVisit) {
     //     localStorage.setItem('visited', 'true');
     // }
-
+    console.log("currentPage: ", currentPage)
     return (
         <ConfigProvider
             theme={{

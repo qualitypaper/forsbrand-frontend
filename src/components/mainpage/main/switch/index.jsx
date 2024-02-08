@@ -8,8 +8,6 @@ export const SwitchClothes = ({ onPageChange }) => {
     const {
         cardData,
         setCurrentCardData,
-        setCurrentPage,
-        currentPage
     } = useContext(AppContext);
 
     const [activeSwitch, setActiveSwitch] = React.useState(0)
@@ -48,11 +46,12 @@ export const SwitchClothes = ({ onPageChange }) => {
     }
 
     const handleCategoryChange = (index) => {
+        if(index === 0) console.log("ALL CARTERGasdjfnsa")
         onPageChange(1);
         setTimeout(() => {
             setActiveSwitch(index)
             filterClothes(index)
-        }, 100)
+        }, 100);
     }
 
     return (
