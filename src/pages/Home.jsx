@@ -25,12 +25,14 @@ export const Home = () => {
         setWindowProduct,
         setCardData,
         setCurrentPage,
+        currentPage,
         clothesPerPage,
         setLoading,
         currentCardData,
         setCurrentCardData,
         removeFromOrder
     } = useContext(AppContext);
+
     const [itemOffset, setItemOffset] = useState(0);
     const navigate = useNavigate();
     useEffect(() => {
@@ -84,7 +86,6 @@ export const Home = () => {
         setWindowProduct(true);
     };
 
-
     const openCart = () => {
         setCartOpened(true);
     };
@@ -93,18 +94,22 @@ export const Home = () => {
     //     addToOrder(item);
     // }
 
+    console.log(currentCardData)
+
     const endOffset = itemOffset + clothesPerPage;
     const currentClothes = Array.isArray(currentCardData) ? currentCardData.slice(itemOffset, endOffset) : [];
     const pageCount = Math.ceil(currentCardData.length / clothesPerPage);
 
     const handlePageClick = (pageNumber) => {
+        console.log('pageNumber ', pageNumber);
+        debugger
         const newOffset = ((pageNumber - 1) * clothesPerPage) % cardData.length;
         setItemOffset(newOffset);
+        setCurrentPage(pageNumber);
     };
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
-
 
     const homeAnimation = useSpring({
         opacity: 1,
@@ -129,7 +134,8 @@ export const Home = () => {
                         )}
                         <Main
                             clothesPerPage={clothesPerPage}
-                            totalClothes={cardData.length}
+                            currentPage={currentPage}
+                            totalClothes={currentCardData.length}
                             items={windowItems}
                             previousPage={paginate}
                             onPlus={onPlus}

@@ -4,11 +4,12 @@ import {AppContext} from '../../../app/App'
 import axios from 'axios';
 import {BASE_URL} from '../../../../assets/constant';
 
-export const SwitchClothes = () => {
+export const SwitchClothes = ({ onPageChange }) => {
     const {
         cardData,
-        setCurrentCardData
-    } = useContext(AppContext)
+        setCurrentCardData,
+    } = useContext(AppContext);
+
     const [activeSwitch, setActiveSwitch] = React.useState(0)
     const [categories, setCategories] = React.useState([""])
     
@@ -45,8 +46,12 @@ export const SwitchClothes = () => {
     }
 
     const handleCategoryChange = (index) => {
-        setActiveSwitch(index)
-        filterClothes(index)
+        if(index === 0) console.log("ALL CARTERGasdjfnsa")
+        onPageChange(1);
+        setTimeout(() => {
+            setActiveSwitch(index)
+            filterClothes(index)
+        }, 100);
     }
 
     return (

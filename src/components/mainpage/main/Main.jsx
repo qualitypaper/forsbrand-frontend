@@ -31,7 +31,7 @@ export const Main = ({
     // if (isFirstVisit) {
     //     localStorage.setItem('visited', 'true');
     // }
-
+    console.log("currentPage: ", currentPage)
     return (
         <ConfigProvider
             theme={{
@@ -45,7 +45,7 @@ export const Main = ({
         >
             <div className="background">
                 <LogoMain />
-                <SwitchClothes/>
+                <SwitchClothes onPageChange={onPageChange}/>
                 <Typography>
                     <HeaderClothes
                         currentItems={currentItems}
