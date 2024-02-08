@@ -32,7 +32,7 @@ const CheckoutInputs = ({handleChange, deliveryState}) => {
         {label: 'Прізвище*', id: 'lastName', type: 'text'},
         {label: 'Телефон*', id: 'phoneNumber', type: 'tel'},
         {label: 'Країна*', id: 'country', type: 'text'},
-        {label: 'Місто*', id: 'city', type: 'text'},
+        {label: 'Город / Село*', id: 'city', type: 'text'},
         {label: 'Область', id: 'region', type: 'text'},
         {label: 'Поштовий індекс', id: 'postalCode', type: 'text'},
     ];
@@ -62,11 +62,9 @@ const CheckoutInputs = ({handleChange, deliveryState}) => {
 
         const form = document.getElementById('formId');
         const areAllFieldsFilled = inputFields.every((field) => {
-            if (field.id === 'postalCode') {
-                // Если поле "Поштовий індекс", проверяем, не пустое ли оно
-                return true; // Возвращаем true для пропуска проверки на заполнение
+            if (field.id === 'postalCode' && field.id === 'region') {
+                return true;
             } else {
-                // Для всех остальных полей проверяем их заполненность
                 return formData[field.id];
             }
         });
