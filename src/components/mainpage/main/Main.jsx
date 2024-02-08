@@ -45,7 +45,7 @@ export const Main = ({
         >
             <div className="background">
                 <LogoMain />
-                <SwitchClothes/>
+                <SwitchClothes onPageChange={onPageChange}/>
                 <Typography>
                     <HeaderClothes
                         currentItems={currentItems}
