@@ -62,11 +62,9 @@ const CheckoutInputs = ({handleChange, deliveryState}) => {
 
         const form = document.getElementById('formId');
         const areAllFieldsFilled = inputFields.every((field) => {
-            if (field.id === 'postalCode') {
-                // Если поле "Поштовий індекс", проверяем, не пустое ли оно
-                return true; // Возвращаем true для пропуска проверки на заполнение
+            if (field.id === 'postalCode' || field.id === 'region') {
+                return true;
             } else {
-                // Для всех остальных полей проверяем их заполненность
                 return formData[field.id];
             }
         });
