@@ -1,5 +1,5 @@
-export const BASE_URL = "https://api.forsbrand.com.ua";
-// export const BASE_URL = "http://localhost:9090";
+// export const BASE_URL = "https://api.forsbrand.com.ua";
+export const BASE_URL = "http://localhost:8080";
 export const ERROR_HREF = "/website-down";
 export const SIZES = ["XS", "S", "M", "L", "XL", "XXL"];
 export const currencyValue = "₴";

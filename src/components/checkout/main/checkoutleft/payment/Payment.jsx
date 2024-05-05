@@ -22,49 +22,11 @@ export const Payment = ({submitOrder}) => {
     const [orderId, setOrderId] = useState(0);
     const paymentUrlRef = useRef()
 
-
-    // useEffect(() => {
-    //     const createOrder = async () => {
-    //         const result = await submitOrder();
-    //         debugger
-    //         console.log(result);
-    //         if (!result.id) {
-    //             alert("Doesn't work the order creation");
-    //             return;
-    //         }
-    //         if (result.id && result.totalPrice) {
-    //             const scriptTag = document.createElement('script');
-    //             scriptTag.src = 'https://pay.fondy.eu/static_common/v1/checkout/ipsp.js';
-    //             scriptTag.async = true;
-    //             scriptTag.onload = () => {
-    //                 //eslint-disable no-undef
-    //                 //eslint-disable-next-line
-    //                 const button = $ipsp.get('button');
-    //                 button.setMerchantId(1396424);
-    //                 button.setAmount(result.totalPrice, 'UAH');
-    //                 button.setHost('pay.fondy.eu');
-    //                 result.id
-    //                     ? button.setResponseUrl(`${BASE_URL}/order/payment?order_id=${result.id}`)
-    //                     : button.setResponseUrl(`${BASE_URL}/order/payment?order_id=1`);
-    //                 console.log('url', button.getUrl())
-    //                 paymentUrlRef.current = button.getUrl();
-    //             };
-    //
-    //             document.body.appendChild(scriptTag);
-    //             console.log('paymentUrlRef', paymentUrlRef.current);
-    //             if(!paymentUrlRef.current) {
-    //                 alert("Payment url wasn't set");
-    //             }
-    //         }
-    //     }
-    //     createOrder().then();
-    // }, []);
-
     const handler = async () => {
 
         const result = await submitOrder();
         console.log(result);
-        debugger
+        
         if (!result.id) {
             alert("Doesn't work");
             return;
@@ -98,7 +60,7 @@ export const Payment = ({submitOrder}) => {
             }
         } else {
             // show notification message about unsuccessful order creation
-            alert("Пиздец сайт лежит, напишите в тг пж. А то я не понимаю почему и где????")
+        
         }
     }
 

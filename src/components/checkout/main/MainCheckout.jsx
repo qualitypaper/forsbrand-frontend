@@ -91,7 +91,7 @@ const MainCheckout = () => {
     return (
         <div className="checkout">
             <CheckoutLeft handleChange={handleChange} submitOrder={submitOrder} amountToPay={amountToPay}
-                          orderId={orderId}/>
+                          orderId={orderId} name={updateChanges.firstName + updateChanges.lastName} email={updateChanges.email}/>
             <CheckoutRight handleChange={handleChange}/>
         </div>
     )
