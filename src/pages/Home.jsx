@@ -126,7 +126,7 @@ export const Home = () => {
     <animated.div style={homeAnimation}>
       <PreLoader />
       <div className="mid">
-        <PaymentWidget amount={1} orderId={432} productCount={0}/>
+        {/* <PaymentWidget amount={1} orderId={432} productCount={0}/> */}
         <div className="mid_background1">
           <div className="one1">
             <HeaderMain
