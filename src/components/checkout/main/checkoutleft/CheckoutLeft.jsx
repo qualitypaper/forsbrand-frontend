@@ -9,7 +9,8 @@ import PaymentWidget from "../../../../pages/Payment";
 const CheckoutLeft = ({ handleChange, submitOrder, orderId, amountToPay, name, email }) => {
   const { showPay, showPayOpen } = useContext(AppContext);
   const [deliveryState, setDeliveryState] = useState(false);
-
+  const [merchantSignature, setMerchantSignature] = useState("");
+  const [id, setId] = useState(0);
 
   return (
     <section className="checkout-left">
@@ -19,7 +20,11 @@ const CheckoutLeft = ({ handleChange, submitOrder, orderId, amountToPay, name, e
       />
       <ShippingOptions
         handleChange={handleChange}
+        submitOrder={submitOrder}
         setDeliveryState={setDeliveryState}
+        setMerchantSignature={setMerchantSignature}
+        setOrderId={setId}
+        amount={amountToPay}
       />
 
       {showPay && (
@@ -29,7 +34,7 @@ const CheckoutLeft = ({ handleChange, submitOrder, orderId, amountToPay, name, e
       )}
       {showPayOpen && (
         <div className="checkout-left-delivery2">
-          <PaymentWidget submitOrder={submitOrder} orderId={orderId} amount={amountToPay} productCount={0} email={email} name={name}/>
+          <PaymentWidget submitOrder={submitOrder} orderId={id} signature={merchantSignature} amount={amountToPay} productCount={0} email={email} name={name}/>
         </div>
       )}
     </section>

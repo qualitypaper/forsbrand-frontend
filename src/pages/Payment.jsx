@@ -2,47 +2,17 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BASE_URL } from "../assets/constant";
 
-
-const PaymentWidget = ({ submitOrder, amount, productCount, orderId }) => {
+const PaymentWidget = ({
+  submitOrder,
+  amount,
+  productCount,
+  orderId,
+  signature,
+}) => {
   const firstProductName = "Товары";
   const secondProductName = "Количество";
   const orderDate = "1415379863";
   const [orderReference] = useState(String(orderId));
-  const [merchantSignature, setMerchantSignature] = useState();
-
-  useEffect(() => {
-    function generateSignature() {
-      var data = [
-        "forsbrand_com_ua", // Merchant account
-        "www.market.ua",
-        orderReference,
-        orderDate,
-        amount + productCount, // Amount
-        "UAH", // Currency
-        firstProductName,
-        secondProductName,
-        1,
-        1,
-        amount,
-        productCount,
-      ].join(";");
-      console.log(data);
-
-      const url = `${BASE_URL}/hmacmd5?string=${data}`;
-      console.log("🚀 ~ generateSignature ~ url:", url);
-
-      const r = axios
-        .get(url)
-        .then((res) => {
-          setMerchantSignature(res.data);
-          return res.data;
-        })
-        .catch((err) => console.error(err));
-
-      return r;
-    }
-    generateSignature();
-  }, [amount, orderReference, productCount]);
 
   async function onSubmit(e) {
     e.preventDefault();
@@ -50,50 +20,75 @@ const PaymentWidget = ({ submitOrder, amount, productCount, orderId }) => {
     const result = await submitOrder();
     console.log(result);
     if (!result) {
-      alert("Произошла ошибка при оформлении заказа, попробуйте позже.")
+      alert("Произошла ошибка при оформлении заказа, попробуйте позже.");
       return;
     }
 
+    var data = [
+      "forsbrand_com_ua", // Merchant account
+      "www.market.ua",
+      result.id,
+      orderDate,
+      amount + productCount, // Amount
+      "UAH", // Currency
+      firstProductName,
+      secondProductName,
+      1,
+      1,
+      amount,
+      productCount,
+    ].join(";");
+    console.log(data);
+
+    const url = `${BASE_URL}/hmacmd5?string=${data}`;
+    console.log("🚀 ~ generateSignature ~ url:", url);
+
+    const res = (await axios.get(url)).data;
+    const merchantSignature = res;
+    debugger;
+
+    const body = {
+      merchantAccount: "forsbrand_com_ua",
+      merchantAuthType: "SimpleSignature",
+      merchantDomainName: "www.market.ua",
+      orderReference: res.id,
+      orderDate: orderDate,
+      amount: `${amount + productCount}`,
+      currency: "UAH",
+      "productName[]": [firstProductName, secondProductName],
+      "productPrice[]": [amount, productCount],
+      serviceUrl: "https://api.forsbrand.com.ua/order/payment",
+      "productCount[]": [1, 1],
+      defaultPaymentSystem: "card",
+      merchantSignature: merchantSignature,
+    };
+
     fetch("https://secure.wayforpay.com/pay", {
       method: "POST",
-      body: {
-        merchantAccount: "forsbrand_com_ua",
-        merchantAuthType: "SimpleSignature",
-        merchantDomainName: "www.market.ua",
-        orderReference: orderReference,
-        orderDate: orderDate,
-        amount: `${amount} + ${productCount}`,
-        currency: "UAH",
-        "productName[]": [firstProductName, secondProductName],
-        "productPrice[]": [amount, productCount],
-        serviceUrl: "https://api.forsbrand.com.ua/order/payment",
-        "productCount[]": [productCount, productCount],
-        defaultPaymentSystem: "card",
-        merchantSignature: merchantSignature,
-      },
+      body: JSON.stringify(body),
     })
       .then((e) => e.json())
       .catch((e) => console.error(e));
   }
+  debugger;
   return (
     <>
       <form
         method="post"
         action="https://secure.wayforpay.com/pay"
-        onSubmit={(e) => console.log(e.target)}
         accept-charset="utf-8"
       >
         <input name="merchantAccount" value="forsbrand_com_ua" hidden />
         <input name="merchantAuthType" value="SimpleSignature" hidden />
         <input name="merchantDomainName" value="www.market.ua" hidden />
-        <input name="orderReference" value={orderReference} hidden />
-        <input name="orderDate" value={orderDate} hidden />
-        <input name="amount" value={amount + productCount} hidden />
+        <input name="orderReference" value={orderId} hidden />
+        <input name="orderDate" value="1415379863" hidden />
+        <input name="amount" value={amount} hidden />
         <input name="currency" value="UAH" hidden />
-        <input name="productName[]" value={firstProductName} hidden />
-        <input name="productName[]" value={secondProductName} hidden />
+        <input name="productName[]" value="Товары" hidden />
+        <input name="productName[]" value="Количество" hidden />
         <input name="productPrice[]" value={amount} hidden />
-        <input name="productPrice[]" value={productCount} hidden />
+        <input name="productPrice[]" value={0} hidden />
         <input
           name="serviceUrl"
           value="https://api.forsbrand.com.ua/order/payment"
@@ -102,7 +97,7 @@ const PaymentWidget = ({ submitOrder, amount, productCount, orderId }) => {
         <input name="productCount[]" value="1" hidden />
         <input name="productCount[]" value="1" hidden />
         <input name="defaultPaymentSystem" value="card" hidden />
-        <input name="merchantSignature" value={merchantSignature} hidden />
+        <input name="merchantSignature" value={signature} hidden />
         <input type="submit" value="Pay" className="buttonFondy" />
       </form>
     </>

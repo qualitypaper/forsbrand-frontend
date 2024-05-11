@@ -1,10 +1,10 @@
-import React, {useContext, useState} from 'react'
-import "./MainCheckout.scss"
+import React, { useContext, useState } from "react";
+import "./MainCheckout.scss";
 import CheckoutRight from "./checkoutright/CheckoutRight";
 import CheckoutLeft from "./checkoutleft/CheckoutLeft";
-import axios from 'axios';
-import {BASE_URL} from '../../../assets/constant';
-import {AppContext} from '../../app/App';
+import axios from "axios";
+import { BASE_URL } from "../../../assets/constant";
+import { AppContext } from "../../app/App";
 
 // [{
 //     id: 0,
@@ -40,61 +40,64 @@ import {AppContext} from '../../app/App';
 //     ]
 // },]
 const MainCheckout = () => {
-    const {cartItems, setPromocode} = useContext(AppContext);
-    const [updateChanges, setUpdateChanges] = useState({});
-    const [orderId, setOrderId] = useState();
-    const [amountToPay, setAmountToPay] = useState(100000);
+  const { cartItems, setPromocode } = useContext(AppContext);
+  const [updateChanges, setUpdateChanges] = useState({});
+  const [orderId, setOrderId] = useState();
+  const [amountToPay, setAmountToPay] = useState(100000);
 
-    const handleChange = (key, value, firstKey = null) => {
-        console.log("key: ", key, "value: ", value)
-        if (key === 'deliveryTypeId') {
-            const temp = {...updateChanges, "deliveryTypeId": value};
-            console.log(temp);
-            setUpdateChanges(temp)
-        }
-        if (firstKey) {
-            const temp = {...updateChanges};
-            temp[firstKey][key] = value;
-            setUpdateChanges(temp)
-        } else {
-            setUpdateChanges({...updateChanges, [key]: value})
-        }
+  const handleChange = (key, value, firstKey = null) => {
+    console.log("key: ", key, "value: ", value);
+    if (key === "deliveryTypeId") {
+      const temp = { ...updateChanges, deliveryTypeId: value };
+      console.log(temp);
+      setUpdateChanges(temp);
     }
-
-    const constructProducts = () => {
-        const productArr = cartItems.map(product => ({
-            quantity: product.quantity,
-            size: product.size,
-            productId: product.id
-        }))
-        return {...updateChanges, products: productArr}
+    if (firstKey) {
+      const temp = { ...updateChanges };
+      temp[firstKey][key] = value;
+      setUpdateChanges(temp);
+    } else {
+      setUpdateChanges({ ...updateChanges, [key]: value });
     }
+  };
 
-    const submitOrder = async () => {
-        const result = constructProducts();
-        const res = await axios.post(`${BASE_URL}/order/create`, result)
-        console.log(res.data)
-        debugger
-        if (res.data) {
-            /// send notification about the successful order creation
-            setTimeout(() => {
-                setOrderId(Number.parseInt(res.data.id));
-                setAmountToPay(res.data.totalPrice);
-                setPromocode(null);
-            }, 1000)
-        }
-        return res.data ? res.data : null;
+  const constructProducts = () => {
+    const productArr = cartItems.map((product) => ({
+      quantity: product.quantity,
+      size: product.size,
+      productId: product.id,
+    }));
+    return { ...updateChanges, products: productArr };
+  };
+
+  const submitOrder = async () => {
+    const result = constructProducts();
+    const res = await axios.post(`${BASE_URL}/order/create`, result);
+    console.log(res.data);
+    if (res.data) {
+      /// send notification about the successful order creation
+      setOrderId(Number.parseInt(res.data.id));
+      setAmountToPay(res.data.totalPrice);
+      setPromocode(null);
     }
+    return res.data ? res.data : null;
+  };
 
-    console.log(updateChanges.products)
+  console.log(updateChanges.products);
 
-    return (
-        <div className="checkout">
-            <CheckoutLeft handleChange={handleChange} submitOrder={submitOrder} amountToPay={amountToPay}
-                          orderId={orderId} name={updateChanges.firstName + updateChanges.lastName} email={updateChanges.email}/>
-            <CheckoutRight handleChange={handleChange}/>
-        </div>
-    )
-}
+  return (
+    <div className="checkout">
+      <CheckoutLeft
+        handleChange={handleChange}
+        submitOrder={submitOrder}
+        amountToPay={amountToPay}
+        orderId={orderId}
+        name={updateChanges.firstName + updateChanges.lastName}
+        email={updateChanges.email}
+      />
+      <CheckoutRight handleChange={handleChange} />
+    </div>
+  );
+};
 
-export default MainCheckout
+export default MainCheckout;
