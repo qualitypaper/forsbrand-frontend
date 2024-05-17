@@ -23,9 +23,10 @@ const PaymentWidget = ({
       alert("Произошла ошибка при оформлении заказа, попробуйте позже.");
       return;
     }
+    
 
     var data = [
-      "forsbrand_com_ua", // Merchant account
+      "www_forsbrand_com_ua", // Merchant account
       "www.market.ua",
       result.id,
       orderDate,
@@ -48,7 +49,7 @@ const PaymentWidget = ({
     debugger;
 
     const body = {
-      merchantAccount: "forsbrand_com_ua",
+      merchantAccount: "www_forsbrand_com_ua",
       merchantAuthType: "SimpleSignature",
       merchantDomainName: "www.market.ua",
       orderReference: res.id,
@@ -70,7 +71,8 @@ const PaymentWidget = ({
       .then((e) => e.json())
       .catch((e) => console.error(e));
   }
-  debugger;
+
+
   return (
     <>
       <form
@@ -78,7 +80,7 @@ const PaymentWidget = ({
         action="https://secure.wayforpay.com/pay"
         accept-charset="utf-8"
       >
-        <input name="merchantAccount" value="forsbrand_com_ua" hidden />
+        <input name="merchantAccount" value="www_forsbrand_com_ua" hidden />
         <input name="merchantAuthType" value="SimpleSignature" hidden />
         <input name="merchantDomainName" value="www.market.ua" hidden />
         <input name="orderReference" value={orderId} hidden />

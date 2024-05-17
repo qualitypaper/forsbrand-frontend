@@ -5,8 +5,16 @@ import "./CheckoutLeft.scss";
 import ShippingOptions from "./shippingoptions/ShippingOptions";
 import CheckoutInputs from "./checkoutinputs/CheckoutInputs";
 import PaymentWidget from "../../../../pages/Payment";
+import { Spin } from "antd";
 
-const CheckoutLeft = ({ handleChange, submitOrder, orderId, amountToPay, name, email }) => {
+const CheckoutLeft = ({
+  handleChange,
+  submitOrder,
+  orderId,
+  amountToPay,
+  name,
+  email,
+}) => {
   const { showPay, showPayOpen } = useContext(AppContext);
   const [deliveryState, setDeliveryState] = useState(false);
   const [merchantSignature, setMerchantSignature] = useState("");
@@ -34,7 +42,21 @@ const CheckoutLeft = ({ handleChange, submitOrder, orderId, amountToPay, name, e
       )}
       {showPayOpen && (
         <div className="checkout-left-delivery2">
-          <PaymentWidget submitOrder={submitOrder} orderId={id} signature={merchantSignature} amount={amountToPay} productCount={0} email={email} name={name}/>
+          <PaymentWidget
+            submitOrder={submitOrder}
+            orderId={id}
+            signature={merchantSignature}
+            amount={amountToPay}
+            productCount={0}
+            email={email}
+            name={name}
+          />
+        </div>
+      )}
+
+      {!showPay && !showPayOpen && (
+        <div>
+          <Spin className="checkout-left-delivery2 d-flex justify-center"/>
         </div>
       )}
     </section>
