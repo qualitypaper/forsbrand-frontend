@@ -74,15 +74,14 @@ const PaymentWidget = ({
 
 
   return (
-    <>
-      <form
+     <form
         method="post"
         action="https://secure.wayforpay.com/pay"
         accept-charset="utf-8"
       >
         <input name="merchantAccount" value="www_forsbrand_com_ua" hidden />
         <input name="merchantAuthType" value="SimpleSignature" hidden />
-        <input name="merchantDomainName" value="www.market.ua" hidden />
+        <input name="merchantDomainName" value="https://www.forsbrand.com.ua/" hidden />
         <input name="orderReference" value={orderId} hidden />
         <input name="orderDate" value="1415379863" hidden />
         <input name="amount" value={amount} hidden />
@@ -102,7 +101,6 @@ const PaymentWidget = ({
         <input name="merchantSignature" value={signature} hidden />
         <input type="submit" value="Pay" className="buttonFondy" />
       </form>
-    </>
   );
 };
 

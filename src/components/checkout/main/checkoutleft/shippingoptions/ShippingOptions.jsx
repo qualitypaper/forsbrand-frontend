@@ -96,9 +96,9 @@ const ShippingOptions = ({
       return;
     }
 
-    var data = [
+    const data = [
       "www_forsbrand_com_ua", // Merchant account
-      "www.market.ua",
+      "https://www.forsbrand.com.ua/",
       result.id,
       "1415379863",
       result.totalPrice, // Amount
