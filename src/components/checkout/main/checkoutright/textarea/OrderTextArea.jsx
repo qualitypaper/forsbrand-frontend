@@ -16,9 +16,9 @@ const    OrderTextArea = ({ handleChange }) => {
         }
     };
 
-    const handleTextareaChange = (event) => {
+    const handleTextareaChange = async (event) => {
         setUserInput(event.target.value);
-        handleChange("description", event.target.value)
+        await handleChange("description", event.target.value)
     };
 
     const handleToggleNote = () => {

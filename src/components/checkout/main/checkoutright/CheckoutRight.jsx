@@ -14,8 +14,8 @@ const CheckoutRight = ({ handleChange }) => {
     ? totalCost - (promocode.discount / 100) * totalCost
     : totalCost;
 
-  const handlePromocodeChange = (promocode) => {
-    handleChange("promocode", promocode);
+  const handlePromocodeChange = async (promocode) => {
+    await handleChange("promocode", promocode);
   }
 
   return (

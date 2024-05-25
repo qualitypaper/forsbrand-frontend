@@ -16,7 +16,7 @@ const PromocodeOrder = ({ handlePromocodeChange } ) => {
         const res = await checkPromocode(promocodeText);
         if (res) {
             if (res.valid) {
-                handlePromocodeChange(promocodeText)
+                await handlePromocodeChange(promocodeText)
                 setPromocodeText('')
                 setNotifications({ message: <div className='mt-3'>`Промокод дійсний! <b>${res.discount}%`</b> </div>});
                 setTimeout(function() {

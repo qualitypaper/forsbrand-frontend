@@ -72,12 +72,13 @@ const PaymentWidget = ({
       .catch((e) => console.error(e));
   }
 
+  console.log('amount', amount)
 
   return (
      <form
         method="post"
         action="https://secure.wayforpay.com/pay"
-        accept-charset="utf-8"
+        acceptCharset="utf-8"
       >
         <input name="merchantAccount" value="www_forsbrand_com_ua" hidden />
         <input name="merchantAuthType" value="SimpleSignature" hidden />

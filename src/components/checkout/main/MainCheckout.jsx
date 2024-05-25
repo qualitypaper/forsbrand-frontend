@@ -5,6 +5,7 @@ import CheckoutLeft from "./checkoutleft/CheckoutLeft";
 import axios from "axios";
 import { BASE_URL } from "../../../assets/constant";
 import { AppContext } from "../../app/App";
+import { generateMerchantSignature } from "./checkoutleft/shippingoptions/ShippingOptions";
 
 // [{
 //     id: 0,
@@ -44,8 +45,10 @@ const MainCheckout = () => {
   const [updateChanges, setUpdateChanges] = useState({});
   const [orderId, setOrderId] = useState();
   const [amountToPay, setAmountToPay] = useState(100000);
+  const [merchantSignature, setMerchantSignature] = useState("");
+  console.log("🚀 ~ MainCheckout ~ merchantSignature:", merchantSignature);
 
-  const handleChange = (key, value, firstKey = null) => {
+  const handleChange = async (key, value, firstKey = null) => {
     console.log("key: ", key, "value: ", value);
     if (key === "deliveryTypeId") {
       const temp = { ...updateChanges, deliveryTypeId: value };
@@ -58,6 +61,22 @@ const MainCheckout = () => {
       setUpdateChanges(temp);
     } else {
       setUpdateChanges({ ...updateChanges, [key]: value });
+    }
+
+    if (key === "promocode" && orderId) {
+      const res = await axios.post(`${BASE_URL}/order/setPromo`, {
+          orderId: orderId,
+          promo: value
+      });
+      if(res.data) {
+        setAmountToPay(res.data.price)
+        setMerchantSignature(await generateMerchantSignature(orderId, res.data.price))
+      }
+    } else if (key === "description" && orderId) {
+      await axios.post(`${BASE_URL}/order/setDescription`, {
+          orderId: orderId,
+          description: value,
+      });
     }
   };
 
@@ -77,8 +96,17 @@ const MainCheckout = () => {
     if (res.data) {
       /// send notification about the successful order creation
       setOrderId(Number.parseInt(res.data.id));
-      setAmountToPay(res.data.totalPrice);
-      setPromocode(null);
+      setPromocode(res.data.promocodes);
+      if (res.data.promocodes) {
+        setAmountToPay(
+          res.data.totalPrice -
+            Math.ceil(
+              (res.data.totalPrice * res.data.promocodes.discount) / 100
+            )
+        );
+      } else {
+        setAmountToPay(res.data.totalPrice);
+      }
     }
     return res.data ? res.data : null;
   };
@@ -94,6 +122,8 @@ const MainCheckout = () => {
         orderId={orderId}
         name={updateChanges.firstName + updateChanges.lastName}
         email={updateChanges.email}
+        merchantSignature={merchantSignature}
+        setMerchantSignature={setMerchantSignature}
       />
       <CheckoutRight handleChange={handleChange} />
     </div>

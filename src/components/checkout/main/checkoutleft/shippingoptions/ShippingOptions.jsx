@@ -77,11 +77,9 @@ const ShippingOptions = ({
           setAddressError("Please provide an address");
           return;
         }
-      } else {
-        if (departmentValue === undefined || departmentValue === "") {
-          setDepartmentError("Please provide an department number");
-          return;
-        }
+      } else if (departmentValue === undefined || departmentValue === "") {
+        setDepartmentError("Please provide an department number");
+        return;
       }
     }
 
@@ -95,29 +93,21 @@ const ShippingOptions = ({
       alert("Произошла ошибка при оформлении заказа, попробуйте позже.");
       return;
     }
+    let amountToPay;
 
-    const data = [
-      "www_forsbrand_com_ua", // Merchant account
-      "https://www.forsbrand.com.ua/",
-      result.id,
-      "1415379863",
-      result.totalPrice, // Amount
-      "UAH", // Currency
-      "Товары",
-      "Количество",
-      1,
-      1,
-      result.totalPrice,
-      0,
-    ].join(";");
-    console.log(data);
+    if (result.promocodes) {
+      amountToPay =
+        result.totalPrice -
+        Math.ceil((result.totalPrice * result.promocodes.discount) / 100);
+    } else {
+      amountToPay = result.totalPrice;
+    }
+
+    console.log("🚀 ~ handleButtonClick3 ~ amountToPay:", amountToPay);
+
+    const signature = await generateMerchantSignature(result.id, amountToPay);
     setOrderId(result.id);
-
-    const url = `${BASE_URL}/hmacmd5?string=${data}`;
-    console.log("🚀 ~ generateSignature ~ url:", url);
-
-    const res = (await axios.get(url)).data;
-    setMerchantSignature(res);
+    setMerchantSignature(signature);
     setShowPayOpen(true);
     setDeliveryState(true);
     console.log("id", selectedOption.id);
@@ -213,3 +203,27 @@ const ShippingOptions = ({
   );
 };
 export default ShippingOptions;
+
+export async function generateMerchantSignature(id, amountToPay) {
+  const data = [
+    "www_forsbrand_com_ua", // Merchant account
+    "https://www.forsbrand.com.ua/",
+    id,
+    "1415379863",
+    amountToPay, // Amount
+    "UAH", // Currency
+    "Товары",
+    "Количество",
+    1,
+    1,
+    amountToPay,
+    0,
+  ].join(";");
+
+  console.log(data);
+
+  const url = `${BASE_URL}/hmacmd5?string=${data}`;
+  console.log("🚀 ~ generateSignature ~ url:", url);
+
+  return (await axios.get(url)).data;
+}

@@ -14,10 +14,11 @@ const CheckoutLeft = ({
   amountToPay,
   name,
   email,
+  merchantSignature,
+  setMerchantSignature
 }) => {
   const { showPay, showPayOpen } = useContext(AppContext);
   const [deliveryState, setDeliveryState] = useState(false);
-  const [merchantSignature, setMerchantSignature] = useState("");
   const [id, setId] = useState(0);
 
   return (
