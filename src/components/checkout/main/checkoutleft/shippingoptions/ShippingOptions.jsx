@@ -32,6 +32,7 @@ const ShippingOptions = ({
   const [addressError, setAddressError] = useState("");
   const [departmentError, setDepartmentError] = useState("");
   const [, setContinueToPayment] = useState(false);
+  const [departments, setDepartments] = useState([]);
 
   //
   useEffect(() => {
@@ -45,13 +46,21 @@ const ShippingOptions = ({
     fetchShippingOptions().then();
   }, []);
 
+  const fetchDepartments = async (q) => {
+    const res = await axios.get(`${BASE_URL}/post/findDepartment?q=${q}`);
+
+    setDepartments(res.data.map( e => ({value: e, label: e, key: e})));
+  }
+
   const handleInputChange2 = (event) => {
     setInputValue(event.target.value);
     handleChange("deliveryAddress", event.target.value);
   };
-  const handleInputChange3 = (event) => {
-    setDepartmentValue(event.target.value);
-    handleChange("departmentNumber", event.target.value);
+  const handleInputChange3 = async (value) => {
+    setDepartmentValue(value);
+    handleChange("departmentNumber", value);
+    await fetchDepartments(value)
+    setDepartmentError(null)
   };
 
   const handleButtonClick4 = () => {
@@ -61,6 +70,7 @@ const ShippingOptions = ({
     setShowPay(true);
     setShowPayOpen(false);
   };
+
   const handleButtonClick3 = async () => {
     console.log(inputValue);
     if (selectedOption.requiredFieldsList.length === 2) {
@@ -118,6 +128,8 @@ const ShippingOptions = ({
   const handleShippingOptionChange = (option) => {
     console.log(option);
     setSelectedOption({});
+    setDepartmentError(null)
+    setAddressError(null)
     setInputValue("");
     setDepartmentValue("");
     setSelectedOption(option);
@@ -168,6 +180,7 @@ const ShippingOptions = ({
                 departmentValue={departmentValue}
                 handleInputChange={handleInputChange2}
                 handleInputChange2={handleInputChange3}
+                departments={departments}
               />
             ))
           ) : (
@@ -186,6 +199,7 @@ const ShippingOptions = ({
             <>
               <button
                 onClick={handleButtonClick3}
+                style={{marginTop: "20px"}}
                 className="checkout-left__shipping"
               >
                 <p>Продовжити</p>

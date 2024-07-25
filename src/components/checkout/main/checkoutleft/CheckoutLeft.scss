@@ -94,7 +94,14 @@
     flex-direction: column;
     gap: 20px;
     .checkout-left__input{
-      input{
+      // input{
+      //   padding: 10px 10px 10px;
+      //   width: 100%;
+      //   margin-top: 10px;
+      //   background-color: #FFFFFF;
+      //   border: 1px solid #000000;
+      // }
+      .inp {
         padding: 10px 10px 10px;
         width: 100%;
         margin-top: 10px;

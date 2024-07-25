@@ -1,17 +1,16 @@
+import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { animated, useSpring } from "react-spring";
+import { BASE_URL, ERROR_HREF } from "../assets/constant";
+import { AppContext } from "../components/app/App";
+import Drawer from "../components/mainpage/drawer";
 import { Footer } from "../components/mainpage/footer";
 import { HeaderMain } from "../components/mainpage/headermain";
 import { Main } from "../components/mainpage/main/Main";
-import Drawer from "../components/mainpage/drawer";
 import Window from "../components/mainpage/window";
-import { AppContext } from "../components/app/App";
-import "./Home.scss";
-import { BASE_URL, ERROR_HREF } from "../assets/constant";
 import PreLoader from "../components/preloader/PreLoader";
-import { animated, useSpring } from "react-spring";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import PaymentWidget from "./Payment";
+import "./Home.scss";
 
 export const Home = () => {
   const {
@@ -39,26 +38,13 @@ export const Home = () => {
   useEffect(() => {
     const getClothes = async () => {
       setLoading(true);
-
-      // try {
-      //     const cachedData = localStorage.getItem('clothesData');
-      //     if (cachedData) {
-      //         setCardData(JSON.parse(cachedData));
-      //         setCurrentCardData(JSON.parse(cachedData));
-      //     } else {
-      // const response = await axios.get(`${BASE_URL}/product/getAll`);
-      // localStorage.setItem('clothesData', JSON.stringify(response.data));
-      // setCardData(response.data);
-      // setCurrentCardData(response.data);
-      //
-      // } catch (error) {
-      //     console.error(error);
-      //     navigate(ERROR_HREF);
-      // } finally {
-      //     setLoading(false);
-      // }
       try {
-        const response = await axios.get(`${BASE_URL}/product/getAll`);
+        debugger
+        const response = await axios.get(`${BASE_URL}/product/getAll`, {
+          headers: {
+            "Authorization": ""
+          }
+        });
         setCardData(response.data);
         setCurrentCardData(response.data);
       } catch (error) {

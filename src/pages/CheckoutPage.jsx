@@ -1,8 +1,8 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import HeaderCheckout from "../components/checkout/header/HeaderCheckout";
 import "./CheckoutPage.scss"
 import MainCheckout from "../components/checkout/main/MainCheckout";
-import {AppContext} from "../components/app/App";
+import { AppContext } from "../components/app/App";
 
 
 export const CheckoutPage = () => {
@@ -11,7 +11,7 @@ export const CheckoutPage = () => {
         setShowData,
         setInputData,
         setDeliveryMethod,
-        setDeliveryOpenMethod, 
+        setDeliveryOpenMethod,
         setOrderData,
         setSelectedOption,
         setShowPayOpen,
@@ -45,12 +45,10 @@ export const CheckoutPage = () => {
     }
 
     return (
-        <>
-            <div className="mid1">
-                {/* <SuccessfulOrder /> */}
-                <HeaderCheckout clearState={clearState} />
-                <MainCheckout />
-            </div>
-        </>
+        <div className="mid1">
+            {/* <SuccessfulOrder /> */}
+            <HeaderCheckout clearState={clearState} />
+            <MainCheckout />
+        </div>
     )
 }

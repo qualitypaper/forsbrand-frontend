@@ -1,14 +1,14 @@
-import React, {useContext, useEffect} from 'react'
-import {Footer} from "../components/mainpage/footer";
+import React, { useContext, useEffect } from 'react'
+import { Footer } from "../components/mainpage/footer";
 import "./ProductPage.scss"
 
-import {AppContext} from "../components/app/App";
-import {useParams} from 'react-router-dom';
+import { AppContext } from "../components/app/App";
+import { useParams } from 'react-router-dom';
 import Drawer from "../components/mainpage/drawer";
 import CardFull from "../components/productpage/main/CardFull";
 import CardFullSeeBox from "../components/productpage/seebox/CardFullSeeBox";
-import {animated, useSpring} from "react-spring";
-import {BASE_URL} from '../assets/constant';
+import { animated, useSpring } from "react-spring";
+import { BASE_URL } from '../assets/constant';
 import axios from 'axios';
 
 export const ProductPage = () => {
@@ -25,7 +25,7 @@ export const ProductPage = () => {
     } = useContext(AppContext);
 
 
-    const {id} = useParams();
+    const { id } = useParams();
     const addToCartFromWindow = (item) => {
         addToOrder(item);
         setWindowProduct(false);
@@ -34,7 +34,7 @@ export const ProductPage = () => {
         const temp = cartItems.find(e => e.id === item.id)
         if (temp) {
             temp.quantity += 1
-            setCartItems(cartItems.filter(e => e.id === item.id ? {...e, quantity: e.quantity + 1} : e))
+            setCartItems(cartItems.filter(e => e.id === item.id ? { ...e, quantity: e.quantity + 1 } : e))
         } else {
             const tempItems = [...cartItems]
             tempItems.push(item)
@@ -44,8 +44,11 @@ export const ProductPage = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            // const res = {data: ProductJson.find(item => item.id === Number.parseInt(id))}
-            const res = await axios.get(`${BASE_URL}/product/get/${id}`)
+            const res = await axios.get(`${BASE_URL}/product/get/${id}`, {
+                headers: {
+                    "Authorization": ""
+                }
+            })
             if (res.data) {
                 console.log(res.data)
                 setCurrentClothing(res.data)
@@ -80,30 +83,28 @@ export const ProductPage = () => {
     });
 
     return (
-        <>
-            <div className="mid">
-                <div className="mid_background1">
-                    <div className="one">
-                        <animated.div style={productAnimation}>
-                            <CardFull
-                                onAdd={addToOrder}
-                                product={windowItems}
-                                onClickAddToCart={addToCartFromWindow}
-                            />
-                        </animated.div>
-                            {cartOpened && (
-                                <Drawer
-                                    deleteToOrder={deleteToOrder}
-                                    items={cartItems}
-                                    removeFromCart={removeFromOrder}
-                                    onClickClosed={() => setCartOpened(false)}
-                                />
-                            )}
-                        {imagesBoxOpened && <CardFullSeeBox />}
-                    </div>
+        <div className="mid">
+            <div className="mid_background1">
+                <div className="one">
+                    <animated.div style={productAnimation}>
+                        <CardFull
+                            onAdd={addToOrder}
+                            product={windowItems}
+                            onClickAddToCart={addToCartFromWindow}
+                        />
+                    </animated.div>
+                    {cartOpened && (
+                        <Drawer
+                            deleteToOrder={deleteToOrder}
+                            items={cartItems}
+                            removeFromCart={removeFromOrder}
+                            onClickClosed={() => setCartOpened(false)}
+                        />
+                    )}
+                    {imagesBoxOpened && <CardFullSeeBox />}
                 </div>
-                <Footer />
             </div>
-        </>
+            <Footer />
+        </div>
     );
 };
