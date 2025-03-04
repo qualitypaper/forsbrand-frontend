@@ -263,17 +263,18 @@ const App = () => {
         >
             <Router>
                 <Routes>
-                    <Route path="/" element={<Home itemsPerPage={9} />} />
+                    <Route path="/" element={<DownWebSite />} />
+                    
+                    {/* <Route path="/" element={<Home itemsPerPage={9} />} />
                     <Route path="/product-page/:id" element={<ProductPage />} />
                     <Route path="/cart-page" element={<CartPage />} />
                     <Route path="/delivery" element={<Delivery />} />
                     <Route path="*" element={<Error />} />
-                    <Route path="/website-down" element={<DownWebSite />} />
                     <Route path="/contacts" element={<Contacts />} />
                     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                     <Route path="/checkout" element={<CheckoutPage />} />
                     <Route path="/success" element={<SuccessfulOrder />} />
-                    <Route path="/failure" element={<UnsuccessfulOrder />} />
+                    <Route path="/failure" element={<UnsuccessfulOrder />} /> */}
                 </Routes>
             </Router>
         </AppContext.Provider>
